@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>pfSense &#8211; Stefcho&#039;s Tech Blog</title>
+	<atom:link href="https://blog.stefcho.eu/tag/pfsense/feed/" rel="self" type="application/rss+xml" />
+	<link>http://blog.stefcho.eu/</link>
+	<description>Software Development, Cloud, DevOps and PfSense</description>
+	<lastBuildDate>
+	Tue, 05 Mar 2019 12:03:41 +0000	</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.1</generator>
+
+<image>
+	<url>https://blog.stefcho.eu/wp-content/uploads/2018/10/cropped-0-32x32.jpg</url>
+	<title>pfSense &#8211; Stefcho&#039;s Tech Blog</title>
+	<link>http://blog.stefcho.eu/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>pfSense 2.4.4 Released</title>
+		<link>https://blog.stefcho.eu/pfsense-2-4-4-released/</link>
+				<pubDate>Thu, 04 Oct 2018 08:25:46 +0000</pubDate>
+		<dc:creator><![CDATA[Stefan]]></dc:creator>
+				<category><![CDATA[Technical]]></category>
+		<category><![CDATA[pfSense]]></category>
+
+		<guid isPermaLink="false">https://blog.stefcho.eu/?p=1051</guid>
+				<description><![CDATA[<p>Hello everyone, The new version 2.4.4 if finally here. You can check what&#8217;s new here. &#160;</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/pfsense-2-4-4-released/">pfSense 2.4.4 Released</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Hello everyone,</p>
+<p>The new version 2.4.4 if finally here. You can check what&#8217;s new <a href="https://www.netgate.com/blog/pfsense-2-4-4-release-now-available.html">here.</a></p>
+<p>&nbsp;</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/pfsense-2-4-4-released/">pfSense 2.4.4 Released</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Sharing a Port with OpenVPN and a Web Server</title>
+		<link>https://blog.stefcho.eu/sharing-port-openvpn-web-server/</link>
+				<pubDate>Fri, 04 Mar 2016 06:36:35 +0000</pubDate>
+		<dc:creator><![CDATA[Stefan]]></dc:creator>
+				<category><![CDATA[Technical]]></category>
+		<category><![CDATA[OpenVPN]]></category>
+		<category><![CDATA[pfSense]]></category>
+
+		<guid isPermaLink="false">http://stefcho.azurewebsites.net/?p=1025</guid>
+				<description><![CDATA[<p>Sharing a Port with OpenVPN and a Web Server Routing your entire internet traffic over VPN when away from home is almost a must. Especially when using public WiFi hotspots or hotel internet. Hello all, long time no see. I have a lot of other engagements lately and can’t reach to our beloved topic of [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/sharing-port-openvpn-web-server/">Sharing a Port with OpenVPN and a Web Server</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Sharing a Port with OpenVPN and a Web Server</p>
+<p>Routing your entire internet traffic over VPN when away from home is almost a must. Especially when using public WiFi hotspots or hotel internet.</p>
+<p>Hello all, long time no see. I have a lot of other engagements lately and can’t reach to our beloved topic of pfSense. The fact that I don’t write new posts does not mean that I have abandoned it. Sometimes you have to put priorities to things in your life that are not as pleasant as other, but are just as much if not more important.</p>
+<p>Enough said about that. Let’s get to the topic.</p>
+<p>Recently I was visiting Asian country. As you probably know there are some places that some sites are restricted for access. It was a strange experience to not be able to open pages that you usually use every day. On other hand I would prefer to route all traffic over my Internet connection back at home when in a foreign country. Just as a protection.</p>
+<p>So for test purposes I’ve setup an OpenVPN instance to check if I’m able to route all my traffic back home.</p>
+<p>During my research I’ve came across very interesting article on the pfSense documentation. The article is: “<a href="https://doc.pfsense.org/index.php/Sharing_a_Port_with_OpenVPN_and_a_Web_Server" target="_blank">Sharing a Port with OpenVPN and a Web Server</a>”</p>
+<p>It works and the only modification that has to be made to the OpenVPN server configuration are as follows:</p>
+<ol>
+<li>Set the protocol to TCP in the General Information section<a href="https://blog.stefcho.eu/wp-content/uploads/2016/03/Sharing-a-Port-with-OpenVPN-and-a-Web-Server-01.png" rel="attachment wp-att-1027"><img class="alignnone size-full wp-image-1027" src="https://blog.stefcho.eu/wp-content/uploads/2016/03/Sharing-a-Port-with-OpenVPN-and-a-Web-Server-01.png" alt="Sharing a Port with OpenVPN and a Web Server 01" width="773" height="131" srcset="https://blog.stefcho.eu/wp-content/uploads/2016/03/Sharing-a-Port-with-OpenVPN-and-a-Web-Server-01.png 773w, https://blog.stefcho.eu/wp-content/uploads/2016/03/Sharing-a-Port-with-OpenVPN-and-a-Web-Server-01-300x51.png 300w, https://blog.stefcho.eu/wp-content/uploads/2016/03/Sharing-a-Port-with-OpenVPN-and-a-Web-Server-01-768x130.png 768w" sizes="(max-width: 773px) 100vw, 773px" /></a></li>
+<li>Don’t forget to tick in the Tunnel Settings &gt; Redirect Gateway</li>
+</ol>
+<p>(Force all client generated traffic through the tunnel.)</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2016/03/Sharing-a-Port-with-OpenVPN-and-a-Web-Server-03.png" rel="attachment wp-att-1029"><img class="alignnone size-full wp-image-1029" src="https://blog.stefcho.eu/wp-content/uploads/2016/03/Sharing-a-Port-with-OpenVPN-and-a-Web-Server-03.png" alt="Sharing a Port with OpenVPN and a Web Server 03" width="825" height="49" srcset="https://blog.stefcho.eu/wp-content/uploads/2016/03/Sharing-a-Port-with-OpenVPN-and-a-Web-Server-03.png 825w, https://blog.stefcho.eu/wp-content/uploads/2016/03/Sharing-a-Port-with-OpenVPN-and-a-Web-Server-03-300x18.png 300w, https://blog.stefcho.eu/wp-content/uploads/2016/03/Sharing-a-Port-with-OpenVPN-and-a-Web-Server-03-768x46.png 768w" sizes="(max-width: 825px) 100vw, 825px" /></a></p>
+<ol start="3">
+<li>In Advanced configuration section in Advanced field put the following:</li>
+</ol>
+<p>port-share localhost 443<a href="https://blog.stefcho.eu/wp-content/uploads/2016/03/Sharing-a-Port-with-OpenVPN-and-a-Web-Server-02.png" rel="attachment wp-att-1026"><img class="alignnone size-full wp-image-1026" src="https://blog.stefcho.eu/wp-content/uploads/2016/03/Sharing-a-Port-with-OpenVPN-and-a-Web-Server-02.png" alt="Sharing a Port with OpenVPN and a Web Server 02" width="761" height="163" srcset="https://blog.stefcho.eu/wp-content/uploads/2016/03/Sharing-a-Port-with-OpenVPN-and-a-Web-Server-02.png 761w, https://blog.stefcho.eu/wp-content/uploads/2016/03/Sharing-a-Port-with-OpenVPN-and-a-Web-Server-02-300x64.png 300w" sizes="(max-width: 761px) 100vw, 761px" /></a></p>
+<p>The old OpenVPN configuration instructions you can find here:</p>
+<h2 class="post-title"><a title="Permanent Link to pfSense 2.0 RC1 configuration of OpenVPN Server for Road Warrior with TLS and User Authentication" href="http://stefcho.azurewebsites.net/pfsense-2-0-rc1-configuration-of-openvpn-server-for-rad-warrior-with-tls-and-user-authentication/" rel="bookmark permalink">pfSense 2.0 RC1 configuration of OpenVPN Server for Road Warrior with TLS and User Authentication</a></h2>
+<p>Now you can connect to your pfSense / OpenVPN server on HTTPS and hopefully it would appear much like you are opening a page over SSL.</p>
+<p>Have fun and as usual I don’t take any kind of responsibly for the way you use this setup, or any legal actions or consequences for that matter or related to it.</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/sharing-port-openvpn-web-server/">Sharing a Port with OpenVPN and a Web Server</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>pfSense 2.2 Released!</title>
+		<link>https://blog.stefcho.eu/pfsense-2-2-released/</link>
+				<pubDate>Sat, 24 Jan 2015 12:45:33 +0000</pubDate>
+		<dc:creator><![CDATA[Stefan]]></dc:creator>
+				<category><![CDATA[Technical]]></category>
+		<category><![CDATA[pfSense]]></category>
+		<category><![CDATA[pfSense 2.2]]></category>
+
+		<guid isPermaLink="false">http://stefcho.azurewebsites.net/?p=987</guid>
+				<description><![CDATA[<p>It’s been a while since I’ve been digging in pfSense. A lot of things had happened. The good news is that currently I’ve got a few projects related to the topic and will make a few posts about them. Next post will be related to upgrading to 2.2 from 2.1.5. In the meantime you can [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/pfsense-2-2-released/">pfSense 2.2 Released!</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>It’s been a while since I’ve been digging in pfSense. A lot of things had happened. The good news is that currently I’ve got a few projects related to the topic and will make a few posts about them. Next post will be related to upgrading to 2.2 from 2.1.5.</p>
+<p>In the meantime you can check what are the new features in this release here:</p>
+<p><a href="https://doc.pfsense.org/index.php/2.2_New_Features_and_Changes">2.2 New Features and Changes</a></p>
+<p>The official article about the release:</p>
+<p><a href="https://blog.pfsense.org/?p=1546">pfSense 2.2-RELEASE Now Available!</a></p>
+<p>and of course the <a href="https://doc.pfsense.org/index.php/Upgrade_Guide">Upgrade Guide</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/pfsense-2-2-released/">pfSense 2.2 Released!</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>pfSense 2.0 Release Now Available!</title>
+		<link>https://blog.stefcho.eu/pfsense-2-0-release-now-available/</link>
+				<comments>https://blog.stefcho.eu/pfsense-2-0-release-now-available/#comments</comments>
+				<pubDate>Sun, 25 Sep 2011 13:37:00 +0000</pubDate>
+		<dc:creator><![CDATA[Stefan]]></dc:creator>
+				<category><![CDATA[Technical]]></category>
+		<category><![CDATA[pfSense]]></category>
+
+		<guid isPermaLink="false">http://stefcho.azurewebsites.net/?p=966</guid>
+				<description><![CDATA[<p>The 2.0 release is finally available. Here is the news: 2.0 Release Now Available! My experience so far is good, I’ve already upgrade some of my machines. You can take a look at the upgrade process from RC3 to RTM here: &#160; &#160; Before performing any kind of upgrade read carefully the Upgrade Guide!!! &#160;</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/pfsense-2-0-release-now-available/">pfSense 2.0 Release Now Available!</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>The 2.0 release is finally available.</p>
+<p>Here is the news:</p>
+<h1><strong><a title="Permanent Link: 2.0 Release Now Available!" href="http://blog.pfsense.org/?p=598" target="_blank">2.0 Release Now Available!</a></strong></h1>
+<p>My experience so far is good, I’ve already upgrade some of my machines.</p>
+<p>You can take a look at the upgrade process from RC3 to RTM here:</p>
+<p>&nbsp;<br />
+<iframe width="640" height="480" src="http://www.youtube.com/embed/SPsOr2VAfwE?rel=0&amp;hd=1" frameborder="0" allowfullscreen=""></iframe><br />
+&nbsp;</p>
+<h2>Before performing any kind of upgrade read carefully the <a href="http://doc.pfsense.org/index.php/Upgrade_Guide" target="_blank">Upgrade Guide!!!</a></h2>
+<p>&nbsp;</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/pfsense-2-0-release-now-available/">pfSense 2.0 Release Now Available!</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></content:encoded>
+							<wfw:commentRss>https://blog.stefcho.eu/pfsense-2-0-release-now-available/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+							</item>
+		<item>
+		<title>Using your OpenVPN Road Warrior setup as a Secure Relay</title>
+		<link>https://blog.stefcho.eu/using-your-openvpn-road-warrior-setup-as-a-secure-relay/</link>
+				<comments>https://blog.stefcho.eu/using-your-openvpn-road-warrior-setup-as-a-secure-relay/#comments</comments>
+				<pubDate>Wed, 07 Sep 2011 20:16:49 +0000</pubDate>
+		<dc:creator><![CDATA[Stefan]]></dc:creator>
+				<category><![CDATA[Technical]]></category>
+		<category><![CDATA[Network]]></category>
+		<category><![CDATA[OpenVPN]]></category>
+		<category><![CDATA[pfSense]]></category>
+		<category><![CDATA[pfSense 2.0 RC3]]></category>
+
+		<guid isPermaLink="false">http://stefcho.azurewebsites.net/?p=956</guid>
+				<description><![CDATA[<p>Introduction If you are in a café or another place with free wireless Internet access you are under a security risk. Your traffic can be monitored, captured and analysed. Your sensitive data can be stolen or your laptop infected with malicious application. To avoid as much as possible of the above we can route all [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/using-your-openvpn-road-warrior-setup-as-a-secure-relay/">Using your OpenVPN Road Warrior setup as a Secure Relay</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p><strong>Introduction</strong></p>
+<p>If you are in a café or another place with free wireless Internet access you are under a security risk. Your traffic can be monitored, captured and analysed. Your sensitive data can be stolen or your laptop infected with malicious application.</p>
+<p>To avoid as much as possible of the above we can route all your traffic through the internet connection at home or in your office.</p>
+<p><strong>Configuration</strong></p>
+<p>As a base configuration you can use <a href="http://stefcho.azurewebsites.net/?p=492" target="_blank">pfSense 2.0 RC1 configuration of OpenVPN Server for Road Warrior with TLS and User Authentication</a></p>
+<p>up until the Tunnel Settings section of the OpenVPN Configuration.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/09/Using-your-OpenVPN-Road-Warrior-setup-as-a-Secure-Relay-for-the-users-01.png"><img class="alignnone size-full wp-image-957" title="Using your OpenVPN Road Warrior setup as a Secure Relay for the users - 01" src="https://blog.stefcho.eu/wp-content/uploads/2011/09/Using-your-OpenVPN-Road-Warrior-setup-as-a-Secure-Relay-for-the-users-01.png" alt="" width="909" height="678" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/09/Using-your-OpenVPN-Road-Warrior-setup-as-a-Secure-Relay-for-the-users-01.png 909w, https://blog.stefcho.eu/wp-content/uploads/2011/09/Using-your-OpenVPN-Road-Warrior-setup-as-a-Secure-Relay-for-the-users-01-300x223.png 300w, https://blog.stefcho.eu/wp-content/uploads/2011/09/Using-your-OpenVPN-Road-Warrior-setup-as-a-Secure-Relay-for-the-users-01-200x150.png 200w" sizes="(max-width: 909px) 100vw, 909px" /></a></p>
+<p>There tick the Redirect Gateway.</p>
+<p>&nbsp;</p>
+<p>Under Client Settings enter DNS Server 1 as the IP address of you LAN interface.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/09/Using-your-OpenVPN-Road-Warrior-setup-as-a-Secure-Relay-for-the-users-02.png"><img class="alignnone size-full wp-image-958" title="Using your OpenVPN Road Warrior setup as a Secure Relay for the users - 02" src="https://blog.stefcho.eu/wp-content/uploads/2011/09/Using-your-OpenVPN-Road-Warrior-setup-as-a-Secure-Relay-for-the-users-02.png" alt="" width="909" height="678" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/09/Using-your-OpenVPN-Road-Warrior-setup-as-a-Secure-Relay-for-the-users-02.png 909w, https://blog.stefcho.eu/wp-content/uploads/2011/09/Using-your-OpenVPN-Road-Warrior-setup-as-a-Secure-Relay-for-the-users-02-300x223.png 300w, https://blog.stefcho.eu/wp-content/uploads/2011/09/Using-your-OpenVPN-Road-Warrior-setup-as-a-Secure-Relay-for-the-users-02-200x150.png 200w" sizes="(max-width: 909px) 100vw, 909px" /></a></p>
+<p><strong>Explanation</strong></p>
+<p>By doing so you will redirect all your traffic through the VPN connection and avoid the risks related to the publicly available Internet access hotspots. The addition of DNS server address is needed in order to use you own device to resolve web sites IPs instead of the publicly available DNS server of the hotspot.</p>
+<p><strong>Testing</strong></p>
+<p>As a test you can trace route (tracert bbc.co.uk for example) a popular internet site with or without established VPN Connection.</p>
+<p><strong>Conclusion</strong></p>
+<p>At the cost of building just another VPN Server on your device you are gaining a little peace of mind while surfing the net from insecure location.</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/using-your-openvpn-road-warrior-setup-as-a-secure-relay/">Using your OpenVPN Road Warrior setup as a Secure Relay</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></content:encoded>
+							<wfw:commentRss>https://blog.stefcho.eu/using-your-openvpn-road-warrior-setup-as-a-secure-relay/feed/</wfw:commentRss>
+		<slash:comments>7</slash:comments>
+							</item>
+		<item>
+		<title>Upgrade Alix board  with pfSense 1.2.3 to pfSense 2.0 RC3</title>
+		<link>https://blog.stefcho.eu/upgrade-alix-board-with-pfsense-1-2-3-to-pfsense-2-0-rc3/</link>
+				<comments>https://blog.stefcho.eu/upgrade-alix-board-with-pfsense-1-2-3-to-pfsense-2-0-rc3/#comments</comments>
+				<pubDate>Sat, 20 Aug 2011 06:17:55 +0000</pubDate>
+		<dc:creator><![CDATA[Stefan]]></dc:creator>
+				<category><![CDATA[Technical]]></category>
+		<category><![CDATA[pfSense]]></category>
+		<category><![CDATA[pfSense 2.0 RC3]]></category>
+
+		<guid isPermaLink="false">http://stefcho.azurewebsites.net/?p=930</guid>
+				<description><![CDATA[<p>Introduction After having &#160;enough of tests with the RC3 in virtual environment, I decide to upgrade my pfSense 1.2.3 appliance running on Alix2d13. Considering my Dual WAN setup with load balancing and some other rules, I didn’t really want to lose any of my configurations during this process. If I made in-place upgrade what is [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/upgrade-alix-board-with-pfsense-1-2-3-to-pfsense-2-0-rc3/">Upgrade Alix board  with pfSense 1.2.3 to pfSense 2.0 RC3</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p><strong>Introduction</strong></p>
+<p>After having &nbsp;enough of tests with the RC3 in virtual environment, I decide to upgrade my pfSense 1.2.3 appliance running on Alix2d13. Considering my Dual WAN setup with load balancing and some other rules, I didn’t really want to lose any of my configurations during this process.</p>
+<p>If I made in-place upgrade what is my rollback strategy?!</p>
+<p>If I performed clean install and just restored configuration backup what are the guaranties that is will work. Of course I can test it in my virtual lab, but there are risks with the physical scenario that I can’t predict using this method. So I needed and alternative.</p>
+<p><strong>Scenario</strong></p>
+<p>I want to test upgrade my pfSense 1.2.3 to 2.0 RC3. For that purpose I need a reliable rollback plan with no data loss, and minimal operations required. How did I achieve it you can find in the Explanation section.</p>
+<p><strong>Setup</strong></p>
+<p>The setup is described in this post: <a href="http://stefcho.azurewebsites.net/?p=306" target="_blank">SoHo Firewall Appliance with Alix2d13 and pfSense</a></p>
+<p>,noting change there since.</p>
+<p><strong>Configuration</strong></p>
+<p>First I made a backup of the full configuration of the 1.2.3, you know just in case.</p>
+<pre>Then download the image file: <a href="http://mirror.qubenet.net/mirror/pfsense/updates/pfSense-2.0-RC3-4g-i386-20110621-1821-nanobsd-upgrade.img.gz">pfSense-2.0-RC3-4g-i386-20110621-1821-nanobsd-upgrade.img.gz</a></pre>
+<p>And extract the image from the archive.</p>
+<p>Now as it is described here: <a href="http://m0n0.ch/wall/installation_generic.php" target="_blank">Installation on a standard PC (CF/IDE version)</a></p>
+<p>We need the <strong>physdiskwrite</strong> tool to write the image to the Compact Flash (CF). I’ve used the</p>
+<p><a href="http://m0n0.ch/wall/physdiskwrite.php" target="_blank">physdiskwrite 0.5.2 + PhysGUI</a></p>
+<p>Then I plug in the new CF in the card reader make sure there are no portions on it using the Disk Management Console (Start &gt; Run&gt; diskmgmt.msc), otherwise you will receive error message like the one in the Issue section below.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/08/CF.png"><img class="alignnone size-full wp-image-931" title="CF" src="https://blog.stefcho.eu/wp-content/uploads/2011/08/CF.png" alt="" width="674" height="102" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/08/CF.png 674w, https://blog.stefcho.eu/wp-content/uploads/2011/08/CF-300x45.png 300w" sizes="(max-width: 674px) 100vw, 674px" /></a><a href="https://blog.stefcho.eu/wp-content/uploads/2011/08/PhysGUI.png"></a></p>
+<p>Then start physdiskwrite with PhysGUI, select the CF disk.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/08/PhysGUI.png"><img class="alignnone size-full wp-image-936" title="PhysGUI" src="https://blog.stefcho.eu/wp-content/uploads/2011/08/PhysGUI.png" alt="" width="723" height="295" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/08/PhysGUI.png 723w, https://blog.stefcho.eu/wp-content/uploads/2011/08/PhysGUI-300x122.png 300w" sizes="(max-width: 723px) 100vw, 723px" /></a></p>
+<p>Right click on the disk select Image laden (Load Image), Offnen (Open). Brows to the extracted image and select it.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/08/PhysGUI-Load-Image.png"><img class="alignnone size-full wp-image-933" title="PhysGUI - Load Image" src="https://blog.stefcho.eu/wp-content/uploads/2011/08/PhysGUI-Load-Image.png" alt="" width="724" height="299" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/08/PhysGUI-Load-Image.png 724w, https://blog.stefcho.eu/wp-content/uploads/2011/08/PhysGUI-Load-Image-300x123.png 300w" sizes="(max-width: 724px) 100vw, 724px" /></a><a href="https://blog.stefcho.eu/wp-content/uploads/2011/08/PhysGUI-Remove-2GB-restriction.png"></a></p>
+<p>You will see this warning message window, tick the check box next to <strong>Remove 2GB restriction</strong>, mine is 8 Gigs, if your CF is smaller then don&#8217;t.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/08/PhysGUI-Remove-2GB-restriction.png"><img class="alignnone size-full wp-image-934" title="PhysGUI - Remove 2GB restriction" src="https://blog.stefcho.eu/wp-content/uploads/2011/08/PhysGUI-Remove-2GB-restriction.png" alt="" width="308" height="168" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/08/PhysGUI-Remove-2GB-restriction.png 308w, https://blog.stefcho.eu/wp-content/uploads/2011/08/PhysGUI-Remove-2GB-restriction-300x163.png 300w" sizes="(max-width: 308px) 100vw, 308px" /></a><a href="https://blog.stefcho.eu/wp-content/uploads/2011/08/PhysGUI-Warninng.png"></a></p>
+<p>Yet another warning message windows, asking you if you really want to overwrite the disk with the image.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/08/PhysGUI-Warninng.png"><img class="alignnone size-full wp-image-935" title="PhysGUI - Warninng" src="https://blog.stefcho.eu/wp-content/uploads/2011/08/PhysGUI-Warninng.png" alt="" width="475" height="184" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/08/PhysGUI-Warninng.png 475w, https://blog.stefcho.eu/wp-content/uploads/2011/08/PhysGUI-Warninng-300x116.png 300w" sizes="(max-width: 475px) 100vw, 475px" /></a><a href="https://blog.stefcho.eu/wp-content/uploads/2011/08/Progress.png"></a></p>
+<p>No you have about 20 – 30 minutes of waiting, so be patient, do some other stuff.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/08/Progress.png"><img class="alignnone size-full wp-image-937" title="Progress" src="https://blog.stefcho.eu/wp-content/uploads/2011/08/Progress.png" alt="" width="677" height="342" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/08/Progress.png 677w, https://blog.stefcho.eu/wp-content/uploads/2011/08/Progress-300x151.png 300w" sizes="(max-width: 677px) 100vw, 677px" /></a></p>
+<p>We are ready.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/08/Done.png"><img class="alignnone size-full wp-image-932" title="Done" src="https://blog.stefcho.eu/wp-content/uploads/2011/08/Done.png" alt="" width="244" height="171"></a></p>
+<p>&nbsp;</p>
+<p><strong>Explanation</strong></p>
+<p>Finally I get it, instead of changing the content of my original Compact Flash, why not get second one and use is for the tests instead? This way I can retain my original configuration and with just a swap of the cards be right back where I started.</p>
+<p><strong>Testing</strong></p>
+<p>After successful installation I’ve just swap the CFs and configured pfSense 2.0 RC3 using console cable.</p>
+<p>Then using the WebGUI restored the backup configuration from the 1.2.3. Now it is time to check the functionality.</p>
+<p>The Interface configuration like interfaced configuration was in place but the Load Balancing configuration was gone. Also my OpenVPN configurations were restored but in a non-working state. The firewall rules were applied but with the missing Load Balancer there was little use of them. After about half hour of checks, I decided to roll back to 1.2.3. Swap the CFs again and everything works the old way.</p>
+<p><strong>Issues</strong></p>
+<p>Writing to the CF card, As stated in <a href="http://m0n0.ch/wall/physdiskwrite.php" target="_blank">Special considerations for Windows Vista/7</a></p>
+<blockquote><p>If you get write errors shortly after physdiskwrite has begun writing to the target disk (usually after 65536 bytes), this may be caused by existing partitions on the disk. Use the Disk Management utility (right-click on the &#8220;Computer&#8221; icon on the desktop and select Manage, then navigate to Computer Management (Local)/Storage) to delete all partitions on the target disk before starting physdiskwrite.</p>
+<p>If you are unable to delete all the partitions with the Disk Management utility, try the following procedure:</p>
+<p>1.&nbsp;&nbsp;&nbsp;&nbsp; Open a command window as admin (&#8220;cmd&#8221;)</p>
+<p>2.&nbsp;&nbsp;&nbsp;&nbsp; Type &#8220;diskpart&#8221; and hit enter.</p>
+<p>3.&nbsp;&nbsp;&nbsp;&nbsp; Type &#8220;list disk&#8221; and hit enter to find out the number of your drive.</p>
+<p>4.&nbsp;&nbsp;&nbsp;&nbsp; Type &#8220;select disk X&#8221; (where you replace X with the number of your drive) and hit enter.</p>
+<p>5.&nbsp;&nbsp;&nbsp;&nbsp; Type &#8220;clean&#8221; and hit enter.</p></blockquote>
+<p>&nbsp;</p>
+<p>So I had to clean the disk first but it was a breezy task. Then everything was alright.</p>
+<p><strong>Conclusion</strong></p>
+<p>Up until the restoration of the configuration backup everything is ok. Now I have to test the restoration in my lab, or better yet reproduce my original configuration there. I ought to think for the second alternative more.</p>
+<p>To configure everything in the lab and then just backup and restore the configuration from the same one and the same version sound reasonable to me. Better yet I will know that it works.</p>
+<p>I’ll have to test Dual WAN in fail-over configuration, then test recreate my OpenVPN configurations, and test all the rules that I have applied.</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/upgrade-alix-board-with-pfsense-1-2-3-to-pfsense-2-0-rc3/">Upgrade Alix board  with pfSense 1.2.3 to pfSense 2.0 RC3</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></content:encoded>
+							<wfw:commentRss>https://blog.stefcho.eu/upgrade-alix-board-with-pfsense-1-2-3-to-pfsense-2-0-rc3/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+							</item>
+		<item>
+		<title>OpenVPN on pfSense 2.0 RC3 with OpenLDAP Authentication on CentOS 5.6</title>
+		<link>https://blog.stefcho.eu/openvpn-on-pfsense-2-0-rc3-with-openldap-authentication-on-centos-5-6/</link>
+				<comments>https://blog.stefcho.eu/openvpn-on-pfsense-2-0-rc3-with-openldap-authentication-on-centos-5-6/#comments</comments>
+				<pubDate>Sat, 13 Aug 2011 09:31:34 +0000</pubDate>
+		<dc:creator><![CDATA[Stefan]]></dc:creator>
+				<category><![CDATA[Technical]]></category>
+		<category><![CDATA[CentOS]]></category>
+		<category><![CDATA[LDAP]]></category>
+		<category><![CDATA[OpenLDAP]]></category>
+		<category><![CDATA[OpenVPN]]></category>
+		<category><![CDATA[pfSense]]></category>
+		<category><![CDATA[pfSense 2.0 RC3]]></category>
+
+		<guid isPermaLink="false">http://stefcho.azurewebsites.net/?p=916</guid>
+				<description><![CDATA[<p>Introduction After writing OpenVPN with LDAP authentication on pfSense 2.0 RC1, a reader of my blog shared some problems with configuring OpenLDAP on CentOS.&#160; So I decide to build such a setup and test. Scenario The scenario is as follows, authenticating users requiring access to the OpenVPN server against OpenLDAP service running on CentOS. Setup [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/openvpn-on-pfsense-2-0-rc3-with-openldap-authentication-on-centos-5-6/">OpenVPN on pfSense 2.0 RC3 with OpenLDAP Authentication on CentOS 5.6</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p><strong>Introduction</strong></p>
+<p>After writing OpenVPN with LDAP authentication on pfSense 2.0 RC1, a reader of my blog shared some problems with configuring OpenLDAP on CentOS.&nbsp; So I decide to build such a setup and test.</p>
+<p><strong>Scenario</strong></p>
+<p>The scenario is as follows, authenticating users requiring access to the OpenVPN server against OpenLDAP service running on CentOS.</p>
+<p><strong>Setup</strong></p>
+<p>I’ve spent most time in preparing the CentOS server. Initially my decision was to use CentOS 6.0, but after a few failed attempts to configure it and the absence of how to guides for this purpose, I’ve decided to fall back to 5.6.</p>
+<p>For this version there is a wonderful how to guide here:</p>
+<p><a href="http://drozd.com/2011/04/22/openldap-on-centos-5-6/" target="_blank">OpenLDAP on CentOS 5.6</a></p>
+<p><a href="http://drozd.com/2011/04/22/openldap-on-centos-5-6/" target="_blank">Install And Configure OpenLDAP 2.4.25 On CentOS 5.6</a></p>
+<p>Following this instructions I’ve managed to setup OpenLDAP very fast.&nbsp; The only comment that I have is in this section:</p>
+<blockquote><p>All data loaded is in&nbsp;<a title="LDAP Data Interchange Format" href="http://en.wikipedia.org/wiki/LDAP_Data_Interchange_Format" target="_blank">LDIF</a> format. Create a file to initialize the LDAP database:</p>
+<p># vi ldap-init.ldif</p>
+<p>dn: dc=mycompany,dc=com</p>
+<p>objectclass: dcObject</p>
+<p>objectclass: organization</p>
+<p>o: Example</p>
+<p>dc: mycompany</p>
+<p>dn: cn=Admin,dc=mycompany,dc=com</p>
+<p>objectclass: organizationalRole</p>
+<p>cn: Admin</p>
+<p>&nbsp;</p></blockquote>
+<p>you have to have one new row, otherwise the import in the next step fails. So the above should look like:</p>
+<blockquote><p># vi ldap-init.ldif</p>
+<p>dn: dc=mycompany,dc=com</p>
+<p>objectclass: dcObject</p>
+<p>objectclass: organization</p>
+<p>o: Example</p>
+<p>dc: mycompany</p>
+<p>&nbsp;</p>
+<p>dn: cn=Admin,dc=mycompany,dc=com</p>
+<p>objectclass: organizationalRole</p>
+<p>cn: Admin</p>
+<p>&nbsp;</p></blockquote>
+<p>&nbsp;</p>
+<p>Next step is to create a few test users. &nbsp;For that purpose I’ve used :</p>
+<p><a href="http://ldapadmin.sourceforge.net/" target="_blank">LDAP Admin</a></p>
+<blockquote><p>Ldap Admin is free Win32 administration tool for LDAP directory management. This application lets you browse, search, modify, create and delete objects on LDAP server. It also supports more complex operations such as directory copy and move between remote servers and extends the common edit functions to support specific object types (such as groups and accounts).</p>
+<p>You can use it to manage Posix groups and accounts, Samba accounts and it even includes support for Postfix MTA. Ldap Admin is free Open Source software distributed under the GNU General Public License.</p></blockquote>
+<p><strong>Configuration</strong></p>
+<p>It is time to configure the pfSense. I will skip all the steps described in the previous posts. You can find them here:</p>
+<p><a href="http://stefcho.azurewebsites.net/?p=492" target="_blank">pfSense 2.0 RC1 configuration of OpenVPN Server for Road Warrior with TLS and User Authentication</a></p>
+<p><a href="http://stefcho.azurewebsites.net/?p=528" target="_blank">OpenVPN with LDAP authentication on pfSense 2.0 RC1</a></p>
+<p>Now let’s get straight to System &gt; User Manager and on the Servers leaf.</p>
+<p><strong>Hostname or IP address:</strong> this it the address of the CentOS server</p>
+<p><strong>Base DN</strong>: this is the domain name</p>
+<p><strong>Authentication container</strong>: after insterted the Bind credentials, it was visible, but when I&#8217;ve click on the Save button, nothing happen. So I&#8217;ve typed it in manually.</p>
+<p><strong>Bind Credentials</strong>: enter User DN and Password. , I&#8217;ve tested it and with <strong>Use anonymous binds to resolve distinguished names</strong>, it works also.</p>
+<p><strong>Group Member Attribute</strong>: you can modify this with the Uid=%s, if you need.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/08/Authenticaton-Config.png"><img class="alignnone size-full wp-image-917" title="Authenticaton Config" src="https://blog.stefcho.eu/wp-content/uploads/2011/08/Authenticaton-Config.png" alt="" width="888" height="732" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/08/Authenticaton-Config.png 888w, https://blog.stefcho.eu/wp-content/uploads/2011/08/Authenticaton-Config-300x247.png 300w" sizes="(max-width: 888px) 100vw, 888px" /></a></p>
+<p><strong>Testing</strong></p>
+<p>Just for reference this is my test user.<strong><br />
+</strong></p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/08/LDAP-Admin.png"><img class="alignnone size-full wp-image-918" title="LDAP Admin" src="https://blog.stefcho.eu/wp-content/uploads/2011/08/LDAP-Admin.png" alt="" width="742" height="409" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/08/LDAP-Admin.png 742w, https://blog.stefcho.eu/wp-content/uploads/2011/08/LDAP-Admin-300x165.png 300w" sizes="(max-width: 742px) 100vw, 742px" /></a></p>
+<p>After preforming the OpenVPN configuration, enter the user name and the password.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/08/OpenVPN-Login.png"><img class="alignnone size-full wp-image-920" title="OpenVPN Login" src="https://blog.stefcho.eu/wp-content/uploads/2011/08/OpenVPN-Login.png" alt="" width="577" height="372" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/08/OpenVPN-Login.png 577w, https://blog.stefcho.eu/wp-content/uploads/2011/08/OpenVPN-Login-300x193.png 300w" sizes="(max-width: 577px) 100vw, 577px" /></a></p>
+<p>If everything is OK, you should be successfully connected and see something similar in the OpenVPN logs:</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/08/OpenVPN-server-Log.png"><img class="alignnone size-full wp-image-919" title="OpenVPN server Log" src="https://blog.stefcho.eu/wp-content/uploads/2011/08/OpenVPN-server-Log.png" alt="" width="805" height="423" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/08/OpenVPN-server-Log.png 805w, https://blog.stefcho.eu/wp-content/uploads/2011/08/OpenVPN-server-Log-300x157.png 300w" sizes="(max-width: 805px) 100vw, 805px" /></a></p>
+<p>You can also test the connection using the Diagnostics &gt; Authentication, Select the Authentication Server, in my case the CentOS OpenLDAP connection is named Test. Enter Username and Password, and see the result.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authentication.png"><img class="alignnone size-full wp-image-943" title="Test Authentication" src="https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authentication.png" alt="" width="881" height="342" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authentication.png 881w, https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authentication-300x116.png 300w" sizes="(max-width: 881px) 100vw, 881px" /></a></p>
+<p>If you get error, you can check the Status&gt; System Logs on the System leaf for errors.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authenticaion-Error-Msg.png"><img class="alignnone size-full wp-image-944" title="Test Authenticaion Error Msg" src="https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authenticaion-Error-Msg.png" alt="" width="886" height="387" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authenticaion-Error-Msg.png 886w, https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authenticaion-Error-Msg-300x131.png 300w" sizes="(max-width: 886px) 100vw, 886px" /></a></p>
+<p>I&#8217;ve got this error when the CentOS server was turn off.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authenticaion-Error-System-Logs.png"><img class="alignnone size-full wp-image-945" title="Test Authenticaion Error System Logs" src="https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authenticaion-Error-System-Logs.png" alt="" width="887" height="262" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authenticaion-Error-System-Logs.png 887w, https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authenticaion-Error-System-Logs-300x88.png 300w" sizes="(max-width: 887px) 100vw, 887px" /></a></p>
+<p><strong>Issues</strong></p>
+<p>The issues that I faced was the problem with selecting the OU in which my users resides. Hope this will be fixed in future versions<strong>. </strong>On the CentOS side the problems were releted with the changes of OpenLDAP in the 6.0 version.<strong><br />
+</strong></p>
+<p><strong> Conclusion</strong></p>
+<p>That’s it. Thank you for reading.</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/openvpn-on-pfsense-2-0-rc3-with-openldap-authentication-on-centos-5-6/">OpenVPN on pfSense 2.0 RC3 with OpenLDAP Authentication on CentOS 5.6</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></content:encoded>
+							<wfw:commentRss>https://blog.stefcho.eu/openvpn-on-pfsense-2-0-rc3-with-openldap-authentication-on-centos-5-6/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+							</item>
+		<item>
+		<title>pfCenter</title>
+		<link>https://blog.stefcho.eu/pfcenter/</link>
+				<comments>https://blog.stefcho.eu/pfcenter/#comments</comments>
+				<pubDate>Sat, 06 Aug 2011 13:15:01 +0000</pubDate>
+		<dc:creator><![CDATA[Stefan]]></dc:creator>
+				<category><![CDATA[Technical]]></category>
+		<category><![CDATA[pfCenter]]></category>
+		<category><![CDATA[pfSense]]></category>
+
+		<guid isPermaLink="false">http://stefcho.azurewebsites.net/?p=897</guid>
+				<description><![CDATA[<p>These days I’ve looked at the tweets of Scott Ullrich and what catch my attention is the mentioning of pfCenter several times. As written here: pfCenter is the product we are working on to allow administration of multiple pfSense boxen from one GUI / Appliance. and here pfCenter now supports tags! Later this summer we [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/pfcenter/">pfCenter</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>These days I’ve looked at the tweets of <a href="https://twitter.com/#!/sullrich" target="_blank">Scott Ullrich</a> and what catch my attention is the mentioning of pfCenter several times.</p>
+<p>As written here:</p>
+<p><a href="https://twitter.com/#!/sullrich/status/75712042077655040" target="_blank">pfCenter is the product we are working on to allow administration of multiple pfSense boxen from one GUI / Appliance.</a></p>
+<p>and here</p>
+<p><a href="https://twitter.com/#!/sullrich/status/75341743582752768" target="_blank">pfCenter now supports tags! Later this summer we will change how large scale deployments of pfSense are managed.</a></p>
+<p>After I have took a look at the shred screen shots from <a href="http://twitpic.com/photos/sullrich" target="_blank">his image gallery</a>.</p>
+<p>There is even a thread in the forum with obscure information: <a href="http://forum.pfsense.org/index.php?topic=39308.0" target="_blank">Next Gen of pfSense &lt;&#8212;&gt; pfCenter</a></p>
+<p>&nbsp;</p>
+<p>My suspicion is that this center will perform tasks similar to <a href="http://www.astaro.com/solutions/central-management" target="_blank">Astaro Command Center.</a></p>
+<p>There will be a Real-Time Monitoring, Site-to-Site VPN configuration for multiple sites made quick and easy. We can hope for centralisation of Device Maintenance tasks such as firmware upgrades and configurations propagation, some kind of Inventory Management component that can show us what, where and in what state we have. Access Management so you must know only one set of credentials to manage all hooked up devices. I really do hope that there will be some form of Aggregated Reporting functionality, RRD is great for some purposes, but alone is not enough and NTOP is great but a dedicated appliance is better suited for it alone.</p>
+<p>The next logical question is where you would you place such thing?</p>
+<p>On a pfSense box, might be, but a dedicate Appliance sounds more reasonable, taking into account the amount of data and load, that such a solution could generate. As alternative a Virtual Appliance sounds as a good idea. Last but not least as an option is a service in the cloud, a hosted multi-tenant installation of the pfCenter. Which of these alternatives will be the one we’ll see?</p>
+<p>Until then, take a look at the teasers:</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/315838247.png"><img class="alignnone size-large wp-image-902" title="315838247" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/315838247-1024x781.png" alt="" width="586" height="446" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/315838247-1024x781.png 1024w, https://blog.stefcho.eu/wp-content/uploads/2011/07/315838247-300x228.png 300w, https://blog.stefcho.eu/wp-content/uploads/2011/07/315838247.png 1256w" sizes="(max-width: 586px) 100vw, 586px" /></a></p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/315838600.png"><img class="alignnone size-large wp-image-903" title="315838600" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/315838600-1024x781.png" alt="" width="586" height="446" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/315838600-1024x781.png 1024w, https://blog.stefcho.eu/wp-content/uploads/2011/07/315838600-300x228.png 300w, https://blog.stefcho.eu/wp-content/uploads/2011/07/315838600.png 1256w" sizes="(max-width: 586px) 100vw, 586px" /></a></p>
+<p>&nbsp;</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/353021663.png"><img class="alignnone size-large wp-image-905" title="353021663" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/353021663-1024x836.png" alt="" width="586" height="478" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/353021663-1024x836.png 1024w, https://blog.stefcho.eu/wp-content/uploads/2011/07/353021663-300x245.png 300w, https://blog.stefcho.eu/wp-content/uploads/2011/07/353021663.png 1166w" sizes="(max-width: 586px) 100vw, 586px" /></a></p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/353021940.png"><img class="alignnone size-large wp-image-906" title="353021940" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/353021940-1024x836.png" alt="" width="586" height="478" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/353021940-1024x836.png 1024w, https://blog.stefcho.eu/wp-content/uploads/2011/07/353021940-300x245.png 300w, https://blog.stefcho.eu/wp-content/uploads/2011/07/353021940.png 1166w" sizes="(max-width: 586px) 100vw, 586px" /></a></p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/353024071.png"><img class="alignnone size-large wp-image-907" title="353024071" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/353024071-1024x836.png" alt="" width="586" height="478" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/353024071-1024x836.png 1024w, https://blog.stefcho.eu/wp-content/uploads/2011/07/353024071-300x245.png 300w, https://blog.stefcho.eu/wp-content/uploads/2011/07/353024071.png 1166w" sizes="(max-width: 586px) 100vw, 586px" /></a></p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/353027904.png"><img class="alignnone size-large wp-image-908" title="353027904" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/353027904-1024x836.png" alt="" width="586" height="478" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/353027904-1024x836.png 1024w, https://blog.stefcho.eu/wp-content/uploads/2011/07/353027904-300x245.png 300w, https://blog.stefcho.eu/wp-content/uploads/2011/07/353027904.png 1166w" sizes="(max-width: 586px) 100vw, 586px" /></a></p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/353039638.png"><img class="alignnone size-large wp-image-909" title="353039638" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/353039638-1024x803.png" alt="" width="586" height="459" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/353039638-1024x803.png 1024w, https://blog.stefcho.eu/wp-content/uploads/2011/07/353039638-300x235.png 300w, https://blog.stefcho.eu/wp-content/uploads/2011/07/353039638.png 1166w" sizes="(max-width: 586px) 100vw, 586px" /></a></p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/354225964.png"><img class="alignnone size-large wp-image-910" title="354225964" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/354225964-1024x858.png" alt="" width="586" height="491" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/354225964-1024x858.png 1024w, https://blog.stefcho.eu/wp-content/uploads/2011/07/354225964-300x251.png 300w, https://blog.stefcho.eu/wp-content/uploads/2011/07/354225964.png 1092w" sizes="(max-width: 586px) 100vw, 586px" /></a></p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/359537383.png"><img class="alignnone size-large wp-image-911" title="359537383" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/359537383-1024x920.png" alt="" width="586" height="526" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/359537383-1024x920.png 1024w, https://blog.stefcho.eu/wp-content/uploads/2011/07/359537383-300x269.png 300w, https://blog.stefcho.eu/wp-content/uploads/2011/07/359537383.png 1066w" sizes="(max-width: 586px) 100vw, 586px" /></a></p>
+<p>The source of these images is <a href="http://twitpic.com/photos/sullrich" target="_blank">Scott Ullrich twitpic gallery</a>.</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/pfcenter/">pfCenter</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></content:encoded>
+							<wfw:commentRss>https://blog.stefcho.eu/pfcenter/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+							</item>
+		<item>
+		<title>Install Open VM Tools package on pfSense 2.0 RC3 for VMWare</title>
+		<link>https://blog.stefcho.eu/install-open-vm-tools-package-on-pfsense-2-0-rc3-for-vmware/</link>
+				<comments>https://blog.stefcho.eu/install-open-vm-tools-package-on-pfsense-2-0-rc3-for-vmware/#comments</comments>
+				<pubDate>Sat, 30 Jul 2011 12:22:53 +0000</pubDate>
+		<dc:creator><![CDATA[Stefan]]></dc:creator>
+				<category><![CDATA[Technical]]></category>
+		<category><![CDATA[pfSense]]></category>
+		<category><![CDATA[pfSense 2.0 RC1]]></category>
+		<category><![CDATA[pfSense 2.0 RC3]]></category>
+		<category><![CDATA[VMWare]]></category>
+
+		<guid isPermaLink="false">http://stefcho.azurewebsites.net/?p=886</guid>
+				<description><![CDATA[<p>In my previous posts we’ve Install pfSense 2.0 RC1 on VMWare Workstation 7 and adjusted the memory of the Virtual Machines in pfSense 2.0 RC1 on VMware Workstation 7.1.4 &#8211; RAM size. Now let’s continue with the setup of the Virtual Machine with the installation of VMware Tools for pfSense. For that purpose go to [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/install-open-vm-tools-package-on-pfsense-2-0-rc3-for-vmware/">Install Open VM Tools package on pfSense 2.0 RC3 for VMWare</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>In my previous posts we’ve <a href="http://stefcho.azurewebsites.net/?p=431" target="_blank">Install pfSense 2.0 RC1 on VMWare Workstation 7</a> and adjusted the memory of the Virtual Machines in <a href="http://stefcho.azurewebsites.net/?p=646" target="_blank">pfSense 2.0 RC1 on VMware Workstation 7.1.4 &#8211; RAM size</a>.</p>
+<p>Now let’s continue with the setup of the Virtual Machine with the installation of VMware Tools for pfSense.</p>
+<p>For that purpose go to System &gt; Packages</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-System-Package.png"><img class="aligncenter size-full wp-image-887" title="Install Open VM Tools package on pfSense 2.0 RC3 for VM Ware - System - Package" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-System-Package.png" alt="" width="224" height="278"></a></p>
+<p>, and on the Available Packages find Open-VM-Tools. Click on the “+” next to it and start the installation.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Install-The-Package.png"><img class="aligncenter size-full wp-image-888" title="Install Open VM Tools package on pfSense 2.0 RC3 for VM Ware - Install The Package" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Install-The-Package.png" alt="" width="911" height="405" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Install-The-Package.png 911w, https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Install-The-Package-300x133.png 300w" sizes="(max-width: 911px) 100vw, 911px" /></a><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Progress.png"><img class="aligncenter size-full wp-image-889" title="Install Open VM Tools package on pfSense 2.0 RC3 for VM Ware - Progress" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Progress.png" alt="" width="831" height="348" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Progress.png 831w, https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Progress-300x125.png 300w" sizes="(max-width: 831px) 100vw, 831px" /></a></p>
+<p>Wait it to finish, and on the Installed packages you should see it listed. Click on the link below Package Info, to see the instructions how to verify successful installation.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Package-Installed.png"><img class="aligncenter size-full wp-image-890" title="Install Open VM Tools package on pfSense 2.0 RC3 for VM Ware - Package Installed" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Package-Installed.png" alt="" width="895" height="244" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Package-Installed.png 895w, https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Package-Installed-300x81.png 300w" sizes="(max-width: 895px) 100vw, 895px" /></a>The operation boils down to connecting to the console and executing first and monitor the output.</p>
+<blockquote><p>ps ax|grep vmware</p></blockquote>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Verify-I.png"><img class="aligncenter size-full wp-image-891" title="Install Open VM Tools package on pfSense 2.0 RC3 for VM Ware - Verify I" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Verify-I.png" alt="" width="1024" height="768" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Verify-I.png 1024w, https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Verify-I-300x225.png 300w, https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Verify-I-200x150.png 200w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></p>
+<p>&nbsp;</p>
+<blockquote>
+<pre>kldstat
+</pre>
+</blockquote>
+<pre><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Verify-II.png"><img class="aligncenter size-full wp-image-892" title="Install Open VM Tools package on pfSense 2.0 RC3 for VM Ware - Verify II" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Verify-II.png" alt="" width="1024" height="768" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Verify-II.png 1024w, https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Verify-II-300x225.png 300w, https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Verify-II-200x150.png 200w" sizes="(max-width: 1024px) 100vw, 1024px" /></a>
+That's it.</pre>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/install-open-vm-tools-package-on-pfsense-2-0-rc3-for-vmware/">Install Open VM Tools package on pfSense 2.0 RC3 for VMWare</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></content:encoded>
+							<wfw:commentRss>https://blog.stefcho.eu/install-open-vm-tools-package-on-pfsense-2-0-rc3-for-vmware/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+							</item>
+		<item>
+		<title>Upgrade pfSense 2.0 from RC1 to RC3.</title>
+		<link>https://blog.stefcho.eu/upgrade-pfsense-2-0-from-rc1-to-rc3/</link>
+				<comments>https://blog.stefcho.eu/upgrade-pfsense-2-0-from-rc1-to-rc3/#comments</comments>
+				<pubDate>Sat, 23 Jul 2011 07:28:44 +0000</pubDate>
+		<dc:creator><![CDATA[Stefan]]></dc:creator>
+				<category><![CDATA[Technical]]></category>
+		<category><![CDATA[Network]]></category>
+		<category><![CDATA[pfSense]]></category>
+		<category><![CDATA[pfSense 2.0 RC1]]></category>
+		<category><![CDATA[pfSense 2.0 RC3]]></category>
+
+		<guid isPermaLink="false">http://stefcho.azurewebsites.net/?p=878</guid>
+				<description><![CDATA[<p>In this post we will upgrade pfSense 2.0 from RC1 to RC3. For the purpose go to this page with the news about the RC3 release: 2.0-RC3 now available! and click on the Upgrades link: http://www.pfsense.org/mirror.php?section=updates select a mirror and download the image that suits you, in my case it was: pfSense-Full-Update-2.0-RC3-i386-20110621-1542.tgz Now go to [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/upgrade-pfsense-2-0-from-rc1-to-rc3/">Upgrade pfSense 2.0 from RC1 to RC3.</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>In this post we will upgrade pfSense 2.0 from RC1 to RC3.</p>
+<p>For the purpose go to this page with the news about the RC3 release:</p>
+<p><a href="http://blog.pfsense.org/?p=589" target="_blank">2.0-RC3 now available!</a></p>
+<p>and click on the Upgrades link: <a href="http://www.pfsense.org/mirror.php?section=updates" target="_blank">http://www.pfsense.org/mirror.php?section=updates</a></p>
+<p>select a mirror and download the image that suits you, in my case it was:</p>
+<p><a href="http://mirror.qubenet.net/mirror/pfsense/updates/pfSense-Full-Update-2.0-RC3-i386-20110621-1542.tgz" target="_blank"> pfSense-Full-Update-2.0-RC3-i386-20110621-1542.tgz</a></p>
+<p>Now go to <strong>System</strong> &gt; <strong>Firmware </strong>and click on <strong>Enable Firmware uploads</strong>.</p>
+<p>Click on <strong>Choose File</strong> button, select the file that we just downloaded, and click on <strong>Upgrade Firmware</strong> button.</p>
+<p>Wait for the firmware upgrade process complete.</p>
+<p>That’s it. If you want more graphical representation, I’ve just uploaded a video here with the whole process.</p>
+<p>&nbsp;<br />
+<iframe width="640" height="510" src="http://www.youtube.com/embed/bJmYV6GRLnw?rel=0" frameborder="0" allowfullscreen=""></iframe><br />
+&nbsp;</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/upgrade-pfsense-2-0-from-rc1-to-rc3/">Upgrade pfSense 2.0 from RC1 to RC3.</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></content:encoded>
+							<wfw:commentRss>https://blog.stefcho.eu/upgrade-pfsense-2-0-from-rc1-to-rc3/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+							</item>
+	</channel>
+</rss>

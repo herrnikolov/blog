@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Technical &#8211; Stefcho&#039;s Tech Blog</title>
+	<atom:link href="https://blog.stefcho.eu/category/technical/feed/" rel="self" type="application/rss+xml" />
+	<link>http://blog.stefcho.eu/</link>
+	<description>Software Development, Cloud, DevOps and PfSense</description>
+	<lastBuildDate>
+	Tue, 05 Mar 2019 12:03:41 +0000	</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.1</generator>
+
+<image>
+	<url>https://blog.stefcho.eu/wp-content/uploads/2018/10/cropped-0-32x32.jpg</url>
+	<title>Technical &#8211; Stefcho&#039;s Tech Blog</title>
+	<link>http://blog.stefcho.eu/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>My blog new home</title>
+		<link>https://blog.stefcho.eu/my-blog-new-home/</link>
+				<pubDate>Tue, 05 Mar 2019 12:03:39 +0000</pubDate>
+		<dc:creator><![CDATA[Stefan]]></dc:creator>
+				<category><![CDATA[Technical]]></category>
+		<category><![CDATA[Azure]]></category>
+		<category><![CDATA[Docker]]></category>
+		<category><![CDATA[MySQL]]></category>
+		<category><![CDATA[Raspberry Pi]]></category>
+		<category><![CDATA[WordPress]]></category>
+
+		<guid isPermaLink="false">https://blog.stefcho.eu/?p=1174</guid>
+				<description><![CDATA[<p>IntroductionHello everyone. I’ve been running this blog for 9 years now. In 2010 there were very few options to host WordPress site. The blog was hosted in one local provider up until its acquisition by another company two years ago. This pushed me to move. At that time, I was experimenting with Azure and the [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/my-blog-new-home/">My blog new home</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[
+<p><strong>Introduction</strong><br>Hello everyone. I’ve been running this blog for 9 years now. In 2010 there were very few options to host WordPress site. The blog was hosted in one local provider up until its acquisition by another company two years ago. This pushed me to move. At that time, I was experimenting with Azure and the natural choice of service was an Azure Web App with WordPress template. </p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://blog.stefcho.eu/wp-content/uploads/2019/03/WordPress-on-Linux-on-Azure.png" alt="" class="wp-image-1177"/><figcaption><br></figcaption></figure></div>
+
+
+
+<p>The platform is packed with settings that you can tweak. Unfortunately, the prices are targeted at enterprise customers and were too steep for a small site like mine. <br>Recently a friend of mine mentioned the Static Site Generators. I’ve investigated the topic and it appeared quite an interesting concept. For my purposes this solution fits well as most of my content is static. Thanks to GDPR I had to close all comments and feedback options, which made the site even more static. On the positive side not having to worry about PHP and MySQL out in the wild sounds very a pleasing. </p>
+
+
+
+<p><strong>Static Site Generators Research</strong><br>After reviewing a couple of solutions, the idea to use WordPress as a Static Site Generators begin to take shape. This could be achieved by employing Plugins. The ones that I’m currently experimenting with are: <br> <a rel="noreferrer noopener" aria-label="Simply Static (opens in a new tab)" href="https://wordpress.org/plugins/simply-static/" target="_blank">Simply Static</a><br> <a rel="noreferrer noopener" aria-label="WP2Static (opens in a new tab)" href="https://wordpress.org/plugins/static-html-output-plugin/" target="_blank">WP2Static</a><br> Each has some very strong features. But I still haven’t decided which one to keep. <br> Simply Static has great Diagnostics that helped me troubleshoot some issues. Offering streamlined interface with essential options. While WP2Static gives more control over the crawling and processing with valuable options to clean up some garbage from the output pages. <br> They both produced archives containing the static content, WP2Static can even be configured to push it directly to GitHub repository. </p>
+
+
+
+<p><strong>Web Hosting</strong><br>Either way I have a static version of my site now. The next hurdle is where to store the files? <br>I don’t want to host it On-Premise as this will require a lot of additional time and effort. As the Cloud options are so many, let’s narrow it down to Static Websites on Azure Storage and GitHub for simplicity sake. <br>Ever since I’ve read about the Static Websites in Azure, I really wanted to try it with something. Now having the content experiments can commence. My inspiration came from this article <a rel="noreferrer noopener" aria-label="Static websites on Azure Storage now generally available (opens in a new tab)" href="https://azure.microsoft.com/en-us/blog/static-websites-on-azure-storage-now-generally-available/" target="_blank">Static websites on Azure Storage now generally available</a><br> Price for storing content and data transfers charges would be low in my case. SSL is requirement but it is not directly offered from Static Websites. I need Azure CDN in front to get the desired feature. This will incur additional cost and complexity for just one simple static site served over HTTPs.  <br>For Web Apps there is a Azure Let’s Encrypt Extension that is a pretty useful solution to automatically renew the SSL Certificate.  <br> <br>This tilted the table in favour of GitHub. There are no taxes for storing publicly accessible content and it automatically takes care of the SSL Certificate provisioning and renewal. For the moment GitHub wins.    <br></p>
+
+
+
+<p><strong>WordPress Hosting</strong><br> Now that I have the generation and web hosting covered. The last obstacle is where to keep my Static Content Generating WordPress instance? <br><br><em> Cloud:</em><br> <em>WordPress.com</em> – good starting point. But pretty much the same. You get a free WordPress instance somewhere out there. Not my ideal solution. </p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://blog.stefcho.eu/wp-content/uploads/2019/03/aci_logo.png" alt="" class="wp-image-1224" srcset="https://blog.stefcho.eu/wp-content/uploads/2019/03/aci_logo.png 230w, https://blog.stefcho.eu/wp-content/uploads/2019/03/aci_logo-150x150.png 150w, https://blog.stefcho.eu/wp-content/uploads/2019/03/aci_logo-144x144.png 144w" sizes="(max-width: 230px) 100vw, 230px" /></figure></div>
+
+
+
+<p> <em>Azure Containers Instance</em> – recently I have experiment with this service. It is perfectly suited to quickly get up and running a bunch of containers. Get the job done and destroy them. There is a ready-made template to build two containers solution for WordPress here: <a rel="noreferrer noopener" aria-label="Create a WordPress site on a Container Instance (opens in a new tab)" href="https://github.com/Azure/azure-quickstart-templates/tree/master/201-aci-wordpress" target="_blank">Create a WordPress site on a Container Instance</a><br>My experience with the service is mostly positive. Bringing it up is easy. Getting data persistence requires modifying the template. The performance at the lowest tire was comparable to the once in Web App and insufficient from my perspective. <br> <br><em>Local:</em><br> VM with docker containers – My first choice. Spun up Ubuntu server, quickly and easily installed docker and docker compose. As I felt generous at the time the VM had 4 CPU cores and 4 GB or RAM. Even on mechanical HDD, performance was Fantastic! I never knew that WordPress could feel so snappy! The downside is that I will not keep the VM running all the time and must start and stop it every time that I want to do something.  <br> </p>
+
+
+
+<div class="wp-block-image"><figure class="alignleft is-resized"><img src="https://blog.stefcho.eu/wp-content/uploads/2019/03/Raspberry-Pi.png" alt="" class="wp-image-1211" width="193" height="247" srcset="https://blog.stefcho.eu/wp-content/uploads/2019/03/Raspberry-Pi.png 401w, https://blog.stefcho.eu/wp-content/uploads/2019/03/Raspberry-Pi-235x300.png 235w" sizes="(max-width: 193px) 100vw, 193px" /></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="alignleft is-resized"><img src="https://blog.stefcho.eu/wp-content/uploads/2019/03/docker-logo-png-transparent-1024x860.png" alt="" class="wp-image-1206" width="279" height="234" srcset="https://blog.stefcho.eu/wp-content/uploads/2019/03/docker-logo-png-transparent-1024x860.png 1024w, https://blog.stefcho.eu/wp-content/uploads/2019/03/docker-logo-png-transparent-300x252.png 300w, https://blog.stefcho.eu/wp-content/uploads/2019/03/docker-logo-png-transparent-768x645.png 768w" sizes="(max-width: 279px) 100vw, 279px" /></figure></div>
+
+
+
+<p><br><br><br><br><br><br><br><br><br><br><br><br><br> RPI with docker containers &#8211; As I have a Raspberry Pi humming in the background. This is a preferable alternative to a full blown VM.  I’ve managed to install docker and docker compose relatively easy using as a starting point this article: <a rel="noreferrer noopener" aria-label="The easy way to set up Docker on a Raspberry Pi (opens in a new tab)" href="https://medium.freecodecamp.org/the-easy-way-to-set-up-docker-on-a-raspberry-pi-7d24ced073ef" target="_blank">The easy way to set up Docker on a Raspberry Pi </a>and <a rel="noreferrer noopener" aria-label="HOW TO RUN DOCKER AND DOCKER-COMPOSE ON RASPBIAN (opens in a new tab)" href="https://manre-universe.net/how-to-run-docker-and-docker-compose-on-raspbian/" target="_blank">HOW TO RUN DOCKER AND DOCKER-COMPOSE ON RASPBIAN</a><br> <br>To my unpleasant surprise there is NO official MySQL image for ARM,  Really!? Check this article: <a rel="noreferrer noopener" href="https://bugs.mysql.com/bug.php?id=86501%20https://scito.ch/content/mysql-57-docker-container-raspberry-pi-using-debian-sid" target="_blank">Install mysql server-5.7 on ARMv8 architecture (raspberry pi 3 model B)</a><br>But there is one for <a rel="noreferrer noopener" href="https://hub.docker.com/_/wordpress" target="_blank">WordPress</a>. I’ve tried building one on my own and hit a lot of problems! As a temporary solution for the moment I’m using this image  <a rel="noreferrer noopener" href="https://hub.docker.com/r/hypriot/rpi-mysql/" target="_blank">hypriot/rpi-mysql</a>. Works fine but holds MySQL 5.5 and my aim is 5.7. In near future I’ll look into it and if possible, build one image on my own.   <br>  Had a few hiccups with the persistent storage of data for both WordPress and MySQL containers, but got it right at the end.  <br>Here is the content of my docker-compose file:<br></p>
+
+
+
+<pre class="wp-block-code"><code>version: '3.7'
+
+services:
+   db:
+     image: hypriot/rpi-mysql:latest
+     volumes:
+       - ./db_data:/var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: [ROOTPASSWORD]
+       MYSQL_DATABASE: [DBNAME]
+       MYSQL_USER: [DBUSER]
+       MYSQL_PASSWORD: [DBPASSWORD]
+
+   wordpress:
+     depends_on:
+       - db
+     image: wordpress:latest
+     volumes:
+      - ./wp-content:/var/www/html:rw
+     ports:
+       - "80:80"
+     restart: always
+     environment:
+       WORDPRESS_DB_HOST: db:3306
+       WORDPRESS_DB_NAME: [DBNAME]
+       WORDPRESS_DB_USER: [DBUSER]
+       WORDPRESS_DB_PASSWORD: [DBPASSWORD]
+
+volumes:
+    db_data: {}
+    wp-content: {}</code></pre>
+
+
+
+<p> Again, the performance is even more surprisingly good compared the cloud scenarios. Considering that it is run off a mechanical hard drive on a very humble 1.2GHz Quad and only 1 GB of RAM.  </p>
+
+
+
+<p><strong>Conclusion</strong><br>With this exercise I’ve managed to decrease the costs of hosting this blog to the bare minimum. Hosting costs are reduced to virtually free. The power costs for the Raspberry Pi are shared with other services and are negligible. <br> Compared with Azure Web App and it’s 20 Euros per month it is a feat! <br> My initial intention for this post was to be short and sweet, but it grew into something much larger. I was able to compress a few weeks of research and experiments into these few lines omitting a lot of problems crossed along the way. Hope you enjoy reading it. </p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/my-blog-new-home/">My blog new home</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Azure Architecture Useful Resources</title>
+		<link>https://blog.stefcho.eu/azure-architecture-useful-resources/</link>
+				<pubDate>Thu, 28 Feb 2019 19:48:16 +0000</pubDate>
+		<dc:creator><![CDATA[Stefan]]></dc:creator>
+				<category><![CDATA[Technical]]></category>
+		<category><![CDATA[Azure]]></category>
+
+		<guid isPermaLink="false">https://blog.stefcho.eu/?p=1164</guid>
+				<description><![CDATA[<p>I’ve collected a few useful resources and would like to share them with you. If you are into Azure Architecture these most probably will be quite useful. Azure Architecture Center – Start Here Azure Application Architecture Guide &#8211; This guide presents a structured approach for designing applications on Azure that are scalable, resilient, and highly [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/azure-architecture-useful-resources/">Azure Architecture Useful Resources</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[
+<p>I’ve collected a few useful resources and would like to share them with you. If you are into Azure Architecture these most probably will be quite useful. <br><br><a rel="noreferrer noopener" aria-label="Azure Architecture Center (opens in a new tab)" href="https://docs.microsoft.com/en-us/azure/architecture/" target="_blank">Azure Architecture Center</a> – Start Here <br><br><a rel="noreferrer noopener" aria-label="Azure Application Architecture Guide (opens in a new tab)" href="https://docs.microsoft.com/bg-bg/azure/architecture/guide/" target="_blank">Azure Application Architecture Guide</a> &#8211; This guide presents a structured approach for designing applications on Azure that are scalable, resilient, and highly available. It is based on proven practices that we have learned from customer engagements.<br><br><a rel="noreferrer noopener" aria-label="Azure Reference Architectures (opens in a new tab)" href="https://docs.microsoft.com/bg-bg/azure/architecture/reference-architectures/" target="_blank">Azure Reference Architectures</a> &#8211; Our reference architectures are arranged by scenario. Each architecture includes recommended practices, along with considerations for scalability, availability, manageability, and security. Most also include a deployable solution or reference implementation. <br><br><a rel="noreferrer noopener" aria-label="Azure Quickstart Templates (opens in a new tab)" href="https://azure.microsoft.com/en-us/resources/templates/" target="_blank">Azure Quickstart Templates</a> &#8211; Deploy Azure resources through the Azure Resource Manager with community contributed templates to get more done. Deploy, learn, fork and contribute back.<br><br><a rel="noreferrer noopener" aria-label="Cloud Design Patterns (opens in a new tab)" href="https://docs.microsoft.com/bg-bg/azure/architecture/patterns/" target="_blank">Cloud Design Patterns</a> &#8211; These design patterns are useful for building reliable, scalable, secure applications in the cloud.<br>Each pattern describes the problem that the pattern addresses, considerations for applying the pattern, and an example based on Microsoft Azure. Most of the patterns include code samples or snippets that show how to implement the pattern on Azure. However, most of the patterns are relevant to any distributed system, whether hosted on Azure or on other cloud platforms.<br><br><a rel="noreferrer noopener" aria-label="Microsoft patterns &amp; practices (opens in a new tab)" href="https://github.com/mspnp" target="_blank">Microsoft patterns &amp; practices</a> &#8211; We discover, collect, and encourage practices that bring joy to engineering software.<br><br><a rel="noreferrer noopener" aria-label="Introducing the Azure portal “how to” video series (opens in a new tab)" href="https://azure.microsoft.com/en-us/updates/introducing-the-azure-portal-how-to-video-series/" target="_blank">Introducing the Azure portal “how to” video series</a> &#8211; A new video weekly series highlights specific aspects of the Azure portal so you can be more efficient and productive while deploying your cloud workloads from the portal.<br></p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/azure-architecture-useful-resources/">Azure Architecture Useful Resources</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Microsoft Certified: Azure Solutions Architect Expert</title>
+		<link>https://blog.stefcho.eu/microsoft-certified-azure-solutions-architect-expert/</link>
+				<pubDate>Fri, 15 Feb 2019 12:02:43 +0000</pubDate>
+		<dc:creator><![CDATA[Stefan]]></dc:creator>
+				<category><![CDATA[Technical]]></category>
+		<category><![CDATA[Certification]]></category>
+		<category><![CDATA[Learning]]></category>
+
+		<guid isPermaLink="false">https://blog.stefcho.eu/?p=1101</guid>
+				<description><![CDATA[<p>I would like to share with you my learning path achieving this certification. In order to achieve Microsoft Certified: Azure Solutions Architect Expert, you have to pass two exams: AZ-300 and AZ-301. AZ-300 Microsoft Azure Architect TechnologiesA great way to start is with Scott Duffy’s course on Udemy: AZ-300 Azure Architecture Technologies Certification Exam&#160; Now [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/microsoft-certified-azure-solutions-architect-expert/">Microsoft Certified: Azure Solutions Architect Expert</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[
+<div class="wp-block-image"><figure class="aligncenter is-resized"><a href="https://www.youracclaim.com/badges/864c585e-50d5-4375-88ba-6a8c6fba843f/public_url" target="_blank" rel="noreferrer noopener"><img src="/wp-content/uploads/2019/02/microsoft-certified-azure-solutions-architect-expert-1.png" alt="" class="wp-image-1114" width="324" height="324" srcset="https://blog.stefcho.eu/wp-content/uploads/2019/02/microsoft-certified-azure-solutions-architect-expert-1.png 600w, https://blog.stefcho.eu/wp-content/uploads/2019/02/microsoft-certified-azure-solutions-architect-expert-1-150x150.png 150w, https://blog.stefcho.eu/wp-content/uploads/2019/02/microsoft-certified-azure-solutions-architect-expert-1-300x300.png 300w, https://blog.stefcho.eu/wp-content/uploads/2019/02/microsoft-certified-azure-solutions-architect-expert-1-144x144.png 144w" sizes="(max-width: 324px) 100vw, 324px" /></a></figure></div>
+
+
+
+<p><a rel="noreferrer noopener" aria-label="Microsoft Certified: Azure Solutions Architect Expert (opens in a new tab)" href="https://www.microsoft.com/en-us/learning/azure-solutions-architect.aspx" target="_blank"></a>I would like to share with you my learning path achieving this certification. In order to achieve <a rel="noreferrer noopener" href="https://www.microsoft.com/en-us/learning/azure-solutions-architect.aspx" target="_blank">Microsoft Certified: Azure Solutions Architect Expert</a>, you have to pass two exams: AZ-300 and AZ-301.</p>
+
+
+
+<p><a rel="noreferrer noopener" aria-label="AZ-300 Microsoft Azure Architect Technologies (opens in a new tab)" href="https://www.microsoft.com/en-us/learning/exam-az-300.aspx" target="_blank"><strong>AZ-300 Microsoft Azure Architect Technologies</strong></a><br>A great way to start is with Scott Duffy’s course on Udemy: <a rel="noreferrer noopener" aria-label="AZ-300 Azure Architecture Technologies Certification Exam (opens in a new tab)" href="https://www.udemy.com/70534-azure/" target="_blank">AZ-300 Azure Architecture Technologies Certification Exam&nbsp;</a></p>
+
+
+
+<p>Now is time to dig deeper in to each topic. For the purpose you can either go through this list: <a rel="noreferrer noopener" href="https://pixelrobots.co.uk/2018/09/study-resources-for-the-az-300/" target="_blank">Updated: Study resources for the AZ-300 Microsoft Azure Architect Technologies exam</a> or this one <a rel="noreferrer noopener" href="https://gregorsuttie.com/2018/10/02/azure-architect-design-az-300-exam/" target="_blank">Azure Architect AZ-300 Exam.</a> The latter is much more detailed.</p>
+
+
+
+<p><a rel="noreferrer noopener" aria-label="AZ-301 Microsoft Azure Architect Design (opens in a new tab)" href="https://www.microsoft.com/en-us/learning/exam-AZ-301.aspx" target="_blank"><strong>AZ-301 Microsoft Azure Architect Design</strong></a><br>Soon there will be a video course from Scott Duffy for this course too. Until than you can start with this list: <a rel="noreferrer noopener" href="https://pixelrobots.co.uk/2018/10/study-resources-for-the-az-301/" target="_blank"> Updated: Study resources for the AZ-301 Microsoft Azure Architect Design exam</a>.</p>
+
+
+
+<p>If you have PluralSight subscription there is a large collection of courses <a rel="noreferrer noopener" href="https://www.pluralsight.com/paths/microsoft-azure-architect-design-az-301" target="_blank">Here.</a></p>
+
+
+
+<p>Before going to exam you absolutely have to do practice! Working with the real production technology has no substitutes. So hit the labs. My favorites are on the new Microsoft Learn platform. Check this list of learning paths specially tailored for Azure Architects. I’ve done them all and could say the are well written and the hands on labs are pretty good.<br><a rel="noreferrer noopener" href="https://docs.microsoft.com/en-us/learn/browse/?roles=solution-architect&amp;products=azure&amp;resource_type=learning%20path" target="_blank">Microsoft Learn</a> &#8211; Solution Architect</p>
+
+
+
+<p>As alternative to Learn you can check these two locations for other Labs: <br><a rel="noreferrer noopener" href="https://azurecitadel.com/" target="_blank">Azure Citadel</a><br><a rel="noreferrer noopener" href="https://www.microsoft.com/handsonlabs" target="_blank">Microsoft Hands-On Labs</a></p>
+
+
+
+<p></p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/microsoft-certified-azure-solutions-architect-expert/">Microsoft Certified: Azure Solutions Architect Expert</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>.NET Design Patterns</title>
+		<link>https://blog.stefcho.eu/net-design-patterns/</link>
+				<pubDate>Fri, 12 Oct 2018 08:27:03 +0000</pubDate>
+		<dc:creator><![CDATA[Stefan]]></dc:creator>
+				<category><![CDATA[Technical]]></category>
+		<category><![CDATA[.Net]]></category>
+		<category><![CDATA[C#]]></category>
+
+		<guid isPermaLink="false">https://blog.stefcho.eu/?p=1061</guid>
+				<description><![CDATA[<p>Design Patterns are interesting and important topic. On this site I’ve found very well presentation and summary for each pattern information. .NET Design Patterns Tutorial &#8211; For Beginners &#38; Professionals &#160; &#160;</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/net-design-patterns/">.NET Design Patterns</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Design Patterns are interesting and important topic. On this site I’ve found very well presentation and summary for each pattern information.</p>
+<p><a href="https://www.dotnettricks.com/learn/designpatterns">.NET Design Patterns Tutorial &#8211; For Beginners &amp; Professionals</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/net-design-patterns/">.NET Design Patterns</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Learn Git Branching</title>
+		<link>https://blog.stefcho.eu/learn-git-branching/</link>
+				<pubDate>Sat, 06 Oct 2018 17:34:58 +0000</pubDate>
+		<dc:creator><![CDATA[Stefan]]></dc:creator>
+				<category><![CDATA[Technical]]></category>
+		<category><![CDATA[Git]]></category>
+		<category><![CDATA[Learning]]></category>
+
+		<guid isPermaLink="false">https://blog.stefcho.eu/?p=1058</guid>
+				<description><![CDATA[<p>Found a great site to learn git. It is a collection of interactive exercises. By my humble opinion the best way to learn something it by doing it in combination with reading. So If you want to check your git skills to https://learngitbranching.js.org/</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/learn-git-branching/">Learn Git Branching</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Found a great site to learn git.</p>
+<p>It is a collection of interactive exercises. By my humble opinion the best way to learn something it by doing it in combination with reading.</p>
+<p>So If you want to check your git skills to <a href="https://learngitbranching.js.org/">https://learngitbranching.js.org/</a></p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/learn-git-branching/">Learn Git Branching</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Windows Subsystem for Linux &#8211; Ubuntu</title>
+		<link>https://blog.stefcho.eu/windows-subsystem-for-linux-ubuntu/</link>
+				<pubDate>Fri, 05 Oct 2018 07:05:55 +0000</pubDate>
+		<dc:creator><![CDATA[Stefan]]></dc:creator>
+				<category><![CDATA[Technical]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+		<category><![CDATA[WSL]]></category>
+
+		<guid isPermaLink="false">https://blog.stefcho.eu/?p=1055</guid>
+				<description><![CDATA[<p>If you are on Windows 10, you should probably give a try to Windows Subsystem for Linux. Getting a bash shell under Windows was not a trivial task back in the day. Now you just head to the Microsoft Store and install one. There are variety of distributions to choose from ranging Debian, Ubuntu, Open [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/windows-subsystem-for-linux-ubuntu/">Windows Subsystem for Linux &#8211; Ubuntu</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>If you are on Windows 10, you should probably give a try to Windows Subsystem for Linux. Getting a bash shell under Windows was not a trivial task back in the day.</p>
+<p>Now you just head to the Microsoft Store and install one. There are variety of distributions to choose from ranging Debian, Ubuntu, Open SUSE and even Kali.</p>
+<p>My preference is Ubuntu but wait there are 3 of them! This is quite confusing isn’t it?</p>
+<p>Well I’ve finally found a reasonable explanation in this article: <a href="https://www.howtogeek.com/fyi/there-are-now-three-versions-of-ubuntu-in-the-microsoft-store-heres-why/">There Are Now Three Versions of Ubuntu in the Microsoft Store, Here’s Why</a></p>
+<p>So if you need the latest and greatest LTS version simply install Ubuntu. For the moment my choice lays with Ubuntu 16.04 because of some application compatibility that is missing in 18.04 with <a href="https://github.com/vuori/weasel-pageant">weasel-pageant.</a></p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/windows-subsystem-for-linux-ubuntu/">Windows Subsystem for Linux &#8211; Ubuntu</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>pfSense 2.4.4 Released</title>
+		<link>https://blog.stefcho.eu/pfsense-2-4-4-released/</link>
+				<pubDate>Thu, 04 Oct 2018 08:25:46 +0000</pubDate>
+		<dc:creator><![CDATA[Stefan]]></dc:creator>
+				<category><![CDATA[Technical]]></category>
+		<category><![CDATA[pfSense]]></category>
+
+		<guid isPermaLink="false">https://blog.stefcho.eu/?p=1051</guid>
+				<description><![CDATA[<p>Hello everyone, The new version 2.4.4 if finally here. You can check what&#8217;s new here. &#160;</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/pfsense-2-4-4-released/">pfSense 2.4.4 Released</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Hello everyone,</p>
+<p>The new version 2.4.4 if finally here. You can check what&#8217;s new <a href="https://www.netgate.com/blog/pfsense-2-4-4-release-now-available.html">here.</a></p>
+<p>&nbsp;</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/pfsense-2-4-4-released/">pfSense 2.4.4 Released</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>The pfSense Book, now for free!</title>
+		<link>https://blog.stefcho.eu/the-pfsense-book-now-for-free/</link>
+				<pubDate>Thu, 30 Aug 2018 14:37:35 +0000</pubDate>
+		<dc:creator><![CDATA[Stefan]]></dc:creator>
+				<category><![CDATA[Technical]]></category>
+		<category><![CDATA[pfSense 2.4.3]]></category>
+
+		<guid isPermaLink="false">https://blog.stefcho.eu/?p=1048</guid>
+				<description><![CDATA[<p>Good news everyone! The pfSense Book is now free and available on this address: The pfSense Book I still remember when I got my hard-copy of the original one. 🙂</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/the-pfsense-book-now-for-free/">The pfSense Book, now for free!</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Good news everyone!</p>
+<p>The pfSense Book is now free and available on this address:</p>
+<p><a href="https://www.netgate.com/docs/pfsense/book/">The pfSense Book</a></p>
+<p>I still remember when I got my hard-copy of the original one. <img src="https://s.w.org/images/core/emoji/11.2.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/the-pfsense-book-now-for-free/">The pfSense Book, now for free!</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Sharing a Port with OpenVPN and a Web Server</title>
+		<link>https://blog.stefcho.eu/sharing-port-openvpn-web-server/</link>
+				<pubDate>Fri, 04 Mar 2016 06:36:35 +0000</pubDate>
+		<dc:creator><![CDATA[Stefan]]></dc:creator>
+				<category><![CDATA[Technical]]></category>
+		<category><![CDATA[OpenVPN]]></category>
+		<category><![CDATA[pfSense]]></category>
+
+		<guid isPermaLink="false">http://stefcho.azurewebsites.net/?p=1025</guid>
+				<description><![CDATA[<p>Sharing a Port with OpenVPN and a Web Server Routing your entire internet traffic over VPN when away from home is almost a must. Especially when using public WiFi hotspots or hotel internet. Hello all, long time no see. I have a lot of other engagements lately and can’t reach to our beloved topic of [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/sharing-port-openvpn-web-server/">Sharing a Port with OpenVPN and a Web Server</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Sharing a Port with OpenVPN and a Web Server</p>
+<p>Routing your entire internet traffic over VPN when away from home is almost a must. Especially when using public WiFi hotspots or hotel internet.</p>
+<p>Hello all, long time no see. I have a lot of other engagements lately and can’t reach to our beloved topic of pfSense. The fact that I don’t write new posts does not mean that I have abandoned it. Sometimes you have to put priorities to things in your life that are not as pleasant as other, but are just as much if not more important.</p>
+<p>Enough said about that. Let’s get to the topic.</p>
+<p>Recently I was visiting Asian country. As you probably know there are some places that some sites are restricted for access. It was a strange experience to not be able to open pages that you usually use every day. On other hand I would prefer to route all traffic over my Internet connection back at home when in a foreign country. Just as a protection.</p>
+<p>So for test purposes I’ve setup an OpenVPN instance to check if I’m able to route all my traffic back home.</p>
+<p>During my research I’ve came across very interesting article on the pfSense documentation. The article is: “<a href="https://doc.pfsense.org/index.php/Sharing_a_Port_with_OpenVPN_and_a_Web_Server" target="_blank">Sharing a Port with OpenVPN and a Web Server</a>”</p>
+<p>It works and the only modification that has to be made to the OpenVPN server configuration are as follows:</p>
+<ol>
+<li>Set the protocol to TCP in the General Information section<a href="https://blog.stefcho.eu/wp-content/uploads/2016/03/Sharing-a-Port-with-OpenVPN-and-a-Web-Server-01.png" rel="attachment wp-att-1027"><img class="alignnone size-full wp-image-1027" src="https://blog.stefcho.eu/wp-content/uploads/2016/03/Sharing-a-Port-with-OpenVPN-and-a-Web-Server-01.png" alt="Sharing a Port with OpenVPN and a Web Server 01" width="773" height="131" srcset="https://blog.stefcho.eu/wp-content/uploads/2016/03/Sharing-a-Port-with-OpenVPN-and-a-Web-Server-01.png 773w, https://blog.stefcho.eu/wp-content/uploads/2016/03/Sharing-a-Port-with-OpenVPN-and-a-Web-Server-01-300x51.png 300w, https://blog.stefcho.eu/wp-content/uploads/2016/03/Sharing-a-Port-with-OpenVPN-and-a-Web-Server-01-768x130.png 768w" sizes="(max-width: 773px) 100vw, 773px" /></a></li>
+<li>Don’t forget to tick in the Tunnel Settings &gt; Redirect Gateway</li>
+</ol>
+<p>(Force all client generated traffic through the tunnel.)</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2016/03/Sharing-a-Port-with-OpenVPN-and-a-Web-Server-03.png" rel="attachment wp-att-1029"><img class="alignnone size-full wp-image-1029" src="https://blog.stefcho.eu/wp-content/uploads/2016/03/Sharing-a-Port-with-OpenVPN-and-a-Web-Server-03.png" alt="Sharing a Port with OpenVPN and a Web Server 03" width="825" height="49" srcset="https://blog.stefcho.eu/wp-content/uploads/2016/03/Sharing-a-Port-with-OpenVPN-and-a-Web-Server-03.png 825w, https://blog.stefcho.eu/wp-content/uploads/2016/03/Sharing-a-Port-with-OpenVPN-and-a-Web-Server-03-300x18.png 300w, https://blog.stefcho.eu/wp-content/uploads/2016/03/Sharing-a-Port-with-OpenVPN-and-a-Web-Server-03-768x46.png 768w" sizes="(max-width: 825px) 100vw, 825px" /></a></p>
+<ol start="3">
+<li>In Advanced configuration section in Advanced field put the following:</li>
+</ol>
+<p>port-share localhost 443<a href="https://blog.stefcho.eu/wp-content/uploads/2016/03/Sharing-a-Port-with-OpenVPN-and-a-Web-Server-02.png" rel="attachment wp-att-1026"><img class="alignnone size-full wp-image-1026" src="https://blog.stefcho.eu/wp-content/uploads/2016/03/Sharing-a-Port-with-OpenVPN-and-a-Web-Server-02.png" alt="Sharing a Port with OpenVPN and a Web Server 02" width="761" height="163" srcset="https://blog.stefcho.eu/wp-content/uploads/2016/03/Sharing-a-Port-with-OpenVPN-and-a-Web-Server-02.png 761w, https://blog.stefcho.eu/wp-content/uploads/2016/03/Sharing-a-Port-with-OpenVPN-and-a-Web-Server-02-300x64.png 300w" sizes="(max-width: 761px) 100vw, 761px" /></a></p>
+<p>The old OpenVPN configuration instructions you can find here:</p>
+<h2 class="post-title"><a title="Permanent Link to pfSense 2.0 RC1 configuration of OpenVPN Server for Road Warrior with TLS and User Authentication" href="http://stefcho.azurewebsites.net/pfsense-2-0-rc1-configuration-of-openvpn-server-for-rad-warrior-with-tls-and-user-authentication/" rel="bookmark permalink">pfSense 2.0 RC1 configuration of OpenVPN Server for Road Warrior with TLS and User Authentication</a></h2>
+<p>Now you can connect to your pfSense / OpenVPN server on HTTPS and hopefully it would appear much like you are opening a page over SSL.</p>
+<p>Have fun and as usual I don’t take any kind of responsibly for the way you use this setup, or any legal actions or consequences for that matter or related to it.</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/sharing-port-openvpn-web-server/">Sharing a Port with OpenVPN and a Web Server</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>pfSense on Azure, Teaser</title>
+		<link>https://blog.stefcho.eu/pfsense-on-azure-teaser/</link>
+				<pubDate>Wed, 01 Apr 2015 06:22:22 +0000</pubDate>
+		<dc:creator><![CDATA[Stefan]]></dc:creator>
+				<category><![CDATA[Technical]]></category>
+		<category><![CDATA[Azure]]></category>
+		<category><![CDATA[pfSemse]]></category>
+
+		<guid isPermaLink="false">http://stefcho.azurewebsites.net/?p=1015</guid>
+				<description><![CDATA[<p>Could it be, What is we can run our beloved pfSense in Azure? As it’s written here: Running FreeBSD in Azure It is, but is it really?</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/pfsense-on-azure-teaser/">pfSense on Azure, Teaser</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>Could it be,</p>
+<p>What is we can run our beloved pfSense in Azure?</p>
+<p>As it’s written here:</p>
+<p><a href="http://azure.microsoft.com/blog/2014/05/22/running-freebsd-in-azure" target="_blank">Running FreeBSD in Azure</a></p>
+<p>It is, but is it really? <a href="https://blog.stefcho.eu/wp-content/uploads/2015/04/pfSense-on-Azure.png"><img class="alignnone wp-image-1017 size-medium" src="https://blog.stefcho.eu/wp-content/uploads/2015/04/pfSense-on-Azure-300x293.png" alt="pfSense on Azure" width="300" height="293" srcset="https://blog.stefcho.eu/wp-content/uploads/2015/04/pfSense-on-Azure-300x293.png 300w, https://blog.stefcho.eu/wp-content/uploads/2015/04/pfSense-on-Azure-900x878.png 900w, https://blog.stefcho.eu/wp-content/uploads/2015/04/pfSense-on-Azure.png 968w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/pfsense-on-azure-teaser/">pfSense on Azure, Teaser</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></content:encoded>
+										</item>
+	</channel>
+</rss>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Mikrotik RouterBoard RB250G &#8211; Stefcho&#039;s Tech Blog</title>
+	<atom:link href="https://blog.stefcho.eu/tag/mikrotik-routerboard-rb250g/feed/" rel="self" type="application/rss+xml" />
+	<link>http://blog.stefcho.eu/</link>
+	<description>Software Development, Cloud, DevOps and PfSense</description>
+	<lastBuildDate>
+	Tue, 05 Mar 2019 12:03:41 +0000	</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.1</generator>
+
+<image>
+	<url>https://blog.stefcho.eu/wp-content/uploads/2018/10/cropped-0-32x32.jpg</url>
+	<title>Mikrotik RouterBoard RB250G &#8211; Stefcho&#039;s Tech Blog</title>
+	<link>http://blog.stefcho.eu/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>pfSense-On-A-Stick &#8211; 802.1Q Trunking With pfSense 2.0 RC1 and Mikrotik RouterBoard RB250G Smart Gigabit Switch with five ports and SwOS v1.5</title>
+		<link>https://blog.stefcho.eu/pfsense-on-a-stick-802-1q-trunking-with-pfsense-2-0-rc1-and-mikrotik-routerboard-rb250g-smart-gigabit-switch-with-five-ports-and-swos-v1-5/</link>
+				<comments>https://blog.stefcho.eu/pfsense-on-a-stick-802-1q-trunking-with-pfsense-2-0-rc1-and-mikrotik-routerboard-rb250g-smart-gigabit-switch-with-five-ports-and-swos-v1-5/#comments</comments>
+				<pubDate>Wed, 25 May 2011 19:28:03 +0000</pubDate>
+		<dc:creator><![CDATA[Stefan]]></dc:creator>
+				<category><![CDATA[Technical]]></category>
+		<category><![CDATA[Mikrotik RouterBoard RB250G]]></category>
+		<category><![CDATA[Network]]></category>
+		<category><![CDATA[pfSense]]></category>
+		<category><![CDATA[VLAN]]></category>
+
+		<guid isPermaLink="false">http://stefcho.azurewebsites.net/?p=695</guid>
+				<description><![CDATA[<p>&#160; I’ve just got a Mikrotik RouterBoard RB250G. While searching for useful information about its capabilities found very interesting article in the MikroTik Wiki: SwOS/Router-On-A-Stick This article gave me the idea to use pfSense as a router and trunk a few VLANs. Scenario My aim is to reproduce the configuration from the above mentioned post [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/pfsense-on-a-stick-802-1q-trunking-with-pfsense-2-0-rc1-and-mikrotik-routerboard-rb250g-smart-gigabit-switch-with-five-ports-and-swos-v1-5/">pfSense-On-A-Stick &#8211; 802.1Q Trunking With pfSense 2.0 RC1 and Mikrotik RouterBoard RB250G Smart Gigabit Switch with five ports and SwOS v1.5</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>&nbsp;</p>
+<p>I’ve just got a Mikrotik RouterBoard RB250G. While searching for useful information about its capabilities found very interesting article in the MikroTik Wiki: <a href="http://wiki.mikrotik.com/wiki/SwOS/Router-On-A-Stick" target="_blank">SwOS/Router-On-A-Stick</a> <a href="http://wiki.mikrotik.com/wiki/SwOS/Router-On-A-Stick"></a></p>
+<p>This article gave me the idea to use pfSense as a router and trunk a few VLANs.</p>
+<p><strong>Scenario</strong></p>
+<p>My aim is to reproduce the configuration from the above mentioned post with three VLANs, trunked on a single LAN interface (aka Parent interface) to the pfSense. To make it more usable, every VLAN will be on separate port on the switch (aka Access Port) and have its own instance of DHCP running on the pfSense. In this way, when a client connect to some of the ports he/she will automatically receive configuration contextual to VLAN on this port.</p>
+<p>For the installation and basic configuration of pfSense on VMware take a look my previous post<a title="Permanent Link to Install pfSense 2.0 RC1 on VMWare Workstation 7" rel="bookmark permalink" href="http://stefcho.azurewebsites.net/?p=431" target="_blank"> Install pfSense 2.0 RC1 on VMWare Workstation 7</a></p>
+<p>The difference here is that the LAN virtual NIC is bridged to the second physical NIC of my workstation and from there directly connected to the RB250G switch.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/Network-Diagram.png"><img class="aligncenter size-full wp-image-730" title="Network Diagram" src="https://blog.stefcho.eu/wp-content/uploads/2011/05/Network-Diagram.png" alt="" width="492" height="541" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/05/Network-Diagram.png 492w, https://blog.stefcho.eu/wp-content/uploads/2011/05/Network-Diagram-272x300.png 272w" sizes="(max-width: 492px) 100vw, 492px" /></a></p>
+<p>We start with installed pfSense 2.0 RC1, configure WAN port bridged to my first physical NIC, and LAN port connected to my second physical NIC. For the sake of convenience and because of the problems that I faced initially with the communication on my second NIC, I decide to manage the router through the WAN interface, because its configuration will not change during testing. More on the topic VMware Workstation Virtual Machine and VLANs support, you can find at the bottom of this post.</p>
+<p>There are two ways to configure VLANs in pfSense as long as I’m aware. One is through the console and the other is using the Web GUI. Here I will use the latter.</p>
+<p><strong>WAN Rules</strong></p>
+<p>First let’s configure Rules on the WAN port to allow access to the Web GUI.</p>
+<p>Got to Firewall &gt; Rules, on the WAN leaf, add new rule.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/pfSense-WAN-Rules-01.png"><img class="aligncenter size-full wp-image-696" title="pfSense-WAN-Rules-01" src="https://blog.stefcho.eu/wp-content/uploads/2011/05/pfSense-WAN-Rules-01.png" alt="" width="919" height="564" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/05/pfSense-WAN-Rules-01.png 919w, https://blog.stefcho.eu/wp-content/uploads/2011/05/pfSense-WAN-Rules-01-300x184.png 300w" sizes="(max-width: 919px) 100vw, 919px" /></a></p>
+<p>The Interface is WAN, Protocol is TCP. Destination port range is HTTPS, enter and description.</p>
+<p>This will allow access to the pfSense WebGUI on the WAN IP Address.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/pfSense-WAN-Rules-02.png"><img class="aligncenter size-full wp-image-697" title="pfSense-WAN-Rules-02" src="https://blog.stefcho.eu/wp-content/uploads/2011/05/pfSense-WAN-Rules-02.png" alt="" width="913" height="884" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/05/pfSense-WAN-Rules-02.png 913w, https://blog.stefcho.eu/wp-content/uploads/2011/05/pfSense-WAN-Rules-02-300x290.png 300w" sizes="(max-width: 913px) 100vw, 913px" /></a></p>
+<p><strong>Creation of VLANs and Interfaces</strong></p>
+<p>Go to Interfaces&gt; (assign).</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-01.png"><img class="aligncenter size-full wp-image-705" title="Craetion-of-VLANs-01" src="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-01.png" alt="" width="359" height="135" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-01.png 359w, https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-01-300x112.png 300w" sizes="(max-width: 359px) 100vw, 359px" /></a></p>
+<p>Make sure that you second Network port is not assigned to any Interface, if it is removed it. In my case this is em1. This machine has two interface em0 for the WAN, and em1 for the LAN.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-02.png"><img class="aligncenter size-full wp-image-706" title="Craetion-of-VLANs-02" src="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-02.png" alt="" width="920" height="365" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-02.png 920w, https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-02-300x119.png 300w" sizes="(max-width: 920px) 100vw, 920px" /></a></p>
+<p>Go to the VLANs leaf, click on the add button.</p>
+<p>On the new page make sure that Parent interface is em1. Enter VLAN tag number different from 1.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-04.png"><img class="aligncenter size-full wp-image-708" title="Craetion-of-VLANs-04" src="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-04.png" alt="" width="915" height="310" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-04.png 915w, https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-04-300x101.png 300w" sizes="(max-width: 915px) 100vw, 915px" /></a></p>
+<p>I’ve made three VLANs – 100, 200, 300.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-03.png"><img class="aligncenter size-full wp-image-707" title="Craetion-of-VLANs-03" src="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-03.png" alt="" width="912" height="357" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-03.png 912w, https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-03-300x117.png 300w" sizes="(max-width: 912px) 100vw, 912px" /></a></p>
+<p>Now we need to assign these as Interfaces, go to Interface assignments and then add them one by one, select the proper Network port which are the VLANs that we have just created, and do not assign em1 to any Interface directly.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-02.png"><img class="aligncenter size-full wp-image-706" title="Craetion-of-VLANs-02" src="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-02.png" alt="" width="920" height="365" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-02.png 920w, https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-02-300x119.png 300w" sizes="(max-width: 920px) 100vw, 920px" /></a></p>
+<p>Now select LAN interface from the drop down menu under Interfaces. Tick Enable Interface, as type select Static. Under Static IP configuration, enter IP address and subnet mask.</p>
+<p>In my case it is 10.10.10.1/24.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-05-Interfaces-Config.png"><img class="aligncenter size-full wp-image-709" title="Craetion-of-VLANs-05-Interfaces-Config" src="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-05-Interfaces-Config.png" alt="" width="917" height="843" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-05-Interfaces-Config.png 917w, https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-05-Interfaces-Config-300x275.png 300w" sizes="(max-width: 917px) 100vw, 917px" /></a></p>
+<p>&nbsp;</p>
+<p>Repeat this procedure for all the VLAN interfaces. For reference these are the IP addresses that I have used:</p>
+<p>LAN – 10.10.10.1/24</p>
+<p>OPT1 – 10.10.9.1/24</p>
+<p>OPT2 – 10.10.8.1/24</p>
+<p>&nbsp;</p>
+<p><strong>Interfaces Rules </strong></p>
+<p>For the sake of simplicity every interface will be allowed communication to everywhere.</p>
+<p>Go to Firewall &gt; Rules, on the LAN leaf.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/VLANS-Allow-All-Rule-01.png"><img class="aligncenter size-full wp-image-711" title="VLANS-Allow-All-Rule-01" src="https://blog.stefcho.eu/wp-content/uploads/2011/05/VLANS-Allow-All-Rule-01.png" alt="" width="928" height="628" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/05/VLANS-Allow-All-Rule-01.png 928w, https://blog.stefcho.eu/wp-content/uploads/2011/05/VLANS-Allow-All-Rule-01-300x203.png 300w" sizes="(max-width: 928px) 100vw, 928px" /></a></p>
+<p>Add new Rule</p>
+<p>Action is Pass, Interface is LAN, Protocol in Any, Source is Any, Destination is Any, enter some Description too.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/VLANS-Allow-All-Rule-02.png"><img class="aligncenter size-full wp-image-712" title="VLANS-Allow-All-Rule-02" src="https://blog.stefcho.eu/wp-content/uploads/2011/05/VLANS-Allow-All-Rule-02.png" alt="" width="925" height="739" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/05/VLANS-Allow-All-Rule-02.png 925w, https://blog.stefcho.eu/wp-content/uploads/2011/05/VLANS-Allow-All-Rule-02-300x239.png 300w" sizes="(max-width: 925px) 100vw, 925px" /></a></p>
+<p>Repeat this step on OPT1 and OPT2 leafs too.</p>
+<p>&nbsp;</p>
+<p><strong>DHCP Server Configuration</strong></p>
+<p>Go to Services &gt; DHCP Server page.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/DHCP-Config-01.png"><img class="aligncenter size-full wp-image-713" title="DHCP-Config-01" src="https://blog.stefcho.eu/wp-content/uploads/2011/05/DHCP-Config-01.png" alt="" width="502" height="345" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/05/DHCP-Config-01.png 502w, https://blog.stefcho.eu/wp-content/uploads/2011/05/DHCP-Config-01-300x206.png 300w" sizes="(max-width: 502px) 100vw, 502px" /></a></p>
+<p>On the LAN leaf, tick Enable DHCP server on LAN interface.</p>
+<p>Enter Range from the subnet of the interface, in my case 10.10.10.10 – 10.10.10.15</p>
+<p>Click the Save button.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/DHCP-Config-02.png"><img class="aligncenter size-full wp-image-714" title="DHCP-Config-02" src="https://blog.stefcho.eu/wp-content/uploads/2011/05/DHCP-Config-02.png" alt="" width="917" height="890" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/05/DHCP-Config-02.png 917w, https://blog.stefcho.eu/wp-content/uploads/2011/05/DHCP-Config-02-300x291.png 300w" sizes="(max-width: 917px) 100vw, 917px" /></a></p>
+<p>Repeat the procedure for the OPT1 and OPT2 leafs. In my case the ranges were.</p>
+<p>LAN – 10.10.10.10 – 10.10.10.15</p>
+<p>OPT1 – 10.10.9.10 – 10.10.9.15</p>
+<p>OPT2 – 10.10.8.10 – 10.10.8.15</p>
+<p>&nbsp;</p>
+<p><strong>Mikrotik RouterBoard RB250G Smart Gigabit Switch with five ports and SwOS v1.5</strong></p>
+<p>Before configuring VLANs on the switch, make sure that your firmware version is 1.2 or higher, by the time of writing this version 1.5 of the firmware is available. Otherwise you may run into problems that are related to applied functionality of the device.</p>
+<p><strong> </strong></p>
+<p><strong>Switch VLANs Configuration</strong></p>
+<p>On the Switch, go to the VLANs leaf, add the same VLANs from the router. As for ports member always add Port1 and choose one of the other ports. This is the tricky part, my pfSense router is connected to Port1, which makes it Trunk port and must be a member of all VLANs.</p>
+<p>In my example</p>
+<p>Port 5 is member of VLAN 100</p>
+<p>Port 4 is member of VLAN 200</p>
+<p>Port 3 is member of VLAN 300</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/Switch-VLANs-Config-02.png"><img class="aligncenter size-full wp-image-715" title="Switch-VLANs-Config-02" src="https://blog.stefcho.eu/wp-content/uploads/2011/05/Switch-VLANs-Config-02.png" alt="" width="773" height="269" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/05/Switch-VLANs-Config-02.png 773w, https://blog.stefcho.eu/wp-content/uploads/2011/05/Switch-VLANs-Config-02-300x104.png 300w" sizes="(max-width: 773px) 100vw, 773px" /></a></p>
+<p>On the VLAN leaf.</p>
+<p>For Port 1, our Trunk Port &#8211; VLAN Mode is Enabled, default VLAN ID is 1 and VLAN Header is Add If Missing.</p>
+<p>For the other Access Ports the configuration is as follows: VLAN Mode is Strict, Default VLAN ID is configured by your design, from the VLANs configured on the router. You can leave Force VLAN ID unpicked, VLAN Header is Always Strip.</p>
+<p><strong> </strong></p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/Switch-VLANs-Config-01.png"><img class="aligncenter size-full wp-image-716" title="Switch-VLANs-Config-01" src="https://blog.stefcho.eu/wp-content/uploads/2011/05/Switch-VLANs-Config-01.png" alt="" width="778" height="361" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/05/Switch-VLANs-Config-01.png 778w, https://blog.stefcho.eu/wp-content/uploads/2011/05/Switch-VLANs-Config-01-300x139.png 300w" sizes="(max-width: 778px) 100vw, 778px" /></a></p>
+<p><strong>Testing</strong></p>
+<p>Now if you plug the test laptop to one of the Ports 3,4,5. And the NIC is configured to receive configuration from a DHCP server, you will get IP address from the subnet of the configured VLAN range. Because of the Allow All traffic rule you will have Internet, and access to host on the other VLANs.</p>
+<p>&nbsp;</p>
+<p><strong>Issues</strong></p>
+<p>Some issues that I faced along the way.</p>
+<p><strong> </strong></p>
+<p><strong>VMware Workstation Virtual Machine and VLANs support</strong></p>
+<p>My idea was to configure quickly one VM with pfSense, and use the bridged interface for connection to the switch. Everything works fine up until I configured VLANs. Then suddenly the communication between the route and switch stops. After a little network sniffing what surprised me, was that the packets were not tagged with VLANs. After extensive googling on the topic, I did not found definitive reason for this strange behaviour. One part of the information was related to the physical NIC support of VLANs. The other portion of the topics were about the VMware VM and the type of the virtual NIC configured on the virtual machine. Unfortunately my EVGA X58 motherboard is equipped with two on-board Realtek NICS, but fortunately enough they support VLAN and event Priority. When I check the configuration of the bridged NIC <strong>Priority &amp; VLAN </strong>were <strong>Enabled</strong>.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/NIC-02.png"><img class="aligncenter size-full wp-image-718" title="NIC-02" src="https://blog.stefcho.eu/wp-content/uploads/2011/05/NIC-02.png" alt="" width="417" height="466" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/05/NIC-02.png 417w, https://blog.stefcho.eu/wp-content/uploads/2011/05/NIC-02-268x300.png 268w" sizes="(max-width: 417px) 100vw, 417px" /></a></p>
+<p>The troubleshooting took me long hours, but finally I’ve got a great idea. What if I turn off the Priority &amp; VLAN support on the physical NIC? And indeed, packets start showing with the 802.1Q Tags. My suspicion is that the physical NIC strips off the VLAN tag, and this is the cause of the disruption in communication between my router and switch.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/WireShark-Capture.png"></a><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/WireShark-Capture1.png"><img class="aligncenter size-full wp-image-720" title="WireShark Capture" src="https://blog.stefcho.eu/wp-content/uploads/2011/05/WireShark-Capture1.png" alt="" width="957" height="601" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/05/WireShark-Capture1.png 957w, https://blog.stefcho.eu/wp-content/uploads/2011/05/WireShark-Capture1-300x188.png 300w" sizes="(max-width: 957px) 100vw, 957px" /></a></p>
+<p><strong>Mikrotik RouterBoard RB250G</strong></p>
+<p>If you ping the switch the pings are around 17-9 ms, which is huge taking in to account the device is directly connected.</p>
+<p>For more information look here:</p>
+<h2><a href="http://forum.mikrotik.com/viewtopic.php?f=17&amp;t=45360&amp;sid=55976ca9471e381ea424613150f9eba8">Pings TO the switch dropped, high ping&#8230;</a></h2>
+<p>&nbsp;</p>
+<p><strong>References:</strong></p>
+<ul>
+<li>To get a feeling of the switch Web GUI, take a look here, all interface pages are shown and all options are explained : <a href="http://wiki.mikrotik.com/wiki/SwOS">http://wiki.mikrotik.com/wiki/SwOS</a></li>
+<li>This wiki article gave me some ideas for VLANs configuration: <a href="http://wiki.mikrotik.com/wiki/Manual:Interface/VLAN">http://wiki.mikrotik.com/wiki/Manual:Interface/VLAN</a></li>
+<li>I like this thread in the forum, probably in future will try to separate Voice and Data in to separate VLANs as discussed: Topic: Setting UP VLAN in pfSense 2.0? &nbsp;<a href="http://forum.pfsense.org/index.php?topic=34739.0">http://forum.pfsense.org/index.php?topic=34739.0</a></li>
+<li>If you are seeking for a Smart Switch take a look at that thread: <a href="http://forum.pfsense.org/index.php/topic,36749.msg189441.html" target="_blank">Smart Switch &#8211; Recommendations</a></li>
+</ul>
+<p>MikroTik Forum useful links:</p>
+<p>The Section about Mikrotik RouterBoard RB250G:</p>
+<h2><a href="http://forum.mikrotik.com/viewforum.php?f=17&amp;sid=a56fea589ae8eb3fb1f78b0db629fc72">SwOS</a></h2>
+<div id="pageheader">
+<p>Some interesting threads:</p>
+</div>
+<h2><a href="http://forum.mikrotik.com/viewtopic.php?f=17&amp;t=45721">please do not tag default vlan in &#8220;add if missing&#8221; mode</a></h2>
+<h2><a href="http://forum.mikrotik.com/viewtopic.php?f=17&amp;t=51066">VLAN Tagging on SwOS</a></h2>
+<h2><a href="http://forum.mikrotik.com/viewtopic.php?f=17&amp;t=46150">VLAN Trunk</a></h2>
+<h2><a href="http://forum.mikrotik.com/viewtopic.php?f=17&amp;t=44840">Vlan Trunk / Access port configuration</a></h2>
+<h2><a href="http://forum.mikrotik.com/viewtopic.php?f=17&amp;t=44534&amp;sid=faa5992612130e9516b4c4215b06cbf9">QnQ</a></h2>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/pfsense-on-a-stick-802-1q-trunking-with-pfsense-2-0-rc1-and-mikrotik-routerboard-rb250g-smart-gigabit-switch-with-five-ports-and-swos-v1-5/">pfSense-On-A-Stick &#8211; 802.1Q Trunking With pfSense 2.0 RC1 and Mikrotik RouterBoard RB250G Smart Gigabit Switch with five ports and SwOS v1.5</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></content:encoded>
+							<wfw:commentRss>https://blog.stefcho.eu/pfsense-on-a-stick-802-1q-trunking-with-pfsense-2-0-rc1-and-mikrotik-routerboard-rb250g-smart-gigabit-switch-with-five-ports-and-swos-v1-5/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+							</item>
+	</channel>
+</rss>

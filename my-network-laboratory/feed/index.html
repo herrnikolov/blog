@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: My Network Laboratory	</title>
+	<atom:link href="https://blog.stefcho.eu/my-network-laboratory/feed/" rel="self" type="application/rss+xml" />
+	<link>https://blog.stefcho.eu/my-network-laboratory/</link>
+	<description>Software Development, Cloud, DevOps and PfSense</description>
+	<lastBuildDate>
+	Mon, 18 Feb 2019 12:55:56 +0000	</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.1</generator>
+			<item>
+				<title>
+				By: kelxon				</title>
+				<link>https://blog.stefcho.eu/my-network-laboratory/#comment-139</link>
+		<dc:creator><![CDATA[kelxon]]></dc:creator>
+		<pubDate>Wed, 04 Jan 2012 04:23:51 +0000</pubDate>
+		<guid isPermaLink="false">http://stefcho.azurewebsites.net/?p=438#comment-139</guid>
+					<description><![CDATA[You can install OpenWrt onto VMWare easily following the video instruction on Youtube about install OpenWrt on VirtualBox, &quot;http://www.youtube.com/watch?v=cL81DQk4WL8&quot;, but make sure you change the HDD option to IDE.  Here&#039;s a little instruction I composed for myself just in case I need to redo:
+
+These are the steps taken to configure the four virtual OpenWrt Backfire 10.03.1-rc6, each with three separate ethernet connection.
+
+Steps:
+
+1.  Virtual machine specs
+	-1GB IDE HDD (Note: using SCSI HDD will not work)
+	-128MB RAM
+	-1 NAT network adapter
+	-2 Custom VMNet adapters (will have to play around later to get them to connect to each other)
+
+2.  Follow the video on www.youtube.com for installing &quot;OpenWrt Backfire VirtualBox Install&quot;
+	Steps:
+	   1.  Bootup with Ubuntu iso image (use the &quot;try Ubuntu&quot; option)
+	   2.  Open Firefox or any browser
+           3.  Goto www.openwrt.org and copy the Link Location for the openwrt-x86-generic-combined-ext2.img.gz file
+	   4.  Open Terminal
+	   5.  switch to root:  sudo -s
+	   6.  fdisk /dev/sda	(to format the HDD)
+	 	a.  use options &quot;o&quot; then &quot;w&quot; pressing Enter after each
+	   7.  fdisk -l	(list disk)
+	   8.  wget (paste the link for the OpenWrt image here)
+	   9.  gunzip (the image filename downloaded from the previous step)
+	   10. dd if=(unzip filename of OpenWrt) of=/dev/sda bs=1M count=100
+	   11. reboot
+           12. vi /etc/config/network (make change to the following/delete the other options for this connection)
+	 	-config interface	lan
+			option ifname	eth0
+			option proto	dhcp
+			option hostname	backfire
+	   13.  /etc/init.d/network restart	(restart network connections/adapters)
+	   14.  ping www.google.com	(should get reply from google)
+	   15.  opkg update
+	   16.  opkg install fdisk
+	   17.  fdisk -l
+	   18.  mkdir boot
+	   19.  mount /dev/sda1 boot/
+	   20.  cd boot/
+	   21.  cd boot/grub
+	   22.  vim menu.lst
+	   23.  delete first two lines (begin with serial and terminal) and change timeout to 0
+	   24.  save and reboot
+
+Happy sharing.
+
+Kelxon]]></description>
+		<content:encoded><![CDATA[<p>You can install OpenWrt onto VMWare easily following the video instruction on Youtube about install OpenWrt on VirtualBox, &#8220;http://www.youtube.com/watch?v=cL81DQk4WL8&#8221;, but make sure you change the HDD option to IDE.  Here&#8217;s a little instruction I composed for myself just in case I need to redo:</p>
+<p>These are the steps taken to configure the four virtual OpenWrt Backfire 10.03.1-rc6, each with three separate ethernet connection.</p>
+<p>Steps:</p>
+<p>1.  Virtual machine specs<br />
+	-1GB IDE HDD (Note: using SCSI HDD will not work)<br />
+	-128MB RAM<br />
+	-1 NAT network adapter<br />
+	-2 Custom VMNet adapters (will have to play around later to get them to connect to each other)</p>
+<p>2.  Follow the video on <a href="http://www.youtube.com" rel="nofollow">http://www.youtube.com</a> for installing &#8220;OpenWrt Backfire VirtualBox Install&#8221;<br />
+	Steps:<br />
+	   1.  Bootup with Ubuntu iso image (use the &#8220;try Ubuntu&#8221; option)<br />
+	   2.  Open Firefox or any browser<br />
+           3.  Goto <a href="http://www.openwrt.org" rel="nofollow">http://www.openwrt.org</a> and copy the Link Location for the openwrt-x86-generic-combined-ext2.img.gz file<br />
+	   4.  Open Terminal<br />
+	   5.  switch to root:  sudo -s<br />
+	   6.  fdisk /dev/sda	(to format the HDD)<br />
+	 	a.  use options &#8220;o&#8221; then &#8220;w&#8221; pressing Enter after each<br />
+	   7.  fdisk -l	(list disk)<br />
+	   8.  wget (paste the link for the OpenWrt image here)<br />
+	   9.  gunzip (the image filename downloaded from the previous step)<br />
+	   10. dd if=(unzip filename of OpenWrt) of=/dev/sda bs=1M count=100<br />
+	   11. reboot<br />
+           12. vi /etc/config/network (make change to the following/delete the other options for this connection)<br />
+	 	-config interface	lan<br />
+			option ifname	eth0<br />
+			option proto	dhcp<br />
+			option hostname	backfire<br />
+	   13.  /etc/init.d/network restart	(restart network connections/adapters)<br />
+	   14.  ping <a href="http://www.google.com" rel="nofollow">http://www.google.com</a>	(should get reply from google)<br />
+	   15.  opkg update<br />
+	   16.  opkg install fdisk<br />
+	   17.  fdisk -l<br />
+	   18.  mkdir boot<br />
+	   19.  mount /dev/sda1 boot/<br />
+	   20.  cd boot/<br />
+	   21.  cd boot/grub<br />
+	   22.  vim menu.lst<br />
+	   23.  delete first two lines (begin with serial and terminal) and change timeout to 0<br />
+	   24.  save and reboot</p>
+<p>Happy sharing.</p>
+<p>Kelxon</p>
+]]></content:encoded>
+						</item>
+						<item>
+				<title>
+				By: Install pfSense 2.0 RC1 on VMWare Workstation 7				</title>
+				<link>https://blog.stefcho.eu/my-network-laboratory/#comment-25</link>
+		<dc:creator><![CDATA[Install pfSense 2.0 RC1 on VMWare Workstation 7]]></dc:creator>
+		<pubDate>Tue, 29 Mar 2011 18:31:18 +0000</pubDate>
+		<guid isPermaLink="false">http://stefcho.azurewebsites.net/?p=438#comment-25</guid>
+					<description><![CDATA[[...] is the first part of the network laboratory [...]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] is the first part of the network laboratory [&#8230;]</p>
+]]></content:encoded>
+						</item>
+			</channel>
+</rss>

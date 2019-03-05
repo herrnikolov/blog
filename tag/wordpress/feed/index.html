@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>WordPress &#8211; Stefcho&#039;s Tech Blog</title>
+	<atom:link href="https://blog.stefcho.eu/tag/wordpress/feed/" rel="self" type="application/rss+xml" />
+	<link>http://blog.stefcho.eu/</link>
+	<description>Software Development, Cloud, DevOps and PfSense</description>
+	<lastBuildDate>
+	Tue, 05 Mar 2019 12:03:41 +0000	</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.1</generator>
+
+<image>
+	<url>https://blog.stefcho.eu/wp-content/uploads/2018/10/cropped-0-32x32.jpg</url>
+	<title>WordPress &#8211; Stefcho&#039;s Tech Blog</title>
+	<link>http://blog.stefcho.eu/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>My blog new home</title>
+		<link>https://blog.stefcho.eu/my-blog-new-home/</link>
+				<pubDate>Tue, 05 Mar 2019 12:03:39 +0000</pubDate>
+		<dc:creator><![CDATA[Stefan]]></dc:creator>
+				<category><![CDATA[Technical]]></category>
+		<category><![CDATA[Azure]]></category>
+		<category><![CDATA[Docker]]></category>
+		<category><![CDATA[MySQL]]></category>
+		<category><![CDATA[Raspberry Pi]]></category>
+		<category><![CDATA[WordPress]]></category>
+
+		<guid isPermaLink="false">https://blog.stefcho.eu/?p=1174</guid>
+				<description><![CDATA[<p>IntroductionHello everyone. I’ve been running this blog for 9 years now. In 2010 there were very few options to host WordPress site. The blog was hosted in one local provider up until its acquisition by another company two years ago. This pushed me to move. At that time, I was experimenting with Azure and the [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/my-blog-new-home/">My blog new home</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[
+<p><strong>Introduction</strong><br>Hello everyone. I’ve been running this blog for 9 years now. In 2010 there were very few options to host WordPress site. The blog was hosted in one local provider up until its acquisition by another company two years ago. This pushed me to move. At that time, I was experimenting with Azure and the natural choice of service was an Azure Web App with WordPress template. </p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://blog.stefcho.eu/wp-content/uploads/2019/03/WordPress-on-Linux-on-Azure.png" alt="" class="wp-image-1177"/><figcaption><br></figcaption></figure></div>
+
+
+
+<p>The platform is packed with settings that you can tweak. Unfortunately, the prices are targeted at enterprise customers and were too steep for a small site like mine. <br>Recently a friend of mine mentioned the Static Site Generators. I’ve investigated the topic and it appeared quite an interesting concept. For my purposes this solution fits well as most of my content is static. Thanks to GDPR I had to close all comments and feedback options, which made the site even more static. On the positive side not having to worry about PHP and MySQL out in the wild sounds very a pleasing. </p>
+
+
+
+<p><strong>Static Site Generators Research</strong><br>After reviewing a couple of solutions, the idea to use WordPress as a Static Site Generators begin to take shape. This could be achieved by employing Plugins. The ones that I’m currently experimenting with are: <br> <a rel="noreferrer noopener" aria-label="Simply Static (opens in a new tab)" href="https://wordpress.org/plugins/simply-static/" target="_blank">Simply Static</a><br> <a rel="noreferrer noopener" aria-label="WP2Static (opens in a new tab)" href="https://wordpress.org/plugins/static-html-output-plugin/" target="_blank">WP2Static</a><br> Each has some very strong features. But I still haven’t decided which one to keep. <br> Simply Static has great Diagnostics that helped me troubleshoot some issues. Offering streamlined interface with essential options. While WP2Static gives more control over the crawling and processing with valuable options to clean up some garbage from the output pages. <br> They both produced archives containing the static content, WP2Static can even be configured to push it directly to GitHub repository. </p>
+
+
+
+<p><strong>Web Hosting</strong><br>Either way I have a static version of my site now. The next hurdle is where to store the files? <br>I don’t want to host it On-Premise as this will require a lot of additional time and effort. As the Cloud options are so many, let’s narrow it down to Static Websites on Azure Storage and GitHub for simplicity sake. <br>Ever since I’ve read about the Static Websites in Azure, I really wanted to try it with something. Now having the content experiments can commence. My inspiration came from this article <a rel="noreferrer noopener" aria-label="Static websites on Azure Storage now generally available (opens in a new tab)" href="https://azure.microsoft.com/en-us/blog/static-websites-on-azure-storage-now-generally-available/" target="_blank">Static websites on Azure Storage now generally available</a><br> Price for storing content and data transfers charges would be low in my case. SSL is requirement but it is not directly offered from Static Websites. I need Azure CDN in front to get the desired feature. This will incur additional cost and complexity for just one simple static site served over HTTPs.  <br>For Web Apps there is a Azure Let’s Encrypt Extension that is a pretty useful solution to automatically renew the SSL Certificate.  <br> <br>This tilted the table in favour of GitHub. There are no taxes for storing publicly accessible content and it automatically takes care of the SSL Certificate provisioning and renewal. For the moment GitHub wins.    <br></p>
+
+
+
+<p><strong>WordPress Hosting</strong><br> Now that I have the generation and web hosting covered. The last obstacle is where to keep my Static Content Generating WordPress instance? <br><br><em> Cloud:</em><br> <em>WordPress.com</em> – good starting point. But pretty much the same. You get a free WordPress instance somewhere out there. Not my ideal solution. </p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://blog.stefcho.eu/wp-content/uploads/2019/03/aci_logo.png" alt="" class="wp-image-1224" srcset="https://blog.stefcho.eu/wp-content/uploads/2019/03/aci_logo.png 230w, https://blog.stefcho.eu/wp-content/uploads/2019/03/aci_logo-150x150.png 150w, https://blog.stefcho.eu/wp-content/uploads/2019/03/aci_logo-144x144.png 144w" sizes="(max-width: 230px) 100vw, 230px" /></figure></div>
+
+
+
+<p> <em>Azure Containers Instance</em> – recently I have experiment with this service. It is perfectly suited to quickly get up and running a bunch of containers. Get the job done and destroy them. There is a ready-made template to build two containers solution for WordPress here: <a rel="noreferrer noopener" aria-label="Create a WordPress site on a Container Instance (opens in a new tab)" href="https://github.com/Azure/azure-quickstart-templates/tree/master/201-aci-wordpress" target="_blank">Create a WordPress site on a Container Instance</a><br>My experience with the service is mostly positive. Bringing it up is easy. Getting data persistence requires modifying the template. The performance at the lowest tire was comparable to the once in Web App and insufficient from my perspective. <br> <br><em>Local:</em><br> VM with docker containers – My first choice. Spun up Ubuntu server, quickly and easily installed docker and docker compose. As I felt generous at the time the VM had 4 CPU cores and 4 GB or RAM. Even on mechanical HDD, performance was Fantastic! I never knew that WordPress could feel so snappy! The downside is that I will not keep the VM running all the time and must start and stop it every time that I want to do something.  <br> </p>
+
+
+
+<div class="wp-block-image"><figure class="alignleft is-resized"><img src="https://blog.stefcho.eu/wp-content/uploads/2019/03/Raspberry-Pi.png" alt="" class="wp-image-1211" width="193" height="247" srcset="https://blog.stefcho.eu/wp-content/uploads/2019/03/Raspberry-Pi.png 401w, https://blog.stefcho.eu/wp-content/uploads/2019/03/Raspberry-Pi-235x300.png 235w" sizes="(max-width: 193px) 100vw, 193px" /></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="alignleft is-resized"><img src="https://blog.stefcho.eu/wp-content/uploads/2019/03/docker-logo-png-transparent-1024x860.png" alt="" class="wp-image-1206" width="279" height="234" srcset="https://blog.stefcho.eu/wp-content/uploads/2019/03/docker-logo-png-transparent-1024x860.png 1024w, https://blog.stefcho.eu/wp-content/uploads/2019/03/docker-logo-png-transparent-300x252.png 300w, https://blog.stefcho.eu/wp-content/uploads/2019/03/docker-logo-png-transparent-768x645.png 768w" sizes="(max-width: 279px) 100vw, 279px" /></figure></div>
+
+
+
+<p><br><br><br><br><br><br><br><br><br><br><br><br><br> RPI with docker containers &#8211; As I have a Raspberry Pi humming in the background. This is a preferable alternative to a full blown VM.  I’ve managed to install docker and docker compose relatively easy using as a starting point this article: <a rel="noreferrer noopener" aria-label="The easy way to set up Docker on a Raspberry Pi (opens in a new tab)" href="https://medium.freecodecamp.org/the-easy-way-to-set-up-docker-on-a-raspberry-pi-7d24ced073ef" target="_blank">The easy way to set up Docker on a Raspberry Pi </a>and <a rel="noreferrer noopener" aria-label="HOW TO RUN DOCKER AND DOCKER-COMPOSE ON RASPBIAN (opens in a new tab)" href="https://manre-universe.net/how-to-run-docker-and-docker-compose-on-raspbian/" target="_blank">HOW TO RUN DOCKER AND DOCKER-COMPOSE ON RASPBIAN</a><br> <br>To my unpleasant surprise there is NO official MySQL image for ARM,  Really!? Check this article: <a rel="noreferrer noopener" href="https://bugs.mysql.com/bug.php?id=86501%20https://scito.ch/content/mysql-57-docker-container-raspberry-pi-using-debian-sid" target="_blank">Install mysql server-5.7 on ARMv8 architecture (raspberry pi 3 model B)</a><br>But there is one for <a rel="noreferrer noopener" href="https://hub.docker.com/_/wordpress" target="_blank">WordPress</a>. I’ve tried building one on my own and hit a lot of problems! As a temporary solution for the moment I’m using this image  <a rel="noreferrer noopener" href="https://hub.docker.com/r/hypriot/rpi-mysql/" target="_blank">hypriot/rpi-mysql</a>. Works fine but holds MySQL 5.5 and my aim is 5.7. In near future I’ll look into it and if possible, build one image on my own.   <br>  Had a few hiccups with the persistent storage of data for both WordPress and MySQL containers, but got it right at the end.  <br>Here is the content of my docker-compose file:<br></p>
+
+
+
+<pre class="wp-block-code"><code>version: '3.7'
+
+services:
+   db:
+     image: hypriot/rpi-mysql:latest
+     volumes:
+       - ./db_data:/var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: [ROOTPASSWORD]
+       MYSQL_DATABASE: [DBNAME]
+       MYSQL_USER: [DBUSER]
+       MYSQL_PASSWORD: [DBPASSWORD]
+
+   wordpress:
+     depends_on:
+       - db
+     image: wordpress:latest
+     volumes:
+      - ./wp-content:/var/www/html:rw
+     ports:
+       - "80:80"
+     restart: always
+     environment:
+       WORDPRESS_DB_HOST: db:3306
+       WORDPRESS_DB_NAME: [DBNAME]
+       WORDPRESS_DB_USER: [DBUSER]
+       WORDPRESS_DB_PASSWORD: [DBPASSWORD]
+
+volumes:
+    db_data: {}
+    wp-content: {}</code></pre>
+
+
+
+<p> Again, the performance is even more surprisingly good compared the cloud scenarios. Considering that it is run off a mechanical hard drive on a very humble 1.2GHz Quad and only 1 GB of RAM.  </p>
+
+
+
+<p><strong>Conclusion</strong><br>With this exercise I’ve managed to decrease the costs of hosting this blog to the bare minimum. Hosting costs are reduced to virtually free. The power costs for the Raspberry Pi are shared with other services and are negligible. <br> Compared with Azure Web App and it’s 20 Euros per month it is a feat! <br> My initial intention for this post was to be short and sweet, but it grew into something much larger. I was able to compress a few weeks of research and experiments into these few lines omitting a lot of problems crossed along the way. Hope you enjoy reading it. </p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/my-blog-new-home/">My blog new home</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></content:encoded>
+										</item>
+	</channel>
+</rss>

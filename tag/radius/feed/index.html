@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>RADIUS &#8211; Stefcho&#039;s Tech Blog</title>
+	<atom:link href="https://blog.stefcho.eu/tag/radius/feed/" rel="self" type="application/rss+xml" />
+	<link>http://blog.stefcho.eu/</link>
+	<description>Software Development, Cloud, DevOps and PfSense</description>
+	<lastBuildDate>
+	Tue, 05 Mar 2019 12:03:41 +0000	</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.1</generator>
+
+<image>
+	<url>https://blog.stefcho.eu/wp-content/uploads/2018/10/cropped-0-32x32.jpg</url>
+	<title>RADIUS &#8211; Stefcho&#039;s Tech Blog</title>
+	<link>http://blog.stefcho.eu/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>pfSense 2.0 RC1 &#8211; Captive Portal with RADIUS Authentication and Vouchers</title>
+		<link>https://blog.stefcho.eu/pfsense-2-0-rc1-captive-portal-with-radius-authentication-and-vouchers/</link>
+				<comments>https://blog.stefcho.eu/pfsense-2-0-rc1-captive-portal-with-radius-authentication-and-vouchers/#comments</comments>
+				<pubDate>Sun, 03 Jul 2011 10:22:10 +0000</pubDate>
+		<dc:creator><![CDATA[Stefan]]></dc:creator>
+				<category><![CDATA[Technical]]></category>
+		<category><![CDATA[Captive Portal]]></category>
+		<category><![CDATA[Network]]></category>
+		<category><![CDATA[pfSense]]></category>
+		<category><![CDATA[pfSense 2.0 RC1]]></category>
+		<category><![CDATA[RADIUS]]></category>
+
+		<guid isPermaLink="false">http://stefcho.azurewebsites.net/?p=854</guid>
+				<description><![CDATA[<p>Introduction After we have setup Captive Portal and customized the pages in the previous posts. Now let’s wrap it up with the other two authentication methods. In this article we are going to configure RADIUS authentication for users, and create Vouchers for our Guests. Scenario In the previous post pfSense 2.0 RC1 &#8211; Configure Captive [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/pfsense-2-0-rc1-captive-portal-with-radius-authentication-and-vouchers/">pfSense 2.0 RC1 &#8211; Captive Portal with RADIUS Authentication and Vouchers</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p><strong>Introduction</strong></p>
+<p>After we have setup Captive Portal and customized the pages in the previous posts. Now let’s wrap it up with the other two authentication methods. In this article we are going to configure RADIUS authentication for users, and create Vouchers for our Guests.</p>
+<p><strong>Scenario</strong></p>
+<p>In the previous post <a href="http://stefcho.azurewebsites.net/?p=754" target="_blank">pfSense 2.0 RC1 &#8211; Configure Captive Portal for Guests</a>, we used Local User Manager for authentication. But managing users in multiple systems can be dull task. For that reason we could provide our Users with a way to use their Active Directory user accounts to authenticate against the Captive Portal.</p>
+<p>For our Guest We can create one Guest user account in Active Directory, but a better solution would be to provide them with one time use Voucher, that can be dispose of at the end of day.</p>
+<p><strong>Setup</strong></p>
+<p>The only change from our previous setup is the use of one Windows Server 2008 R2, with Active Directory Domain Services and Network Policy Server roles.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/Network-Diagram.png"><img class="aligncenter size-full wp-image-856" title="Network Diagram" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/Network-Diagram.png" alt="" width="623" height="346" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/Network-Diagram.png 623w, https://blog.stefcho.eu/wp-content/uploads/2011/07/Network-Diagram-300x166.png 300w" sizes="(max-width: 623px) 100vw, 623px" /></a></p>
+<p><strong>Configuration</strong></p>
+<p><strong> </strong></p>
+<p><strong>Network Policy Server (NPS) aka RADIUS Server, Configuration</strong></p>
+<p>We can reuse the setup of NPS from <a href="http://stefcho.azurewebsites.net/?p=545" target="_blank">OpenVPN with RADIUS authentication on pfSense 2.0 RC1</a>, up until the pfSense configuration. So I would not duplicate the steps here.</p>
+<p>On the pfSense side:</p>
+<p>Now go to the Services &gt; Captive Portal</p>
+<p>On the Captive Portal leaf, scroll down to the Authentication Section.</p>
+<p>As Authentication choose RADIUS Autentication</p>
+<p>Primary RADIUS server, IP address – 10.10.9.99</p>
+<p>Enter Shared Secret</p>
+<p>Optionally if you wish tick the send RADIUS accounting packets check box.</p>
+<p>And under RADIUS options, RADIUS NAS IP Attribute, select the LAN interface. I presume that behind this interface is your RADIUS server.</p>
+<p>Save the configuration.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-04.png"><img class="aligncenter size-full wp-image-860" title="pfSense 2.0 RC1 - Captive Portal RADIUS Authentication and Vouchers - 04" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-04.png" alt="" width="910" height="768" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-04.png 910w, https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-04-300x253.png 300w" sizes="(max-width: 910px) 100vw, 910px" /></a><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-05.png"><img class="aligncenter size-full wp-image-861" title="pfSense 2.0 RC1 - Captive Portal RADIUS Authentication and Vouchers - 05" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-05.png" alt="" width="910" height="768" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-05.png 910w, https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-05-300x253.png 300w" sizes="(max-width: 910px) 100vw, 910px" /></a></p>
+<p><strong>Vouchers Configuration</strong></p>
+<p>The first time you <strong>Enable</strong> the Vouchers, a pair of RSA keys are generated for you automatically.</p>
+<p><a href="../wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-01.png"><img class="aligncenter" title="pfSense 2.0 RC1 - Captive Portal RADIUS Authentication and Vouchers - 01" src="../wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-01.png" alt="" width="708" height="169"></a></p>
+<p>The pre generated RAS keys are 32 bits. &nbsp;For now we will use the default. But if you want to create 64 bit keys, you can check our the article Captive Portal Vouchers.</p>
+<p>For the Save Interval, the default value is 5 minutes, but I do not want the state of the vouchers to be kept in my configuration file, so I’ll change it to 0. Leave the rest of the fields to default values. Save the configuration.</p>
+<p><a href="../wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-02.png"><img class="aligncenter" title="pfSense 2.0 RC1 - Captive Portal RADIUS Authentication and Vouchers - 02" src="../wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-02.png" alt="" width="908" height="768"></a></p>
+<p>&nbsp;</p>
+<p><a href="../wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-03.png"><img class="aligncenter" title="pfSense 2.0 RC1 - Captive Portal RADIUS Authentication and Vouchers - 03" src="../wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-03.png" alt="" width="910" height="768"></a></p>
+<p>No let&#8217;s generate some vouchers, in the Voucher Rolls section, click on the &#8220;+&#8221; sign.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-06.png"><img class="aligncenter size-full wp-image-862" title="pfSense 2.0 RC1 - Captive Portal RADIUS Authentication and Vouchers - 06" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-06.png" alt="" width="787" height="103" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-06.png 787w, https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-06-300x39.png 300w" sizes="(max-width: 787px) 100vw, 787px" /></a></p>
+<p>On the new page, enter</p>
+<p>Roll# &#8211; 16, Minutes per Ticker &#8211; 460 (8 hours), Count &#8211; 10 this is the number of vouchers generated. You can put some comment for reference. Save it.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-07.png"><img class="aligncenter size-full wp-image-863" title="pfSense 2.0 RC1 - Captive Portal RADIUS Authentication and Vouchers - 07" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-07.png" alt="" width="913" height="619" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-07.png 913w, https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-07-300x203.png 300w" sizes="(max-width: 913px) 100vw, 913px" /></a></p>
+<p>Upon return to the Vouchers leaf, click on the circle with &#8220;i&#8221; in it to export the list of vouchers.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-08.png"><img class="aligncenter size-full wp-image-864" title="pfSense 2.0 RC1 - Captive Portal RADIUS Authentication and Vouchers - 08" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-08.png" alt="" width="910" height="284" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-08.png 910w, https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-08-300x93.png 300w" sizes="(max-width: 910px) 100vw, 910px" /></a></p>
+<p>The result should look similar to this:</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-09.png"><img class="aligncenter size-full wp-image-865" title="pfSense 2.0 RC1 - Captive Portal RADIUS Authentication and Vouchers - 09" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-09.png" alt="" width="604" height="323" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-09.png 604w, https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-09-300x160.png 300w" sizes="(max-width: 604px) 100vw, 604px" /></a></p>
+<p><strong>Testing</strong></p>
+<p>Open a browser on a computer connected to the Guest interface of pfSense, enter a web address, and you should be presented with the Captive Portal page.</p>
+<p>For RADIUS test , enter a user name and password, from the Active Directory, and you should successfuly log in.</p>
+<p>For test of the Voucher system, copy one of the rows from the csv file, and paste it in the Voucher field.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/Client-2011-07-03-13-06-33.png"><img class="aligncenter size-full wp-image-869" title="CpfSense 2.0 RC1 - Captive Portal RADIUS Authentication and Vouchers - 13" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/Client-2011-07-03-13-06-33.png" alt="" width="548" height="676" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/Client-2011-07-03-13-06-33.png 548w, https://blog.stefcho.eu/wp-content/uploads/2011/07/Client-2011-07-03-13-06-33-243x300.png 243w" sizes="(max-width: 548px) 100vw, 548px" /></a></p>
+<p>The web address that you typed should load, and you will have access for the next 8 hours.</p>
+<p>On the web GUI, you could check that the user is successfuly connected.</p>
+<p><strong><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-10.png"><img class="aligncenter size-full wp-image-866" title="pfSense 2.0 RC1 - Captive Portal RADIUS Authentication and Vouchers - 10" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-10.png" alt="" width="918" height="261" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-10.png 918w, https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-10-300x85.png 300w" sizes="(max-width: 918px) 100vw, 918px" /></a><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-10.png"><strong> </strong></a><strong> </strong></strong><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-10.png"><strong> </strong></a><strong><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-11.png"><img class="aligncenter size-full wp-image-867" title="pfSense 2.0 RC1 - Captive Portal RADIUS Authentication and Vouchers - 11" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-11.png" alt="" width="905" height="212" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-11.png 905w, https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-11-300x70.png 300w" sizes="(max-width: 905px) 100vw, 905px" /></a></strong></p>
+<p><strong><br />
+</strong></p>
+<p><strong>References</strong></p>
+<p><a href="http://doc.pfsense.org/index.php/Category:Captive_Portal" target="_blank">http://doc.pfsense.org/index.php/Category:Captive_Portal</a></p>
+<p>Aggregated all topics related to Captive Portal in pfSense Documentation</p>
+<p><a href="http://doc.pfsense.org/index.php/Captive_Portal_Vouchers" target="_blank">http://doc.pfsense.org/index.php/Captive_Portal_Vouchers</a></p>
+<p>Specific article for the Vouchers</p>
+<p><a href="http://doc.m0n0.ch/handbook/captiveportal.html" target="_blank">http://doc.m0n0.ch/handbook/captiveportal.html</a></p>
+<p>m0n0wall documentation of the Captive Portal, can be used for cross references.</p>
+<p><strong>Conclusion</strong></p>
+<p>During the last three posts we look at the basic configuration of Captive Portal in pfSense 2.0 RC1. Also we customized the Portal pages, and used different authentication methods available. Using this feature of pfSense you can safely provide Internet access to your users and guests. Of course there are many other options that we have not covered, but they are left for future posts.</p>
+<p>Thank you for reading, and I hope it was helpful.</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/pfsense-2-0-rc1-captive-portal-with-radius-authentication-and-vouchers/">pfSense 2.0 RC1 &#8211; Captive Portal with RADIUS Authentication and Vouchers</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></content:encoded>
+							<wfw:commentRss>https://blog.stefcho.eu/pfsense-2-0-rc1-captive-portal-with-radius-authentication-and-vouchers/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+							</item>
+		<item>
+		<title>OpenVPN with RADIUS authentication on pfSense 2.0 RC1</title>
+		<link>https://blog.stefcho.eu/openvpn-with-radius-authentication-on-pfsense-2-0-rc1/</link>
+				<comments>https://blog.stefcho.eu/openvpn-with-radius-authentication-on-pfsense-2-0-rc1/#comments</comments>
+				<pubDate>Tue, 26 Apr 2011 14:32:32 +0000</pubDate>
+		<dc:creator><![CDATA[Stefan]]></dc:creator>
+				<category><![CDATA[Technical]]></category>
+		<category><![CDATA[ADDS]]></category>
+		<category><![CDATA[OpenVPN]]></category>
+		<category><![CDATA[pfSense]]></category>
+		<category><![CDATA[RADIUS]]></category>
+		<category><![CDATA[Windows Server 2008 R2]]></category>
+
+		<guid isPermaLink="false">http://stefcho.azurewebsites.net/?p=545</guid>
+				<description><![CDATA[<p>This is the last post in the series of authentication alternatives for OpenVPN in pfSense 2.0 RC1. In the previous posts we looked at the local database of pfSense and Active Directory. Now we will use Remote Authentication Dial In User Service (RADIUS) instead. Again we will authenticate our users against Active Directory, as domain [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/openvpn-with-radius-authentication-on-pfsense-2-0-rc1/">OpenVPN with RADIUS authentication on pfSense 2.0 RC1</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>This is the last post in the series of authentication alternatives for OpenVPN in pfSense 2.0 RC1.</p>
+<p>In the previous posts we looked at the <a href="http://stefcho.azurewebsites.net/?p=492" target="_blank">local database</a> of pfSense and <a href="http://stefcho.azurewebsites.net/?p=528" target="_blank">Active Directory</a>. Now we will use Remote Authentication Dial In User Service (RADIUS) instead. Again we will authenticate our users against Active Directory, as domain user accounts.</p>
+<p>For that purpose we need to add <strong>Network Policy and Access Services</strong> server role to our Windows Server 2008 R2.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/04/ADDS-Add-NPS-roles-02.png"><img class="aligncenter size-full wp-image-546" title="ADDS Add NPS roles 02" src="https://blog.stefcho.eu/wp-content/uploads/2011/04/ADDS-Add-NPS-roles-02.png" alt="" width="801" height="576" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/04/ADDS-Add-NPS-roles-02.png 801w, https://blog.stefcho.eu/wp-content/uploads/2011/04/ADDS-Add-NPS-roles-02-300x215.png 300w" sizes="(max-width: 801px) 100vw, 801px" /></a></p>
+<p>From the Role services select only the<strong> Network Policy Server</strong>. We don’t need any of the other services.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/04/ADDS-Add-NPS-roles-03.png"><img class="aligncenter size-full wp-image-547" title="ADDS Add NPS roles 03" src="https://blog.stefcho.eu/wp-content/uploads/2011/04/ADDS-Add-NPS-roles-03.png" alt="" width="801" height="577" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/04/ADDS-Add-NPS-roles-03.png 801w, https://blog.stefcho.eu/wp-content/uploads/2011/04/ADDS-Add-NPS-roles-03-300x216.png 300w" sizes="(max-width: 801px) 100vw, 801px" /></a></p>
+<p>After the successful installation, open the Network Policy Server console. Under RADIUS Clients and Servers, create new RADIUS Client.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/04/NPS-add-new-RADIUS-Client-01.png"><img class="aligncenter size-full wp-image-548" title="NPS add new RADIUS Client 01" src="https://blog.stefcho.eu/wp-content/uploads/2011/04/NPS-add-new-RADIUS-Client-01.png" alt="" width="1024" height="244" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/04/NPS-add-new-RADIUS-Client-01.png 1024w, https://blog.stefcho.eu/wp-content/uploads/2011/04/NPS-add-new-RADIUS-Client-01-300x71.png 300w" sizes="(max-width: 1024px) 100vw, 1024px" /></a>Take note of the Friendly name of the client, we will use is later in the Network Policy. In our case pfSense.</p>
+<p>Enter the LAN address of pfSense, and Shared secret.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/04/NPS-add-new-RADIUS-Client-02-Details.png"><img class="aligncenter size-full wp-image-549" title="NPS add new RADIUS Client 02 Details" src="https://blog.stefcho.eu/wp-content/uploads/2011/04/NPS-add-new-RADIUS-Client-02-Details.png" alt="" width="746" height="654" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/04/NPS-add-new-RADIUS-Client-02-Details.png 746w, https://blog.stefcho.eu/wp-content/uploads/2011/04/NPS-add-new-RADIUS-Client-02-Details-300x263.png 300w" sizes="(max-width: 746px) 100vw, 746px" /></a></p>
+<p>Leave the default configuration on the Advanced leaf.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/04/NPS-add-new-RADIUS-Client-03-Details.png"><img class="aligncenter size-full wp-image-550" title="NPS add new RADIUS Client 03 Details" src="https://blog.stefcho.eu/wp-content/uploads/2011/04/NPS-add-new-RADIUS-Client-03-Details.png" alt="" width="745" height="656" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/04/NPS-add-new-RADIUS-Client-03-Details.png 745w, https://blog.stefcho.eu/wp-content/uploads/2011/04/NPS-add-new-RADIUS-Client-03-Details-300x264.png 300w" sizes="(max-width: 745px) 100vw, 745px" /></a></p>
+<p>We won’t configure additional Connection request Polies.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/04/NPS-Connection-Request-Poliocies.png"><img class="aligncenter size-full wp-image-551" title="NPS Connection Request Poliocies" src="https://blog.stefcho.eu/wp-content/uploads/2011/04/NPS-Connection-Request-Poliocies.png" alt="" width="1024" height="768" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/04/NPS-Connection-Request-Poliocies.png 1024w, https://blog.stefcho.eu/wp-content/uploads/2011/04/NPS-Connection-Request-Poliocies-300x225.png 300w, https://blog.stefcho.eu/wp-content/uploads/2011/04/NPS-Connection-Request-Poliocies-200x150.png 200w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></p>
+<p>A new Network Policy is needed, because the default<strong> Connections to other access servers</strong> block requests send by pfSense.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-01.png"><img class="aligncenter size-full wp-image-552" title="Network Policies New 01" src="https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-01.png" alt="" width="1024" height="768" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-01.png 1024w, https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-01-300x225.png 300w, https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-01-200x150.png 200w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></p>
+<p>Enter Policy name of your preference, and leave the default Type of network access server to Unspecified. Otherwise your authentication request will be denied.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-02.png"><img class="aligncenter size-full wp-image-553" title="Network Policies New 02" src="https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-02.png" alt="" width="687" height="588" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-02.png 687w, https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-02-300x256.png 300w" sizes="(max-width: 687px) 100vw, 687px" /></a>For Condition, let’s add the Client Friendly Name. In our case the client is our pfSense router. Type in here the Friendly name that you used in the RADIUS Client configuration. In our case pfSense.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-04.png"></a><a href="https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-05.png"><img class="aligncenter size-full wp-image-555" title="Network Policies New 05" src="https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-05.png" alt="" width="686" height="589" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-05.png 686w, https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-05-300x257.png 300w" sizes="(max-width: 686px) 100vw, 686px" /></a><br />
+On Specify Access Permission, leave Access granted.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-06.png"><img class="aligncenter size-full wp-image-556" title="Network Policies New 06" src="https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-06.png" alt="" width="689" height="586" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-06.png 689w, https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-06-300x255.png 300w" sizes="(max-width: 689px) 100vw, 689px" /></a></p>
+<p>As Authentication Methods add Unencrypted authentication (PAP, SPAP). The explanation follows later.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-07.png"><img class="aligncenter size-full wp-image-557" title="Network Policies New 07" src="https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-07.png" alt="" width="688" height="586" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-07.png 688w, https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-07-300x255.png 300w" sizes="(max-width: 688px) 100vw, 688px" /></a>Leave constraints to defaults, if you don’t have some specific requirements. The same is valid for Settings too.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-08.png"><img class="aligncenter size-full wp-image-558" title="Network Policies New 08" src="https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-08.png" alt="" width="687" height="585" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-08.png 687w, https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-08-300x255.png 300w" sizes="(max-width: 687px) 100vw, 687px" /></a><a href="https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-09.png"><img class="aligncenter size-full wp-image-559" title="Network Policies New 09" src="https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-09.png" alt="" width="687" height="588" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-09.png 687w, https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-09-300x256.png 300w" sizes="(max-width: 687px) 100vw, 687px" /></a></p>
+<p>All done</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-10.png"><img class="aligncenter size-full wp-image-560" title="Network Policies New 10" src="https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-10.png" alt="" width="690" height="588" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-10.png 690w, https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-10-300x255.png 300w" sizes="(max-width: 690px) 100vw, 690px" /></a><a href="https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-11.png"><img class="aligncenter size-full wp-image-561" title="Network Policies New 11" src="https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-11.png" alt="" width="1024" height="768" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-11.png 1024w, https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-11-300x225.png 300w, https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-11-200x150.png 200w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></p>
+<p>On your pfSense go to System &gt; User Management &gt; Servers add new.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-Configure-RADIUS-Authentication-01.png"><img class="aligncenter size-full wp-image-562" title="pfSense Configure RADIUS Authentication 01" src="https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-Configure-RADIUS-Authentication-01.png" alt="" width="1024" height="680" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-Configure-RADIUS-Authentication-01.png 1024w, https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-Configure-RADIUS-Authentication-01-300x199.png 300w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></p>
+<p>Enter descriptive name of your liking. As type select Radius. Enter the IP address of the server that we just configure to be our RADIUS server. Under Services offered, leave the default Authentication and Accounting. Take note that we have not configured accounting on our NPS service, but you could easily enable it. The default ports are fine. If you have Windows Firewall, or some other kind of firewall service running, make sure required ports are open.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-Configure-RADIUS-Authentication-02.png"><img class="aligncenter size-full wp-image-563" title="pfSense Configure RADIUS Authentication 02" src="https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-Configure-RADIUS-Authentication-02.png" alt="" width="1024" height="702" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-Configure-RADIUS-Authentication-02.png 1024w, https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-Configure-RADIUS-Authentication-02-300x205.png 300w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></p>
+<p>It is time to go to your OpenVPN Server configuration and select our new RADIUS provider as <strong>Backend for authentication</strong>.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-OpenVPN-Server-Authentication-configuration.png"><img class="aligncenter size-full wp-image-564" title="pfSense OpenVPN Server Authentication configuration" src="https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-OpenVPN-Server-Authentication-configuration.png" alt="" width="1024" height="549" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-OpenVPN-Server-Authentication-configuration.png 1024w, https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-OpenVPN-Server-Authentication-configuration-300x160.png 300w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></p>
+<p>Now if you make test connection with test user, take a look at the security logs on the RADIUS server.</p>
+<p>You will see RADIUS Client Friendly Name match out configuration, and which Policies were used,<a href="https://blog.stefcho.eu/wp-content/uploads/2011/04/Verify-Successful-connection-in-the-Security-Logs-02.png"><img class="aligncenter size-full wp-image-565" title="Verify Successful connection in  the  Security Logs 02" src="https://blog.stefcho.eu/wp-content/uploads/2011/04/Verify-Successful-connection-in-the-Security-Logs-02.png" alt="" width="1024" height="768" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/04/Verify-Successful-connection-in-the-Security-Logs-02.png 1024w, https://blog.stefcho.eu/wp-content/uploads/2011/04/Verify-Successful-connection-in-the-Security-Logs-02-300x225.png 300w, https://blog.stefcho.eu/wp-content/uploads/2011/04/Verify-Successful-connection-in-the-Security-Logs-02-200x150.png 200w" sizes="(max-width: 1024px) 100vw, 1024px" /></a>and that the Authentication Type is PAP, that is why we added it to the policy earlier.<a href="https://blog.stefcho.eu/wp-content/uploads/2011/04/Verify-Successful-connection-in-the-Security-Logs-04.png"><img class="aligncenter size-full wp-image-566" title="Verify Successful connection in  the  Security Logs 04" src="https://blog.stefcho.eu/wp-content/uploads/2011/04/Verify-Successful-connection-in-the-Security-Logs-04.png" alt="" width="1024" height="768" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/04/Verify-Successful-connection-in-the-Security-Logs-04.png 1024w, https://blog.stefcho.eu/wp-content/uploads/2011/04/Verify-Successful-connection-in-the-Security-Logs-04-300x225.png 300w, https://blog.stefcho.eu/wp-content/uploads/2011/04/Verify-Successful-connection-in-the-Security-Logs-04-200x150.png 200w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></p>
+<p>That’s it.</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/openvpn-with-radius-authentication-on-pfsense-2-0-rc1/">OpenVPN with RADIUS authentication on pfSense 2.0 RC1</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></content:encoded>
+							<wfw:commentRss>https://blog.stefcho.eu/openvpn-with-radius-authentication-on-pfsense-2-0-rc1/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+							</item>
+	</channel>
+</rss>

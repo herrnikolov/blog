@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Windows Server 8 &#8211; Stefcho&#039;s Tech Blog</title>
+	<atom:link href="https://blog.stefcho.eu/tag/windows-server-8/feed/" rel="self" type="application/rss+xml" />
+	<link>http://blog.stefcho.eu/</link>
+	<description>Software Development, Cloud, DevOps and PfSense</description>
+	<lastBuildDate>
+	Tue, 05 Mar 2019 12:03:41 +0000	</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.1</generator>
+
+<image>
+	<url>https://blog.stefcho.eu/wp-content/uploads/2018/10/cropped-0-32x32.jpg</url>
+	<title>Windows Server 8 &#8211; Stefcho&#039;s Tech Blog</title>
+	<link>http://blog.stefcho.eu/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Windows Server 8 on VM Workstation 8 with Hyper-V Role</title>
+		<link>https://blog.stefcho.eu/windows-server-8-on-vm-workstation-8-with-hyper-v-role/</link>
+				<comments>https://blog.stefcho.eu/windows-server-8-on-vm-workstation-8-with-hyper-v-role/#comments</comments>
+				<pubDate>Sun, 09 Oct 2011 08:24:11 +0000</pubDate>
+		<dc:creator><![CDATA[Stefan]]></dc:creator>
+				<category><![CDATA[Technical]]></category>
+		<category><![CDATA[Hyper-V]]></category>
+		<category><![CDATA[VMWare]]></category>
+		<category><![CDATA[Windows Server 8]]></category>
+		<category><![CDATA[Workstation 8]]></category>
+
+		<guid isPermaLink="false">http://stefcho.azurewebsites.net/?p=976</guid>
+				<description><![CDATA[<p>As you probably know, on the Build conference was announced the Developer Previews of Windows 8 and Windows Server 8. Because of the numerous new features in Hyper-V 3.0 I want to check them personally. Because I do not have two spare boxes on which to install them, virtualization comes in play. Before Hyper-V role [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/windows-server-8-on-vm-workstation-8-with-hyper-v-role/">Windows Server 8 on VM Workstation 8 with Hyper-V Role</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>As you probably know, on the Build conference was announced the Developer Previews of Windows 8 and Windows Server 8.</p>
+<p>Because of the numerous new features in Hyper-V 3.0 I want to check them personally. Because I do not have two spare boxes on which to install them, virtualization comes in play.</p>
+<p>Before Hyper-V role is added to the server, there is configuration to be made on the Virtual Machine:</p>
+<p>The best description of the process that I find is in this article:</p>
+<p><a href="http://www.veeam.com/blog/nesting-hyper-v-with-vmware-workstation-8-and-esxi-5.html" target="_blank">Nesting Hyper-V with VMware Workstation 8 and ESXi 5</a></p>
+<p>In the Processors configuration <strong>Virtualize Intel VT-x/EPT</strong> must be checked,</p>
+<p>And one line must be added to the configuration file vmx:</p>
+<blockquote><p>hypervisor.cpuid.v0 = “FALSE”</p></blockquote>
+<p>That’s it, now you can add Hyper-V role and play with it.</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/windows-server-8-on-vm-workstation-8-with-hyper-v-role/">Windows Server 8 on VM Workstation 8 with Hyper-V Role</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></content:encoded>
+							<wfw:commentRss>https://blog.stefcho.eu/windows-server-8-on-vm-workstation-8-with-hyper-v-role/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+							</item>
+	</channel>
+</rss>

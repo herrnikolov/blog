@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Windows Server 2012 R2 &#8211; Stefcho&#039;s Tech Blog</title>
+	<atom:link href="https://blog.stefcho.eu/tag/windows-server-2012-r2/feed/" rel="self" type="application/rss+xml" />
+	<link>http://blog.stefcho.eu/</link>
+	<description>Software Development, Cloud, DevOps and PfSense</description>
+	<lastBuildDate>
+	Tue, 05 Mar 2019 12:03:41 +0000	</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.1</generator>
+
+<image>
+	<url>https://blog.stefcho.eu/wp-content/uploads/2018/10/cropped-0-32x32.jpg</url>
+	<title>Windows Server 2012 R2 &#8211; Stefcho&#039;s Tech Blog</title>
+	<link>http://blog.stefcho.eu/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Upgrade from pfSense 2.1.5 to 2.2 on Hyper-V</title>
+		<link>https://blog.stefcho.eu/upgrade-from-pfsense-2-1-5-to-2-2-on-hyper-v/</link>
+				<comments>https://blog.stefcho.eu/upgrade-from-pfsense-2-1-5-to-2-2-on-hyper-v/#comments</comments>
+				<pubDate>Mon, 26 Jan 2015 19:26:30 +0000</pubDate>
+		<dc:creator><![CDATA[Stefan]]></dc:creator>
+				<category><![CDATA[Technical]]></category>
+		<category><![CDATA[Hyper-V]]></category>
+		<category><![CDATA[pfSense 2.2]]></category>
+		<category><![CDATA[Windows Server 2012 R2]]></category>
+
+		<guid isPermaLink="false">http://stefcho.azurewebsites.net/?p=990</guid>
+				<description><![CDATA[<p>After the release of pfSense 2.2 it was time to upgrade some installations. They resides on Windows Server 2012 R2 Hyper-V. After the first reboot my test machine did not come up. The screen looks like this: The error message is quite interesting at first: Mounting from ufs:/dev/ad0s1a failed with error 19. After little goggling [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/upgrade-from-pfsense-2-1-5-to-2-2-on-hyper-v/">Upgrade from pfSense 2.1.5 to 2.2 on Hyper-V</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>After the release of pfSense 2.2 it was time to upgrade some installations. They resides on Windows Server 2012 R2 Hyper-V. After the first reboot my test machine did not come up. The screen looks like this:</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-01.png"><img class="alignnone wp-image-1001 size-full" src="https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-01.png" alt="pfSense 2.2 Upgrade 01" width="645" height="400" srcset="https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-01.png 645w, https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-01-300x186.png 300w" sizes="(max-width: 645px) 100vw, 645px" /></a>The error message is quite interesting at first:</p>
+<p>Mounting from ufs:/dev/ad0s1a failed with error 19.</p>
+<p>After little goggling I’ve found this article:</p>
+<p><a href="http://mundofreebsd.blogspot.com/2012/09/mounting-from-ufsdevadaxs1a-failed-with.html" target="_blank">Mounting from ufs:/dev/adaxs1a failed with error 19.</a></p>
+<p>and after simple entering of one ? the answer to the problem was in front of me:</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-02.png"><img class="alignnone wp-image-1000 size-full" src="https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-02.png" alt="pfSense 2.2 Upgrade 02" width="637" height="66" srcset="https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-02.png 637w, https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-02-300x31.png 300w" sizes="(max-width: 637px) 100vw, 637px" /></a>The disk names were change from</p>
+<p>ad0s1a</p>
+<p>to</p>
+<p>da0s1a</p>
+<p>So to boot I’ve typed:</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-03.png"><img class="alignnone wp-image-999 size-full" src="https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-03.png" alt="pfSense 2.2 Upgrade 03" width="248" height="22" /></a>and voilà<a href="https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-04.png"><img class="alignnone wp-image-998 size-full" src="https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-04.png" alt="pfSense 2.2 Upgrade 04" width="637" height="401" srcset="https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-04.png 637w, https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-04-300x189.png 300w" sizes="(max-width: 637px) 100vw, 637px" /></a></p>
+<p>Now the only thing that is left if to make changes to the boot configuration</p>
+<p>You have the option to for form console</p>
+<p>8) Shell<a href="https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-05.png"><img class="alignnone wp-image-997 size-full" src="https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-05.png" alt="pfSense 2.2 Upgrade 05" width="643" height="399" srcset="https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-05.png 643w, https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-05-300x186.png 300w" sizes="(max-width: 643px) 100vw, 643px" /></a>and edit the file <a href="https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-06.png"><img class="alignnone wp-image-996 size-full" src="https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-06.png" alt="pfSense 2.2 Upgrade 06" width="201" height="18" srcset="https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-06.png 201w, https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-06-200x18.png 200w" sizes="(max-width: 201px) 100vw, 201px" /></a>Mine looked like this:<a href="https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-07.png"><img class="alignnone wp-image-995 size-full" src="https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-07.png" alt="pfSense 2.2 Upgrade 07" width="643" height="62" srcset="https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-07.png 643w, https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-07-300x29.png 300w" sizes="(max-width: 643px) 100vw, 643px" /></a>and after the change like this<a href="https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-08.png"><img class="alignnone wp-image-994 size-full" src="https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-08.png" alt="pfSense 2.2 Upgrade 08" width="638" height="64" srcset="https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-08.png 638w, https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-08-300x30.png 300w" sizes="(max-width: 638px) 100vw, 638px" /></a></p>
+<p>Of if you will you can make the change using the web gui</p>
+<p>go in the Diagnostics menu and selecting the Edit File<a href="https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-09.png"><img class="alignnone size-full wp-image-993" src="https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-09.png" alt="pfSense 2.2 Upgrade 09" width="139" height="151" /></a>From there you just naviage to the &#8220;/etc/fstab&#8221; and edit the text.<a href="https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-10.png"><img class="alignnone wp-image-992 size-full" src="https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-10.png" alt="pfSense 2.2 Upgrade 10" width="814" height="238" srcset="https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-10.png 814w, https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-10-300x88.png 300w" sizes="(max-width: 814px) 100vw, 814px" /></a>After changes test that the system is booting from the correct partition.</p>
+<p>&nbsp;</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/upgrade-from-pfsense-2-1-5-to-2-2-on-hyper-v/">Upgrade from pfSense 2.1.5 to 2.2 on Hyper-V</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></content:encoded>
+							<wfw:commentRss>https://blog.stefcho.eu/upgrade-from-pfsense-2-1-5-to-2-2-on-hyper-v/feed/</wfw:commentRss>
+		<slash:comments>10</slash:comments>
+							</item>
+	</channel>
+</rss>

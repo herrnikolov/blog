@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>pfSense 2.0 RC1 &#8211; Stefcho&#039;s Tech Blog</title>
+	<atom:link href="https://blog.stefcho.eu/tag/pfsense-2-0-rc1/feed/" rel="self" type="application/rss+xml" />
+	<link>http://blog.stefcho.eu/</link>
+	<description>Software Development, Cloud, DevOps and PfSense</description>
+	<lastBuildDate>
+	Tue, 05 Mar 2019 12:03:41 +0000	</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.1</generator>
+
+<image>
+	<url>https://blog.stefcho.eu/wp-content/uploads/2018/10/cropped-0-32x32.jpg</url>
+	<title>pfSense 2.0 RC1 &#8211; Stefcho&#039;s Tech Blog</title>
+	<link>http://blog.stefcho.eu/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Install Open VM Tools package on pfSense 2.0 RC3 for VMWare</title>
+		<link>https://blog.stefcho.eu/install-open-vm-tools-package-on-pfsense-2-0-rc3-for-vmware/</link>
+				<comments>https://blog.stefcho.eu/install-open-vm-tools-package-on-pfsense-2-0-rc3-for-vmware/#comments</comments>
+				<pubDate>Sat, 30 Jul 2011 12:22:53 +0000</pubDate>
+		<dc:creator><![CDATA[Stefan]]></dc:creator>
+				<category><![CDATA[Technical]]></category>
+		<category><![CDATA[pfSense]]></category>
+		<category><![CDATA[pfSense 2.0 RC1]]></category>
+		<category><![CDATA[pfSense 2.0 RC3]]></category>
+		<category><![CDATA[VMWare]]></category>
+
+		<guid isPermaLink="false">http://stefcho.azurewebsites.net/?p=886</guid>
+				<description><![CDATA[<p>In my previous posts we’ve Install pfSense 2.0 RC1 on VMWare Workstation 7 and adjusted the memory of the Virtual Machines in pfSense 2.0 RC1 on VMware Workstation 7.1.4 &#8211; RAM size. Now let’s continue with the setup of the Virtual Machine with the installation of VMware Tools for pfSense. For that purpose go to [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/install-open-vm-tools-package-on-pfsense-2-0-rc3-for-vmware/">Install Open VM Tools package on pfSense 2.0 RC3 for VMWare</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>In my previous posts we’ve <a href="http://stefcho.azurewebsites.net/?p=431" target="_blank">Install pfSense 2.0 RC1 on VMWare Workstation 7</a> and adjusted the memory of the Virtual Machines in <a href="http://stefcho.azurewebsites.net/?p=646" target="_blank">pfSense 2.0 RC1 on VMware Workstation 7.1.4 &#8211; RAM size</a>.</p>
+<p>Now let’s continue with the setup of the Virtual Machine with the installation of VMware Tools for pfSense.</p>
+<p>For that purpose go to System &gt; Packages</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-System-Package.png"><img class="aligncenter size-full wp-image-887" title="Install Open VM Tools package on pfSense 2.0 RC3 for VM Ware - System - Package" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-System-Package.png" alt="" width="224" height="278"></a></p>
+<p>, and on the Available Packages find Open-VM-Tools. Click on the “+” next to it and start the installation.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Install-The-Package.png"><img class="aligncenter size-full wp-image-888" title="Install Open VM Tools package on pfSense 2.0 RC3 for VM Ware - Install The Package" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Install-The-Package.png" alt="" width="911" height="405" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Install-The-Package.png 911w, https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Install-The-Package-300x133.png 300w" sizes="(max-width: 911px) 100vw, 911px" /></a><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Progress.png"><img class="aligncenter size-full wp-image-889" title="Install Open VM Tools package on pfSense 2.0 RC3 for VM Ware - Progress" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Progress.png" alt="" width="831" height="348" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Progress.png 831w, https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Progress-300x125.png 300w" sizes="(max-width: 831px) 100vw, 831px" /></a></p>
+<p>Wait it to finish, and on the Installed packages you should see it listed. Click on the link below Package Info, to see the instructions how to verify successful installation.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Package-Installed.png"><img class="aligncenter size-full wp-image-890" title="Install Open VM Tools package on pfSense 2.0 RC3 for VM Ware - Package Installed" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Package-Installed.png" alt="" width="895" height="244" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Package-Installed.png 895w, https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Package-Installed-300x81.png 300w" sizes="(max-width: 895px) 100vw, 895px" /></a>The operation boils down to connecting to the console and executing first and monitor the output.</p>
+<blockquote><p>ps ax|grep vmware</p></blockquote>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Verify-I.png"><img class="aligncenter size-full wp-image-891" title="Install Open VM Tools package on pfSense 2.0 RC3 for VM Ware - Verify I" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Verify-I.png" alt="" width="1024" height="768" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Verify-I.png 1024w, https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Verify-I-300x225.png 300w, https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Verify-I-200x150.png 200w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></p>
+<p>&nbsp;</p>
+<blockquote>
+<pre>kldstat
+</pre>
+</blockquote>
+<pre><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Verify-II.png"><img class="aligncenter size-full wp-image-892" title="Install Open VM Tools package on pfSense 2.0 RC3 for VM Ware - Verify II" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Verify-II.png" alt="" width="1024" height="768" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Verify-II.png 1024w, https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Verify-II-300x225.png 300w, https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Verify-II-200x150.png 200w" sizes="(max-width: 1024px) 100vw, 1024px" /></a>
+That's it.</pre>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/install-open-vm-tools-package-on-pfsense-2-0-rc3-for-vmware/">Install Open VM Tools package on pfSense 2.0 RC3 for VMWare</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></content:encoded>
+							<wfw:commentRss>https://blog.stefcho.eu/install-open-vm-tools-package-on-pfsense-2-0-rc3-for-vmware/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+							</item>
+		<item>
+		<title>Upgrade pfSense 2.0 from RC1 to RC3.</title>
+		<link>https://blog.stefcho.eu/upgrade-pfsense-2-0-from-rc1-to-rc3/</link>
+				<comments>https://blog.stefcho.eu/upgrade-pfsense-2-0-from-rc1-to-rc3/#comments</comments>
+				<pubDate>Sat, 23 Jul 2011 07:28:44 +0000</pubDate>
+		<dc:creator><![CDATA[Stefan]]></dc:creator>
+				<category><![CDATA[Technical]]></category>
+		<category><![CDATA[Network]]></category>
+		<category><![CDATA[pfSense]]></category>
+		<category><![CDATA[pfSense 2.0 RC1]]></category>
+		<category><![CDATA[pfSense 2.0 RC3]]></category>
+
+		<guid isPermaLink="false">http://stefcho.azurewebsites.net/?p=878</guid>
+				<description><![CDATA[<p>In this post we will upgrade pfSense 2.0 from RC1 to RC3. For the purpose go to this page with the news about the RC3 release: 2.0-RC3 now available! and click on the Upgrades link: http://www.pfsense.org/mirror.php?section=updates select a mirror and download the image that suits you, in my case it was: pfSense-Full-Update-2.0-RC3-i386-20110621-1542.tgz Now go to [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/upgrade-pfsense-2-0-from-rc1-to-rc3/">Upgrade pfSense 2.0 from RC1 to RC3.</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>In this post we will upgrade pfSense 2.0 from RC1 to RC3.</p>
+<p>For the purpose go to this page with the news about the RC3 release:</p>
+<p><a href="http://blog.pfsense.org/?p=589" target="_blank">2.0-RC3 now available!</a></p>
+<p>and click on the Upgrades link: <a href="http://www.pfsense.org/mirror.php?section=updates" target="_blank">http://www.pfsense.org/mirror.php?section=updates</a></p>
+<p>select a mirror and download the image that suits you, in my case it was:</p>
+<p><a href="http://mirror.qubenet.net/mirror/pfsense/updates/pfSense-Full-Update-2.0-RC3-i386-20110621-1542.tgz" target="_blank"> pfSense-Full-Update-2.0-RC3-i386-20110621-1542.tgz</a></p>
+<p>Now go to <strong>System</strong> &gt; <strong>Firmware </strong>and click on <strong>Enable Firmware uploads</strong>.</p>
+<p>Click on <strong>Choose File</strong> button, select the file that we just downloaded, and click on <strong>Upgrade Firmware</strong> button.</p>
+<p>Wait for the firmware upgrade process complete.</p>
+<p>That’s it. If you want more graphical representation, I’ve just uploaded a video here with the whole process.</p>
+<p>&nbsp;<br />
+<iframe width="640" height="510" src="http://www.youtube.com/embed/bJmYV6GRLnw?rel=0" frameborder="0" allowfullscreen=""></iframe><br />
+&nbsp;</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/upgrade-pfsense-2-0-from-rc1-to-rc3/">Upgrade pfSense 2.0 from RC1 to RC3.</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></content:encoded>
+							<wfw:commentRss>https://blog.stefcho.eu/upgrade-pfsense-2-0-from-rc1-to-rc3/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+							</item>
+		<item>
+		<title>pfSense 2.0 RC1 &#8211; Captive Portal with RADIUS Authentication and Vouchers</title>
+		<link>https://blog.stefcho.eu/pfsense-2-0-rc1-captive-portal-with-radius-authentication-and-vouchers/</link>
+				<comments>https://blog.stefcho.eu/pfsense-2-0-rc1-captive-portal-with-radius-authentication-and-vouchers/#comments</comments>
+				<pubDate>Sun, 03 Jul 2011 10:22:10 +0000</pubDate>
+		<dc:creator><![CDATA[Stefan]]></dc:creator>
+				<category><![CDATA[Technical]]></category>
+		<category><![CDATA[Captive Portal]]></category>
+		<category><![CDATA[Network]]></category>
+		<category><![CDATA[pfSense]]></category>
+		<category><![CDATA[pfSense 2.0 RC1]]></category>
+		<category><![CDATA[RADIUS]]></category>
+
+		<guid isPermaLink="false">http://stefcho.azurewebsites.net/?p=854</guid>
+				<description><![CDATA[<p>Introduction After we have setup Captive Portal and customized the pages in the previous posts. Now let’s wrap it up with the other two authentication methods. In this article we are going to configure RADIUS authentication for users, and create Vouchers for our Guests. Scenario In the previous post pfSense 2.0 RC1 &#8211; Configure Captive [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/pfsense-2-0-rc1-captive-portal-with-radius-authentication-and-vouchers/">pfSense 2.0 RC1 &#8211; Captive Portal with RADIUS Authentication and Vouchers</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p><strong>Introduction</strong></p>
+<p>After we have setup Captive Portal and customized the pages in the previous posts. Now let’s wrap it up with the other two authentication methods. In this article we are going to configure RADIUS authentication for users, and create Vouchers for our Guests.</p>
+<p><strong>Scenario</strong></p>
+<p>In the previous post <a href="http://stefcho.azurewebsites.net/?p=754" target="_blank">pfSense 2.0 RC1 &#8211; Configure Captive Portal for Guests</a>, we used Local User Manager for authentication. But managing users in multiple systems can be dull task. For that reason we could provide our Users with a way to use their Active Directory user accounts to authenticate against the Captive Portal.</p>
+<p>For our Guest We can create one Guest user account in Active Directory, but a better solution would be to provide them with one time use Voucher, that can be dispose of at the end of day.</p>
+<p><strong>Setup</strong></p>
+<p>The only change from our previous setup is the use of one Windows Server 2008 R2, with Active Directory Domain Services and Network Policy Server roles.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/Network-Diagram.png"><img class="aligncenter size-full wp-image-856" title="Network Diagram" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/Network-Diagram.png" alt="" width="623" height="346" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/Network-Diagram.png 623w, https://blog.stefcho.eu/wp-content/uploads/2011/07/Network-Diagram-300x166.png 300w" sizes="(max-width: 623px) 100vw, 623px" /></a></p>
+<p><strong>Configuration</strong></p>
+<p><strong> </strong></p>
+<p><strong>Network Policy Server (NPS) aka RADIUS Server, Configuration</strong></p>
+<p>We can reuse the setup of NPS from <a href="http://stefcho.azurewebsites.net/?p=545" target="_blank">OpenVPN with RADIUS authentication on pfSense 2.0 RC1</a>, up until the pfSense configuration. So I would not duplicate the steps here.</p>
+<p>On the pfSense side:</p>
+<p>Now go to the Services &gt; Captive Portal</p>
+<p>On the Captive Portal leaf, scroll down to the Authentication Section.</p>
+<p>As Authentication choose RADIUS Autentication</p>
+<p>Primary RADIUS server, IP address – 10.10.9.99</p>
+<p>Enter Shared Secret</p>
+<p>Optionally if you wish tick the send RADIUS accounting packets check box.</p>
+<p>And under RADIUS options, RADIUS NAS IP Attribute, select the LAN interface. I presume that behind this interface is your RADIUS server.</p>
+<p>Save the configuration.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-04.png"><img class="aligncenter size-full wp-image-860" title="pfSense 2.0 RC1 - Captive Portal RADIUS Authentication and Vouchers - 04" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-04.png" alt="" width="910" height="768" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-04.png 910w, https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-04-300x253.png 300w" sizes="(max-width: 910px) 100vw, 910px" /></a><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-05.png"><img class="aligncenter size-full wp-image-861" title="pfSense 2.0 RC1 - Captive Portal RADIUS Authentication and Vouchers - 05" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-05.png" alt="" width="910" height="768" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-05.png 910w, https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-05-300x253.png 300w" sizes="(max-width: 910px) 100vw, 910px" /></a></p>
+<p><strong>Vouchers Configuration</strong></p>
+<p>The first time you <strong>Enable</strong> the Vouchers, a pair of RSA keys are generated for you automatically.</p>
+<p><a href="../wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-01.png"><img class="aligncenter" title="pfSense 2.0 RC1 - Captive Portal RADIUS Authentication and Vouchers - 01" src="../wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-01.png" alt="" width="708" height="169"></a></p>
+<p>The pre generated RAS keys are 32 bits. &nbsp;For now we will use the default. But if you want to create 64 bit keys, you can check our the article Captive Portal Vouchers.</p>
+<p>For the Save Interval, the default value is 5 minutes, but I do not want the state of the vouchers to be kept in my configuration file, so I’ll change it to 0. Leave the rest of the fields to default values. Save the configuration.</p>
+<p><a href="../wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-02.png"><img class="aligncenter" title="pfSense 2.0 RC1 - Captive Portal RADIUS Authentication and Vouchers - 02" src="../wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-02.png" alt="" width="908" height="768"></a></p>
+<p>&nbsp;</p>
+<p><a href="../wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-03.png"><img class="aligncenter" title="pfSense 2.0 RC1 - Captive Portal RADIUS Authentication and Vouchers - 03" src="../wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-03.png" alt="" width="910" height="768"></a></p>
+<p>No let&#8217;s generate some vouchers, in the Voucher Rolls section, click on the &#8220;+&#8221; sign.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-06.png"><img class="aligncenter size-full wp-image-862" title="pfSense 2.0 RC1 - Captive Portal RADIUS Authentication and Vouchers - 06" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-06.png" alt="" width="787" height="103" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-06.png 787w, https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-06-300x39.png 300w" sizes="(max-width: 787px) 100vw, 787px" /></a></p>
+<p>On the new page, enter</p>
+<p>Roll# &#8211; 16, Minutes per Ticker &#8211; 460 (8 hours), Count &#8211; 10 this is the number of vouchers generated. You can put some comment for reference. Save it.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-07.png"><img class="aligncenter size-full wp-image-863" title="pfSense 2.0 RC1 - Captive Portal RADIUS Authentication and Vouchers - 07" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-07.png" alt="" width="913" height="619" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-07.png 913w, https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-07-300x203.png 300w" sizes="(max-width: 913px) 100vw, 913px" /></a></p>
+<p>Upon return to the Vouchers leaf, click on the circle with &#8220;i&#8221; in it to export the list of vouchers.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-08.png"><img class="aligncenter size-full wp-image-864" title="pfSense 2.0 RC1 - Captive Portal RADIUS Authentication and Vouchers - 08" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-08.png" alt="" width="910" height="284" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-08.png 910w, https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-08-300x93.png 300w" sizes="(max-width: 910px) 100vw, 910px" /></a></p>
+<p>The result should look similar to this:</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-09.png"><img class="aligncenter size-full wp-image-865" title="pfSense 2.0 RC1 - Captive Portal RADIUS Authentication and Vouchers - 09" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-09.png" alt="" width="604" height="323" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-09.png 604w, https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-09-300x160.png 300w" sizes="(max-width: 604px) 100vw, 604px" /></a></p>
+<p><strong>Testing</strong></p>
+<p>Open a browser on a computer connected to the Guest interface of pfSense, enter a web address, and you should be presented with the Captive Portal page.</p>
+<p>For RADIUS test , enter a user name and password, from the Active Directory, and you should successfuly log in.</p>
+<p>For test of the Voucher system, copy one of the rows from the csv file, and paste it in the Voucher field.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/Client-2011-07-03-13-06-33.png"><img class="aligncenter size-full wp-image-869" title="CpfSense 2.0 RC1 - Captive Portal RADIUS Authentication and Vouchers - 13" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/Client-2011-07-03-13-06-33.png" alt="" width="548" height="676" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/Client-2011-07-03-13-06-33.png 548w, https://blog.stefcho.eu/wp-content/uploads/2011/07/Client-2011-07-03-13-06-33-243x300.png 243w" sizes="(max-width: 548px) 100vw, 548px" /></a></p>
+<p>The web address that you typed should load, and you will have access for the next 8 hours.</p>
+<p>On the web GUI, you could check that the user is successfuly connected.</p>
+<p><strong><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-10.png"><img class="aligncenter size-full wp-image-866" title="pfSense 2.0 RC1 - Captive Portal RADIUS Authentication and Vouchers - 10" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-10.png" alt="" width="918" height="261" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-10.png 918w, https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-10-300x85.png 300w" sizes="(max-width: 918px) 100vw, 918px" /></a><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-10.png"><strong> </strong></a><strong> </strong></strong><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-10.png"><strong> </strong></a><strong><a href="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-11.png"><img class="aligncenter size-full wp-image-867" title="pfSense 2.0 RC1 - Captive Portal RADIUS Authentication and Vouchers - 11" src="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-11.png" alt="" width="905" height="212" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-11.png 905w, https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-11-300x70.png 300w" sizes="(max-width: 905px) 100vw, 905px" /></a></strong></p>
+<p><strong><br />
+</strong></p>
+<p><strong>References</strong></p>
+<p><a href="http://doc.pfsense.org/index.php/Category:Captive_Portal" target="_blank">http://doc.pfsense.org/index.php/Category:Captive_Portal</a></p>
+<p>Aggregated all topics related to Captive Portal in pfSense Documentation</p>
+<p><a href="http://doc.pfsense.org/index.php/Captive_Portal_Vouchers" target="_blank">http://doc.pfsense.org/index.php/Captive_Portal_Vouchers</a></p>
+<p>Specific article for the Vouchers</p>
+<p><a href="http://doc.m0n0.ch/handbook/captiveportal.html" target="_blank">http://doc.m0n0.ch/handbook/captiveportal.html</a></p>
+<p>m0n0wall documentation of the Captive Portal, can be used for cross references.</p>
+<p><strong>Conclusion</strong></p>
+<p>During the last three posts we look at the basic configuration of Captive Portal in pfSense 2.0 RC1. Also we customized the Portal pages, and used different authentication methods available. Using this feature of pfSense you can safely provide Internet access to your users and guests. Of course there are many other options that we have not covered, but they are left for future posts.</p>
+<p>Thank you for reading, and I hope it was helpful.</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/pfsense-2-0-rc1-captive-portal-with-radius-authentication-and-vouchers/">pfSense 2.0 RC1 &#8211; Captive Portal with RADIUS Authentication and Vouchers</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></content:encoded>
+							<wfw:commentRss>https://blog.stefcho.eu/pfsense-2-0-rc1-captive-portal-with-radius-authentication-and-vouchers/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+							</item>
+		<item>
+		<title>pfSense 2.0 RC1 &#8211; Customize Captive Portal Pages and implement HTTPS</title>
+		<link>https://blog.stefcho.eu/pfsense-2-0-rc1-customize-captive-portal-pages-and-implement-https/</link>
+				<comments>https://blog.stefcho.eu/pfsense-2-0-rc1-customize-captive-portal-pages-and-implement-https/#comments</comments>
+				<pubDate>Sun, 26 Jun 2011 10:18:49 +0000</pubDate>
+		<dc:creator><![CDATA[Stefan]]></dc:creator>
+				<category><![CDATA[Technical]]></category>
+		<category><![CDATA[Captive Portal]]></category>
+		<category><![CDATA[Network]]></category>
+		<category><![CDATA[pfSense]]></category>
+		<category><![CDATA[pfSense 2.0 RC1]]></category>
+
+		<guid isPermaLink="false">http://stefcho.azurewebsites.net/?p=814</guid>
+				<description><![CDATA[<p>Introduction In the previous post pfSense 2.0 RC1 Configure Captive Portal for Guests with Local User Management we configured a basic Captive Portal. Now I want to customize a little the web pages that are presented to the guests. Users will send credentials, and it is better to use HTTPS, that’s why will will configure [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/pfsense-2-0-rc1-customize-captive-portal-pages-and-implement-https/">pfSense 2.0 RC1 &#8211; Customize Captive Portal Pages and implement HTTPS</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p><strong>Introduction</strong></p>
+<p>In the previous post <a href="http://stefcho.azurewebsites.net/?p=754" target="_blank">pfSense 2.0 RC1 Configure Captive Portal for Guests with Local User Management</a> we configured a basic Captive Portal. Now I want to customize a little the web pages that are presented to the guests. Users will send credentials, and it is better to use HTTPS, that’s why will will configure it too.</p>
+<p><strong>Scenario</strong></p>
+<p>I want to customize the pages put custom colors and logo. Moreover the default page does not have a voucher field available, and I want this too. Granting access to guests, must follow some rules, so Acceptable Use Policy that have to be acknowledged is suitable for such a page</p>
+<p>You can see the default pages below</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Default-Page-01.png"><img class="aligncenter size-full wp-image-815" title="pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - Default Page 01" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Default-Page-01.png" alt="" width="797" height="457" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Default-Page-01.png 797w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Default-Page-01-300x172.png 300w" sizes="(max-width: 797px) 100vw, 797px" /></a></p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Default-Page-02.png"><img class="aligncenter size-full wp-image-816" title="pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - Default Page 02" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Default-Page-02.png" alt="" width="801" height="482" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Default-Page-02.png 801w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Default-Page-02-300x180.png 300w" sizes="(max-width: 801px) 100vw, 801px" /></a></p>
+<p><strong>Configuration</strong></p>
+<p><strong>Certificate for the HTTPS/SSL</strong></p>
+<p>Go to System &gt; Cert Manager</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-01.png"><img class="aligncenter size-full wp-image-817" title="pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - Certificates 01" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-01.png" alt="" width="282" height="128"></a></p>
+<p>On the CAs leaf, select Create and internal Certificate Authority. Fill in the form to your likings. Make note of the Common name and the Descriptive name.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-02-CA.png"><img class="aligncenter size-full wp-image-818" title="pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - Certificates 02 - CA" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-02-CA.png" alt="" width="911" height="627" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-02-CA.png 911w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-02-CA-300x206.png 300w" sizes="(max-width: 911px) 100vw, 911px" /></a></p>
+<p>Go to the Certificates leaf, and Create an internal Certificate, fill in the form. The Common Name for the certificate must match to firewall name. In my case it is pfSense.localdomain. Also note the Descriptive name of the certificate.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-02-Cert.png"><img class="aligncenter size-full wp-image-819" title="pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - Certificates 02 - Cert" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-02-Cert.png" alt="" width="910" height="647" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-02-Cert.png 910w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-02-Cert-300x213.png 300w" sizes="(max-width: 910px) 100vw, 910px" /></a></p>
+<p><strong>Export the Certificates</strong></p>
+<p>On the CAs leaf click on the downward pointing triangle with rollover info export ca.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-03-Export.png"><img class="aligncenter size-full wp-image-820" title="pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - Certificates 03 - Export" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-03-Export.png" alt="" width="920" height="742" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-03-Export.png 920w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-03-Export-300x241.png 300w" sizes="(max-width: 920px) 100vw, 920px" /></a></p>
+<p>On the Certificate leaf, click on both downward pointing triangles for the Captivate Portal Cert.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-04-Export.png"><img class="aligncenter size-full wp-image-821" title="pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - Certificates 04 - Export" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-04-Export.png" alt="" width="923" height="739" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-04-Export.png 923w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-04-Export-300x240.png 300w" sizes="(max-width: 923px) 100vw, 923px" /></a></p>
+<p>You will end up with three file with similar names to this</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-05-Export.png"><img class="aligncenter size-full wp-image-822" title="pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - Certificates 05 - Export" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-05-Export.png" alt="" width="741" height="201" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-05-Export.png 741w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-05-Export-300x81.png 300w" sizes="(max-width: 741px) 100vw, 741px" /></a></p>
+<p><strong>DNS Record</strong></p>
+<p>Go to Services &gt; DNS Forwarder</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-DNS-01.png"><img class="aligncenter size-full wp-image-823" title="pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - DNS 01" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-DNS-01.png" alt="" width="487" height="164" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-DNS-01.png 487w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-DNS-01-300x101.png 300w" sizes="(max-width: 487px) 100vw, 487px" /></a></p>
+<p>Add new record that will override the results from the forwarders</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-DNS-02.png"><img class="aligncenter size-full wp-image-824" title="pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - DNS 02" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-DNS-02.png" alt="" width="912" height="694" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-DNS-02.png 912w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-DNS-02-300x228.png 300w" sizes="(max-width: 912px) 100vw, 912px" /></a></p>
+<p>Enter Host, Domain, IP Address and Description. In my case the host is pfSense, the domain is localdomain, the IP address is the IP used by pfSense for the Guest network and I’ve entered some useful description.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-DNS-03.png"><img class="aligncenter size-full wp-image-825" title="pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - DNS 03" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-DNS-03.png" alt="" width="639" height="471" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-DNS-03.png 639w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-DNS-03-300x221.png 300w" sizes="(max-width: 639px) 100vw, 639px" /></a></p>
+<p><strong>Put the Certificate data in the fields</strong></p>
+<p>Now open the certificates in your favourite text editor. I’ve used Notepad++, and copy and paste the content in the Services &gt; Captive Portal pages.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-06-Captivate-Portal.png"><img class="aligncenter size-full wp-image-826" title="pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - Certificates 06 - Captivate Portal" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-06-Captivate-Portal.png" alt="" width="485" height="102" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-06-Captivate-Portal.png 485w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-06-Captivate-Portal-300x63.png 300w" sizes="(max-width: 485px) 100vw, 485px" /></a></p>
+<p>Paste Captive+Portal+Cert.crt in HTTPS certificate section</p>
+<p>Paste Captive+Portal+Cert.key in HTTPS private key section</p>
+<p>Paste Captive+Portal+CA.cert&nbsp; in HTTPS intermediate certificate section</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-06-Captivate-Portal-Paste-Certs.png"><img class="aligncenter size-full wp-image-827" title="pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - Certificates 06 - Captivate Portal - Paste Certs" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-06-Captivate-Portal-Paste-Certs.png" alt="" width="908" height="696" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-06-Captivate-Portal-Paste-Certs.png 908w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-06-Captivate-Portal-Paste-Certs-300x229.png 300w" sizes="(max-width: 908px) 100vw, 908px" /></a></p>
+<p>Save your configuration.</p>
+<p><strong>Upload the logo</strong></p>
+<p>Go to the File manager leaf of the Captive portal. Click on the + sign. And choose your logo image.</p>
+<p>Then click on the Upload button.</p>
+<p>Take a note of the name of the image, if it is different from the one used in your pages update them before uploading.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Captivate-Portal-Logo.png"><img class="aligncenter size-full wp-image-828" title="pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - Captivate Portal - Logo" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Captivate-Portal-Logo.png" alt="" width="918" height="436" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Captivate-Portal-Logo.png 918w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Captivate-Portal-Logo-300x142.png 300w" sizes="(max-width: 918px) 100vw, 918px" /></a></p>
+<p><strong> </strong></p>
+<p><strong>Upload the pages</strong></p>
+<p>Go back to the Captive portal leaf, and scroll down to the Portal page contents section.</p>
+<p>Click on Choose File button and select your page file. Do the same for the Authentication error page contents page with the index_error.html page. Save your configuration.<a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Captivate-Portal-Pages-upload.png"><img class="aligncenter size-full wp-image-831" title="pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - Captivate Portal - Pages upload" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Captivate-Portal-Pages-upload.png" alt="" width="916" height="575" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Captivate-Portal-Pages-upload.png 916w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Captivate-Portal-Pages-upload-300x188.png 300w" sizes="(max-width: 916px) 100vw, 916px" /></a></p>
+<p><strong> </strong></p>
+<p><strong>Explanation</strong></p>
+<p>I’ve used the build in Certificate Manager, because it works for me. The alternative is to use OpenSSL as explained in the pfSense forums. This is closely related to the DNS record.</p>
+<p>By customizing the pages we can brand them and in the same time create more enterprise look and feel. Opening the voucher field is first step to my next post. There the main topic will be configuration of vouchers and RADIUS authentication.</p>
+<p>About the pages code:</p>
+<p>Index.html</p>
+<p>&lt;style type=&#8221;text/css&#8221;&gt; makes the background black.</p>
+<p>&lt;img src=&#8221;captiveportal-logo.png&#8221; alt=&#8221;logo&#8221;/&gt; adds the Image</p>
+<p>&lt;td align=&#8221;right&#8221;&gt;Voucher:&lt;/td&gt;&lt;td  align=&#8221;left&#8221;&gt;&lt;input name=&#8221;auth_voucher&#8221; type=&#8221;text&#8221; style=&#8221;border:  1px dashed;&#8221;&gt; add the Vaucher field</p>
+<p>&lt;TEXTAREA id=&#8221;aup&#8221; name=&#8221;aup&#8221; rows=&#8221;15&#8243; cols=&#8221;50&#8243;&gt; adds the Acceptable Use Policy, I&#8217;ve borrowed this from <a href="http://www.smallnetbuilder.com/wireless/wireless-howto/24295-monowallcaptiveportal?showall=&amp;start=6" target="_blank">How To: Using m0n0wall to create a Wireless Captive Portal &#8211; Step 4: Create the Captive Portal Page</a>.</p>
+<p>You can see the original page here: <a href="http://www.smallnetbuilder.com/images_old/myimages/howto/captiveportal/portal.htm" target="_blank">http://www.smallnetbuilder.com/images_old/myimages/howto/captiveportal/portal.htm</a></p>
+<p>&lt;script type=&#8221;text/javascript&#8221;&gt; &#8211; force the guest to accept the use policy. I&#8217;ve borrowed this code from <a href="http://lab.artlung.com/validate-checkbox/" target="_blank">Only submit if at least one checkbox is checked</a> example, and with a little help from a friend integrated in to this form.</p>
+<p>&nbsp;</p>
+<blockquote><p>&lt;html&gt;<br />
+&lt;style type=&#8221;text/css&#8221;&gt;<br />
+body {<br />
+background-color: #000;<br />
+}<br />
+body,td,th {<br />
+color: #090;<br />
+}<br />
+&lt;/style&gt;<br />
+&lt;body&gt;<br />
+&lt;form method=&#8221;post&#8221; action=&#8221;$PORTAL_ACTION$&#8221; onsubmit=&#8221;return CheckBoxesValidations() ;&#8221;&gt;<br />
+&lt;input name=&#8221;redirurl&#8221; type=&#8221;hidden&#8221; value=&#8221;$PORTAL_REDIRURL$&#8221;&gt;<br />
+&lt;center&gt;<br />
+&lt;center&gt;<br />
+&lt;img src=&#8221;captiveportal-logo.png&#8221; alt=&#8221;logo&#8221;/&gt;<br />
+&lt;/center&gt;<br />
+&lt;table cellpadding=&#8221;6&#8243; cellspacing=&#8221;0&#8243; width=&#8221;550&#8243; height=&#8221;380&#8243; style=&#8221;border:1px solid #000000&#8243;&gt;<br />
+&lt;tr height=&#8221;10&#8243; bgcolor=&#8221;#990000&#8243;&gt;<br />
+&lt;td bgcolor=&#8221;#663366&#8243; style=&#8221;border-bottom:1px solid #000000&#8243;&gt;<br />
+&lt;font color=&#8217;white&#8217;&gt;<br />
+&lt;b&gt;<br />
+Stefcho&#8217;s captive portal<br />
+&lt;/b&gt;<br />
+&lt;/font&gt;<br />
+&lt;/td&gt;<br />
+&lt;/tr&gt;<br />
+&lt;tr&gt;<br />
+&lt;td&gt;<br />
+&lt;div id=&#8221;mainlevel&#8221;&gt;<br />
+&lt;center&gt;<br />
+&lt;table width=&#8221;100%&#8221; border=&#8221;0&#8243; cellpadding=&#8221;5&#8243; cellspacing=&#8221;0&#8243;&gt;<br />
+&lt;tr&gt;<br />
+&lt;td&gt;<br />
+&lt;center&gt;<br />
+&lt;div id=&#8221;mainarea&#8221;&gt;<br />
+&lt;center&gt;<br />
+&lt;table width=&#8221;100%&#8221; border=&#8221;0&#8243; cellpadding=&#8221;5&#8243; cellspacing=&#8221;5&#8243;&gt;<br />
+&lt;tr&gt;<br />
+&lt;td&gt;<br />
+&lt;div id=&#8221;maindivarea&#8221;&gt;<br />
+&lt;center&gt;<br />
+&lt;div id=&#8217;statusbox&#8217;&gt;<br />
+&lt;font color=&#8217;red&#8217; face=&#8217;arial&#8217; size=&#8217;+1&#8242;&gt;<br />
+&lt;b&gt;</p>
+<p>&lt;/b&gt;<br />
+&lt;/font&gt;<br />
+&lt;/div&gt;<br />
+&lt;br/&gt;<br />
+&lt;div id=&#8217;loginbox&#8217;&gt;<br />
+&lt;table&gt;<br />
+&lt;tr&gt;&lt;td colspan=&#8221;2&#8243;&gt;&lt;center&gt;Welcome to the Stefcho&#8217;s Wireless Network Captive Portal!&lt;/td&gt;&lt;/tr&gt;<br />
+&lt;tr&gt;&lt;td colspan=&#8221;2&#8243;&gt;&lt;center&gt;Enter User Credentials, or Voucher Code to gain access.&lt;/td&gt;&lt;/tr&gt;<br />
+&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;<br />
+&lt;tr&gt;&lt;td align=&#8221;right&#8221;&gt;Username:&lt;/td&gt;&lt;td align=&#8221;left&#8221;&gt;&lt;input name=&#8221;auth_user&#8221; type=&#8221;text&#8221; style=&#8221;border: 1px dashed;&#8221;&gt;&lt;/td&gt;&lt;/tr&gt;<br />
+&lt;tr&gt;&lt;td align=&#8221;right&#8221;&gt;Password:&lt;/td&gt;&lt;td align=&#8221;left&#8221;&gt;&lt;input name=&#8221;auth_pass&#8221; type=&#8221;password&#8221; style=&#8221;border: 1px dashed;&#8221;&gt;&lt;/td&gt;&lt;/tr&gt;<br />
+&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;<br />
+&lt;tr&gt;&lt;td align=&#8221;right&#8221;&gt;Voucher:&lt;/td&gt;&lt;td align=&#8221;left&#8221;&gt;&lt;input name=&#8221;auth_voucher&#8221; type=&#8221;text&#8221; style=&#8221;border: 1px dashed;&#8221;&gt;&lt;/td&gt;&lt;/tr&gt;<br />
+&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;<br />
+&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;<br />
+&lt;P align=&#8221;center&#8221;&gt;&lt;TEXTAREA id=&#8221;aup&#8221; name=&#8221;aup&#8221; rows=&#8221;15&#8243; cols=&#8221;50&#8243;&gt; Acceptable Use Policy (AUP).<br />
+&lt;/TEXTAREA&gt;<br />
+&lt;/td&gt;&lt;/tr&gt;<br />
+&lt;/tr&gt;<br />
+&lt;/table&gt;<br />
+&lt;input id=&#8221;iagree&#8221; type=&#8221;checkbox&#8221; name=&#8221;CHKBOX1&#8243; value=&#8221;1&#8243;&gt;Accept&lt;/p&gt;<br />
+&lt;input name=&#8221;accept&#8221; type=&#8221;submit&#8221; value=&#8221;Continue&#8221;&gt;<br />
+&lt;/div&gt;<br />
+&lt;/center&gt;<br />
+&lt;/div&gt;<br />
+&lt;/td&gt;<br />
+&lt;/tr&gt;<br />
+&lt;/table&gt;<br />
+&lt;/center&gt;<br />
+&lt;/div&gt;<br />
+&lt;/center&gt;<br />
+&lt;/td&gt;<br />
+&lt;/tr&gt;<br />
+&lt;/table&gt;<br />
+&lt;/center&gt;<br />
+&lt;/div&gt;<br />
+&lt;/td&gt;<br />
+&lt;/tr&gt;<br />
+&lt;/table&gt;<br />
+&lt;/center&gt;<br />
+&lt;/form&gt;<br />
+&lt;script type=&#8221;text/javascript&#8221;&gt;<br />
+function CheckBoxesValidations()<br />
+{<br />
+if(document.getElementById(&#8216;iagree&#8217;).checked == false)<br />
+{<br />
+alert(&#8220;Please read and accept the User agreement to proceed!&#8221;);<br />
+return false;<br />
+}<br />
+else<br />
+return true;<br />
+}<br />
+&lt;/script&gt;<br />
+&lt;/body&gt;<br />
+&lt;/html&gt;</p></blockquote>
+<p>&nbsp;</p>
+<p>Index_error.html &#8211; The only change here is the addition of &#8220;Invalid credentials specified.&#8221;. I did not add the &#8220;$PORTAL_MESSAGE$&#8221;, because it is for RADIUS only.</p>
+<p><em>The contents of the HTML/PHP file that you upload here are displayed when an authentication error occurs. You may include &#8220;$PORTAL_MESSAGE$&#8221;, which will be replaced by the error or reply messages from the RADIUS server, if any.</em></p>
+<blockquote><p>&lt;tr&gt;<br />
+&lt;td&gt;<br />
+&lt;div id=&#8221;mainlevel&#8221;&gt;<br />
+&lt;center&gt;<br />
+&lt;table width=&#8221;100%&#8221; border=&#8221;0&#8243; cellpadding=&#8221;5&#8243; cellspacing=&#8221;0&#8243;&gt;<br />
+&lt;tr&gt;<br />
+&lt;td&gt;<br />
+&lt;center&gt;<br />
+&lt;div id=&#8221;mainarea&#8221;&gt;<br />
+&lt;center&gt;<br />
+&lt;table width=&#8221;100%&#8221; border=&#8221;0&#8243; cellpadding=&#8221;5&#8243; cellspacing=&#8221;5&#8243;&gt;<br />
+&lt;tr&gt;<br />
+&lt;td&gt;<br />
+&lt;div id=&#8221;maindivarea&#8221;&gt;<br />
+&lt;center&gt;<br />
+&lt;div id=&#8217;statusbox&#8217;&gt;<br />
+&lt;font color=&#8217;red&#8217; face=&#8217;arial&#8217; size=&#8217;+1&#8242;&gt;<br />
+&lt;b&gt;<br />
+Invalid credentials specified.<br />
+&lt;/b&gt;<br />
+&lt;/font&gt;<br />
+&lt;/div&gt;<br />
+&lt;br/&gt;</p></blockquote>
+<p>&nbsp;</p>
+<p>You can download my pages from here:</p>
+<h2><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/index1.html">index</a></h2>
+<h2><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/index_error1.html">index_error</a></h2>
+<p><strong>Testing</strong></p>
+<p>Connect to the guest network and try to open a web page. You will see a warning about your certificate, go over it. Now you are supposed to see your new custom page. Enter your username and password, look at the Acceptable Use Policy and Click on the Accept check box. Then on the Continue button. If you don’t tick the Accept check box a warning message windows will appear, that will inform you that you must accept the policy first.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Custome-Page-011.png"><img class="aligncenter size-full wp-image-849" title="pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - Custome Page 01" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Custome-Page-011.png" alt="" width="1007" height="738" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Custome-Page-011.png 1007w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Custome-Page-011-300x219.png 300w" sizes="(max-width: 1007px) 100vw, 1007px" /></a></p>
+<p>In case that you intentionally or not mistype your user name and/or password, you will see in red Invalid credentials specified. Now you can try to enter then again.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Custome-Page-02.png"><img class="aligncenter size-full wp-image-850" title="pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - Custome Page 02" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Custome-Page-02.png" alt="" width="1008" height="739" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Custome-Page-02.png 1008w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Custome-Page-02-300x219.png 300w" sizes="(max-width: 1008px) 100vw, 1008px" /></a></p>
+<p>After successful log in you will have internet access, and on the Status &gt; Captive portal page you will be able to see the currently logged on users.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Captivate-Portal-Logged-on-Client-Status1.png"><img class="aligncenter size-full wp-image-833" title="pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - Captivate Portal - Logged on Client Status" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Captivate-Portal-Logged-on-Client-Status1.png" alt="" width="911" height="681" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Captivate-Portal-Logged-on-Client-Status1.png 911w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Captivate-Portal-Logged-on-Client-Status1-300x224.png 300w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Captivate-Portal-Logged-on-Client-Status1-200x150.png 200w" sizes="(max-width: 911px) 100vw, 911px" /></a></p>
+<p><strong>Issues</strong></p>
+<p>DNS record surprise me because I have not used it up until now.</p>
+<p><strong>References</strong></p>
+<p>Here are some materials that could help you further develop the Captive Portal Pages:</p>
+<p><a href="http://doc.pfsense.org/index.php/Category:Captive_Portal" target="_blank">http://doc.pfsense.org/index.php/Category:Captive_Portal</a></p>
+<p><a href="http://gronver.dk/?p=37" target="_blank">Free, cool, and easy Captive Portal (Guest portal)</a></p>
+<p><a href="http://www.smallnetbuilder.com/wireless/wireless-howto/24295-monowallcaptiveportal?showall=&amp;start=6" target="_blank">How To: Using m0n0wall to create a Wireless Captive Portal &#8211; Step 4: Create the Captive Portal Page </a></p>
+<p><a href="http://nettechonline.net/index.php?option=com_content&amp;view=article&amp;id=85:pfsense-captive-portal-edit&amp;catid=57:pfsense-captive-portal&amp;Itemid=72" target="_blank">pfSense: Captive Portal Logo Edit</a></p>
+<p><a href="http://itrez.blogspot.com/2011/03/pfsense-20-captive-portal.html" target="_blank">Как в pfsense 2.0 сделать Captive portal доступным из разных сетей</a></p>
+<p><a href="http://bruteforcer.ru/index.php/2010/09/27/ustanovka-i-nastrojka-wi-fi-hot-spot-sistemy-na-primere-programmnogo-routera-pfsense-2-0-chast-1/" target="_blank">Установка и настройка Wi-FI HOT-SPOT системы на примере программного роутера PfSense 2.0.(Часть 1)</a></p>
+<p>&nbsp;</p>
+<p>A good base for the Acceptable Use Policy:</p>
+<p><a href="http://www.itservices.manchester.ac.uk/roaming/regulationsforuse/acceptableusepolicy/" target="_blank">Acceptable Use Policy for the Wireless Network</a></p>
+<p><a href="http://www.ci.austin.tx.us/library/wireless.htm" target="_blank">Acceptable Use Policy for Wireless Access</a></p>
+<p><a href="http://www.spotonnetworks.com/acceptable-use.php" target="_blank">Acceptable Use Policy</a></p>
+<p><strong> </strong></p>
+<p><strong>Conclusion</strong></p>
+<p>Now we have better looking pages displayed to our guest, and well communicated Acceptable Use Policy of the Guest Network. The credentials of our users are transferred using SSL cannel and are not in plain text.</p>
+<p>&nbsp;</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/pfsense-2-0-rc1-customize-captive-portal-pages-and-implement-https/">pfSense 2.0 RC1 &#8211; Customize Captive Portal Pages and implement HTTPS</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></content:encoded>
+							<wfw:commentRss>https://blog.stefcho.eu/pfsense-2-0-rc1-customize-captive-portal-pages-and-implement-https/feed/</wfw:commentRss>
+		<slash:comments>13</slash:comments>
+							</item>
+		<item>
+		<title>pfSense 2.0 RC1 Configure Captive Portal for Guests with Local User Management</title>
+		<link>https://blog.stefcho.eu/pfsense-2-0-rc1-configure-captive-portal-for-guests-with-local-user-management/</link>
+				<comments>https://blog.stefcho.eu/pfsense-2-0-rc1-configure-captive-portal-for-guests-with-local-user-management/#comments</comments>
+				<pubDate>Sun, 19 Jun 2011 16:38:12 +0000</pubDate>
+		<dc:creator><![CDATA[Stefan]]></dc:creator>
+				<category><![CDATA[Technical]]></category>
+		<category><![CDATA[Captive Portal]]></category>
+		<category><![CDATA[Network]]></category>
+		<category><![CDATA[pfSense]]></category>
+		<category><![CDATA[pfSense 2.0 RC1]]></category>
+		<category><![CDATA[Wireless]]></category>
+
+		<guid isPermaLink="false">http://stefcho.azurewebsites.net/?p=754</guid>
+				<description><![CDATA[<p>Introduction More or less it is expected from a company to provide some form of Wireless Internet Access to guest, clients and partner visiting their premises. Providing them with such could pose a security risk if you use just a simple wireless access point directly connected to your LAN. It is better to isolate them [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/pfsense-2-0-rc1-configure-captive-portal-for-guests-with-local-user-management/">pfSense 2.0 RC1 Configure Captive Portal for Guests with Local User Management</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p><strong>Introduction</strong></p>
+<p>More or less it is expected from a company to provide some form of Wireless Internet Access to guest, clients and partner visiting their premises. Providing them with such could pose a security risk if you use just a simple wireless access point directly connected to your LAN. It is better to isolate them in separate network segment without access to your LAN. For that purpose we will use an Optional Interface and the Captive Portal feature of pfSense 2.0 RC1.</p>
+<p><strong>Scenario</strong></p>
+<p>You want to provide your guest with Internet Access using single of multiple Wireless Access Point, but you want to prevent them from lurking around your servers and workstations. Even worse they can be infected with some malicious code that could try to take over your network. &nbsp;You have probably seen what enterprise grade wireless solutions offer as functionality, but the price of these solutions is prohibitive to implement for Small Office Home Office (SoHo) uses.</p>
+<p>In this post we will look at the basic configuration of Captive Portal, a feature of pfSense, and how to implement a basic scenario with required authentication of guests, which will be quarantined from our internal network, but will have almost full Internet Access at their disposal.</p>
+<p><strong>Setup</strong></p>
+<p>We have a simple setup of pfSense 2.0 RC1 with three network interfaces. The WAN gives us access to the Internet, behind the LAN interface resides our servers and workstations, and we will put the guests behind the GUESTS interface. For reference take a look at the network diagram.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Network-Diagram-1.png"><img class="aligncenter size-full wp-image-756" title="pfSense 2.0 RC1 - Configure Captive Portal for Guests - Network Diagram 1" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Network-Diagram-1.png" alt="" width="655" height="333" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Network-Diagram-1.png 655w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Network-Diagram-1-300x152.png 300w" sizes="(max-width: 655px) 100vw, 655px" /></a></p>
+<p>&nbsp;</p>
+<p>Some hardware appliance on which pfSense is running might have Wireless Network Interface Cards installed initially, in that case you can use that interface for GUESTS, but currently I do not have such card available for testing. At near future when I do get one, I will test this scenario too.</p>
+<p>&nbsp;</p>
+<p>If you are unfortunate enough to have only two network interfaces, but you are fortunate to have a VLAN capable switch you can separate the LAN and the GUESTS into separate VLANs. &nbsp;Take a look at the network diagram below for reference. Yet again this is a separate scenario that I will leave for the future posts.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Network-Diagram-2-VLANs.png"></a><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Network-Diagram-2-VLANs1.png"><img class="aligncenter size-full wp-image-788" title="pfSense 2.0 RC1 - Configure Captive Portal for Guests - Network Diagram 2 VLANs" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Network-Diagram-2-VLANs1.png" alt="" width="493" height="483" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Network-Diagram-2-VLANs1.png 493w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Network-Diagram-2-VLANs1-300x293.png 300w" sizes="(max-width: 493px) 100vw, 493px" /></a></p>
+<p>&nbsp;</p>
+<p><strong>Configuration</strong></p>
+<p><strong>Configure the Guests Interface.</strong></p>
+<p>If you haven’t configured the third network interface already, let’s configure it now.<a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-01.png"><img class="aligncenter size-full wp-image-758" title="pfSense 2.0 RC1 - Configure Captive Portal for Guests -  Interfaces 01" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-01.png" alt="" width="326" height="168" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-01.png 326w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-01-300x154.png 300w" sizes="(max-width: 326px) 100vw, 326px" /></a></p>
+<p>Go to Interface &gt; (assign), and click on the + button, and then click on Save button to save the configuration.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-02.png"><img class="aligncenter size-full wp-image-759" title="pfSense 2.0 RC1 - Configure Captive Portal for Guests -  Interfaces 02" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-02.png" alt="" width="910" height="374" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-02.png 910w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-02-300x123.png 300w" sizes="(max-width: 910px) 100vw, 910px" /></a><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-03.png"><img class="aligncenter size-full wp-image-760" title="pfSense 2.0 RC1 - Configure Captive Portal for Guests -  Interfaces 03" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-03.png" alt="" width="923" height="485" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-03.png 923w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-03-300x157.png 300w" sizes="(max-width: 923px) 100vw, 923px" /></a></p>
+<p>Not go to you newly added interface, the name by default is OPT1.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-04.png"><img class="aligncenter size-full wp-image-761" title="pfSense 2.0 RC1 - Configure Captive Portal for Guests -  Interfaces 04" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-04.png" alt="" width="914" height="379" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-04.png 914w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-04-300x124.png 300w" sizes="(max-width: 914px) 100vw, 914px" /></a></p>
+<p>Tick the Enable Interface and click Save.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-05.png"><img class="aligncenter size-full wp-image-762" title="pfSense 2.0 RC1 - Configure Captive Portal for Guests -  Interfaces 05" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-05.png" alt="" width="914" height="317" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-05.png 914w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-05-300x104.png 300w" sizes="(max-width: 914px) 100vw, 914px" /></a></p>
+<p>Now you can enter a Description for this interface, in my example I used Guests.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-06.png"><img class="aligncenter size-full wp-image-763" title="pfSense 2.0 RC1 - Configure Captive Portal for Guests -  Interfaces 06" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-06.png" alt="" width="915" height="741" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-06.png 915w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-06-300x242.png 300w" sizes="(max-width: 915px) 100vw, 915px" /></a><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-07.png"></a></p>
+<p>Select Static as Type.</p>
+<p>In the Static IP configuration section,  enter IP Address for the interface and a subnet mask. In my case these  are 192.168.0.1/24.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-07.png"><img class="aligncenter size-full wp-image-764" title="pfSense 2.0 RC1 - Configure Captive Portal for Guests -  Interfaces 07" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-07.png" alt="" width="912" height="703" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-07.png 912w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-07-300x231.png 300w" sizes="(max-width: 912px) 100vw, 912px" /></a><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-08.png"></a></p>
+<p>Then click on the Save button, and Apply changes.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-08.png"><img class="aligncenter size-full wp-image-765" title="pfSense 2.0 RC1 - Configure Captive Portal for Guests -  Interfaces 08" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-08.png" alt="" width="916" height="742" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-08.png 916w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-08-300x243.png 300w" sizes="(max-width: 916px) 100vw, 916px" /></a></p>
+<p>&nbsp;</p>
+<p><strong>Setup a DHCP Server for this Interface</strong></p>
+<p>Go to Services &gt; DHCP Server,</p>
+<p>&nbsp;</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-DHCP-01.png"><img class="aligncenter size-full wp-image-767" title="pfSense 2.0 RC1 - Configure Captive Portal for Guests -  DHCP 01" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-DHCP-01.png" alt="" width="501" height="376" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-DHCP-01.png 501w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-DHCP-01-300x225.png 300w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-DHCP-01-200x150.png 200w" sizes="(max-width: 501px) 100vw, 501px" /></a></p>
+<p>on the Guests leaf, tick the Enable DHCP server on Guests Interface.</p>
+<p>Enter a Range aka Pool of IP addresses available for our guests, in my case 192.168.0.10-20.</p>
+<p>Enter 192.168.0.1 as value for DNS Server and a Gateway, then Save the configuration.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-DHCP-02.png"><img class="aligncenter size-full wp-image-768" title="pfSense 2.0 RC1 - Configure Captive Portal for Guests -  DHCP 02" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-DHCP-02.png" alt="" width="914" height="743" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-DHCP-02.png 914w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-DHCP-02-300x243.png 300w" sizes="(max-width: 914px) 100vw, 914px" /></a></p>
+<p><strong>Apply Firewall rules on the Guests Interface</strong></p>
+<p>As we stated in the Scenario section, we want to provide our guests only with Internet access, and NO access to our LAN resources, also preventing them from accessing the Web GUI of the pfSense is a good idea.</p>
+<p>I used for a base for the required firewall rules this wonderful article here: <a href="http://www.smallnetbuilder.com/wireless/wireless-howto/24295-monowallcaptiveportal?start=8" target="_blank">How To: Using m0n0wall to create a Wireless Captive Portal &#8211; Security</a></p>
+<p>As you know pfSense is a fork of m0n0wall, so the rules still apply.</p>
+<p>So here are my rules:</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-FireWall-Rules-00.png"><img class="aligncenter size-full wp-image-775" title="pfSense 2.0 RC1 - Configure Captive Portal for Guests -  FireWall Rules 00" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-FireWall-Rules-00.png" alt="" width="911" height="563" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-FireWall-Rules-00.png 911w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-FireWall-Rules-00-300x185.png 300w" sizes="(max-width: 911px) 100vw, 911px" /></a></p>
+<p>The NetBIOS Block rules do exactly that the description states.</p>
+<p>Web GUI Block prevent guest from accessing the management interface of the pfSense from the wireless network.</p>
+<p>The WAN Address / Subnet Block, prevent the guest from accessing any devices connected directly on our WAN port in case you have something like modem or anything else that could be configured using web or other interface.</p>
+<p>The last Guests to Any Other Than LAN network provide our guest with the so much needed Internet Access.</p>
+<p>As additional test I’ve made a rule that block all traffic on this interface during no business hours. This is the first time that I used a Schedule for a rule, so accept is as experimental. The idea for this rule is inspired by this blog post: <a href="http://sadsoftware.blogspot.com/2008/09/pfsense-captive-portal-with-firewall.html" target="_blank">pfSense Captive Portal with Firewall Schedules</a></p>
+<blockquote><p>If you&#8217;re providing Wifi access you certainly don&#8217;t want to worry about some jackass out in the parking lot in the middle of the night trying to hack on your portal.</p></blockquote>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-FireWall-Rules-99.png"><img class="aligncenter size-full wp-image-776" title="pfSense 2.0 RC1 - Configure Captive Portal for Guests -  FireWall Rules 99" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-FireWall-Rules-99.png" alt="" width="918" height="575" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-FireWall-Rules-99.png 918w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-FireWall-Rules-99-300x187.png 300w" sizes="(max-width: 918px) 100vw, 918px" /></a></p>
+<p><strong>Configure Captive Portal</strong></p>
+<p>Go to Services &gt; Captive Portal.</p>
+<p>Tick the Enable captive portal, and select our Guests Interface. You can leave to the defaults values for now Maximum concurrent connection, Idle timeout. For Hard timeout you can choose a period depending on the average stay of your guests, for my test purposes a value of 60 minutes is fine.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Captive-Portal-02.png"><img class="aligncenter size-full wp-image-777" title="pfSense 2.0 RC1 - Configure Captive Portal for Guests -  Captive Portal 02" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Captive-Portal-02.png" alt="" width="1024" height="744" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Captive-Portal-02.png 1024w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Captive-Portal-02-300x217.png 300w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></p>
+<p>If you really believe that you guest a conscience enough you can enable the Logout popup window, and give then the possibility to logout by themselves, but for the sake of simplicity I will not enable this feature.</p>
+<p>Very nice feature is the Per-user bandwidth restriction, you can limit the amount of bandwidth that each user can consume. This will slow down their access but will provide resources for more concurrent users. It is up to you to decide whether to use this or not. In my setup, I’ve enabled this feature for testing purposes, and the results were satisfactory.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Captive-Portal-00.png"><img class="aligncenter size-full wp-image-778" title="pfSense 2.0 RC1 - Configure Captive Portal for Guests -  Captive Portal 00" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Captive-Portal-00.png" alt="" width="1024" height="741" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Captive-Portal-00.png 1024w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Captive-Portal-00-300x217.png 300w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></p>
+<p>For Authentication, we have three options, No authentication can be used for a page with Acceptable Use Policy for the Wireless Network, which your guest must only acknowledge.</p>
+<p>For this example I will use Local User Manager. In a future blog post I will take a look at RADIUS Authentication.</p>
+<p><strong> </strong></p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Captive-Portal-04.png"><img class="aligncenter size-full wp-image-779" title="pfSense 2.0 RC1 - Configure Captive Portal for Guests -  Captive Portal 04" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Captive-Portal-04.png" alt="" width="1024" height="739" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Captive-Portal-04.png 1024w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Captive-Portal-04-300x216.png 300w" sizes="(max-width: 1024px) 100vw, 1024px" /></a>For now scroll down to the end of the page and click Save.<strong> </strong></p>
+<p><strong>User Management</strong></p>
+<p>Go to System &gt; User Manager and create new user.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-User-Manager-01.png"><img class="aligncenter size-full wp-image-780" title="pfSense 2.0 RC1 - Configure Captive Portal for Guests -  User Manager 01" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-User-Manager-01.png" alt="" width="248" height="285"></a></p>
+<p>For my example User name is guest, type in a Password, and Full name.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-User-Manager-02.png"><img class="aligncenter size-full wp-image-781" title="pfSense 2.0 RC1 - Configure Captive Portal for Guests -  User Manager 02" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-User-Manager-02.png" alt="" width="1024" height="741" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-User-Manager-02.png 1024w, https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-User-Manager-02-300x217.png 300w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></p>
+<p><strong>Explanation</strong></p>
+<p>The purpose of the Captive Portal is to force guest users to visit a page before they are provided with Internet Access, whether you will simply require them to accept a use policy, or to authenticate in some manner it is up to you and your needs.</p>
+<p><strong>Testing</strong></p>
+<p>Now I suppose that you have connected one or more Wireless Access Points to the Guests Interface of the pfSense, and configured a SSID for guests. After that you have connected to this Wireless Network. Now when you open a browser and type in some website address, you will be redirected to the Captive Portal page and be required to enter user name and password, use the guest account. &nbsp;After successful authentication you will be redirected back to the original web site address that you have entered.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/Client-2011-06-18-15-16-09.png"><img class="aligncenter size-full wp-image-792" title="Client-2011-06-18-15-16-09" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/Client-2011-06-18-15-16-09.png" alt="" width="810" height="481" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/Client-2011-06-18-15-16-09.png 810w, https://blog.stefcho.eu/wp-content/uploads/2011/06/Client-2011-06-18-15-16-09-300x178.png 300w" sizes="(max-width: 810px) 100vw, 810px" /></a></p>
+<p><strong>Conclusion</strong><br />
+Now you can connect one or more Wireless Access Point to the Guest interface of pfSense and distributed the guest user name and password to clients coming over. Whether you will limit the services on to normal business hours, or limit the bandwidth for each user I leave up to you.<br />
+In the following post I will look at the possibilities to customize the Captive Portal pages, and implementation of Vouchers and RADIUS authentication.</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/pfsense-2-0-rc1-configure-captive-portal-for-guests-with-local-user-management/">pfSense 2.0 RC1 Configure Captive Portal for Guests with Local User Management</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></content:encoded>
+							<wfw:commentRss>https://blog.stefcho.eu/pfsense-2-0-rc1-configure-captive-portal-for-guests-with-local-user-management/feed/</wfw:commentRss>
+		<slash:comments>20</slash:comments>
+							</item>
+	</channel>
+</rss>

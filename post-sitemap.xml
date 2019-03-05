@@ -1,0 +1,1193 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="//blog.stefcho.eu/wp-content/plugins/wordpress-seo/css/main-sitemap.xsl"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
+		<loc>http://blog.stefcho.eu/</loc>
+		<lastmod>2019-03-05T12:03:41+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/learn-git-branching/</loc>
+		<lastmod>2018-10-28T20:15:02+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/net-design-patterns/</loc>
+		<lastmod>2018-10-28T20:15:02+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/the-pfsense-book-now-for-free/</loc>
+		<lastmod>2018-10-28T20:15:03+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/pfsense-on-azure-teaser/</loc>
+		<lastmod>2018-10-28T20:15:03+00:00</lastmod>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2015/04/pfSense-on-Azure.png</image:loc>
+			<image:caption><![CDATA[pfSense on Azure]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/windows-subsystem-for-linux-ubuntu/</loc>
+		<lastmod>2018-10-28T20:15:03+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/sharing-port-openvpn-web-server/</loc>
+		<lastmod>2018-10-28T20:15:03+00:00</lastmod>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2016/03/Sharing-a-Port-with-OpenVPN-and-a-Web-Server-02.png</image:loc>
+			<image:title><![CDATA[Sharing a Port with OpenVPN and a Web Server 02]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2016/03/Sharing-a-Port-with-OpenVPN-and-a-Web-Server-01.png</image:loc>
+			<image:caption><![CDATA[Sharing a Port with OpenVPN and a Web Server 01]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2016/03/Sharing-a-Port-with-OpenVPN-and-a-Web-Server-03.png</image:loc>
+			<image:caption><![CDATA[Sharing a Port with OpenVPN and a Web Server 03]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2016/03/Sharing-a-Port-with-OpenVPN-and-a-Web-Server-02.png</image:loc>
+			<image:caption><![CDATA[Sharing a Port with OpenVPN and a Web Server 02]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/potential-dns-rebind-attack-detected-workaround/</loc>
+		<lastmod>2018-10-28T20:15:03+00:00</lastmod>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2015/03/Potential-DNS-Rebind-attack-detected-01.png</image:loc>
+			<image:title><![CDATA[Potential DNS Rebind attack detected 01]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2015/03/Potential-DNS-Rebind-attack-detected-01.png</image:loc>
+			<image:caption><![CDATA[Potential DNS Rebind attack detected 01]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2015/03/Potential-DNS-Rebind-attack-detected-02.png</image:loc>
+			<image:caption><![CDATA[Potential DNS Rebind attack detected 02]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2015/03/Potential-DNS-Rebind-attack-detected-03.png</image:loc>
+			<image:caption><![CDATA[Potential DNS Rebind attack detected 03]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2015/03/Potential-DNS-Rebind-attack-detected-04.png</image:loc>
+			<image:caption><![CDATA[Potential DNS Rebind attack detected 04]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/pfsense-2-4-4-released/</loc>
+		<lastmod>2018-10-28T20:15:03+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/upgrade-from-pfsense-2-1-5-to-2-2-on-hyper-v/</loc>
+		<lastmod>2018-10-28T20:15:04+00:00</lastmod>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-01.png</image:loc>
+			<image:caption><![CDATA[pfSense 2.2 Upgrade 01]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-02.png</image:loc>
+			<image:caption><![CDATA[pfSense 2.2 Upgrade 02]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-03.png</image:loc>
+			<image:caption><![CDATA[pfSense 2.2 Upgrade 03]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-04.png</image:loc>
+			<image:caption><![CDATA[pfSense 2.2 Upgrade 04]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-05.png</image:loc>
+			<image:caption><![CDATA[pfSense 2.2 Upgrade 05]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-06.png</image:loc>
+			<image:caption><![CDATA[pfSense 2.2 Upgrade 06]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-07.png</image:loc>
+			<image:caption><![CDATA[pfSense 2.2 Upgrade 07]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-08.png</image:loc>
+			<image:caption><![CDATA[pfSense 2.2 Upgrade 08]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-09.png</image:loc>
+			<image:caption><![CDATA[pfSense 2.2 Upgrade 09]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2015/01/pfSense-2.2-Upgrade-10.png</image:loc>
+			<image:caption><![CDATA[pfSense 2.2 Upgrade 10]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/mba/</loc>
+		<lastmod>2018-10-28T20:15:04+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/pfsense-2-2-released/</loc>
+		<lastmod>2018-10-28T20:15:04+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/pfsense-2-0-rc3-released/</loc>
+		<lastmod>2018-10-28T20:16:49+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/packt-publishing-openvpn-2-cookbook-review/</loc>
+		<lastmod>2018-10-28T20:16:52+00:00</lastmod>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/0103OS_OpenVPN-2-Cookbook_FrontCover.jpg</image:loc>
+			<image:title><![CDATA[0103OS_OpenVPN 2 Cookbook_FrontCover]]></image:title>
+			<image:caption><![CDATA[OpenVPN 2 Cookbook]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/microsoft-certified-azure-solutions-architect-expert/</loc>
+		<lastmod>2019-02-15T12:17:39+00:00</lastmod>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2019/02/microsoft-certified-azure-solutions-architect-expert-1.png</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/soho-pbx-with-dd-wrt-and-asterisk-1-4/</loc>
+		<lastmod>2019-02-18T12:31:45+00:00</lastmod>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2010/07/SPA941_lrg.jpg</image:loc>
+			<image:title><![CDATA[SPA941]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2010/07/rt_n16_209.jpg</image:loc>
+			<image:title><![CDATA[RT-N16]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/soho-firewall-appliance-with-alix2d13-and-pfsense/</loc>
+		<lastmod>2019-02-18T12:34:38+00:00</lastmod>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2010/07/comparison.jpg</image:loc>
+			<image:title><![CDATA[comparison]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2010/07/alix2d3.jpg</image:loc>
+			<image:title><![CDATA[alix2d3]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2010/07/alix2d13.jpg</image:loc>
+			<image:title><![CDATA[alix2d13]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3628.jpg</image:loc>
+			<image:title><![CDATA[CIMG3628]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3633.jpg</image:loc>
+			<image:title><![CDATA[CIMG3633]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3629.jpg</image:loc>
+			<image:title><![CDATA[CIMG3629]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3645.jpg</image:loc>
+			<image:title><![CDATA[CIMG3645]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3642.jpg</image:loc>
+			<image:title><![CDATA[CIMG3642]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3637.jpg</image:loc>
+			<image:title><![CDATA[CIMG3637]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3639.jpg</image:loc>
+			<image:title><![CDATA[CIMG3639]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/import-microsoft-vms-in-vmware-workstation/</loc>
+		<lastmod>2019-02-18T12:35:04+00:00</lastmod>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2010/07/b.jpg</image:loc>
+			<image:title><![CDATA[b]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/file-sharing-protocols-and-ports-in-xp-and-2003/</loc>
+		<lastmod>2019-02-18T12:37:35+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/online-radio-recording-with-vlc-player/</loc>
+		<lastmod>2019-02-18T12:38:23+00:00</lastmod>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2010/07/record-radio-streaming.jpg</image:loc>
+			<image:title><![CDATA[record-radio-streaming]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/upmix-mode-sound-blaster-x-fi-xtrememusic-7-1/</loc>
+		<lastmod>2019-02-18T12:39:04+00:00</lastmod>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2010/07/CMSS-3d.jpg</image:loc>
+			<image:title><![CDATA[CMSS-3d]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/upmix-mode-sound-blaster-x-fi-xtrememusic-7-1-ii/</loc>
+		<lastmod>2019-02-18T12:39:28+00:00</lastmod>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/02/CMSS-3d_01.png</image:loc>
+			<image:title><![CDATA[CMSS-3d_01]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/02/CMSS-3d_02.png</image:loc>
+			<image:title><![CDATA[CMSS-3d_02]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/02/CMSS-3d_03.png</image:loc>
+			<image:title><![CDATA[CMSS-3d_03]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/upgrading-dd-wrt-firmware-on-asus-rt-n16-with-optware-asterisk-1-4/</loc>
+		<lastmod>2019-02-18T12:40:15+00:00</lastmod>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/02/update_firmware.png</image:loc>
+			<image:title><![CDATA[update_firmware_dd-wrt]]></image:title>
+			<image:caption><![CDATA[update_firmware_dd-wrt]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/pfsense-1-2-3-as-virtual-machine-on-windows-server-2008-r2-hyper-v/</loc>
+		<lastmod>2019-02-18T12:40:52+00:00</lastmod>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/02/pfsense_hyperv_NICs_type.png</image:loc>
+			<image:title><![CDATA[pfsense_hyperv_NICs_type]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/pfsense-2-0-rc1-released-on-hyper-v/</loc>
+		<lastmod>2019-02-18T12:44:06+00:00</lastmod>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/03/pfSense_logo.png</image:loc>
+			<image:title><![CDATA[pfSense_logo]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/asus-rt-n16-supported-with-dd-wrt-100-pages-thread/</loc>
+		<lastmod>2019-02-18T12:44:07+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/my-network-laboratory/</loc>
+		<lastmod>2019-02-18T12:44:21+00:00</lastmod>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/03/Lab-Setup1.png</image:loc>
+			<image:title><![CDATA[Lab Setup]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/install-pfsense-2-0-rc1-on-vmware-workstation-7/</loc>
+		<lastmod>2019-02-18T12:44:47+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/running-dd-wrt-on-vmware-workstation-7-1/</loc>
+		<lastmod>2019-02-18T12:45:14+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/1-1-nat-in-pfsense-and-dd-wrt/</loc>
+		<lastmod>2019-02-18T12:45:51+00:00</lastmod>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/1-to-1-NAT-Diagram.png</image:loc>
+			<image:title><![CDATA[1 to 1 NAT Diagram]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/DD-WRT-DMZ.png</image:loc>
+			<image:title><![CDATA[DD-WRT---DMZ]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-VIP-1.2.3.png</image:loc>
+			<image:title><![CDATA[pfSense-VIP-1.2.3]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-NAT-1-to-1-1.2.3.png</image:loc>
+			<image:title><![CDATA[pfSense-NAT-1-to-1-1.2.3]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-NAT-1-to-1-Details-1.2.3.png</image:loc>
+			<image:title><![CDATA[pfSense-NAT-1-to-1-Details-1.2.3]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-Firewall-Rule-1.2.3.png</image:loc>
+			<image:title><![CDATA[pfSense-Firewall-Rule-1.2.3]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-VIP-2.0.png</image:loc>
+			<image:title><![CDATA[pfSense-VIP-2.0]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/DD-WRT-Scripts.png</image:loc>
+			<image:title><![CDATA[DD-WRT---Scripts]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/openvpn-with-ldap-authentication-on-pfsense-2-0-rc1/</loc>
+		<lastmod>2019-02-18T12:47:10+00:00</lastmod>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/ADDS-OU-with-Users.png</image:loc>
+			<image:title><![CDATA[ADDS OU with Users]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-2.0-System-Authentication-Servers.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 System Authentication Servers]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-2.0-System-Authentication-Servers-Configure-LDAP.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 System Authentication Servers - Configure LDAP]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/ADSI-Edit-Domain.png</image:loc>
+			<image:title><![CDATA[ADSI Edit Domain]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-2.0-System-Authentication-Servers-Configure-LDAP-Select-Authentication-Containers.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 System Authentication Servers - Configure LDAP - Select Authentication Containers]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-2.0-OpenVPN-Wizard-Select-Authentication-backedn-Type-LDAP.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 OpenVPN Wizard Select Authentication backedn Type - LDAP]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-2.0-OpenVPN-Wizard-Select-LDAP-Authentication-Server.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 OpenVPN Wizard Select LDAP Authentication Server]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-2.0-OpenVPN-Server-Multiple-Backedn-for-Authentication.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 OpenVPN Server Multiple Backedn for Authentication]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/openvpn-with-radius-authentication-on-pfsense-2-0-rc1/</loc>
+		<lastmod>2019-02-18T12:47:34+00:00</lastmod>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/ADDS-Add-NPS-roles-02.png</image:loc>
+			<image:title><![CDATA[ADDS Add NPS roles 02]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/ADDS-Add-NPS-roles-03.png</image:loc>
+			<image:title><![CDATA[ADDS Add NPS roles 03]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/NPS-add-new-RADIUS-Client-01.png</image:loc>
+			<image:title><![CDATA[NPS add new RADIUS Client 01]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/NPS-add-new-RADIUS-Client-02-Details.png</image:loc>
+			<image:title><![CDATA[NPS add new RADIUS Client 02 Details]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/NPS-add-new-RADIUS-Client-03-Details.png</image:loc>
+			<image:title><![CDATA[NPS add new RADIUS Client 03 Details]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/NPS-Connection-Request-Poliocies.png</image:loc>
+			<image:title><![CDATA[NPS Connection Request Poliocies]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-01.png</image:loc>
+			<image:title><![CDATA[Network Policies New 01]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-02.png</image:loc>
+			<image:title><![CDATA[Network Policies New 02]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-05.png</image:loc>
+			<image:title><![CDATA[Network Policies New 05]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-06.png</image:loc>
+			<image:title><![CDATA[Network Policies New 06]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-07.png</image:loc>
+			<image:title><![CDATA[Network Policies New 07]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-08.png</image:loc>
+			<image:title><![CDATA[Network Policies New 08]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-09.png</image:loc>
+			<image:title><![CDATA[Network Policies New 09]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-10.png</image:loc>
+			<image:title><![CDATA[Network Policies New 10]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/Network-Policies-New-11.png</image:loc>
+			<image:title><![CDATA[Network Policies New 11]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-Configure-RADIUS-Authentication-01.png</image:loc>
+			<image:title><![CDATA[pfSense Configure RADIUS Authentication 01]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-Configure-RADIUS-Authentication-02.png</image:loc>
+			<image:title><![CDATA[pfSense Configure RADIUS Authentication 02]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-OpenVPN-Server-Authentication-configuration.png</image:loc>
+			<image:title><![CDATA[pfSense OpenVPN Server Authentication configuration]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/Verify-Successful-connection-in-the-Security-Logs-02.png</image:loc>
+			<image:title><![CDATA[Verify Successful connection in  the  Security Logs 02]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/Verify-Successful-connection-in-the-Security-Logs-04.png</image:loc>
+			<image:title><![CDATA[Verify Successful connection in  the  Security Logs 04]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/building-site-to-site-connection-with-openvpn-on-pfsense-2-0-rc1-with-shared-key/</loc>
+		<lastmod>2019-02-18T12:48:26+00:00</lastmod>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/OpenVPN-Site-to-Site-on-pfSense-2.0.png</image:loc>
+			<image:title><![CDATA[OpenVPN Site to Site on pfSense 2.0]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/Configure-pfsense01-as-a-Server-01-OpenVPN-Conifuration.png</image:loc>
+			<image:title><![CDATA[Configure pfsense01 as a Server - 01 - OpenVPN Conifuration]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/Configure-pfsense01-as-a-Server-02-OpenVPN-Conifuration.png</image:loc>
+			<image:title><![CDATA[Configure pfsense01 as a Server - 02 - OpenVPN Conifuration]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/Configure-pfsense01-as-a-Server-03-OpenVPN-Conifuration.png</image:loc>
+			<image:title><![CDATA[Configure pfsense01 as a Server - 03 - OpenVPN Conifuration]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/Configure-pfsense01-as-a-Server-04-OpenVPN-Conifuration.png</image:loc>
+			<image:title><![CDATA[Configure pfsense01 as a Server - 04 - OpenVPN Conifuration]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/Configure-pfsense01-as-a-Server-05-Network-Rules.png</image:loc>
+			<image:title><![CDATA[Configure pfsense01 as a Server - 05 - Network Rules]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/Configure-pfsense01-as-a-Server-05.5-Network-Rules.png</image:loc>
+			<image:title><![CDATA[Configure pfsense01 as a Server - 05.5 - Network Rules]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/Configure-pfsense01-as-a-Server-06-Network-Rules-WAN.png</image:loc>
+			<image:title><![CDATA[Configure pfsense01 as a Server - 06 - Network Rules - WAN]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/Configure-pfsense01-as-a-Server-07-Network-Rules.png</image:loc>
+			<image:title><![CDATA[Configure pfsense01 as a Server - 07 - Network Rules]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/Configure-pfsense01-as-a-Server-08-Network-Rules-OpenVPN.png</image:loc>
+			<image:title><![CDATA[Configure pfsense01 as a Server - 08 - Network Rules OpenVPN]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/Configure-pfsense01-as-a-Server-09-Network-Rules-OpenVPN.png</image:loc>
+			<image:title><![CDATA[Configure pfsense01 as a Server - 09 - Network Rules OpenVPN]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/Configure-pfsense02-as-a-Client-01-OpenVPN-confiugration1.png</image:loc>
+			<image:title><![CDATA[Configure pfsense02 as a Client - 01 - OpenVPN confiugration]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/Configure-pfsense02-as-a-Client-02-OpenVPN-confiugration.png</image:loc>
+			<image:title><![CDATA[Configure pfsense02 as a Client - 02 - OpenVPN confiugration]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/Configure-pfsense02-as-a-Client-03-OpenVPN-confiugration.png</image:loc>
+			<image:title><![CDATA[Configure pfsense02 as a Client - 03 - OpenVPN confiugration]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/Configure-pfsense02-as-a-Client-04-OpenVPN-confiugration.png</image:loc>
+			<image:title><![CDATA[Configure pfsense02 as a Client - 04 - OpenVPN confiugration]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/Configure-pfsense02-as-a-Client-05-OpenVPN-Rule.png</image:loc>
+			<image:title><![CDATA[Configure pfsense02 as a Client - 05 - OpenVPN Rule]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/Configure-pfsense02-as-a-Client-05-OpenVPN-Status.png</image:loc>
+			<image:title><![CDATA[Configure pfsense02 as a Client - 05 - OpenVPN Status]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/Configure-pfsense02-as-a-Client-06-OpenVPN-Status.png</image:loc>
+			<image:title><![CDATA[Configure pfsense02 as a Client - 06 - OpenVPN Status]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/building-site-to-site-connection-with-openvpn-on-pfsense-2-0-rc1-with-pki/</loc>
+		<lastmod>2019-02-18T12:48:43+00:00</lastmod>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/OpenVPN-Site-to-Site-on-pfSense-2.01.png</image:loc>
+			<image:title><![CDATA[OpenVPN Site to Site on pfSense 2.0]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/pfsense01-01-Create-CA-.png</image:loc>
+			<image:title><![CDATA[pfsense01 - 01 Create CA]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/pfsense01-02-Create-Server-Cert-.png</image:loc>
+			<image:title><![CDATA[pfsense01 - 02 Create Server Cert]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/pfsense01-03-Add-user-.png</image:loc>
+			<image:title><![CDATA[pfsense01 - 03 Add user]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/pfsense01-04-Add-user-.png</image:loc>
+			<image:title><![CDATA[pfsense01 - 04 Add user]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/pfsense01-04.1-Add-user-.png</image:loc>
+			<image:title><![CDATA[pfsense01 - 04.1 Add user]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/pfsense01-05-Setup-OpenVPN-Server-.png</image:loc>
+			<image:title><![CDATA[pfsense01 - 05 Setup OpenVPN Server]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/pfsense01-06-Setup-OpenVPN-Server-.png</image:loc>
+			<image:title><![CDATA[pfsense01 - 06 Setup OpenVPN Server]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/pfsense01-11-Configure-Client-Specific-Override.png</image:loc>
+			<image:title><![CDATA[pfsense01 - 11 Configure Client Specific Override]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/pfsense01-12-Configure-Client-Specific-Override.png</image:loc>
+			<image:title><![CDATA[pfsense01 - 12 Configure Client Specific Override]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/pfsense01-13-Configure-Client-Specific-Override.png</image:loc>
+			<image:title><![CDATA[pfsense01 - 13 Configure Client Specific Override]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/pfsense01-08-Add-Rule-to-Allow-Traffic.png</image:loc>
+			<image:title><![CDATA[pfsense01 - 08 Add Rule to Allow Traffic]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/pfsense01-09-Add-Rule-to-Allow-Traffic.png</image:loc>
+			<image:title><![CDATA[pfsense01 - 09 Add Rule to Allow Traffic]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/pfsense01-09-Add-Rule-to-Open-VPN-Port-Port.png</image:loc>
+			<image:title><![CDATA[pfsense01 - 09 Add Rule to Open VPN Port Port]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/pfsense01-10-Add-Rule-to-Open-VPN-Port-Port.png</image:loc>
+			<image:title><![CDATA[pfsense01 - 10 Add Rule to Open VPN Port Port]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/pfsense01-07-Export-CA-Cert-.png</image:loc>
+			<image:title><![CDATA[pfsense01 - 07 Export CA Cert]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/pfsense01-08-Export-User-Cert.png</image:loc>
+			<image:title><![CDATA[pfsense01 - 08 Export User Cert]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/pfsense02-01.1-Import-CA-Cert.png</image:loc>
+			<image:title><![CDATA[pfsense02 - 01.1 Import CA Cert]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/pfsense02-02-Import-User-Cert.png</image:loc>
+			<image:title><![CDATA[pfsense02 - 02 Import User Cert]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/pfsense02-03-Setup-OpenVPN-Client.png</image:loc>
+			<image:title><![CDATA[pfsense02 - 03 Setup OpenVPN Client]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/pfsense02-04-Copy-PreShared-Key-From-pfsense01.png</image:loc>
+			<image:title><![CDATA[pfsense02 - 04 Copy PreShared Key From pfsense01]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/pfsense02-05-Paste-PreShared-Key-From-pfsense01.png</image:loc>
+			<image:title><![CDATA[pfsense02 - 05 Paste PreShared Key From pfsense01]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/pfsense02-06-Setup-OpenVPN-Client.png</image:loc>
+			<image:title><![CDATA[pfsense02 - 06 Setup OpenVPN Client]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/pfsense02-07-Verify-Connectivity-on-Client.png</image:loc>
+			<image:title><![CDATA[pfsense02 - 07 Verify Connectivity on Client]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/pfsense02-07-Verify-Connectivity-on-Server.png</image:loc>
+			<image:title><![CDATA[pfsense02 - 07 Verify Connectivity on Server]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/pfsense-2-0-rc1-on-vmware-workstation-7-1-4-ram-size/</loc>
+		<lastmod>2019-02-18T12:49:10+00:00</lastmod>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/128-ram-result-in.png</image:loc>
+			<image:title><![CDATA[128-ram-result-in]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/128-RAM-on-pfSense1.png</image:loc>
+			<image:title><![CDATA[128 RAM on pfSense]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/156-RAM-on-VM.png</image:loc>
+			<image:title><![CDATA[156-RAM-on-VM]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/156-RAM-on-pfSense.png</image:loc>
+			<image:title><![CDATA[156 RAM on pfSense]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/pfsense-on-a-stick-802-1q-trunking-with-pfsense-2-0-rc1-and-mikrotik-routerboard-rb250g-smart-gigabit-switch-with-five-ports-and-swos-v1-5/</loc>
+		<lastmod>2019-02-18T12:50:02+00:00</lastmod>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/Network-Diagram.png</image:loc>
+			<image:title><![CDATA[Network Diagram]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/pfSense-WAN-Rules-01.png</image:loc>
+			<image:title><![CDATA[pfSense-WAN-Rules-01]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/pfSense-WAN-Rules-02.png</image:loc>
+			<image:title><![CDATA[pfSense-WAN-Rules-02]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-01.png</image:loc>
+			<image:title><![CDATA[Craetion-of-VLANs-01]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-02.png</image:loc>
+			<image:title><![CDATA[Craetion-of-VLANs-02]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-04.png</image:loc>
+			<image:title><![CDATA[Craetion-of-VLANs-04]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-03.png</image:loc>
+			<image:title><![CDATA[Craetion-of-VLANs-03]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-02.png</image:loc>
+			<image:title><![CDATA[Craetion-of-VLANs-02]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-05-Interfaces-Config.png</image:loc>
+			<image:title><![CDATA[Craetion-of-VLANs-05-Interfaces-Config]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/VLANS-Allow-All-Rule-01.png</image:loc>
+			<image:title><![CDATA[VLANS-Allow-All-Rule-01]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/VLANS-Allow-All-Rule-02.png</image:loc>
+			<image:title><![CDATA[VLANS-Allow-All-Rule-02]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/DHCP-Config-01.png</image:loc>
+			<image:title><![CDATA[DHCP-Config-01]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/DHCP-Config-02.png</image:loc>
+			<image:title><![CDATA[DHCP-Config-02]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/Switch-VLANs-Config-02.png</image:loc>
+			<image:title><![CDATA[Switch-VLANs-Config-02]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/Switch-VLANs-Config-01.png</image:loc>
+			<image:title><![CDATA[Switch-VLANs-Config-01]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/NIC-02.png</image:loc>
+			<image:title><![CDATA[NIC-02]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/05/WireShark-Capture1.png</image:loc>
+			<image:title><![CDATA[WireShark Capture]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/routing-road-warriors-clients-through-a-site-to-site-vpn-with-pfsense-2-0-rc1-and-openvpn/</loc>
+		<lastmod>2019-02-18T12:50:56+00:00</lastmod>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/OpenVPN-site-to-site-and-Road-Warrior-routing.png</image:loc>
+			<image:title><![CDATA[OpenVPN site to site and Road Warrior, routing]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/Road-Warrior-Config-01.png</image:loc>
+			<image:title><![CDATA[Road-Warrior-Config-01]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/Road-Warrior-Config-02.png</image:loc>
+			<image:title><![CDATA[Road-Warrior-Config-02]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/Road-Warrior-Config-03.png</image:loc>
+			<image:title><![CDATA[Road-Warrior-Config-03]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/Site-To-Site-Config-02.png</image:loc>
+			<image:title><![CDATA[Site-To-Site-Config-02]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/Site-To-Site-Config-03.png</image:loc>
+			<image:title><![CDATA[Site-To-Site-Config-03]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/OpenVPN-Client-Route-Print-Result.png</image:loc>
+			<image:title><![CDATA[OpenVPN-Client-Route-Print-Result]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/pfsense-2-0-rc1-configure-captive-portal-for-guests-with-local-user-management/</loc>
+		<lastmod>2019-02-18T12:51:22+00:00</lastmod>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Network-Diagram-1.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Configure Captive Portal for Guests - Network Diagram 1]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Network-Diagram-2-VLANs1.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Configure Captive Portal for Guests - Network Diagram 2 VLANs]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-01.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Configure Captive Portal for Guests -  Interfaces 01]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-02.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Configure Captive Portal for Guests -  Interfaces 02]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-03.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Configure Captive Portal for Guests -  Interfaces 03]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-04.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Configure Captive Portal for Guests -  Interfaces 04]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-05.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Configure Captive Portal for Guests -  Interfaces 05]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-06.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Configure Captive Portal for Guests -  Interfaces 06]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-07.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Configure Captive Portal for Guests -  Interfaces 07]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Interfaces-08.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Configure Captive Portal for Guests -  Interfaces 08]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-DHCP-01.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Configure Captive Portal for Guests -  DHCP 01]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-DHCP-02.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Configure Captive Portal for Guests -  DHCP 02]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-FireWall-Rules-00.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Configure Captive Portal for Guests -  FireWall Rules 00]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-FireWall-Rules-99.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Configure Captive Portal for Guests -  FireWall Rules 99]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Captive-Portal-02.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Configure Captive Portal for Guests -  Captive Portal 02]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Captive-Portal-00.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Configure Captive Portal for Guests -  Captive Portal 00]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-Captive-Portal-04.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Configure Captive Portal for Guests -  Captive Portal 04]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-User-Manager-01.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Configure Captive Portal for Guests -  User Manager 01]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Configure-Captive-Portal-for-Guests-User-Manager-02.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Configure Captive Portal for Guests -  User Manager 02]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/Client-2011-06-18-15-16-09.png</image:loc>
+			<image:title><![CDATA[Client-2011-06-18-15-16-09]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/pfsense-2-0-rc1-customize-captive-portal-pages-and-implement-https/</loc>
+		<lastmod>2019-02-18T12:51:47+00:00</lastmod>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Default-Page-01.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - Default Page 01]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Default-Page-02.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - Default Page 02]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-01.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - Certificates 01]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-02-CA.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - Certificates 02 - CA]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-02-Cert.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - Certificates 02 - Cert]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-03-Export.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - Certificates 03 - Export]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-04-Export.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - Certificates 04 - Export]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-05-Export.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - Certificates 05 - Export]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-DNS-01.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - DNS 01]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-DNS-02.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - DNS 02]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-DNS-03.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - DNS 03]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-06-Captivate-Portal.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - Certificates 06 - Captivate Portal]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Certificates-06-Captivate-Portal-Paste-Certs.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - Certificates 06 - Captivate Portal - Paste Certs]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Captivate-Portal-Logo.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - Captivate Portal - Logo]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Captivate-Portal-Pages-upload.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - Captivate Portal - Pages upload]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Custome-Page-011.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - Custome Page 01]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Custome-Page-02.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - Custome Page 02]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/06/pfSense-2.0-RC1-Customize-Captive-Portal-Pages-and-implement-HTTPS-Captivate-Portal-Logged-on-Client-Status1.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Customize Captive Portal Pages and implement HTTPS - Captivate Portal - Logged on Client Status]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/pfsense-2-0-rc1-captive-portal-with-radius-authentication-and-vouchers/</loc>
+		<lastmod>2019-02-18T12:52:27+00:00</lastmod>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/07/Network-Diagram.png</image:loc>
+			<image:title><![CDATA[Network Diagram]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-04.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Captive Portal RADIUS Authentication and Vouchers - 04]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-05.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Captive Portal RADIUS Authentication and Vouchers - 05]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-06.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Captive Portal RADIUS Authentication and Vouchers - 06]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-07.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Captive Portal RADIUS Authentication and Vouchers - 07]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-08.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Captive Portal RADIUS Authentication and Vouchers - 08]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-09.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Captive Portal RADIUS Authentication and Vouchers - 09]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/07/Client-2011-07-03-13-06-33.png</image:loc>
+			<image:title><![CDATA[CpfSense 2.0 RC1 - Captive Portal RADIUS Authentication and Vouchers - 13]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-10.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Captive Portal RADIUS Authentication and Vouchers - 10]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/07/pfSense-2.0-RC1-Captive-Portal-RADIUS-Authentication-and-Vouchers-11.png</image:loc>
+			<image:title><![CDATA[pfSense 2.0 RC1 - Captive Portal RADIUS Authentication and Vouchers - 11]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/upgrade-pfsense-2-0-from-rc1-to-rc3/</loc>
+		<lastmod>2019-02-18T12:52:34+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/install-open-vm-tools-package-on-pfsense-2-0-rc3-for-vmware/</loc>
+		<lastmod>2019-02-18T12:55:04+00:00</lastmod>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-System-Package.png</image:loc>
+			<image:title><![CDATA[Install Open VM Tools package on pfSense 2.0 RC3 for VM Ware - System - Package]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Install-The-Package.png</image:loc>
+			<image:title><![CDATA[Install Open VM Tools package on pfSense 2.0 RC3 for VM Ware - Install The Package]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Progress.png</image:loc>
+			<image:title><![CDATA[Install Open VM Tools package on pfSense 2.0 RC3 for VM Ware - Progress]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Package-Installed.png</image:loc>
+			<image:title><![CDATA[Install Open VM Tools package on pfSense 2.0 RC3 for VM Ware - Package Installed]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Verify-I.png</image:loc>
+			<image:title><![CDATA[Install Open VM Tools package on pfSense 2.0 RC3 for VM Ware - Verify I]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/07/Install-Open-VM-Tools-package-on-pfSense-2.0-RC3-for-VM-Ware-Verify-II.png</image:loc>
+			<image:title><![CDATA[Install Open VM Tools package on pfSense 2.0 RC3 for VM Ware - Verify II]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/pfcenter/</loc>
+		<lastmod>2019-02-18T12:56:09+00:00</lastmod>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/07/315838247.png</image:loc>
+			<image:title><![CDATA[315838247]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/07/315838600.png</image:loc>
+			<image:title><![CDATA[315838600]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/07/353021663.png</image:loc>
+			<image:title><![CDATA[353021663]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/07/353021940.png</image:loc>
+			<image:title><![CDATA[353021940]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/07/353024071.png</image:loc>
+			<image:title><![CDATA[353024071]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/07/353027904.png</image:loc>
+			<image:title><![CDATA[353027904]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/07/353039638.png</image:loc>
+			<image:title><![CDATA[353039638]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/07/354225964.png</image:loc>
+			<image:title><![CDATA[354225964]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/07/359537383.png</image:loc>
+			<image:title><![CDATA[359537383]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/openvpn-on-pfsense-2-0-rc3-with-openldap-authentication-on-centos-5-6/</loc>
+		<lastmod>2019-02-18T12:56:33+00:00</lastmod>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/08/Authenticaton-Config.png</image:loc>
+			<image:title><![CDATA[Authenticaton Config]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/08/LDAP-Admin.png</image:loc>
+			<image:title><![CDATA[LDAP Admin]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/08/OpenVPN-Login.png</image:loc>
+			<image:title><![CDATA[OpenVPN Login]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/08/OpenVPN-server-Log.png</image:loc>
+			<image:title><![CDATA[OpenVPN server Log]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authentication.png</image:loc>
+			<image:title><![CDATA[Test Authentication]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authenticaion-Error-Msg.png</image:loc>
+			<image:title><![CDATA[Test Authenticaion Error Msg]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authenticaion-Error-System-Logs.png</image:loc>
+			<image:title><![CDATA[Test Authenticaion Error System Logs]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/upgrade-alix-board-with-pfsense-1-2-3-to-pfsense-2-0-rc3/</loc>
+		<lastmod>2019-02-18T12:57:03+00:00</lastmod>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/08/CF.png</image:loc>
+			<image:title><![CDATA[CF]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/08/PhysGUI.png</image:loc>
+			<image:title><![CDATA[PhysGUI]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/08/PhysGUI-Load-Image.png</image:loc>
+			<image:title><![CDATA[PhysGUI - Load Image]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/08/PhysGUI-Remove-2GB-restriction.png</image:loc>
+			<image:title><![CDATA[PhysGUI - Remove 2GB restriction]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/08/PhysGUI-Warninng.png</image:loc>
+			<image:title><![CDATA[PhysGUI - Warninng]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/08/Progress.png</image:loc>
+			<image:title><![CDATA[Progress]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/08/Done.png</image:loc>
+			<image:title><![CDATA[Done]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/using-your-openvpn-road-warrior-setup-as-a-secure-relay/</loc>
+		<lastmod>2019-02-18T12:57:15+00:00</lastmod>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/09/Using-your-OpenVPN-Road-Warrior-setup-as-a-Secure-Relay-for-the-users-01.png</image:loc>
+			<image:title><![CDATA[Using your OpenVPN Road Warrior setup as a Secure Relay for the users - 01]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/09/Using-your-OpenVPN-Road-Warrior-setup-as-a-Secure-Relay-for-the-users-02.png</image:loc>
+			<image:title><![CDATA[Using your OpenVPN Road Warrior setup as a Secure Relay for the users - 02]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/pfsense-2-0-release-now-available/</loc>
+		<lastmod>2019-02-18T12:57:41+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/windows-server-8-on-vm-workstation-8-with-hyper-v-role/</loc>
+		<lastmod>2019-02-18T12:58:11+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/pfsense-2-0-rc1-configuration-of-openvpn-server-for-rad-warrior-with-tls-and-user-authentication/</loc>
+		<lastmod>2019-02-18T13:58:17+00:00</lastmod>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/OpenVPn-Client-Export-Utility2.png</image:loc>
+			<image:title><![CDATA[OpenVPn Client Export Utility]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/Create-CA-Cert1.png</image:loc>
+			<image:title><![CDATA[Create CA Cert]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/Create-New-User1.png</image:loc>
+			<image:title><![CDATA[Create New User]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/OpenVPN-Wizz-011.png</image:loc>
+			<image:title><![CDATA[OpenVPN Wizz 01]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/OpenVPN-Wizz-02.png</image:loc>
+			<image:title><![CDATA[OpenVPN Wizz 02]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/OpenVPN-Wizz-03.png</image:loc>
+			<image:title><![CDATA[OpenVPN Wizz 03]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/OpenVPN-Server-Certificate-Creation.png</image:loc>
+			<image:title><![CDATA[OpenVPN Server Certificate Creation]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/OpenVPN-Wizz-04-Confgiuration.png</image:loc>
+			<image:title><![CDATA[OpenVPN Wizz 04- Confgiuration]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/OpenVPN-Wizz-05-Configuration-II.png</image:loc>
+			<image:title><![CDATA[OpenVPN Wizz 05 - Configuration II]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/OpenVPN-Wizz-06-Configuration-III.png</image:loc>
+			<image:title><![CDATA[OpenVPN Wizz 06 - Configuration III]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/OpenVPN-Wizz-07-Configuration-III.png</image:loc>
+			<image:title><![CDATA[OpenVPN Wizz 07 - Configuration III]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2011/04/Export-User-Configuration.png</image:loc>
+			<image:title><![CDATA[Export User Configuration]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/about-video-talks-and-who-benefits-from-them/</loc>
+		<lastmod>2019-02-19T09:06:12+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/azure-architecture-useful-resources/</loc>
+		<lastmod>2019-02-28T19:48:18+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://blog.stefcho.eu/my-blog-new-home/</loc>
+		<lastmod>2019-03-05T12:03:41+00:00</lastmod>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2019/03/WordPress-on-Linux-on-Azure.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2019/03/aci_logo.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2019/03/Raspberry-Pi.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://blog.stefcho.eu/wp-content/uploads/2019/03/docker-logo-png-transparent.png</image:loc>
+		</image:image>
+	</url>
+</urlset>
+<!-- XML Sitemap generated by Yoast SEO -->

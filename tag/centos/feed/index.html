@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>CentOS &#8211; Stefcho&#039;s Tech Blog</title>
+	<atom:link href="https://blog.stefcho.eu/tag/centos/feed/" rel="self" type="application/rss+xml" />
+	<link>http://blog.stefcho.eu/</link>
+	<description>Software Development, Cloud, DevOps and PfSense</description>
+	<lastBuildDate>
+	Tue, 05 Mar 2019 12:03:41 +0000	</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.1</generator>
+
+<image>
+	<url>https://blog.stefcho.eu/wp-content/uploads/2018/10/cropped-0-32x32.jpg</url>
+	<title>CentOS &#8211; Stefcho&#039;s Tech Blog</title>
+	<link>http://blog.stefcho.eu/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>OpenVPN on pfSense 2.0 RC3 with OpenLDAP Authentication on CentOS 5.6</title>
+		<link>https://blog.stefcho.eu/openvpn-on-pfsense-2-0-rc3-with-openldap-authentication-on-centos-5-6/</link>
+				<comments>https://blog.stefcho.eu/openvpn-on-pfsense-2-0-rc3-with-openldap-authentication-on-centos-5-6/#comments</comments>
+				<pubDate>Sat, 13 Aug 2011 09:31:34 +0000</pubDate>
+		<dc:creator><![CDATA[Stefan]]></dc:creator>
+				<category><![CDATA[Technical]]></category>
+		<category><![CDATA[CentOS]]></category>
+		<category><![CDATA[LDAP]]></category>
+		<category><![CDATA[OpenLDAP]]></category>
+		<category><![CDATA[OpenVPN]]></category>
+		<category><![CDATA[pfSense]]></category>
+		<category><![CDATA[pfSense 2.0 RC3]]></category>
+
+		<guid isPermaLink="false">http://stefcho.azurewebsites.net/?p=916</guid>
+				<description><![CDATA[<p>Introduction After writing OpenVPN with LDAP authentication on pfSense 2.0 RC1, a reader of my blog shared some problems with configuring OpenLDAP on CentOS.&#160; So I decide to build such a setup and test. Scenario The scenario is as follows, authenticating users requiring access to the OpenVPN server against OpenLDAP service running on CentOS. Setup [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/openvpn-on-pfsense-2-0-rc3-with-openldap-authentication-on-centos-5-6/">OpenVPN on pfSense 2.0 RC3 with OpenLDAP Authentication on CentOS 5.6</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p><strong>Introduction</strong></p>
+<p>After writing OpenVPN with LDAP authentication on pfSense 2.0 RC1, a reader of my blog shared some problems with configuring OpenLDAP on CentOS.&nbsp; So I decide to build such a setup and test.</p>
+<p><strong>Scenario</strong></p>
+<p>The scenario is as follows, authenticating users requiring access to the OpenVPN server against OpenLDAP service running on CentOS.</p>
+<p><strong>Setup</strong></p>
+<p>I’ve spent most time in preparing the CentOS server. Initially my decision was to use CentOS 6.0, but after a few failed attempts to configure it and the absence of how to guides for this purpose, I’ve decided to fall back to 5.6.</p>
+<p>For this version there is a wonderful how to guide here:</p>
+<p><a href="http://drozd.com/2011/04/22/openldap-on-centos-5-6/" target="_blank">OpenLDAP on CentOS 5.6</a></p>
+<p><a href="http://drozd.com/2011/04/22/openldap-on-centos-5-6/" target="_blank">Install And Configure OpenLDAP 2.4.25 On CentOS 5.6</a></p>
+<p>Following this instructions I’ve managed to setup OpenLDAP very fast.&nbsp; The only comment that I have is in this section:</p>
+<blockquote><p>All data loaded is in&nbsp;<a title="LDAP Data Interchange Format" href="http://en.wikipedia.org/wiki/LDAP_Data_Interchange_Format" target="_blank">LDIF</a> format. Create a file to initialize the LDAP database:</p>
+<p># vi ldap-init.ldif</p>
+<p>dn: dc=mycompany,dc=com</p>
+<p>objectclass: dcObject</p>
+<p>objectclass: organization</p>
+<p>o: Example</p>
+<p>dc: mycompany</p>
+<p>dn: cn=Admin,dc=mycompany,dc=com</p>
+<p>objectclass: organizationalRole</p>
+<p>cn: Admin</p>
+<p>&nbsp;</p></blockquote>
+<p>you have to have one new row, otherwise the import in the next step fails. So the above should look like:</p>
+<blockquote><p># vi ldap-init.ldif</p>
+<p>dn: dc=mycompany,dc=com</p>
+<p>objectclass: dcObject</p>
+<p>objectclass: organization</p>
+<p>o: Example</p>
+<p>dc: mycompany</p>
+<p>&nbsp;</p>
+<p>dn: cn=Admin,dc=mycompany,dc=com</p>
+<p>objectclass: organizationalRole</p>
+<p>cn: Admin</p>
+<p>&nbsp;</p></blockquote>
+<p>&nbsp;</p>
+<p>Next step is to create a few test users. &nbsp;For that purpose I’ve used :</p>
+<p><a href="http://ldapadmin.sourceforge.net/" target="_blank">LDAP Admin</a></p>
+<blockquote><p>Ldap Admin is free Win32 administration tool for LDAP directory management. This application lets you browse, search, modify, create and delete objects on LDAP server. It also supports more complex operations such as directory copy and move between remote servers and extends the common edit functions to support specific object types (such as groups and accounts).</p>
+<p>You can use it to manage Posix groups and accounts, Samba accounts and it even includes support for Postfix MTA. Ldap Admin is free Open Source software distributed under the GNU General Public License.</p></blockquote>
+<p><strong>Configuration</strong></p>
+<p>It is time to configure the pfSense. I will skip all the steps described in the previous posts. You can find them here:</p>
+<p><a href="http://stefcho.azurewebsites.net/?p=492" target="_blank">pfSense 2.0 RC1 configuration of OpenVPN Server for Road Warrior with TLS and User Authentication</a></p>
+<p><a href="http://stefcho.azurewebsites.net/?p=528" target="_blank">OpenVPN with LDAP authentication on pfSense 2.0 RC1</a></p>
+<p>Now let’s get straight to System &gt; User Manager and on the Servers leaf.</p>
+<p><strong>Hostname or IP address:</strong> this it the address of the CentOS server</p>
+<p><strong>Base DN</strong>: this is the domain name</p>
+<p><strong>Authentication container</strong>: after insterted the Bind credentials, it was visible, but when I&#8217;ve click on the Save button, nothing happen. So I&#8217;ve typed it in manually.</p>
+<p><strong>Bind Credentials</strong>: enter User DN and Password. , I&#8217;ve tested it and with <strong>Use anonymous binds to resolve distinguished names</strong>, it works also.</p>
+<p><strong>Group Member Attribute</strong>: you can modify this with the Uid=%s, if you need.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/08/Authenticaton-Config.png"><img class="alignnone size-full wp-image-917" title="Authenticaton Config" src="https://blog.stefcho.eu/wp-content/uploads/2011/08/Authenticaton-Config.png" alt="" width="888" height="732" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/08/Authenticaton-Config.png 888w, https://blog.stefcho.eu/wp-content/uploads/2011/08/Authenticaton-Config-300x247.png 300w" sizes="(max-width: 888px) 100vw, 888px" /></a></p>
+<p><strong>Testing</strong></p>
+<p>Just for reference this is my test user.<strong><br />
+</strong></p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/08/LDAP-Admin.png"><img class="alignnone size-full wp-image-918" title="LDAP Admin" src="https://blog.stefcho.eu/wp-content/uploads/2011/08/LDAP-Admin.png" alt="" width="742" height="409" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/08/LDAP-Admin.png 742w, https://blog.stefcho.eu/wp-content/uploads/2011/08/LDAP-Admin-300x165.png 300w" sizes="(max-width: 742px) 100vw, 742px" /></a></p>
+<p>After preforming the OpenVPN configuration, enter the user name and the password.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/08/OpenVPN-Login.png"><img class="alignnone size-full wp-image-920" title="OpenVPN Login" src="https://blog.stefcho.eu/wp-content/uploads/2011/08/OpenVPN-Login.png" alt="" width="577" height="372" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/08/OpenVPN-Login.png 577w, https://blog.stefcho.eu/wp-content/uploads/2011/08/OpenVPN-Login-300x193.png 300w" sizes="(max-width: 577px) 100vw, 577px" /></a></p>
+<p>If everything is OK, you should be successfully connected and see something similar in the OpenVPN logs:</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/08/OpenVPN-server-Log.png"><img class="alignnone size-full wp-image-919" title="OpenVPN server Log" src="https://blog.stefcho.eu/wp-content/uploads/2011/08/OpenVPN-server-Log.png" alt="" width="805" height="423" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/08/OpenVPN-server-Log.png 805w, https://blog.stefcho.eu/wp-content/uploads/2011/08/OpenVPN-server-Log-300x157.png 300w" sizes="(max-width: 805px) 100vw, 805px" /></a></p>
+<p>You can also test the connection using the Diagnostics &gt; Authentication, Select the Authentication Server, in my case the CentOS OpenLDAP connection is named Test. Enter Username and Password, and see the result.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authentication.png"><img class="alignnone size-full wp-image-943" title="Test Authentication" src="https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authentication.png" alt="" width="881" height="342" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authentication.png 881w, https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authentication-300x116.png 300w" sizes="(max-width: 881px) 100vw, 881px" /></a></p>
+<p>If you get error, you can check the Status&gt; System Logs on the System leaf for errors.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authenticaion-Error-Msg.png"><img class="alignnone size-full wp-image-944" title="Test Authenticaion Error Msg" src="https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authenticaion-Error-Msg.png" alt="" width="886" height="387" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authenticaion-Error-Msg.png 886w, https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authenticaion-Error-Msg-300x131.png 300w" sizes="(max-width: 886px) 100vw, 886px" /></a></p>
+<p>I&#8217;ve got this error when the CentOS server was turn off.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authenticaion-Error-System-Logs.png"><img class="alignnone size-full wp-image-945" title="Test Authenticaion Error System Logs" src="https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authenticaion-Error-System-Logs.png" alt="" width="887" height="262" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authenticaion-Error-System-Logs.png 887w, https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authenticaion-Error-System-Logs-300x88.png 300w" sizes="(max-width: 887px) 100vw, 887px" /></a></p>
+<p><strong>Issues</strong></p>
+<p>The issues that I faced was the problem with selecting the OU in which my users resides. Hope this will be fixed in future versions<strong>. </strong>On the CentOS side the problems were releted with the changes of OpenLDAP in the 6.0 version.<strong><br />
+</strong></p>
+<p><strong> Conclusion</strong></p>
+<p>That’s it. Thank you for reading.</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/openvpn-on-pfsense-2-0-rc3-with-openldap-authentication-on-centos-5-6/">OpenVPN on pfSense 2.0 RC3 with OpenLDAP Authentication on CentOS 5.6</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></content:encoded>
+							<wfw:commentRss>https://blog.stefcho.eu/openvpn-on-pfsense-2-0-rc3-with-openldap-authentication-on-centos-5-6/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+							</item>
+	</channel>
+</rss>

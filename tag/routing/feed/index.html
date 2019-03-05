@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Routing &#8211; Stefcho&#039;s Tech Blog</title>
+	<atom:link href="https://blog.stefcho.eu/tag/routing/feed/" rel="self" type="application/rss+xml" />
+	<link>http://blog.stefcho.eu/</link>
+	<description>Software Development, Cloud, DevOps and PfSense</description>
+	<lastBuildDate>
+	Tue, 05 Mar 2019 12:03:41 +0000	</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.1</generator>
+
+<image>
+	<url>https://blog.stefcho.eu/wp-content/uploads/2018/10/cropped-0-32x32.jpg</url>
+	<title>Routing &#8211; Stefcho&#039;s Tech Blog</title>
+	<link>http://blog.stefcho.eu/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Routing Road Warrior’s clients through a Site-To-Site VPN with pfSense 2.0 RC1 and OpenVPN</title>
+		<link>https://blog.stefcho.eu/routing-road-warriors-clients-through-a-site-to-site-vpn-with-pfsense-2-0-rc1-and-openvpn/</link>
+				<comments>https://blog.stefcho.eu/routing-road-warriors-clients-through-a-site-to-site-vpn-with-pfsense-2-0-rc1-and-openvpn/#comments</comments>
+				<pubDate>Sat, 04 Jun 2011 14:39:06 +0000</pubDate>
+		<dc:creator><![CDATA[Stefan]]></dc:creator>
+				<category><![CDATA[Technical]]></category>
+		<category><![CDATA[Network]]></category>
+		<category><![CDATA[OpenVPN]]></category>
+		<category><![CDATA[pfSense]]></category>
+		<category><![CDATA[Routing]]></category>
+
+		<guid isPermaLink="false">http://stefcho.azurewebsites.net/?p=733</guid>
+				<description><![CDATA[<p>After we looked at the different options for Road Warrior and Site to Site configuration for OpenVPN on pfSense 2.0 RC1, now it is time to combine them in one solution. Scenario You have one or more Site to Site VPNs already and at least one Road Warrior setup for your users. Initially you are [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/routing-road-warriors-clients-through-a-site-to-site-vpn-with-pfsense-2-0-rc1-and-openvpn/">Routing Road Warrior’s clients through a Site-To-Site VPN with pfSense 2.0 RC1 and OpenVPN</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[<p>After we looked at the different options for Road Warrior and Site to Site configuration for OpenVPN on pfSense 2.0 RC1, now it is time to combine them in one solution.</p>
+<h1>Scenario</h1>
+<p>You have one or more Site to Site VPNs already and at least one Road Warrior setup for your users. Initially you are happy that you users can consume services from the site that hosts the Road Warrior, but then you want to give them access through the same connection to other sites connected to your main one.</p>
+<h1>Setup</h1>
+<p>Take a look at the network diagram.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/OpenVPN-site-to-site-and-Road-Warrior-routing.png"><img class="aligncenter size-full wp-image-734" title="OpenVPN site to site and Road Warrior, routing" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/OpenVPN-site-to-site-and-Road-Warrior-routing.png" alt="" width="769" height="412" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/OpenVPN-site-to-site-and-Road-Warrior-routing.png 769w, https://blog.stefcho.eu/wp-content/uploads/2011/06/OpenVPN-site-to-site-and-Road-Warrior-routing-300x160.png 300w" sizes="(max-width: 769px) 100vw, 769px" /></a></p>
+<p>pfSense01 serves the main site, and provides access to the remote users, but also has a site to site configuration with pfSense02.</p>
+<p>If you are on the LAN (10.10.9.0/24) side behind pfSense01, you will be able to access machines through the Site to Site connection and communicate with machines on the other end, for example 10.10.10.99.</p>
+<p>But if you are the VPN Client, you will be able to only access machines in the 10.10.9.0/24 network.</p>
+<p>Our aim is to provide the VPN Client access to network behind pfSense02 (10.10.10.0/24) in addition to the 10.10.9.0/24 one.</p>
+<h1>Configuration</h1>
+<p>If you have already configured Road Warrior and Site To Site configuration skip to the Advanced Configuration section below.</p>
+<h2>Road Warrior</h2>
+<p>For reference how to configure it, you can look at my other posts, and choose depending on your needs:</p>
+<p><a href="http://stefcho.azurewebsites.net/?p=492" target="_blank">pfSense 2.0 RC1 configuration of OpenVPN Server for Rad Warrior with TLS and User Authentication</a></p>
+<p><a href="http://stefcho.azurewebsites.net/?p=528" target="_blank">OpenVPN with LDAP authentication on pfSense 2.0 RC1</a></p>
+<p><a href="http://stefcho.azurewebsites.net/?p=545" target="_blank">OpenVPN with RADIUS authentication on pfSense 2.0 RC1</a></p>
+<p>&nbsp;</p>
+<h2>Site To Site</h2>
+<p>In case that you don’t have a site to site configuration ready, you can check out one of this posts:</p>
+<p><a href="http://stefcho.azurewebsites.net/?p=576" target="_blank">Building Site to Site Connection with OpenVPN on pfSense 2.0 RC1 with Shared Key</a></p>
+<p><a href="http://stefcho.azurewebsites.net/?p=611" target="_blank">Building Site to Site Connection with OpenVPN on pfSense 2.0 RC1 with PKI</a></p>
+<p>&nbsp;</p>
+<h1>Advanced Configuration</h1>
+<p>On pfSense 01,navigate to VPN &gt; OpenVPN</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/Road-Warrior-Config-01.png"><img class="aligncenter size-full wp-image-736" title="Road-Warrior-Config-01" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/Road-Warrior-Config-01.png" alt="" width="580" height="173" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/Road-Warrior-Config-01.png 580w, https://blog.stefcho.eu/wp-content/uploads/2011/06/Road-Warrior-Config-01-300x89.png 300w" sizes="(max-width: 580px) 100vw, 580px" /></a></p>
+<p>on the Server leaf, in the Road Warrior configuration scroll down to the bottom section titled Advanced Configuration</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/Road-Warrior-Config-02.png"><img class="aligncenter size-full wp-image-737" title="Road-Warrior-Config-02" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/Road-Warrior-Config-02.png" alt="" width="915" height="328" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/Road-Warrior-Config-02.png 915w, https://blog.stefcho.eu/wp-content/uploads/2011/06/Road-Warrior-Config-02-300x107.png 300w" sizes="(max-width: 915px) 100vw, 915px" /></a></p>
+<p>and enter this line:</p>
+<blockquote><p>push &#8220;route 10.10.10.0 255.255.255.0&#8221;;</p></blockquote>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/Road-Warrior-Config-03.png"><img class="aligncenter size-full wp-image-738" title="Road-Warrior-Config-03" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/Road-Warrior-Config-03.png" alt="" width="912" height="574" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/Road-Warrior-Config-03.png 912w, https://blog.stefcho.eu/wp-content/uploads/2011/06/Road-Warrior-Config-03-300x188.png 300w" sizes="(max-width: 912px) 100vw, 912px" /></a></p>
+<p>&nbsp;</p>
+<p>On pfSense 02, again navigate to VPN &gt; OpenVPN, on the Client leaf, and open the Site To Site configuration</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/Site-To-Site-Config-02.png"><img class="aligncenter size-full wp-image-739" title="Site-To-Site-Config-02" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/Site-To-Site-Config-02.png" alt="" width="914" height="378" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/Site-To-Site-Config-02.png 914w, https://blog.stefcho.eu/wp-content/uploads/2011/06/Site-To-Site-Config-02-300x124.png 300w" sizes="(max-width: 914px) 100vw, 914px" /></a></p>
+<p>Scroll down to the bottom section titled Advanced Configuration, and enter this line:</p>
+<blockquote><p>route 10.123.45.0 255.255.255.0;</p></blockquote>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/Site-To-Site-Config-03.png"><img class="aligncenter size-full wp-image-740" title="Site-To-Site-Config-03" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/Site-To-Site-Config-03.png" alt="" width="913" height="573" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/Site-To-Site-Config-03.png 913w, https://blog.stefcho.eu/wp-content/uploads/2011/06/Site-To-Site-Config-03-300x188.png 300w" sizes="(max-width: 913px) 100vw, 913px" /></a></p>
+<h1>Explanation</h1>
+<p>As jimp explained in the thread mentioned below,</p>
+<p>The <strong>push &#8220;route 10.10.10.0 255.255.255.0&#8221;;</strong> on the Road Warrior configuration tells the client that they can reach machines on the second site via the OpenVPN connection. While establishing connation OpenVPN Client adds an additional route to the second site.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/OpenVPN-Client-Route-Print-Result.png"><img class="aligncenter size-full wp-image-741" title="OpenVPN-Client-Route-Print-Result" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/OpenVPN-Client-Route-Print-Result.png" alt="" width="672" height="330" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/OpenVPN-Client-Route-Print-Result.png 672w, https://blog.stefcho.eu/wp-content/uploads/2011/06/OpenVPN-Client-Route-Print-Result-300x147.png 300w" sizes="(max-width: 672px) 100vw, 672px" /></a></p>
+<p>The <strong>route 10.123.45.0 255.255.255.0;</strong> will instruct the second site how to answer on requests from the OpenVPN Client.</p>
+<h1>Testing</h1>
+<p>After you save the configuration changes, connect to the Road Warrior, and test you connectivity to machine on both sites.</p>
+<h1>References</h1>
+<p>While I was configuring similar setup, the routing part was new to me and I found it difficult to grasp at the time, but thanks to jimp’s help on the matter everything is crystal clear.<br />
+You can check out the thread in the pfSense forum here:<br />
+<a href="http://forum.pfsense.org/index.php/topic,26036.msg135394.html#msg135394" target="_blank">Topic: Routing Road Warrior to Site-To-Site, pfSense as OpenVPN client configuration</a></p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/routing-road-warriors-clients-through-a-site-to-site-vpn-with-pfsense-2-0-rc1-and-openvpn/">Routing Road Warrior’s clients through a Site-To-Site VPN with pfSense 2.0 RC1 and OpenVPN</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></content:encoded>
+							<wfw:commentRss>https://blog.stefcho.eu/routing-road-warriors-clients-through-a-site-to-site-vpn-with-pfsense-2-0-rc1-and-openvpn/feed/</wfw:commentRss>
+		<slash:comments>7</slash:comments>
+							</item>
+	</channel>
+</rss>
