@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Dual-WAN &#8211; Stefcho&#039;s Tech Blog</title>
+	<atom:link href="https://blog.stefcho.eu/tag/dual-wan/feed/" rel="self" type="application/rss+xml" />
+	<link>http://blog.stefcho.eu/</link>
+	<description>Software Development, Cloud, DevOps and PfSense</description>
+	<lastBuildDate>
+	Sat, 09 Mar 2019 11:33:55 +0000	</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.1</generator>
+
+<image>
+	<url>https://blog.stefcho.eu/wp-content/uploads/2018/10/cropped-0-32x32.jpg</url>
+	<title>Dual-WAN &#8211; Stefcho&#039;s Tech Blog</title>
+	<link>http://blog.stefcho.eu/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Multi-WAN with pfSense HTTPs Sites Issue</title>
+		<link>https://blog.stefcho.eu/multi-wan-with-pfsense-https-sites-issue/</link>
+				<pubDate>Sat, 09 Mar 2019 11:33:53 +0000</pubDate>
+		<dc:creator><![CDATA[Stefan]]></dc:creator>
+				<category><![CDATA[Technical]]></category>
+		<category><![CDATA[Dual-WAN]]></category>
+		<category><![CDATA[HTTPS]]></category>
+		<category><![CDATA[pfSense]]></category>
+
+		<guid isPermaLink="false">https://blog.stefcho.eu/?p=1226</guid>
+				<description><![CDATA[<p>I’ve been running pfSense in Dual WAN mode for more than a decade. Unfortunately, some sites lately are quite sensitive per user session originating from multiple public IP addresses. The best description of the problem is from the official pfSense documentation: Some websites store session information including the client IP address, and if a subsequent [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/multi-wan-with-pfsense-https-sites-issue/">Multi-WAN with pfSense HTTPs Sites Issue</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[
+<p>I’ve been running pfSense in Dual WAN mode for more than a decade. Unfortunately, some sites lately are quite sensitive per user session originating from multiple public IP addresses. The best description of the problem is from the official pfSense documentation:</p>
+
+
+
+<blockquote class="wp-block-quote"><p>Some websites store session information including the client IP address, and if a subsequent connection to that site is routed out a different WAN interface using a different public IP address, the website will not function properly. This is becoming more common with banks and other security-minded sites. The suggested means of working around this is to create a failover group and direct traffic destined to these sites to the failover group rather than a load balancing group. Alternately, perform failover for all HTTPS traffic.</p><p>The sticky connections feature of pf is intended to resolve this problem, but it has historically been problematic. It is safe to use, and should alleviate this, but there is also a downside to using the sticky option. When using sticky connections, an association is held between the client IP address and a given gateway, it is not based off of the destination. When the sticky connections option is enabled, any given client would not load balance its connections between multiple WANs, but it would be associated with whichever gateway it happened to use for its first connection. Once all of the client states have expired, the client may exit a different WAN for its next connection, resulting in a new gateway pairing.</p></blockquote>
+
+
+
+<p style="text-align:right"><a href="https://docs.netgate.com/pfsense/en/latest/book/multiwan/load-balancing-and-failover.html#problems-with-load-balancing" target="_blank" rel="noreferrer noopener" aria-label="Problems with Load Balancing (opens in a new tab)">Problems with Load Balancing</a></p>
+
+
+
+<p><br>After some testing and consideration let’s leave the sticky connections unchecked. As mentioned above they are problematic. </p>
+
+
+
+<figure class="wp-block-image"><a href="https://blog.stefcho.eu/wp-content/uploads/2019/03/GUI_Use_sticky_connections.png" target="_blank" rel="noreferrer noopener"><img src="https://blog.stefcho.eu/wp-content/uploads/2019/03/GUI_Use_sticky_connections-1024x206.png" alt="" class="wp-image-1248" srcset="https://blog.stefcho.eu/wp-content/uploads/2019/03/GUI_Use_sticky_connections-1024x206.png 1024w, https://blog.stefcho.eu/wp-content/uploads/2019/03/GUI_Use_sticky_connections-300x60.png 300w, https://blog.stefcho.eu/wp-content/uploads/2019/03/GUI_Use_sticky_connections-768x154.png 768w, https://blog.stefcho.eu/wp-content/uploads/2019/03/GUI_Use_sticky_connections.png 1146w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure>
+
+
+
+<figure class="wp-block-image"><a href="https://blog.stefcho.eu/wp-content/uploads/2019/03/pfSense_HangOuts_Slide-1024x779.png" target="_blank" rel="noreferrer noopener"><img src="https://blog.stefcho.eu/wp-content/uploads/2019/03/pfSense_HangOuts_Slide-1024x779.png" alt="" class="wp-image-1241"/></a></figure>
+
+
+
+<p>Other description of the problem here: </p>
+
+
+
+<blockquote class="wp-block-quote"><p>Some websites do not work properly if requests from the LAN are initiated from multiple public IP addresses. Hence load balancing is incompatible with these sites. Common examples are sites that maintain login sessions, most frequently online banking. This is most commonly observed with HTTPS sites so usually HTTPS should not be load balanced. Occasionally it is a problem with HTTP sites that maintain session, but this is rare. </p><p>For sites that do not function with load balancing, add firewall rules to not load balance traffic to these destinations or protocols. </p></blockquote>
+
+
+
+<p style="text-align:right"><a href="https://docs.netgate.com/pfsense/en/latest/routing/multi-wan-compatibility.html?web-site-incompatibility-with-changing-ip-addresses#web-site-incompatibility-with-changing-ip-addresses" target="_blank" rel="noreferrer noopener" aria-label="Web site incompatibility with changing IP addresses (opens in a new tab)">Web site incompatibility with changing IP addresses</a></p>
+
+
+
+<p><br>To alleviate this issue, you can do the following:<br><br>Here are my two Gateways</p>
+
+
+
+<figure class="wp-block-image"><a href="https://blog.stefcho.eu/wp-content/uploads/2019/03/Gateways.png" target="_blank" rel="noreferrer noopener"><img src="https://blog.stefcho.eu/wp-content/uploads/2019/03/Gateways-1024x217.png" alt="" class="wp-image-1247" srcset="https://blog.stefcho.eu/wp-content/uploads/2019/03/Gateways-1024x217.png 1024w, https://blog.stefcho.eu/wp-content/uploads/2019/03/Gateways-300x64.png 300w, https://blog.stefcho.eu/wp-content/uploads/2019/03/Gateways-768x163.png 768w, https://blog.stefcho.eu/wp-content/uploads/2019/03/Gateways.png 1145w" sizes="(max-width: 1024px) 100vw, 1024px" /></a><figcaption><br></figcaption></figure>
+
+
+
+<p>Make two Gateway
+Groups</p>
+
+
+
+<figure class="wp-block-image"><a href="https://blog.stefcho.eu/wp-content/uploads/2019/03/Gateway-Groups.png" target="_blank" rel="noreferrer noopener"><img src="https://blog.stefcho.eu/wp-content/uploads/2019/03/Gateway-Groups-1024x316.png" alt="" class="wp-image-1246" srcset="https://blog.stefcho.eu/wp-content/uploads/2019/03/Gateway-Groups-1024x316.png 1024w, https://blog.stefcho.eu/wp-content/uploads/2019/03/Gateway-Groups-300x93.png 300w, https://blog.stefcho.eu/wp-content/uploads/2019/03/Gateway-Groups-768x237.png 768w, https://blog.stefcho.eu/wp-content/uploads/2019/03/Gateway-Groups.png 1147w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure>
+
+
+
+<p>One for Load Balancing<br><br>Set for both Gateways Tier 1 </p>
+
+
+
+<figure class="wp-block-image"><a href="https://blog.stefcho.eu/wp-content/uploads/2019/03/LoadBalanced-WANs.png" target="_blank" rel="noreferrer noopener"><img src="https://blog.stefcho.eu/wp-content/uploads/2019/03/LoadBalanced-WANs-1024x526.png" alt="" class="wp-image-1249" srcset="https://blog.stefcho.eu/wp-content/uploads/2019/03/LoadBalanced-WANs-1024x526.png 1024w, https://blog.stefcho.eu/wp-content/uploads/2019/03/LoadBalanced-WANs-300x154.png 300w, https://blog.stefcho.eu/wp-content/uploads/2019/03/LoadBalanced-WANs-768x394.png 768w, https://blog.stefcho.eu/wp-content/uploads/2019/03/LoadBalanced-WANs.png 1151w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure>
+
+
+
+<p>One for Failover<br> <br>Set Tire1 for the one and Tier 2 for the second </p>
+
+
+
+<figure class="wp-block-image"><a href="https://blog.stefcho.eu/wp-content/uploads/2019/03/FailOver-WANs.png" target="_blank" rel="noreferrer noopener"><img src="https://blog.stefcho.eu/wp-content/uploads/2019/03/FailOver-WANs-1024x528.png" alt="" class="wp-image-1245" srcset="https://blog.stefcho.eu/wp-content/uploads/2019/03/FailOver-WANs-1024x528.png 1024w, https://blog.stefcho.eu/wp-content/uploads/2019/03/FailOver-WANs-300x155.png 300w, https://blog.stefcho.eu/wp-content/uploads/2019/03/FailOver-WANs-768x396.png 768w, https://blog.stefcho.eu/wp-content/uploads/2019/03/FailOver-WANs.png 1143w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure>
+
+
+
+<p>Go to the LAN Rules</p>
+
+
+
+<figure class="wp-block-image"><a href="https://blog.stefcho.eu/wp-content/uploads/2019/03/Rules_LAN.png" target="_blank" rel="noreferrer noopener"><img src="https://blog.stefcho.eu/wp-content/uploads/2019/03/Rules_LAN-1024x336.png" alt="" class="wp-image-1251" srcset="https://blog.stefcho.eu/wp-content/uploads/2019/03/Rules_LAN-1024x336.png 1024w, https://blog.stefcho.eu/wp-content/uploads/2019/03/Rules_LAN-300x99.png 300w, https://blog.stefcho.eu/wp-content/uploads/2019/03/Rules_LAN-768x252.png 768w, https://blog.stefcho.eu/wp-content/uploads/2019/03/Rules_LAN.png 1154w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure>
+
+
+
+<p>Set the default LAN
+rule to use the Load Balancing Gateway Group. </p>
+
+
+
+<figure class="wp-block-image"><a href="https://blog.stefcho.eu/wp-content/uploads/2019/03/Rules_LAN_LB.png" target="_blank" rel="noreferrer noopener"><img src="https://blog.stefcho.eu/wp-content/uploads/2019/03/Rules_LAN_LB-1024x904.png" alt="" class="wp-image-1253" srcset="https://blog.stefcho.eu/wp-content/uploads/2019/03/Rules_LAN_LB-1024x904.png 1024w, https://blog.stefcho.eu/wp-content/uploads/2019/03/Rules_LAN_LB-300x265.png 300w, https://blog.stefcho.eu/wp-content/uploads/2019/03/Rules_LAN_LB-768x678.png 768w, https://blog.stefcho.eu/wp-content/uploads/2019/03/Rules_LAN_LB.png 1148w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure>
+
+
+
+<p>Add new rule that will be valid only for HTTPS connection and set the Gateway to the Fail-over Gateway Group. </p>
+
+
+
+<figure class="wp-block-image"><a href="https://blog.stefcho.eu/wp-content/uploads/2019/03/Rules_LAN_FOWAN_HTTPS-1.png" target="_blank" rel="noreferrer noopener"><img src="https://blog.stefcho.eu/wp-content/uploads/2019/03/Rules_LAN_FOWAN_HTTPS-1-967x1024.png" alt="" class="wp-image-1273" srcset="https://blog.stefcho.eu/wp-content/uploads/2019/03/Rules_LAN_FOWAN_HTTPS-1-967x1024.png 967w, https://blog.stefcho.eu/wp-content/uploads/2019/03/Rules_LAN_FOWAN_HTTPS-1-283x300.png 283w, https://blog.stefcho.eu/wp-content/uploads/2019/03/Rules_LAN_FOWAN_HTTPS-1-768x814.png 768w, https://blog.stefcho.eu/wp-content/uploads/2019/03/Rules_LAN_FOWAN_HTTPS-1.png 1147w" sizes="(max-width: 967px) 100vw, 967px" /></a></figure>
+
+
+
+<p>This way all HTTPS
+connections will pass through the First WAN until it goes down and failover to the
+Second. 
+
+The alternative is to make
+separate rule for each and every HTTPS site with issues. The rule will be very
+similar to the one for HTTPS. The difference will be that Destination address will
+be single Public IP. Doing so will load balance all other HTTPS connection that
+don’t have this problem.
+
+
+
+</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/multi-wan-with-pfsense-https-sites-issue/">Multi-WAN with pfSense HTTPs Sites Issue</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></content:encoded>
+										</item>
+	</channel>
+</rss>

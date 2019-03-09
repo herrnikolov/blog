@@ -2,19 +2,19 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<sitemap>
 		<loc>https://blog.stefcho.eu/post-sitemap.xml</loc>
-		<lastmod>2019-03-05T12:03:41+00:00</lastmod>
+		<lastmod>2019-03-09T11:33:55+00:00</lastmod>
 	</sitemap>
 	<sitemap>
 		<loc>https://blog.stefcho.eu/attachment-sitemap.xml</loc>
-		<lastmod>2019-03-05T12:02:20+00:00</lastmod>
+		<lastmod>2019-03-09T11:31:03+00:00</lastmod>
 	</sitemap>
 	<sitemap>
 		<loc>https://blog.stefcho.eu/category-sitemap.xml</loc>
-		<lastmod>2019-03-05T12:03:41+00:00</lastmod>
+		<lastmod>2019-03-09T11:33:55+00:00</lastmod>
 	</sitemap>
 	<sitemap>
 		<loc>https://blog.stefcho.eu/post_tag-sitemap.xml</loc>
-		<lastmod>2019-03-05T12:03:41+00:00</lastmod>
+		<lastmod>2019-03-09T11:33:55+00:00</lastmod>
 	</sitemap>
 	<sitemap>
 		<loc>https://blog.stefcho.eu/author-sitemap.xml</loc>

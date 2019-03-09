@@ -158,7 +158,59 @@ http://flickity.metafizzy.co
 	<section class="section-fullwidth section-main"><div class="row">
 			<div class="columns small-12 medium-8">
 				<div id="primary" class="content-area">
-					<main id="main" class="site-main"><article id="post-695" class="entry post-695 post type-post status-publish format-standard hentry category-technical tag-mikrotik-routerboard-rb250g tag-network tag-pfsense tag-vlan"><header class="entry-header"><h2 class="entry-title"><a href="https://blog.stefcho.eu/pfsense-on-a-stick-802-1q-trunking-with-pfsense-2-0-rc1-and-mikrotik-routerboard-rb250g-smart-gigabit-switch-with-five-ports-and-swos-v1-5/" rel="bookmark">pfSense-On-A-Stick – 802.1Q Trunking With pfSense 2.0 RC1 and Mikrotik RouterBoard RB250G Smart Gigabit Switch with five ports and SwOS v1.5</a></h2>		<div class="entry-meta">
+					<main id="main" class="site-main"><article id="post-733" class="entry post-733 post type-post status-publish format-standard hentry category-technical tag-network tag-openvpn tag-pfsense tag-routing"><header class="entry-header"><h2 class="entry-title"><a href="https://blog.stefcho.eu/routing-road-warriors-clients-through-a-site-to-site-vpn-with-pfsense-2-0-rc1-and-openvpn/" rel="bookmark">Routing Road Warrior’s clients through a Site-To-Site VPN with pfSense 2.0 RC1 and OpenVPN</a></h2>		<div class="entry-meta">
+			<span class="posted-on">Posted on <time class="entry-date published" datetime="2011-06-04T16:39:06+02:00">04/06/2011</time> - <time class="updated" datetime="2019-02-18T14:50:56+02:00">18/02/2019</time></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="https://blog.stefcho.eu/author/darko/">Stefan</a></span></span>		</div>
+			</header><div class="entry-content">
+		<p>After we looked at the different options for Road Warrior and Site to Site configuration for OpenVPN on pfSense 2.0 RC1, now it is time to combine them in one solution.</p>
+<h1>Scenario</h1>
+<p>You have one or more Site to Site VPNs already and at least one Road Warrior setup for your users. Initially you are happy that you users can consume services from the site that hosts the Road Warrior, but then you want to give them access through the same connection to other sites connected to your main one.</p>
+<h1>Setup</h1>
+<p>Take a look at the network diagram.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/OpenVPN-site-to-site-and-Road-Warrior-routing.png"><img class="aligncenter size-full wp-image-734" title="OpenVPN site to site and Road Warrior, routing" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/OpenVPN-site-to-site-and-Road-Warrior-routing.png" alt="" width="769" height="412" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/OpenVPN-site-to-site-and-Road-Warrior-routing.png 769w,https://blog.stefcho.eu/wp-content/uploads/2011/06/OpenVPN-site-to-site-and-Road-Warrior-routing-300x160.png 300w" sizes="(max-width: 769px) 100vw, 769px"></a></p>
+<p>pfSense01 serves the main site, and provides access to the remote users, but also has a site to site configuration with pfSense02.</p>
+<p>If you are on the LAN (10.10.9.0/24) side behind pfSense01, you will be able to access machines through the Site to Site connection and communicate with machines on the other end, for example 10.10.10.99.</p>
+<p>But if you are the VPN Client, you will be able to only access machines in the 10.10.9.0/24 network.</p>
+<p>Our aim is to provide the VPN Client access to network behind pfSense02 (10.10.10.0/24) in addition to the 10.10.9.0/24 one.</p>
+<h1>Configuration</h1>
+<p>If you have already configured Road Warrior and Site To Site configuration skip to the Advanced Configuration section below.</p>
+<h2>Road Warrior</h2>
+<p>For reference how to configure it, you can look at my other posts, and choose depending on your needs:</p>
+<p><a href="http://stefcho.azurewebsites.net/?p=492" target="_blank">pfSense 2.0 RC1 configuration of OpenVPN Server for Rad Warrior with TLS and User Authentication</a></p>
+<p><a href="http://stefcho.azurewebsites.net/?p=528" target="_blank">OpenVPN with LDAP authentication on pfSense 2.0 RC1</a></p>
+<p><a href="http://stefcho.azurewebsites.net/?p=545" target="_blank">OpenVPN with RADIUS authentication on pfSense 2.0 RC1</a></p>
+<p> </p>
+<h2>Site To Site</h2>
+<p>In case that you don’t have a site to site configuration ready, you can check out one of this posts:</p>
+<p><a href="http://stefcho.azurewebsites.net/?p=576" target="_blank">Building Site to Site Connection with OpenVPN on pfSense 2.0 RC1 with Shared Key</a></p>
+<p><a href="http://stefcho.azurewebsites.net/?p=611" target="_blank">Building Site to Site Connection with OpenVPN on pfSense 2.0 RC1 with PKI</a></p>
+<p> </p>
+<h1>Advanced Configuration</h1>
+<p>On pfSense 01,navigate to VPN > OpenVPN</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/Road-Warrior-Config-01.png"><img class="aligncenter size-full wp-image-736" title="Road-Warrior-Config-01" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/Road-Warrior-Config-01.png" alt="" width="580" height="173" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/Road-Warrior-Config-01.png 580w,https://blog.stefcho.eu/wp-content/uploads/2011/06/Road-Warrior-Config-01-300x89.png 300w" sizes="(max-width: 580px) 100vw, 580px"></a></p>
+<p>on the Server leaf, in the Road Warrior configuration scroll down to the bottom section titled Advanced Configuration</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/Road-Warrior-Config-02.png"><img class="aligncenter size-full wp-image-737" title="Road-Warrior-Config-02" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/Road-Warrior-Config-02.png" alt="" width="915" height="328" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/Road-Warrior-Config-02.png 915w,https://blog.stefcho.eu/wp-content/uploads/2011/06/Road-Warrior-Config-02-300x107.png 300w" sizes="(max-width: 915px) 100vw, 915px"></a></p>
+<p>and enter this line:</p>
+<blockquote><p>push “route 10.10.10.0 255.255.255.0”;</p></blockquote>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/Road-Warrior-Config-03.png"><img class="aligncenter size-full wp-image-738" title="Road-Warrior-Config-03" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/Road-Warrior-Config-03.png" alt="" width="912" height="574" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/Road-Warrior-Config-03.png 912w,https://blog.stefcho.eu/wp-content/uploads/2011/06/Road-Warrior-Config-03-300x188.png 300w" sizes="(max-width: 912px) 100vw, 912px"></a></p>
+<p> </p>
+<p>On pfSense 02, again navigate to VPN > OpenVPN, on the Client leaf, and open the Site To Site configuration</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/Site-To-Site-Config-02.png"><img class="aligncenter size-full wp-image-739" title="Site-To-Site-Config-02" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/Site-To-Site-Config-02.png" alt="" width="914" height="378" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/Site-To-Site-Config-02.png 914w,https://blog.stefcho.eu/wp-content/uploads/2011/06/Site-To-Site-Config-02-300x124.png 300w" sizes="(max-width: 914px) 100vw, 914px"></a></p>
+<p>Scroll down to the bottom section titled Advanced Configuration, and enter this line:</p>
+<blockquote><p>route 10.123.45.0 255.255.255.0;</p></blockquote>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/Site-To-Site-Config-03.png"><img class="aligncenter size-full wp-image-740" title="Site-To-Site-Config-03" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/Site-To-Site-Config-03.png" alt="" width="913" height="573" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/Site-To-Site-Config-03.png 913w,https://blog.stefcho.eu/wp-content/uploads/2011/06/Site-To-Site-Config-03-300x188.png 300w" sizes="(max-width: 913px) 100vw, 913px"></a></p>
+<h1>Explanation</h1>
+<p>As jimp explained in the thread mentioned below,</p>
+<p>The <strong>push “route 10.10.10.0 255.255.255.0”;</strong> on the Road Warrior configuration tells the client that they can reach machines on the second site via the OpenVPN connection. While establishing connation OpenVPN Client adds an additional route to the second site.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/06/OpenVPN-Client-Route-Print-Result.png"><img class="aligncenter size-full wp-image-741" title="OpenVPN-Client-Route-Print-Result" src="https://blog.stefcho.eu/wp-content/uploads/2011/06/OpenVPN-Client-Route-Print-Result.png" alt="" width="672" height="330" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/06/OpenVPN-Client-Route-Print-Result.png 672w,https://blog.stefcho.eu/wp-content/uploads/2011/06/OpenVPN-Client-Route-Print-Result-300x147.png 300w" sizes="(max-width: 672px) 100vw, 672px"></a></p>
+<p>The <strong>route 10.123.45.0 255.255.255.0;</strong> will instruct the second site how to answer on requests from the OpenVPN Client.</p>
+<h1>Testing</h1>
+<p>After you save the configuration changes, connect to the Road Warrior, and test you connectivity to machine on both sites.</p>
+<h1>References</h1>
+<p>While I was configuring similar setup, the routing part was new to me and I found it difficult to grasp at the time, but thanks to jimp’s help on the matter everything is crystal clear.<br>
+You can check out the thread in the pfSense forum here:<br><a href="http://forum.pfsense.org/index.php/topic,26036.msg135394.html#msg135394" target="_blank">Topic: Routing Road Warrior to Site-To-Site, pfSense as OpenVPN client configuration</a></p>
+	</div>
+
+	<footer class="entry-footer"><span class="cat-links">Posted in <a href="https://blog.stefcho.eu/category/technical/" rel="category tag">Technical</a></span><span class="tags-links">Tagged <a href="https://blog.stefcho.eu/tag/network/" rel="tag">Network</a>, <a href="https://blog.stefcho.eu/tag/openvpn/" rel="tag">OpenVPN</a>, <a href="https://blog.stefcho.eu/tag/pfsense/" rel="tag">pfSense</a>, <a href="https://blog.stefcho.eu/tag/routing/" rel="tag">Routing</a></span><span class="comments-link"><a href="https://blog.stefcho.eu/routing-road-warriors-clients-through-a-site-to-site-vpn-with-pfsense-2-0-rc1-and-openvpn/#comments">7 Comments</a></span>	</footer></article><article id="post-695" class="entry post-695 post type-post status-publish format-standard hentry category-technical tag-mikrotik-routerboard-rb250g tag-network tag-pfsense tag-vlan"><header class="entry-header"><h2 class="entry-title"><a href="https://blog.stefcho.eu/pfsense-on-a-stick-802-1q-trunking-with-pfsense-2-0-rc1-and-mikrotik-routerboard-rb250g-smart-gigabit-switch-with-five-ports-and-swos-v1-5/" rel="bookmark">pfSense-On-A-Stick – 802.1Q Trunking With pfSense 2.0 RC1 and Mikrotik RouterBoard RB250G Smart Gigabit Switch with five ports and SwOS v1.5</a></h2>		<div class="entry-meta">
 			<span class="posted-on">Posted on <time class="entry-date published" datetime="2011-05-25T21:28:03+02:00">25/05/2011</time> - <time class="updated" datetime="2019-02-18T14:50:02+02:00">18/02/2019</time></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="https://blog.stefcho.eu/author/darko/">Stefan</a></span></span>		</div>
 			</header><div class="entry-content">
 		<p> </p>
@@ -532,91 +584,53 @@ The management of users and certificate is much easier in pfSense 2.0. You don�
 <p> </p>
 	</div>
 
-	<footer class="entry-footer"><span class="cat-links">Posted in <a href="https://blog.stefcho.eu/category/technical/" rel="category tag">Technical</a></span><span class="tags-links">Tagged <a href="https://blog.stefcho.eu/tag/openvpn/" rel="tag">OpenVPN</a>, <a href="https://blog.stefcho.eu/tag/pfsense/" rel="tag">pfSense</a></span><span class="comments-link"><a href="https://blog.stefcho.eu/pfsense-2-0-rc1-configuration-of-openvpn-server-for-rad-warrior-with-tls-and-user-authentication/#comments">28 Comments</a></span>	</footer></article><article id="post-455" class="entry post-455 post type-post status-publish format-standard hentry category-technical tag-dd-wrt tag-pfsense"><header class="entry-header"><h2 class="entry-title"><a href="https://blog.stefcho.eu/1-1-nat-in-pfsense-and-dd-wrt/" rel="bookmark">1 : 1 NAT in pfSense and DD-WRT</a></h2>		<div class="entry-meta">
-			<span class="posted-on">Posted on <time class="entry-date published" datetime="2011-04-08T21:18:23+02:00">08/04/2011</time> - <time class="updated" datetime="2019-02-18T14:45:51+02:00">18/02/2019</time></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="https://blog.stefcho.eu/author/darko/">Stefan</a></span></span>		</div>
-			</header><div class="entry-content">
-		<p>Sometimes you need to map internal machine IP to real IP address accessible from the Internet.<a href="https://blog.stefcho.eu/wp-content/uploads/2011/04/1-to-1-NAT-Diagram.png"><img class="aligncenter size-full wp-image-456" title="1 to 1 NAT Diagram" src="https://blog.stefcho.eu/wp-content/uploads/2011/04/1-to-1-NAT-Diagram.png" alt="" width="439" height="217" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/04/1-to-1-NAT-Diagram.png 439w,https://blog.stefcho.eu/wp-content/uploads/2011/04/1-to-1-NAT-Diagram-300x148.png 300w" sizes="(max-width: 439px) 100vw, 439px"></a>As on the diagram if someone makes a request to 1.1.1.2, the request is send to 192.168.1.10.</p>
-<p>On DD-WRT you can use DMZ. This service is pseudo-DMZ, more commonly known outside of the SoHo routes as Exposed host.</p>
-<p>To set is up enter the NAT / QoS section, then select the DMZ subsection, and configure your internal IP. For more information read <a href="http://de.wikipedia.org/wiki/Demilitarized_Zone" target="_blank">here</a></p>
-<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/04/DD-WRT-DMZ.png"><img class="aligncenter size-large wp-image-457" title="DD-WRT---DMZ" src="https://blog.stefcho.eu/wp-content/uploads/2011/04/DD-WRT-DMZ-1024x367.png" alt="" width="586" height="210" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/04/DD-WRT-DMZ-1024x367.png 1024w,https://blog.stefcho.eu/wp-content/uploads/2011/04/DD-WRT-DMZ-300x107.png 300w,https://blog.stefcho.eu/wp-content/uploads/2011/04/DD-WRT-DMZ.png 1028w" sizes="(max-width: 586px) 100vw, 586px"></a></p>
-<p>Be warned that exposing all port of a machine to the Internet is very insecure, and even worse if the machine does not have some kind of firewall.</p>
-<p>In pfSense, the alternative is to use VIP and 1:1 NAT</p>
-<p>You can’t do that in 1.2.3, if you have only one WAN IP, if you do an error message appears: “The WAN IP address may not be used in a 1:1 rule”. Alternative is to make a port forward, which is much more preferable especially if not all ports are included.</p>
-<p>So first you must add your additional WAN IP in the Virtual IP section.</p>
-<p>For Type you can choose between Proxy ARP and CARP, detailed explanation why check out <a href="http://doc.pfsense.org/index.php/What_are_Virtual_IP_Addresses%3F" target="_blank">here</a></p>
-<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-VIP-1.2.3.png"><img class="aligncenter size-full wp-image-458" title="pfSense-VIP-1.2.3" src="https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-VIP-1.2.3.png" alt="" width="807" height="582" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-VIP-1.2.3.png 807w,https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-VIP-1.2.3-300x216.png 300w" sizes="(max-width: 807px) 100vw, 807px"></a></p>
-<p>Then create a 1 : 1 NAT rule</p>
-<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-NAT-1-to-1-1.2.3.png"><img class="aligncenter size-full wp-image-461" title="pfSense-NAT-1-to-1-1.2.3" src="https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-NAT-1-to-1-1.2.3.png" alt="" width="811" height="318" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-NAT-1-to-1-1.2.3.png 811w,https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-NAT-1-to-1-1.2.3-300x117.png 300w" sizes="(max-width: 811px) 100vw, 811px"></a>Nothing special in the configuration, just enter your internal and external IPs and description for the rule.</p>
-<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-NAT-1-to-1-Details-1.2.3.png"><img class="aligncenter size-full wp-image-462" title="pfSense-NAT-1-to-1-Details-1.2.3" src="https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-NAT-1-to-1-Details-1.2.3.png" alt="" width="810" height="413" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-NAT-1-to-1-Details-1.2.3.png 810w,https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-NAT-1-to-1-Details-1.2.3-300x152.png 300w" sizes="(max-width: 810px) 100vw, 810px"></a></p>
-<p>You must make a firewall rule for all this to work, enter the internal LAN IP address as destination.</p>
-<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-Firewall-Rule-1.2.3.png"><img class="aligncenter size-full wp-image-470" title="pfSense-Firewall-Rule-1.2.3" src="https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-Firewall-Rule-1.2.3.png" alt="" width="816" height="664" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-Firewall-Rule-1.2.3.png 816w,https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-Firewall-Rule-1.2.3-300x244.png 300w" sizes="(max-width: 816px) 100vw, 816px"></a></p>
-<p>On pfSense 2.0 RC1, except the huge amount of new options the only difference is the new option in the Virtual IP type selection. The IP Alias works fine in this setup. The other good news is that even if you have only one WAN IP address you can use is in such setup. The bad news is that you do use it you can’t use your WAN IP for anything else, all port on the WAN IP are mapped to the machine on the LAN.</p>
-<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-VIP-2.0.png"><img class="aligncenter size-full wp-image-482" title="pfSense-VIP-2.0" src="https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-VIP-2.0.png" alt="" width="1012" height="604" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-VIP-2.0.png 1012w,https://blog.stefcho.eu/wp-content/uploads/2011/04/pfSense-VIP-2.0-300x179.png 300w" sizes="(max-width: 1012px) 100vw, 1012px"></a></p>
-<p>Alright so far this was the case if you have need to publish only one IP, but if you need to do this for multiple machine and have more than one WAN IP address, the procedure is a little different.</p>
-<p>On pfSense you just repeat the procedure as many times as you need.</p>
-<p>On DD-WRT you can add some iptables rules.</p>
-<p>Add these lines to the Startup script:</p>
-<blockquote><p>WANIF=`get_wanface`</p>
-<p>ifconfig $WANIF:1 10.10.1.10 netmask 255.255.255.0 broadcast 10.10.1.255</p></blockquote>
-<p>This adds the new WAN Ip to the Interface</p>
-<p>Add these lines to the Firewall script:</p>
-<blockquote><p>iptables -t nat -I PREROUTING -d 10.10.1.10 -j DNAT –to-destination 10.10.9.9</p>
-<p>iptables -t nat -I POSTROUTING -s 10.10.9.9 -j -p all SNAT –to-source 10.10.1.10</p>
-<p>iptables -I FORWARD -d 10.10.9.9 -p all –dport all -j ACCEPT</p></blockquote>
-<p>10.10.1.10 – this is the WAN IP address</p>
-<p>10.10.9.9 – this is the LAN IP address</p>
-<p>Add these lines for as many IP as you have / need. More on the topic <a href="http://www.dd-wrt.com/wiki/index.php/One-to-one_NAT" target="_blank">here</a>.</p>
-<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/04/DD-WRT-Scripts.png"><img class="aligncenter size-full wp-image-487" title="DD-WRT---Scripts" src="https://blog.stefcho.eu/wp-content/uploads/2011/04/DD-WRT-Scripts.png" alt="" width="789" height="641" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/04/DD-WRT-Scripts.png 789w,https://blog.stefcho.eu/wp-content/uploads/2011/04/DD-WRT-Scripts-300x243.png 300w" sizes="(max-width: 789px) 100vw, 789px"></a></p>
-<p>In conclusion, this is a very quick and dirty way to publish internal machine to the internet, bear in mind that this host is fully exposed to anybody on the Internet. I personally don’t recommend this way of publishing, but if need arise you can consider this an option. In future posts I will try to present more smart and safe ways to publish some service.</p>
-	</div>
-
-	<footer class="entry-footer"><span class="cat-links">Posted in <a href="https://blog.stefcho.eu/category/technical/" rel="category tag">Technical</a></span><span class="tags-links">Tagged <a href="https://blog.stefcho.eu/tag/dd-wrt/" rel="tag">DD-WRT</a>, <a href="https://blog.stefcho.eu/tag/pfsense/" rel="tag">pfSense</a></span><span class="comments-link"><a href="https://blog.stefcho.eu/1-1-nat-in-pfsense-and-dd-wrt/#comments">5 Comments</a></span>	</footer></article><nav class="navigation posts-navigation" role="navigation"><h2 class="screen-reader-text">Posts navigation</h2>
+	<footer class="entry-footer"><span class="cat-links">Posted in <a href="https://blog.stefcho.eu/category/technical/" rel="category tag">Technical</a></span><span class="tags-links">Tagged <a href="https://blog.stefcho.eu/tag/openvpn/" rel="tag">OpenVPN</a>, <a href="https://blog.stefcho.eu/tag/pfsense/" rel="tag">pfSense</a></span><span class="comments-link"><a href="https://blog.stefcho.eu/pfsense-2-0-rc1-configuration-of-openvpn-server-for-rad-warrior-with-tls-and-user-authentication/#comments">28 Comments</a></span>	</footer></article><nav class="navigation posts-navigation" role="navigation"><h2 class="screen-reader-text">Posts navigation</h2>
 		<div class="nav-links"><div class="nav-previous"><a href="https://blog.stefcho.eu/page/5/">Older posts</a></div><div class="nav-next"><a href="https://blog.stefcho.eu/page/3/">Newer posts</a></div></div>
 	</nav></main></div>
 			</div>
 			<div class="columns small-12 medium-4">
 				
-<aside id="secondary" class="widget-area" role="complementary"><section id="tag_cloud-3" class="widget widget_tag_cloud"><h2 class="widget-title">Tags</h2><div class="tagcloud"><a href="https://blog.stefcho.eu/tag/adds/" class="tag-cloud-link tag-link-73 tag-link-position-1" style="font-size: 10.135593220339pt;" aria-label="ADDS (2 items)">ADDS</a>
-<a href="https://blog.stefcho.eu/tag/asterisk/" class="tag-cloud-link tag-link-55 tag-link-position-2" style="font-size: 10.135593220339pt;" aria-label="Asterisk (2 items)">Asterisk</a>
-<a href="https://blog.stefcho.eu/tag/asus/" class="tag-cloud-link tag-link-60 tag-link-position-3" style="font-size: 11.559322033898pt;" aria-label="ASUS (3 items)">ASUS</a>
-<a href="https://blog.stefcho.eu/tag/azure/" class="tag-cloud-link tag-link-94 tag-link-position-4" style="font-size: 11.559322033898pt;" aria-label="Azure (3 items)">Azure</a>
-<a href="https://blog.stefcho.eu/tag/captive-portal/" class="tag-cloud-link tag-link-83 tag-link-position-5" style="font-size: 11.559322033898pt;" aria-label="Captive Portal (3 items)">Captive Portal</a>
+<aside id="secondary" class="widget-area" role="complementary"><section id="tag_cloud-3" class="widget widget_tag_cloud"><h2 class="widget-title">Tags</h2><div class="tagcloud"><a href="https://blog.stefcho.eu/tag/adds/" class="tag-cloud-link tag-link-73 tag-link-position-1" style="font-size: 10.117647058824pt;" aria-label="ADDS (2 items)">ADDS</a>
+<a href="https://blog.stefcho.eu/tag/asterisk/" class="tag-cloud-link tag-link-55 tag-link-position-2" style="font-size: 10.117647058824pt;" aria-label="Asterisk (2 items)">Asterisk</a>
+<a href="https://blog.stefcho.eu/tag/asus/" class="tag-cloud-link tag-link-60 tag-link-position-3" style="font-size: 11.529411764706pt;" aria-label="ASUS (3 items)">ASUS</a>
+<a href="https://blog.stefcho.eu/tag/azure/" class="tag-cloud-link tag-link-94 tag-link-position-4" style="font-size: 11.529411764706pt;" aria-label="Azure (3 items)">Azure</a>
+<a href="https://blog.stefcho.eu/tag/captive-portal/" class="tag-cloud-link tag-link-83 tag-link-position-5" style="font-size: 11.529411764706pt;" aria-label="Captive Portal (3 items)">Captive Portal</a>
 <a href="https://blog.stefcho.eu/tag/cell-phone/" class="tag-cloud-link tag-link-64 tag-link-position-6" style="font-size: 8pt;" aria-label="Cell Phone (1 item)">Cell Phone</a>
 <a href="https://blog.stefcho.eu/tag/centos/" class="tag-cloud-link tag-link-86 tag-link-position-7" style="font-size: 8pt;" aria-label="CentOS (1 item)">CentOS</a>
-<a href="https://blog.stefcho.eu/tag/creative/" class="tag-cloud-link tag-link-66 tag-link-position-8" style="font-size: 10.135593220339pt;" aria-label="Creative (2 items)">Creative</a>
-<a href="https://blog.stefcho.eu/tag/dd-wrt/" class="tag-cloud-link tag-link-57 tag-link-position-9" style="font-size: 14.525423728814pt;" aria-label="DD-WRT (6 items)">DD-WRT</a>
+<a href="https://blog.stefcho.eu/tag/creative/" class="tag-cloud-link tag-link-66 tag-link-position-8" style="font-size: 10.117647058824pt;" aria-label="Creative (2 items)">Creative</a>
+<a href="https://blog.stefcho.eu/tag/dd-wrt/" class="tag-cloud-link tag-link-57 tag-link-position-9" style="font-size: 14.470588235294pt;" aria-label="DD-WRT (6 items)">DD-WRT</a>
 <a href="https://blog.stefcho.eu/tag/dns/" class="tag-cloud-link tag-link-92 tag-link-position-10" style="font-size: 8pt;" aria-label="DNS (1 item)">DNS</a>
-<a href="https://blog.stefcho.eu/tag/hyper-v/" class="tag-cloud-link tag-link-67 tag-link-position-11" style="font-size: 12.745762711864pt;" aria-label="Hyper-V (4 items)">Hyper-V</a>
-<a href="https://blog.stefcho.eu/tag/ldap/" class="tag-cloud-link tag-link-74 tag-link-position-12" style="font-size: 10.135593220339pt;" aria-label="LDAP (2 items)">LDAP</a>
-<a href="https://blog.stefcho.eu/tag/learning/" class="tag-cloud-link tag-link-102 tag-link-position-13" style="font-size: 10.135593220339pt;" aria-label="Learning (2 items)">Learning</a>
+<a href="https://blog.stefcho.eu/tag/hyper-v/" class="tag-cloud-link tag-link-67 tag-link-position-11" style="font-size: 12.705882352941pt;" aria-label="Hyper-V (4 items)">Hyper-V</a>
+<a href="https://blog.stefcho.eu/tag/ldap/" class="tag-cloud-link tag-link-74 tag-link-position-12" style="font-size: 10.117647058824pt;" aria-label="LDAP (2 items)">LDAP</a>
+<a href="https://blog.stefcho.eu/tag/learning/" class="tag-cloud-link tag-link-102 tag-link-position-13" style="font-size: 10.117647058824pt;" aria-label="Learning (2 items)">Learning</a>
 <a href="https://blog.stefcho.eu/tag/linksys/" class="tag-cloud-link tag-link-56 tag-link-position-14" style="font-size: 8pt;" aria-label="Linksys (1 item)">Linksys</a>
-<a href="https://blog.stefcho.eu/tag/microsoft/" class="tag-cloud-link tag-link-63 tag-link-position-15" style="font-size: 11.559322033898pt;" aria-label="Microsoft (3 items)">Microsoft</a>
+<a href="https://blog.stefcho.eu/tag/microsoft/" class="tag-cloud-link tag-link-63 tag-link-position-15" style="font-size: 11.529411764706pt;" aria-label="Microsoft (3 items)">Microsoft</a>
 <a href="https://blog.stefcho.eu/tag/mikrotik-routerboard-rb250g/" class="tag-cloud-link tag-link-79 tag-link-position-16" style="font-size: 8pt;" aria-label="Mikrotik RouterBoard RB250G (1 item)">Mikrotik RouterBoard RB250G</a>
-<a href="https://blog.stefcho.eu/tag/network/" class="tag-cloud-link tag-link-65 tag-link-position-17" style="font-size: 19.389830508475pt;" aria-label="Network (17 items)">Network</a>
+<a href="https://blog.stefcho.eu/tag/network/" class="tag-cloud-link tag-link-65 tag-link-position-17" style="font-size: 19.294117647059pt;" aria-label="Network (17 items)">Network</a>
 <a href="https://blog.stefcho.eu/tag/openldap/" class="tag-cloud-link tag-link-87 tag-link-position-18" style="font-size: 8pt;" aria-label="OpenLDAP (1 item)">OpenLDAP</a>
-<a href="https://blog.stefcho.eu/tag/openvpn/" class="tag-cloud-link tag-link-72 tag-link-position-19" style="font-size: 16.779661016949pt;" aria-label="OpenVPN (10 items)">OpenVPN</a>
+<a href="https://blog.stefcho.eu/tag/openvpn/" class="tag-cloud-link tag-link-72 tag-link-position-19" style="font-size: 16.705882352941pt;" aria-label="OpenVPN (10 items)">OpenVPN</a>
 <a href="https://blog.stefcho.eu/tag/openwrt/" class="tag-cloud-link tag-link-71 tag-link-position-20" style="font-size: 8pt;" aria-label="OpenWrt (1 item)">OpenWrt</a>
 <a href="https://blog.stefcho.eu/tag/pfcenter/" class="tag-cloud-link tag-link-85 tag-link-position-21" style="font-size: 8pt;" aria-label="pfCenter (1 item)">pfCenter</a>
 <a href="https://blog.stefcho.eu/tag/pfsemse/" class="tag-cloud-link tag-link-95 tag-link-position-22" style="font-size: 8pt;" aria-label="pfSemse (1 item)">pfSemse</a>
-<a href="https://blog.stefcho.eu/tag/pfsense/" class="tag-cloud-link tag-link-61 tag-link-position-23" style="font-size: 22pt;" aria-label="pfSense (29 items)">pfSense</a>
-<a href="https://blog.stefcho.eu/tag/pfsense-2-0-rc1/" class="tag-cloud-link tag-link-81 tag-link-position-24" style="font-size: 13.694915254237pt;" aria-label="pfSense 2.0 RC1 (5 items)">pfSense 2.0 RC1</a>
-<a href="https://blog.stefcho.eu/tag/pfsense-2-0-rc3/" class="tag-cloud-link tag-link-84 tag-link-position-25" style="font-size: 14.525423728814pt;" aria-label="pfSense 2.0 RC3 (6 items)">pfSense 2.0 RC3</a>
-<a href="https://blog.stefcho.eu/tag/pfsense-2-2/" class="tag-cloud-link tag-link-90 tag-link-position-26" style="font-size: 11.559322033898pt;" aria-label="pfSense 2.2 (3 items)">pfSense 2.2</a>
+<a href="https://blog.stefcho.eu/tag/pfsense/" class="tag-cloud-link tag-link-61 tag-link-position-23" style="font-size: 22pt;" aria-label="pfSense (30 items)">pfSense</a>
+<a href="https://blog.stefcho.eu/tag/pfsense-2-0-rc1/" class="tag-cloud-link tag-link-81 tag-link-position-24" style="font-size: 13.647058823529pt;" aria-label="pfSense 2.0 RC1 (5 items)">pfSense 2.0 RC1</a>
+<a href="https://blog.stefcho.eu/tag/pfsense-2-0-rc3/" class="tag-cloud-link tag-link-84 tag-link-position-25" style="font-size: 14.470588235294pt;" aria-label="pfSense 2.0 RC3 (6 items)">pfSense 2.0 RC3</a>
+<a href="https://blog.stefcho.eu/tag/pfsense-2-2/" class="tag-cloud-link tag-link-90 tag-link-position-26" style="font-size: 11.529411764706pt;" aria-label="pfSense 2.2 (3 items)">pfSense 2.2</a>
 <a href="https://blog.stefcho.eu/tag/pfsense-2-4-3/" class="tag-cloud-link tag-link-98 tag-link-position-27" style="font-size: 8pt;" aria-label="pfSense 2.4.3 (1 item)">pfSense 2.4.3</a>
-<a href="https://blog.stefcho.eu/tag/pki/" class="tag-cloud-link tag-link-77 tag-link-position-28" style="font-size: 10.135593220339pt;" aria-label="PKI (2 items)">PKI</a>
-<a href="https://blog.stefcho.eu/tag/radius/" class="tag-cloud-link tag-link-75 tag-link-position-29" style="font-size: 10.135593220339pt;" aria-label="RADIUS (2 items)">RADIUS</a>
+<a href="https://blog.stefcho.eu/tag/pki/" class="tag-cloud-link tag-link-77 tag-link-position-28" style="font-size: 10.117647058824pt;" aria-label="PKI (2 items)">PKI</a>
+<a href="https://blog.stefcho.eu/tag/radius/" class="tag-cloud-link tag-link-75 tag-link-position-29" style="font-size: 10.117647058824pt;" aria-label="RADIUS (2 items)">RADIUS</a>
 <a href="https://blog.stefcho.eu/tag/routing/" class="tag-cloud-link tag-link-80 tag-link-position-30" style="font-size: 8pt;" aria-label="Routing (1 item)">Routing</a>
-<a href="https://blog.stefcho.eu/tag/site-to-site/" class="tag-cloud-link tag-link-76 tag-link-position-31" style="font-size: 11.559322033898pt;" aria-label="Site To Site (3 items)">Site To Site</a>
-<a href="https://blog.stefcho.eu/tag/technical/" class="tag-cloud-link tag-link-97 tag-link-position-32" style="font-size: 15.118644067797pt;" aria-label="Technical (7 items)">Technical</a>
+<a href="https://blog.stefcho.eu/tag/site-to-site/" class="tag-cloud-link tag-link-76 tag-link-position-31" style="font-size: 11.529411764706pt;" aria-label="Site To Site (3 items)">Site To Site</a>
+<a href="https://blog.stefcho.eu/tag/technical/" class="tag-cloud-link tag-link-97 tag-link-position-32" style="font-size: 15.058823529412pt;" aria-label="Technical (7 items)">Technical</a>
 <a href="https://blog.stefcho.eu/tag/ubuntu/" class="tag-cloud-link tag-link-99 tag-link-position-33" style="font-size: 8pt;" aria-label="Ubuntu (1 item)">Ubuntu</a>
 <a href="https://blog.stefcho.eu/tag/uncategorized/" class="tag-cloud-link tag-link-96 tag-link-position-34" style="font-size: 8pt;" aria-label="Uncategorized (1 item)">Uncategorized</a>
 <a href="https://blog.stefcho.eu/tag/vlan/" class="tag-cloud-link tag-link-78 tag-link-position-35" style="font-size: 8pt;" aria-label="VLAN (1 item)">VLAN</a>
-<a href="https://blog.stefcho.eu/tag/vmware/" class="tag-cloud-link tag-link-62 tag-link-position-36" style="font-size: 15.118644067797pt;" aria-label="VMWare (7 items)">VMWare</a>
-<a href="https://blog.stefcho.eu/tag/voip/" class="tag-cloud-link tag-link-59 tag-link-position-37" style="font-size: 10.135593220339pt;" aria-label="VoIP (2 items)">VoIP</a>
+<a href="https://blog.stefcho.eu/tag/vmware/" class="tag-cloud-link tag-link-62 tag-link-position-36" style="font-size: 15.058823529412pt;" aria-label="VMWare (7 items)">VMWare</a>
+<a href="https://blog.stefcho.eu/tag/voip/" class="tag-cloud-link tag-link-59 tag-link-position-37" style="font-size: 10.117647058824pt;" aria-label="VoIP (2 items)">VoIP</a>
 <a href="https://blog.stefcho.eu/tag/vyatta/" class="tag-cloud-link tag-link-70 tag-link-position-38" style="font-size: 8pt;" aria-label="Vyatta (1 item)">Vyatta</a>
 <a href="https://blog.stefcho.eu/tag/web-sites/" class="tag-cloud-link tag-link-93 tag-link-position-39" style="font-size: 8pt;" aria-label="Web Sites (1 item)">Web Sites</a>
 <a href="https://blog.stefcho.eu/tag/windows-server-8/" class="tag-cloud-link tag-link-88 tag-link-position-40" style="font-size: 8pt;" aria-label="Windows Server 8 (1 item)">Windows Server 8</a>
-<a href="https://blog.stefcho.eu/tag/windows-server-2008-r2/" class="tag-cloud-link tag-link-68 tag-link-position-41" style="font-size: 12.745762711864pt;" aria-label="Windows Server 2008 R2 (4 items)">Windows Server 2008 R2</a>
+<a href="https://blog.stefcho.eu/tag/windows-server-2008-r2/" class="tag-cloud-link tag-link-68 tag-link-position-41" style="font-size: 12.705882352941pt;" aria-label="Windows Server 2008 R2 (4 items)">Windows Server 2008 R2</a>
 <a href="https://blog.stefcho.eu/tag/windows-server-2012-r2/" class="tag-cloud-link tag-link-91 tag-link-position-42" style="font-size: 8pt;" aria-label="Windows Server 2012 R2 (1 item)">Windows Server 2012 R2</a>
 <a href="https://blog.stefcho.eu/tag/wireless/" class="tag-cloud-link tag-link-82 tag-link-position-43" style="font-size: 8pt;" aria-label="Wireless (1 item)">Wireless</a>
 <a href="https://blog.stefcho.eu/tag/workstation-8/" class="tag-cloud-link tag-link-89 tag-link-position-44" style="font-size: 8pt;" aria-label="Workstation 8 (1 item)">Workstation 8</a>
@@ -659,6 +673,6 @@ The management of users and certificate is much easier in pfSense 2.0. You don�
 
 <script type="text/javascript" src="https://blog.stefcho.eu/wp-content/themes/micro/assets/scripts/scripts.min.js"></script><script type="text/javascript">
 /* <![CDATA[ */
-var wpgdprcData = {"ajaxURL":"https:\/\/blog.stefcho.eu\/wp-admin\/admin-ajax.php","ajaxSecurity":"ba99eb19ca","consentVersion":"1"};
+var wpgdprcData = {"ajaxURL":"https:\/\/blog.stefcho.eu\/wp-admin\/admin-ajax.php","ajaxSecurity":"3521e65293","consentVersion":"1"};
 /* ]]> */
 </script><script type="text/javascript" src="https://blog.stefcho.eu/wp-content/plugins/wp-gdpr-compliance/assets/js/front.js"></script></body></html>

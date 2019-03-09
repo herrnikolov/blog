@@ -158,7 +158,78 @@ http://flickity.metafizzy.co
 	<section class="section-fullwidth section-main"><div class="row">
 			<div class="columns small-12 medium-8">
 				<div id="primary" class="content-area">
-					<main id="main" class="site-main"><header class="page-header"><h1 class="page-title">Category: Technical</h1>						</header><article id="post-897" class="entry post-897 post type-post status-publish format-standard hentry category-technical tag-pfcenter tag-pfsense"><header class="entry-header"><h2 class="entry-title"><a href="https://blog.stefcho.eu/pfcenter/" rel="bookmark">pfCenter</a></h2>		<div class="entry-meta">
+					<main id="main" class="site-main"><header class="page-header"><h1 class="page-title">Category: Technical</h1>						</header><article id="post-916" class="entry post-916 post type-post status-publish format-standard hentry category-technical tag-centos tag-ldap tag-openldap tag-openvpn tag-pfsense tag-pfsense-2-0-rc3 tag-technical"><header class="entry-header"><h2 class="entry-title"><a href="https://blog.stefcho.eu/openvpn-on-pfsense-2-0-rc3-with-openldap-authentication-on-centos-5-6/" rel="bookmark">OpenVPN on pfSense 2.0 RC3 with OpenLDAP Authentication on CentOS 5.6</a></h2>		<div class="entry-meta">
+			<span class="posted-on">Posted on <time class="entry-date published" datetime="2011-08-13T11:31:34+02:00">13/08/2011</time> - <time class="updated" datetime="2019-02-18T14:56:33+02:00">18/02/2019</time></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="https://blog.stefcho.eu/author/darko/">Stefan</a></span></span>		</div>
+			</header><div class="entry-content">
+		<p><strong>Introduction</strong></p>
+<p>After writing OpenVPN with LDAP authentication on pfSense 2.0 RC1, a reader of my blog shared some problems with configuring OpenLDAP on CentOS.  So I decide to build such a setup and test.</p>
+<p><strong>Scenario</strong></p>
+<p>The scenario is as follows, authenticating users requiring access to the OpenVPN server against OpenLDAP service running on CentOS.</p>
+<p><strong>Setup</strong></p>
+<p>I’ve spent most time in preparing the CentOS server. Initially my decision was to use CentOS 6.0, but after a few failed attempts to configure it and the absence of how to guides for this purpose, I’ve decided to fall back to 5.6.</p>
+<p>For this version there is a wonderful how to guide here:</p>
+<p><a href="http://drozd.com/2011/04/22/openldap-on-centos-5-6/" target="_blank">OpenLDAP on CentOS 5.6</a></p>
+<p><a href="http://drozd.com/2011/04/22/openldap-on-centos-5-6/" target="_blank">Install And Configure OpenLDAP 2.4.25 On CentOS 5.6</a></p>
+<p>Following this instructions I’ve managed to setup OpenLDAP very fast.  The only comment that I have is in this section:</p>
+<blockquote><p>All data loaded is in <a title="LDAP Data Interchange Format" href="http://en.wikipedia.org/wiki/LDAP_Data_Interchange_Format" target="_blank">LDIF</a> format. Create a file to initialize the LDAP database:</p>
+<p># vi ldap-init.ldif</p>
+<p>dn: dc=mycompany,dc=com</p>
+<p>objectclass: dcObject</p>
+<p>objectclass: organization</p>
+<p>o: Example</p>
+<p>dc: mycompany</p>
+<p>dn: cn=Admin,dc=mycompany,dc=com</p>
+<p>objectclass: organizationalRole</p>
+<p>cn: Admin</p>
+<p> </p></blockquote>
+<p>you have to have one new row, otherwise the import in the next step fails. So the above should look like:</p>
+<blockquote><p># vi ldap-init.ldif</p>
+<p>dn: dc=mycompany,dc=com</p>
+<p>objectclass: dcObject</p>
+<p>objectclass: organization</p>
+<p>o: Example</p>
+<p>dc: mycompany</p>
+<p> </p>
+<p>dn: cn=Admin,dc=mycompany,dc=com</p>
+<p>objectclass: organizationalRole</p>
+<p>cn: Admin</p>
+<p> </p></blockquote>
+<p> </p>
+<p>Next step is to create a few test users.  For that purpose I’ve used :</p>
+<p><a href="http://ldapadmin.sourceforge.net/" target="_blank">LDAP Admin</a></p>
+<blockquote><p>Ldap Admin is free Win32 administration tool for LDAP directory management. This application lets you browse, search, modify, create and delete objects on LDAP server. It also supports more complex operations such as directory copy and move between remote servers and extends the common edit functions to support specific object types (such as groups and accounts).</p>
+<p>You can use it to manage Posix groups and accounts, Samba accounts and it even includes support for Postfix MTA. Ldap Admin is free Open Source software distributed under the GNU General Public License.</p></blockquote>
+<p><strong>Configuration</strong></p>
+<p>It is time to configure the pfSense. I will skip all the steps described in the previous posts. You can find them here:</p>
+<p><a href="http://stefcho.azurewebsites.net/?p=492" target="_blank">pfSense 2.0 RC1 configuration of OpenVPN Server for Road Warrior with TLS and User Authentication</a></p>
+<p><a href="http://stefcho.azurewebsites.net/?p=528" target="_blank">OpenVPN with LDAP authentication on pfSense 2.0 RC1</a></p>
+<p>Now let’s get straight to System > User Manager and on the Servers leaf.</p>
+<p><strong>Hostname or IP address:</strong> this it the address of the CentOS server</p>
+<p><strong>Base DN</strong>: this is the domain name</p>
+<p><strong>Authentication container</strong>: after insterted the Bind credentials, it was visible, but when I’ve click on the Save button, nothing happen. So I’ve typed it in manually.</p>
+<p><strong>Bind Credentials</strong>: enter User DN and Password. , I’ve tested it and with <strong>Use anonymous binds to resolve distinguished names</strong>, it works also.</p>
+<p><strong>Group Member Attribute</strong>: you can modify this with the Uid=%s, if you need.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/08/Authenticaton-Config.png"><img class="alignnone size-full wp-image-917" title="Authenticaton Config" src="https://blog.stefcho.eu/wp-content/uploads/2011/08/Authenticaton-Config.png" alt="" width="888" height="732" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/08/Authenticaton-Config.png 888w,https://blog.stefcho.eu/wp-content/uploads/2011/08/Authenticaton-Config-300x247.png 300w" sizes="(max-width: 888px) 100vw, 888px"></a></p>
+<p><strong>Testing</strong></p>
+<p>Just for reference this is my test user.<strong><br></strong></p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/08/LDAP-Admin.png"><img class="alignnone size-full wp-image-918" title="LDAP Admin" src="https://blog.stefcho.eu/wp-content/uploads/2011/08/LDAP-Admin.png" alt="" width="742" height="409" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/08/LDAP-Admin.png 742w,https://blog.stefcho.eu/wp-content/uploads/2011/08/LDAP-Admin-300x165.png 300w" sizes="(max-width: 742px) 100vw, 742px"></a></p>
+<p>After preforming the OpenVPN configuration, enter the user name and the password.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/08/OpenVPN-Login.png"><img class="alignnone size-full wp-image-920" title="OpenVPN Login" src="https://blog.stefcho.eu/wp-content/uploads/2011/08/OpenVPN-Login.png" alt="" width="577" height="372" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/08/OpenVPN-Login.png 577w,https://blog.stefcho.eu/wp-content/uploads/2011/08/OpenVPN-Login-300x193.png 300w" sizes="(max-width: 577px) 100vw, 577px"></a></p>
+<p>If everything is OK, you should be successfully connected and see something similar in the OpenVPN logs:</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/08/OpenVPN-server-Log.png"><img class="alignnone size-full wp-image-919" title="OpenVPN server Log" src="https://blog.stefcho.eu/wp-content/uploads/2011/08/OpenVPN-server-Log.png" alt="" width="805" height="423" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/08/OpenVPN-server-Log.png 805w,https://blog.stefcho.eu/wp-content/uploads/2011/08/OpenVPN-server-Log-300x157.png 300w" sizes="(max-width: 805px) 100vw, 805px"></a></p>
+<p>You can also test the connection using the Diagnostics > Authentication, Select the Authentication Server, in my case the CentOS OpenLDAP connection is named Test. Enter Username and Password, and see the result.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authentication.png"><img class="alignnone size-full wp-image-943" title="Test Authentication" src="https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authentication.png" alt="" width="881" height="342" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authentication.png 881w,https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authentication-300x116.png 300w" sizes="(max-width: 881px) 100vw, 881px"></a></p>
+<p>If you get error, you can check the Status> System Logs on the System leaf for errors.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authenticaion-Error-Msg.png"><img class="alignnone size-full wp-image-944" title="Test Authenticaion Error Msg" src="https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authenticaion-Error-Msg.png" alt="" width="886" height="387" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authenticaion-Error-Msg.png 886w,https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authenticaion-Error-Msg-300x131.png 300w" sizes="(max-width: 886px) 100vw, 886px"></a></p>
+<p>I’ve got this error when the CentOS server was turn off.</p>
+<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authenticaion-Error-System-Logs.png"><img class="alignnone size-full wp-image-945" title="Test Authenticaion Error System Logs" src="https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authenticaion-Error-System-Logs.png" alt="" width="887" height="262" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authenticaion-Error-System-Logs.png 887w,https://blog.stefcho.eu/wp-content/uploads/2011/08/Test-Authenticaion-Error-System-Logs-300x88.png 300w" sizes="(max-width: 887px) 100vw, 887px"></a></p>
+<p><strong>Issues</strong></p>
+<p>The issues that I faced was the problem with selecting the OU in which my users resides. Hope this will be fixed in future versions<strong>. </strong>On the CentOS side the problems were releted with the changes of OpenLDAP in the 6.0 version.<strong><br></strong></p>
+<p><strong> Conclusion</strong></p>
+<p>That’s it. Thank you for reading.</p>
+	</div>
+
+	<footer class="entry-footer"><span class="cat-links">Posted in <a href="https://blog.stefcho.eu/category/technical/" rel="category tag">Technical</a></span><span class="tags-links">Tagged <a href="https://blog.stefcho.eu/tag/centos/" rel="tag">CentOS</a>, <a href="https://blog.stefcho.eu/tag/ldap/" rel="tag">LDAP</a>, <a href="https://blog.stefcho.eu/tag/openldap/" rel="tag">OpenLDAP</a>, <a href="https://blog.stefcho.eu/tag/openvpn/" rel="tag">OpenVPN</a>, <a href="https://blog.stefcho.eu/tag/pfsense/" rel="tag">pfSense</a>, <a href="https://blog.stefcho.eu/tag/pfsense-2-0-rc3/" rel="tag">pfSense 2.0 RC3</a>, <a href="https://blog.stefcho.eu/tag/technical/" rel="tag">Technical</a></span><span class="comments-link"><a href="https://blog.stefcho.eu/openvpn-on-pfsense-2-0-rc3-with-openldap-authentication-on-centos-5-6/#comments">2 Comments</a></span>	</footer></article><article id="post-897" class="entry post-897 post type-post status-publish format-standard hentry category-technical tag-pfcenter tag-pfsense"><header class="entry-header"><h2 class="entry-title"><a href="https://blog.stefcho.eu/pfcenter/" rel="bookmark">pfCenter</a></h2>		<div class="entry-meta">
 			<span class="posted-on">Posted on <time class="entry-date published" datetime="2011-08-06T15:15:01+02:00">06/08/2011</time> - <time class="updated" datetime="2019-02-18T14:56:09+02:00">18/02/2019</time></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="https://blog.stefcho.eu/author/darko/">Stefan</a></span></span>		</div>
 			</header><div class="entry-content">
 		<p>These days I’ve looked at the tweets of <a href="https://twitter.com/#!/sullrich" target="_blank">Scott Ullrich</a> and what catch my attention is the mentioning of pfCenter several times.</p>
@@ -652,164 +723,53 @@ In the following post I will look at the possibilities to customize the Captive 
 You can check out the thread in the pfSense forum here:<br><a href="http://forum.pfsense.org/index.php/topic,26036.msg135394.html#msg135394" target="_blank">Topic: Routing Road Warrior to Site-To-Site, pfSense as OpenVPN client configuration</a></p>
 	</div>
 
-	<footer class="entry-footer"><span class="cat-links">Posted in <a href="https://blog.stefcho.eu/category/technical/" rel="category tag">Technical</a></span><span class="tags-links">Tagged <a href="https://blog.stefcho.eu/tag/network/" rel="tag">Network</a>, <a href="https://blog.stefcho.eu/tag/openvpn/" rel="tag">OpenVPN</a>, <a href="https://blog.stefcho.eu/tag/pfsense/" rel="tag">pfSense</a>, <a href="https://blog.stefcho.eu/tag/routing/" rel="tag">Routing</a></span><span class="comments-link"><a href="https://blog.stefcho.eu/routing-road-warriors-clients-through-a-site-to-site-vpn-with-pfsense-2-0-rc1-and-openvpn/#comments">7 Comments</a></span>	</footer></article><article id="post-695" class="entry post-695 post type-post status-publish format-standard hentry category-technical tag-mikrotik-routerboard-rb250g tag-network tag-pfsense tag-vlan"><header class="entry-header"><h2 class="entry-title"><a href="https://blog.stefcho.eu/pfsense-on-a-stick-802-1q-trunking-with-pfsense-2-0-rc1-and-mikrotik-routerboard-rb250g-smart-gigabit-switch-with-five-ports-and-swos-v1-5/" rel="bookmark">pfSense-On-A-Stick – 802.1Q Trunking With pfSense 2.0 RC1 and Mikrotik RouterBoard RB250G Smart Gigabit Switch with five ports and SwOS v1.5</a></h2>		<div class="entry-meta">
-			<span class="posted-on">Posted on <time class="entry-date published" datetime="2011-05-25T21:28:03+02:00">25/05/2011</time> - <time class="updated" datetime="2019-02-18T14:50:02+02:00">18/02/2019</time></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="https://blog.stefcho.eu/author/darko/">Stefan</a></span></span>		</div>
-			</header><div class="entry-content">
-		<p> </p>
-<p>I’ve just got a Mikrotik RouterBoard RB250G. While searching for useful information about its capabilities found very interesting article in the MikroTik Wiki: <a href="http://wiki.mikrotik.com/wiki/SwOS/Router-On-A-Stick" target="_blank">SwOS/Router-On-A-Stick</a> <a href="http://wiki.mikrotik.com/wiki/SwOS/Router-On-A-Stick"></a></p>
-<p>This article gave me the idea to use pfSense as a router and trunk a few VLANs.</p>
-<p><strong>Scenario</strong></p>
-<p>My aim is to reproduce the configuration from the above mentioned post with three VLANs, trunked on a single LAN interface (aka Parent interface) to the pfSense. To make it more usable, every VLAN will be on separate port on the switch (aka Access Port) and have its own instance of DHCP running on the pfSense. In this way, when a client connect to some of the ports he/she will automatically receive configuration contextual to VLAN on this port.</p>
-<p>For the installation and basic configuration of pfSense on VMware take a look my previous post<a title="Permanent Link to Install pfSense 2.0 RC1 on VMWare Workstation 7" rel="bookmark permalink" href="http://stefcho.azurewebsites.net/?p=431" target="_blank"> Install pfSense 2.0 RC1 on VMWare Workstation 7</a></p>
-<p>The difference here is that the LAN virtual NIC is bridged to the second physical NIC of my workstation and from there directly connected to the RB250G switch.</p>
-<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/Network-Diagram.png"><img class="aligncenter size-full wp-image-730" title="Network Diagram" src="https://blog.stefcho.eu/wp-content/uploads/2011/05/Network-Diagram.png" alt="" width="492" height="541" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/05/Network-Diagram.png 492w,https://blog.stefcho.eu/wp-content/uploads/2011/05/Network-Diagram-272x300.png 272w" sizes="(max-width: 492px) 100vw, 492px"></a></p>
-<p>We start with installed pfSense 2.0 RC1, configure WAN port bridged to my first physical NIC, and LAN port connected to my second physical NIC. For the sake of convenience and because of the problems that I faced initially with the communication on my second NIC, I decide to manage the router through the WAN interface, because its configuration will not change during testing. More on the topic VMware Workstation Virtual Machine and VLANs support, you can find at the bottom of this post.</p>
-<p>There are two ways to configure VLANs in pfSense as long as I’m aware. One is through the console and the other is using the Web GUI. Here I will use the latter.</p>
-<p><strong>WAN Rules</strong></p>
-<p>First let’s configure Rules on the WAN port to allow access to the Web GUI.</p>
-<p>Got to Firewall > Rules, on the WAN leaf, add new rule.</p>
-<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/pfSense-WAN-Rules-01.png"><img class="aligncenter size-full wp-image-696" title="pfSense-WAN-Rules-01" src="https://blog.stefcho.eu/wp-content/uploads/2011/05/pfSense-WAN-Rules-01.png" alt="" width="919" height="564" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/05/pfSense-WAN-Rules-01.png 919w,https://blog.stefcho.eu/wp-content/uploads/2011/05/pfSense-WAN-Rules-01-300x184.png 300w" sizes="(max-width: 919px) 100vw, 919px"></a></p>
-<p>The Interface is WAN, Protocol is TCP. Destination port range is HTTPS, enter and description.</p>
-<p>This will allow access to the pfSense WebGUI on the WAN IP Address.</p>
-<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/pfSense-WAN-Rules-02.png"><img class="aligncenter size-full wp-image-697" title="pfSense-WAN-Rules-02" src="https://blog.stefcho.eu/wp-content/uploads/2011/05/pfSense-WAN-Rules-02.png" alt="" width="913" height="884" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/05/pfSense-WAN-Rules-02.png 913w,https://blog.stefcho.eu/wp-content/uploads/2011/05/pfSense-WAN-Rules-02-300x290.png 300w" sizes="(max-width: 913px) 100vw, 913px"></a></p>
-<p><strong>Creation of VLANs and Interfaces</strong></p>
-<p>Go to Interfaces> (assign).</p>
-<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-01.png"><img class="aligncenter size-full wp-image-705" title="Craetion-of-VLANs-01" src="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-01.png" alt="" width="359" height="135" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-01.png 359w,https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-01-300x112.png 300w" sizes="(max-width: 359px) 100vw, 359px"></a></p>
-<p>Make sure that you second Network port is not assigned to any Interface, if it is removed it. In my case this is em1. This machine has two interface em0 for the WAN, and em1 for the LAN.</p>
-<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-02.png"><img class="aligncenter size-full wp-image-706" title="Craetion-of-VLANs-02" src="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-02.png" alt="" width="920" height="365" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-02.png 920w,https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-02-300x119.png 300w" sizes="(max-width: 920px) 100vw, 920px"></a></p>
-<p>Go to the VLANs leaf, click on the add button.</p>
-<p>On the new page make sure that Parent interface is em1. Enter VLAN tag number different from 1.</p>
-<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-04.png"><img class="aligncenter size-full wp-image-708" title="Craetion-of-VLANs-04" src="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-04.png" alt="" width="915" height="310" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-04.png 915w,https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-04-300x101.png 300w" sizes="(max-width: 915px) 100vw, 915px"></a></p>
-<p>I’ve made three VLANs – 100, 200, 300.</p>
-<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-03.png"><img class="aligncenter size-full wp-image-707" title="Craetion-of-VLANs-03" src="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-03.png" alt="" width="912" height="357" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-03.png 912w,https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-03-300x117.png 300w" sizes="(max-width: 912px) 100vw, 912px"></a></p>
-<p>Now we need to assign these as Interfaces, go to Interface assignments and then add them one by one, select the proper Network port which are the VLANs that we have just created, and do not assign em1 to any Interface directly.</p>
-<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-02.png"><img class="aligncenter size-full wp-image-706" title="Craetion-of-VLANs-02" src="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-02.png" alt="" width="920" height="365" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-02.png 920w,https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-02-300x119.png 300w" sizes="(max-width: 920px) 100vw, 920px"></a></p>
-<p>Now select LAN interface from the drop down menu under Interfaces. Tick Enable Interface, as type select Static. Under Static IP configuration, enter IP address and subnet mask.</p>
-<p>In my case it is 10.10.10.1/24.</p>
-<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-05-Interfaces-Config.png"><img class="aligncenter size-full wp-image-709" title="Craetion-of-VLANs-05-Interfaces-Config" src="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-05-Interfaces-Config.png" alt="" width="917" height="843" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-05-Interfaces-Config.png 917w,https://blog.stefcho.eu/wp-content/uploads/2011/05/Craetion-of-VLANs-05-Interfaces-Config-300x275.png 300w" sizes="(max-width: 917px) 100vw, 917px"></a></p>
-<p> </p>
-<p>Repeat this procedure for all the VLAN interfaces. For reference these are the IP addresses that I have used:</p>
-<p>LAN – 10.10.10.1/24</p>
-<p>OPT1 – 10.10.9.1/24</p>
-<p>OPT2 – 10.10.8.1/24</p>
-<p> </p>
-<p><strong>Interfaces Rules </strong></p>
-<p>For the sake of simplicity every interface will be allowed communication to everywhere.</p>
-<p>Go to Firewall > Rules, on the LAN leaf.</p>
-<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/VLANS-Allow-All-Rule-01.png"><img class="aligncenter size-full wp-image-711" title="VLANS-Allow-All-Rule-01" src="https://blog.stefcho.eu/wp-content/uploads/2011/05/VLANS-Allow-All-Rule-01.png" alt="" width="928" height="628" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/05/VLANS-Allow-All-Rule-01.png 928w,https://blog.stefcho.eu/wp-content/uploads/2011/05/VLANS-Allow-All-Rule-01-300x203.png 300w" sizes="(max-width: 928px) 100vw, 928px"></a></p>
-<p>Add new Rule</p>
-<p>Action is Pass, Interface is LAN, Protocol in Any, Source is Any, Destination is Any, enter some Description too.</p>
-<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/VLANS-Allow-All-Rule-02.png"><img class="aligncenter size-full wp-image-712" title="VLANS-Allow-All-Rule-02" src="https://blog.stefcho.eu/wp-content/uploads/2011/05/VLANS-Allow-All-Rule-02.png" alt="" width="925" height="739" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/05/VLANS-Allow-All-Rule-02.png 925w,https://blog.stefcho.eu/wp-content/uploads/2011/05/VLANS-Allow-All-Rule-02-300x239.png 300w" sizes="(max-width: 925px) 100vw, 925px"></a></p>
-<p>Repeat this step on OPT1 and OPT2 leafs too.</p>
-<p> </p>
-<p><strong>DHCP Server Configuration</strong></p>
-<p>Go to Services > DHCP Server page.</p>
-<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/DHCP-Config-01.png"><img class="aligncenter size-full wp-image-713" title="DHCP-Config-01" src="https://blog.stefcho.eu/wp-content/uploads/2011/05/DHCP-Config-01.png" alt="" width="502" height="345" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/05/DHCP-Config-01.png 502w,https://blog.stefcho.eu/wp-content/uploads/2011/05/DHCP-Config-01-300x206.png 300w" sizes="(max-width: 502px) 100vw, 502px"></a></p>
-<p>On the LAN leaf, tick Enable DHCP server on LAN interface.</p>
-<p>Enter Range from the subnet of the interface, in my case 10.10.10.10 – 10.10.10.15</p>
-<p>Click the Save button.</p>
-<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/DHCP-Config-02.png"><img class="aligncenter size-full wp-image-714" title="DHCP-Config-02" src="https://blog.stefcho.eu/wp-content/uploads/2011/05/DHCP-Config-02.png" alt="" width="917" height="890" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/05/DHCP-Config-02.png 917w,https://blog.stefcho.eu/wp-content/uploads/2011/05/DHCP-Config-02-300x291.png 300w" sizes="(max-width: 917px) 100vw, 917px"></a></p>
-<p>Repeat the procedure for the OPT1 and OPT2 leafs. In my case the ranges were.</p>
-<p>LAN – 10.10.10.10 – 10.10.10.15</p>
-<p>OPT1 – 10.10.9.10 – 10.10.9.15</p>
-<p>OPT2 – 10.10.8.10 – 10.10.8.15</p>
-<p> </p>
-<p><strong>Mikrotik RouterBoard RB250G Smart Gigabit Switch with five ports and SwOS v1.5</strong></p>
-<p>Before configuring VLANs on the switch, make sure that your firmware version is 1.2 or higher, by the time of writing this version 1.5 of the firmware is available. Otherwise you may run into problems that are related to applied functionality of the device.</p>
-<p><strong> </strong></p>
-<p><strong>Switch VLANs Configuration</strong></p>
-<p>On the Switch, go to the VLANs leaf, add the same VLANs from the router. As for ports member always add Port1 and choose one of the other ports. This is the tricky part, my pfSense router is connected to Port1, which makes it Trunk port and must be a member of all VLANs.</p>
-<p>In my example</p>
-<p>Port 5 is member of VLAN 100</p>
-<p>Port 4 is member of VLAN 200</p>
-<p>Port 3 is member of VLAN 300</p>
-<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/Switch-VLANs-Config-02.png"><img class="aligncenter size-full wp-image-715" title="Switch-VLANs-Config-02" src="https://blog.stefcho.eu/wp-content/uploads/2011/05/Switch-VLANs-Config-02.png" alt="" width="773" height="269" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/05/Switch-VLANs-Config-02.png 773w,https://blog.stefcho.eu/wp-content/uploads/2011/05/Switch-VLANs-Config-02-300x104.png 300w" sizes="(max-width: 773px) 100vw, 773px"></a></p>
-<p>On the VLAN leaf.</p>
-<p>For Port 1, our Trunk Port – VLAN Mode is Enabled, default VLAN ID is 1 and VLAN Header is Add If Missing.</p>
-<p>For the other Access Ports the configuration is as follows: VLAN Mode is Strict, Default VLAN ID is configured by your design, from the VLANs configured on the router. You can leave Force VLAN ID unpicked, VLAN Header is Always Strip.</p>
-<p><strong> </strong></p>
-<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/Switch-VLANs-Config-01.png"><img class="aligncenter size-full wp-image-716" title="Switch-VLANs-Config-01" src="https://blog.stefcho.eu/wp-content/uploads/2011/05/Switch-VLANs-Config-01.png" alt="" width="778" height="361" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/05/Switch-VLANs-Config-01.png 778w,https://blog.stefcho.eu/wp-content/uploads/2011/05/Switch-VLANs-Config-01-300x139.png 300w" sizes="(max-width: 778px) 100vw, 778px"></a></p>
-<p><strong>Testing</strong></p>
-<p>Now if you plug the test laptop to one of the Ports 3,4,5. And the NIC is configured to receive configuration from a DHCP server, you will get IP address from the subnet of the configured VLAN range. Because of the Allow All traffic rule you will have Internet, and access to host on the other VLANs.</p>
-<p> </p>
-<p><strong>Issues</strong></p>
-<p>Some issues that I faced along the way.</p>
-<p><strong> </strong></p>
-<p><strong>VMware Workstation Virtual Machine and VLANs support</strong></p>
-<p>My idea was to configure quickly one VM with pfSense, and use the bridged interface for connection to the switch. Everything works fine up until I configured VLANs. Then suddenly the communication between the route and switch stops. After a little network sniffing what surprised me, was that the packets were not tagged with VLANs. After extensive googling on the topic, I did not found definitive reason for this strange behaviour. One part of the information was related to the physical NIC support of VLANs. The other portion of the topics were about the VMware VM and the type of the virtual NIC configured on the virtual machine. Unfortunately my EVGA X58 motherboard is equipped with two on-board Realtek NICS, but fortunately enough they support VLAN and event Priority. When I check the configuration of the bridged NIC <strong>Priority & VLAN </strong>were <strong>Enabled</strong>.</p>
-<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/NIC-02.png"><img class="aligncenter size-full wp-image-718" title="NIC-02" src="https://blog.stefcho.eu/wp-content/uploads/2011/05/NIC-02.png" alt="" width="417" height="466" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/05/NIC-02.png 417w,https://blog.stefcho.eu/wp-content/uploads/2011/05/NIC-02-268x300.png 268w" sizes="(max-width: 417px) 100vw, 417px"></a></p>
-<p>The troubleshooting took me long hours, but finally I’ve got a great idea. What if I turn off the Priority & VLAN support on the physical NIC? And indeed, packets start showing with the 802.1Q Tags. My suspicion is that the physical NIC strips off the VLAN tag, and this is the cause of the disruption in communication between my router and switch.</p>
-<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/WireShark-Capture.png"></a><a href="https://blog.stefcho.eu/wp-content/uploads/2011/05/WireShark-Capture1.png"><img class="aligncenter size-full wp-image-720" title="WireShark Capture" src="https://blog.stefcho.eu/wp-content/uploads/2011/05/WireShark-Capture1.png" alt="" width="957" height="601" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/05/WireShark-Capture1.png 957w,https://blog.stefcho.eu/wp-content/uploads/2011/05/WireShark-Capture1-300x188.png 300w" sizes="(max-width: 957px) 100vw, 957px"></a></p>
-<p><strong>Mikrotik RouterBoard RB250G</strong></p>
-<p>If you ping the switch the pings are around 17-9 ms, which is huge taking in to account the device is directly connected.</p>
-<p>For more information look here:</p>
-<h2><a href="http://forum.mikrotik.com/viewtopic.php?f=17&t=45360&sid=55976ca9471e381ea424613150f9eba8">Pings TO the switch dropped, high ping…</a></h2>
-<p> </p>
-<p><strong>References:</strong></p>
-<ul><li>To get a feeling of the switch Web GUI, take a look here, all interface pages are shown and all options are explained : <a href="http://wiki.mikrotik.com/wiki/SwOS">http://wiki.mikrotik.com/wiki/SwOS</a></li>
-<li>This wiki article gave me some ideas for VLANs configuration: <a href="http://wiki.mikrotik.com/wiki/Manual:Interface/VLAN">http://wiki.mikrotik.com/wiki/Manual:Interface/VLAN</a></li>
-<li>I like this thread in the forum, probably in future will try to separate Voice and Data in to separate VLANs as discussed: Topic: Setting UP VLAN in pfSense 2.0?  <a href="http://forum.pfsense.org/index.php?topic=34739.0">http://forum.pfsense.org/index.php?topic=34739.0</a></li>
-<li>If you are seeking for a Smart Switch take a look at that thread: <a href="http://forum.pfsense.org/index.php/topic,36749.msg189441.html" target="_blank">Smart Switch – Recommendations</a></li>
-</ul><p>MikroTik Forum useful links:</p>
-<p>The Section about Mikrotik RouterBoard RB250G:</p>
-<h2><a href="http://forum.mikrotik.com/viewforum.php?f=17&sid=a56fea589ae8eb3fb1f78b0db629fc72">SwOS</a></h2>
-<div id="pageheader">
-<p>Some interesting threads:</p>
-</div>
-<h2><a href="http://forum.mikrotik.com/viewtopic.php?f=17&t=45721">please do not tag default vlan in “add if missing” mode</a></h2>
-<h2><a href="http://forum.mikrotik.com/viewtopic.php?f=17&t=51066">VLAN Tagging on SwOS</a></h2>
-<h2><a href="http://forum.mikrotik.com/viewtopic.php?f=17&t=46150">VLAN Trunk</a></h2>
-<h2><a href="http://forum.mikrotik.com/viewtopic.php?f=17&t=44840">Vlan Trunk / Access port configuration</a></h2>
-<h2><a href="http://forum.mikrotik.com/viewtopic.php?f=17&t=44534&sid=faa5992612130e9516b4c4215b06cbf9">QnQ</a></h2>
-	</div>
-
-	<footer class="entry-footer"><span class="cat-links">Posted in <a href="https://blog.stefcho.eu/category/technical/" rel="category tag">Technical</a></span><span class="tags-links">Tagged <a href="https://blog.stefcho.eu/tag/mikrotik-routerboard-rb250g/" rel="tag">Mikrotik RouterBoard RB250G</a>, <a href="https://blog.stefcho.eu/tag/network/" rel="tag">Network</a>, <a href="https://blog.stefcho.eu/tag/pfsense/" rel="tag">pfSense</a>, <a href="https://blog.stefcho.eu/tag/vlan/" rel="tag">VLAN</a></span><span class="comments-link"><a href="https://blog.stefcho.eu/pfsense-on-a-stick-802-1q-trunking-with-pfsense-2-0-rc1-and-mikrotik-routerboard-rb250g-smart-gigabit-switch-with-five-ports-and-swos-v1-5/#comments">4 Comments</a></span>	</footer></article><nav class="navigation posts-navigation" role="navigation"><h2 class="screen-reader-text">Posts navigation</h2>
+	<footer class="entry-footer"><span class="cat-links">Posted in <a href="https://blog.stefcho.eu/category/technical/" rel="category tag">Technical</a></span><span class="tags-links">Tagged <a href="https://blog.stefcho.eu/tag/network/" rel="tag">Network</a>, <a href="https://blog.stefcho.eu/tag/openvpn/" rel="tag">OpenVPN</a>, <a href="https://blog.stefcho.eu/tag/pfsense/" rel="tag">pfSense</a>, <a href="https://blog.stefcho.eu/tag/routing/" rel="tag">Routing</a></span><span class="comments-link"><a href="https://blog.stefcho.eu/routing-road-warriors-clients-through-a-site-to-site-vpn-with-pfsense-2-0-rc1-and-openvpn/#comments">7 Comments</a></span>	</footer></article><nav class="navigation posts-navigation" role="navigation"><h2 class="screen-reader-text">Posts navigation</h2>
 		<div class="nav-links"><div class="nav-previous"><a href="https://blog.stefcho.eu/category/technical/page/4/">Older posts</a></div><div class="nav-next"><a href="https://blog.stefcho.eu/category/technical/page/2/">Newer posts</a></div></div>
 	</nav></main></div>
 			</div>
 			<div class="columns small-12 medium-4">
 				
-<aside id="secondary" class="widget-area" role="complementary"><section id="tag_cloud-3" class="widget widget_tag_cloud"><h2 class="widget-title">Tags</h2><div class="tagcloud"><a href="https://blog.stefcho.eu/tag/adds/" class="tag-cloud-link tag-link-73 tag-link-position-1" style="font-size: 10.135593220339pt;" aria-label="ADDS (2 items)">ADDS</a>
-<a href="https://blog.stefcho.eu/tag/asterisk/" class="tag-cloud-link tag-link-55 tag-link-position-2" style="font-size: 10.135593220339pt;" aria-label="Asterisk (2 items)">Asterisk</a>
-<a href="https://blog.stefcho.eu/tag/asus/" class="tag-cloud-link tag-link-60 tag-link-position-3" style="font-size: 11.559322033898pt;" aria-label="ASUS (3 items)">ASUS</a>
-<a href="https://blog.stefcho.eu/tag/azure/" class="tag-cloud-link tag-link-94 tag-link-position-4" style="font-size: 11.559322033898pt;" aria-label="Azure (3 items)">Azure</a>
-<a href="https://blog.stefcho.eu/tag/captive-portal/" class="tag-cloud-link tag-link-83 tag-link-position-5" style="font-size: 11.559322033898pt;" aria-label="Captive Portal (3 items)">Captive Portal</a>
+<aside id="secondary" class="widget-area" role="complementary"><section id="tag_cloud-3" class="widget widget_tag_cloud"><h2 class="widget-title">Tags</h2><div class="tagcloud"><a href="https://blog.stefcho.eu/tag/adds/" class="tag-cloud-link tag-link-73 tag-link-position-1" style="font-size: 10.117647058824pt;" aria-label="ADDS (2 items)">ADDS</a>
+<a href="https://blog.stefcho.eu/tag/asterisk/" class="tag-cloud-link tag-link-55 tag-link-position-2" style="font-size: 10.117647058824pt;" aria-label="Asterisk (2 items)">Asterisk</a>
+<a href="https://blog.stefcho.eu/tag/asus/" class="tag-cloud-link tag-link-60 tag-link-position-3" style="font-size: 11.529411764706pt;" aria-label="ASUS (3 items)">ASUS</a>
+<a href="https://blog.stefcho.eu/tag/azure/" class="tag-cloud-link tag-link-94 tag-link-position-4" style="font-size: 11.529411764706pt;" aria-label="Azure (3 items)">Azure</a>
+<a href="https://blog.stefcho.eu/tag/captive-portal/" class="tag-cloud-link tag-link-83 tag-link-position-5" style="font-size: 11.529411764706pt;" aria-label="Captive Portal (3 items)">Captive Portal</a>
 <a href="https://blog.stefcho.eu/tag/cell-phone/" class="tag-cloud-link tag-link-64 tag-link-position-6" style="font-size: 8pt;" aria-label="Cell Phone (1 item)">Cell Phone</a>
 <a href="https://blog.stefcho.eu/tag/centos/" class="tag-cloud-link tag-link-86 tag-link-position-7" style="font-size: 8pt;" aria-label="CentOS (1 item)">CentOS</a>
-<a href="https://blog.stefcho.eu/tag/creative/" class="tag-cloud-link tag-link-66 tag-link-position-8" style="font-size: 10.135593220339pt;" aria-label="Creative (2 items)">Creative</a>
-<a href="https://blog.stefcho.eu/tag/dd-wrt/" class="tag-cloud-link tag-link-57 tag-link-position-9" style="font-size: 14.525423728814pt;" aria-label="DD-WRT (6 items)">DD-WRT</a>
+<a href="https://blog.stefcho.eu/tag/creative/" class="tag-cloud-link tag-link-66 tag-link-position-8" style="font-size: 10.117647058824pt;" aria-label="Creative (2 items)">Creative</a>
+<a href="https://blog.stefcho.eu/tag/dd-wrt/" class="tag-cloud-link tag-link-57 tag-link-position-9" style="font-size: 14.470588235294pt;" aria-label="DD-WRT (6 items)">DD-WRT</a>
 <a href="https://blog.stefcho.eu/tag/dns/" class="tag-cloud-link tag-link-92 tag-link-position-10" style="font-size: 8pt;" aria-label="DNS (1 item)">DNS</a>
-<a href="https://blog.stefcho.eu/tag/hyper-v/" class="tag-cloud-link tag-link-67 tag-link-position-11" style="font-size: 12.745762711864pt;" aria-label="Hyper-V (4 items)">Hyper-V</a>
-<a href="https://blog.stefcho.eu/tag/ldap/" class="tag-cloud-link tag-link-74 tag-link-position-12" style="font-size: 10.135593220339pt;" aria-label="LDAP (2 items)">LDAP</a>
-<a href="https://blog.stefcho.eu/tag/learning/" class="tag-cloud-link tag-link-102 tag-link-position-13" style="font-size: 10.135593220339pt;" aria-label="Learning (2 items)">Learning</a>
+<a href="https://blog.stefcho.eu/tag/hyper-v/" class="tag-cloud-link tag-link-67 tag-link-position-11" style="font-size: 12.705882352941pt;" aria-label="Hyper-V (4 items)">Hyper-V</a>
+<a href="https://blog.stefcho.eu/tag/ldap/" class="tag-cloud-link tag-link-74 tag-link-position-12" style="font-size: 10.117647058824pt;" aria-label="LDAP (2 items)">LDAP</a>
+<a href="https://blog.stefcho.eu/tag/learning/" class="tag-cloud-link tag-link-102 tag-link-position-13" style="font-size: 10.117647058824pt;" aria-label="Learning (2 items)">Learning</a>
 <a href="https://blog.stefcho.eu/tag/linksys/" class="tag-cloud-link tag-link-56 tag-link-position-14" style="font-size: 8pt;" aria-label="Linksys (1 item)">Linksys</a>
-<a href="https://blog.stefcho.eu/tag/microsoft/" class="tag-cloud-link tag-link-63 tag-link-position-15" style="font-size: 11.559322033898pt;" aria-label="Microsoft (3 items)">Microsoft</a>
+<a href="https://blog.stefcho.eu/tag/microsoft/" class="tag-cloud-link tag-link-63 tag-link-position-15" style="font-size: 11.529411764706pt;" aria-label="Microsoft (3 items)">Microsoft</a>
 <a href="https://blog.stefcho.eu/tag/mikrotik-routerboard-rb250g/" class="tag-cloud-link tag-link-79 tag-link-position-16" style="font-size: 8pt;" aria-label="Mikrotik RouterBoard RB250G (1 item)">Mikrotik RouterBoard RB250G</a>
-<a href="https://blog.stefcho.eu/tag/network/" class="tag-cloud-link tag-link-65 tag-link-position-17" style="font-size: 19.389830508475pt;" aria-label="Network (17 items)">Network</a>
+<a href="https://blog.stefcho.eu/tag/network/" class="tag-cloud-link tag-link-65 tag-link-position-17" style="font-size: 19.294117647059pt;" aria-label="Network (17 items)">Network</a>
 <a href="https://blog.stefcho.eu/tag/openldap/" class="tag-cloud-link tag-link-87 tag-link-position-18" style="font-size: 8pt;" aria-label="OpenLDAP (1 item)">OpenLDAP</a>
-<a href="https://blog.stefcho.eu/tag/openvpn/" class="tag-cloud-link tag-link-72 tag-link-position-19" style="font-size: 16.779661016949pt;" aria-label="OpenVPN (10 items)">OpenVPN</a>
+<a href="https://blog.stefcho.eu/tag/openvpn/" class="tag-cloud-link tag-link-72 tag-link-position-19" style="font-size: 16.705882352941pt;" aria-label="OpenVPN (10 items)">OpenVPN</a>
 <a href="https://blog.stefcho.eu/tag/openwrt/" class="tag-cloud-link tag-link-71 tag-link-position-20" style="font-size: 8pt;" aria-label="OpenWrt (1 item)">OpenWrt</a>
 <a href="https://blog.stefcho.eu/tag/pfcenter/" class="tag-cloud-link tag-link-85 tag-link-position-21" style="font-size: 8pt;" aria-label="pfCenter (1 item)">pfCenter</a>
 <a href="https://blog.stefcho.eu/tag/pfsemse/" class="tag-cloud-link tag-link-95 tag-link-position-22" style="font-size: 8pt;" aria-label="pfSemse (1 item)">pfSemse</a>
-<a href="https://blog.stefcho.eu/tag/pfsense/" class="tag-cloud-link tag-link-61 tag-link-position-23" style="font-size: 22pt;" aria-label="pfSense (29 items)">pfSense</a>
-<a href="https://blog.stefcho.eu/tag/pfsense-2-0-rc1/" class="tag-cloud-link tag-link-81 tag-link-position-24" style="font-size: 13.694915254237pt;" aria-label="pfSense 2.0 RC1 (5 items)">pfSense 2.0 RC1</a>
-<a href="https://blog.stefcho.eu/tag/pfsense-2-0-rc3/" class="tag-cloud-link tag-link-84 tag-link-position-25" style="font-size: 14.525423728814pt;" aria-label="pfSense 2.0 RC3 (6 items)">pfSense 2.0 RC3</a>
-<a href="https://blog.stefcho.eu/tag/pfsense-2-2/" class="tag-cloud-link tag-link-90 tag-link-position-26" style="font-size: 11.559322033898pt;" aria-label="pfSense 2.2 (3 items)">pfSense 2.2</a>
+<a href="https://blog.stefcho.eu/tag/pfsense/" class="tag-cloud-link tag-link-61 tag-link-position-23" style="font-size: 22pt;" aria-label="pfSense (30 items)">pfSense</a>
+<a href="https://blog.stefcho.eu/tag/pfsense-2-0-rc1/" class="tag-cloud-link tag-link-81 tag-link-position-24" style="font-size: 13.647058823529pt;" aria-label="pfSense 2.0 RC1 (5 items)">pfSense 2.0 RC1</a>
+<a href="https://blog.stefcho.eu/tag/pfsense-2-0-rc3/" class="tag-cloud-link tag-link-84 tag-link-position-25" style="font-size: 14.470588235294pt;" aria-label="pfSense 2.0 RC3 (6 items)">pfSense 2.0 RC3</a>
+<a href="https://blog.stefcho.eu/tag/pfsense-2-2/" class="tag-cloud-link tag-link-90 tag-link-position-26" style="font-size: 11.529411764706pt;" aria-label="pfSense 2.2 (3 items)">pfSense 2.2</a>
 <a href="https://blog.stefcho.eu/tag/pfsense-2-4-3/" class="tag-cloud-link tag-link-98 tag-link-position-27" style="font-size: 8pt;" aria-label="pfSense 2.4.3 (1 item)">pfSense 2.4.3</a>
-<a href="https://blog.stefcho.eu/tag/pki/" class="tag-cloud-link tag-link-77 tag-link-position-28" style="font-size: 10.135593220339pt;" aria-label="PKI (2 items)">PKI</a>
-<a href="https://blog.stefcho.eu/tag/radius/" class="tag-cloud-link tag-link-75 tag-link-position-29" style="font-size: 10.135593220339pt;" aria-label="RADIUS (2 items)">RADIUS</a>
+<a href="https://blog.stefcho.eu/tag/pki/" class="tag-cloud-link tag-link-77 tag-link-position-28" style="font-size: 10.117647058824pt;" aria-label="PKI (2 items)">PKI</a>
+<a href="https://blog.stefcho.eu/tag/radius/" class="tag-cloud-link tag-link-75 tag-link-position-29" style="font-size: 10.117647058824pt;" aria-label="RADIUS (2 items)">RADIUS</a>
 <a href="https://blog.stefcho.eu/tag/routing/" class="tag-cloud-link tag-link-80 tag-link-position-30" style="font-size: 8pt;" aria-label="Routing (1 item)">Routing</a>
-<a href="https://blog.stefcho.eu/tag/site-to-site/" class="tag-cloud-link tag-link-76 tag-link-position-31" style="font-size: 11.559322033898pt;" aria-label="Site To Site (3 items)">Site To Site</a>
-<a href="https://blog.stefcho.eu/tag/technical/" class="tag-cloud-link tag-link-97 tag-link-position-32" style="font-size: 15.118644067797pt;" aria-label="Technical (7 items)">Technical</a>
+<a href="https://blog.stefcho.eu/tag/site-to-site/" class="tag-cloud-link tag-link-76 tag-link-position-31" style="font-size: 11.529411764706pt;" aria-label="Site To Site (3 items)">Site To Site</a>
+<a href="https://blog.stefcho.eu/tag/technical/" class="tag-cloud-link tag-link-97 tag-link-position-32" style="font-size: 15.058823529412pt;" aria-label="Technical (7 items)">Technical</a>
 <a href="https://blog.stefcho.eu/tag/ubuntu/" class="tag-cloud-link tag-link-99 tag-link-position-33" style="font-size: 8pt;" aria-label="Ubuntu (1 item)">Ubuntu</a>
 <a href="https://blog.stefcho.eu/tag/uncategorized/" class="tag-cloud-link tag-link-96 tag-link-position-34" style="font-size: 8pt;" aria-label="Uncategorized (1 item)">Uncategorized</a>
 <a href="https://blog.stefcho.eu/tag/vlan/" class="tag-cloud-link tag-link-78 tag-link-position-35" style="font-size: 8pt;" aria-label="VLAN (1 item)">VLAN</a>
-<a href="https://blog.stefcho.eu/tag/vmware/" class="tag-cloud-link tag-link-62 tag-link-position-36" style="font-size: 15.118644067797pt;" aria-label="VMWare (7 items)">VMWare</a>
-<a href="https://blog.stefcho.eu/tag/voip/" class="tag-cloud-link tag-link-59 tag-link-position-37" style="font-size: 10.135593220339pt;" aria-label="VoIP (2 items)">VoIP</a>
+<a href="https://blog.stefcho.eu/tag/vmware/" class="tag-cloud-link tag-link-62 tag-link-position-36" style="font-size: 15.058823529412pt;" aria-label="VMWare (7 items)">VMWare</a>
+<a href="https://blog.stefcho.eu/tag/voip/" class="tag-cloud-link tag-link-59 tag-link-position-37" style="font-size: 10.117647058824pt;" aria-label="VoIP (2 items)">VoIP</a>
 <a href="https://blog.stefcho.eu/tag/vyatta/" class="tag-cloud-link tag-link-70 tag-link-position-38" style="font-size: 8pt;" aria-label="Vyatta (1 item)">Vyatta</a>
 <a href="https://blog.stefcho.eu/tag/web-sites/" class="tag-cloud-link tag-link-93 tag-link-position-39" style="font-size: 8pt;" aria-label="Web Sites (1 item)">Web Sites</a>
 <a href="https://blog.stefcho.eu/tag/windows-server-8/" class="tag-cloud-link tag-link-88 tag-link-position-40" style="font-size: 8pt;" aria-label="Windows Server 8 (1 item)">Windows Server 8</a>
-<a href="https://blog.stefcho.eu/tag/windows-server-2008-r2/" class="tag-cloud-link tag-link-68 tag-link-position-41" style="font-size: 12.745762711864pt;" aria-label="Windows Server 2008 R2 (4 items)">Windows Server 2008 R2</a>
+<a href="https://blog.stefcho.eu/tag/windows-server-2008-r2/" class="tag-cloud-link tag-link-68 tag-link-position-41" style="font-size: 12.705882352941pt;" aria-label="Windows Server 2008 R2 (4 items)">Windows Server 2008 R2</a>
 <a href="https://blog.stefcho.eu/tag/windows-server-2012-r2/" class="tag-cloud-link tag-link-91 tag-link-position-42" style="font-size: 8pt;" aria-label="Windows Server 2012 R2 (1 item)">Windows Server 2012 R2</a>
 <a href="https://blog.stefcho.eu/tag/wireless/" class="tag-cloud-link tag-link-82 tag-link-position-43" style="font-size: 8pt;" aria-label="Wireless (1 item)">Wireless</a>
 <a href="https://blog.stefcho.eu/tag/workstation-8/" class="tag-cloud-link tag-link-89 tag-link-position-44" style="font-size: 8pt;" aria-label="Workstation 8 (1 item)">Workstation 8</a>
@@ -852,6 +812,6 @@ You can check out the thread in the pfSense forum here:<br><a href="http://forum
 
 <script type="text/javascript" src="https://blog.stefcho.eu/wp-content/themes/micro/assets/scripts/scripts.min.js"></script><script type="text/javascript">
 /* <![CDATA[ */
-var wpgdprcData = {"ajaxURL":"https:\/\/blog.stefcho.eu\/wp-admin\/admin-ajax.php","ajaxSecurity":"ba99eb19ca","consentVersion":"1"};
+var wpgdprcData = {"ajaxURL":"https:\/\/blog.stefcho.eu\/wp-admin\/admin-ajax.php","ajaxSecurity":"3521e65293","consentVersion":"1"};
 /* ]]> */
 </script><script type="text/javascript" src="https://blog.stefcho.eu/wp-content/plugins/wp-gdpr-compliance/assets/js/front.js"></script></body></html>
