@@ -27,7 +27,7 @@ div.wpgdprc .wpgdprc-switch {display: inline-block;vertical-align: middle;positi
 div.wpgdprc .wpgdprc-switch .wpgdprc-switch-label {display: block;margin: 0;-webkit-border-radius: 30px;-moz-border-radius: 30px;border-radius: 30px;overflow: hidden;cursor: pointer;}
 div.wpgdprc .wpgdprc-switch .wpgdprc-switch-inner {display: block;margin-left: -100%;width: 200%;transition: all .15s ease-in-out;}
 div.wpgdprc .wpgdprc-switch .wpgdprc-switch-inner:before, div.wpgdprc .wpgdprc-switch .wpgdprc-switch-inner:after {float: left;width: 50%;text-transform: uppercase;line-height: 30px;font-size: 12px;color: #fff;content: "";}
-div.wpgdprc .wpgdprc-switch .wpgdprc-switch-inner:before {padding-left: 10px;background-color: #4aa94f;}
+div.wpgdprc .wpgdprc-switch .wpgdprc-switch-inner:before {padding: 0 10px;background-color: #4aa94f;}
 div.wpgdprc .wpgdprc-switch .wpgdprc-switch-inner:after {padding-right: 10px;background-color: #0a0a0a;text-align: right;}
 div.wpgdprc .wpgdprc-switch--reverse .wpgdprc-switch-inner:before {background-color: #ffae00;}
 div.wpgdprc .wpgdprc-switch .wpgdprc-switch-switch {position: absolute;top: 1px;right: 100%;bottom: 0;margin: 0 -29px 0 0;width: 28px;height: 28px;background: #fff;-webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%;-webkit-box-shadow: 0 0 3px rgba(0,0,0,.3);-moz-box-shadow: 0 0 3px rgba(0,0,0,.3);box-shadow: 0 0 3px rgba(0,0,0,.3);transition: all .15s ease-in-out;}
