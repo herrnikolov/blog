@@ -196,7 +196,16 @@ http://flickity.metafizzy.co
 	<section class="section-fullwidth section-main"><div class="row">
 			<div class="columns small-12 medium-8">
 				<div id="primary" class="content-area">
-					<main id="main" class="site-main"><article id="post-383" class="entry post-383 post type-post status-publish format-standard hentry category-technical tag-hyper-v tag-microsoft tag-network tag-pfsense tag-windows-server-2008-r2"><header class="entry-header"><h2 class="entry-title"><a href="https://blog.stefcho.eu/pfsense-1-2-3-as-virtual-machine-on-windows-server-2008-r2-hyper-v/" rel="bookmark">pfSense 1.2.3 as Virtual Machine on Windows Server 2008 R2 Hyper-V</a></h2>		<div class="entry-meta">
+					<main id="main" class="site-main"><article id="post-419" class="entry post-419 post type-post status-publish format-standard hentry category-technical tag-hyper-v tag-pfsense tag-windows-server-2008-r2"><header class="entry-header"><h2 class="entry-title"><a href="https://blog.stefcho.eu/pfsense-2-0-rc1-released-on-hyper-v/" rel="bookmark">pfSense 2.0 RC1 released, on Hyper-V</a></h2>		<div class="entry-meta">
+			<span class="posted-on">Posted on <time class="entry-date published" datetime="2011-03-01T17:45:06+02:00">01/03/2011</time> - <time class="updated" datetime="2019-02-18T14:44:06+02:00">18/02/2019</time></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="https://blog.stefcho.eu/author/darko/">Stefan</a></span></span>		</div>
+			</header><div class="entry-content">
+		<p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/03/pfSense_logo.png"><img class="aligncenter size-full wp-image-422" title="pfSense_logo" src="https://blog.stefcho.eu/wp-content/uploads/2011/03/pfSense_logo.png" alt="" width="300" height="110"></a>Today pfSense 2.0 RC1 was officially released. So I’ve quickly downloaded it and setup one test VM in VMWare. The new interface reveals a lot more features than the previous version 1.2.3. For full list of improvements look here: <a href="http://doc.pfsense.org/index.php/2.0_New_Features_and_Changes" target="_blank">http://doc.pfsense.org/index.php/2.0_New_Features_and_Changes</a></p>
+<p>What I was more interested in was the performance on Hyper-V VM. Recently I’ve setup a Hyper-V VM with 1.2.3 version and legacy network interface cards. Make a few quick file transfer tests and did not like the performance.</p>
+<p>I’ve repeat the tests, and there is a 25% improvement over 1.2.3. This is encouraging. Unfortunately event with the new version, it is necessary to use Legacy NIC for the Hyper-V VM.</p>
+<p>As it is stated in the Digest this is considered a <strong>stable release suitable for production</strong> use. I will continue the testing in production environment to get more realistic results.</p>
+	</div>
+
+	<footer class="entry-footer"><span class="cat-links">Posted in <a href="https://blog.stefcho.eu/category/technical/" rel="category tag">Technical</a></span><span class="tags-links">Tagged <a href="https://blog.stefcho.eu/tag/hyper-v/" rel="tag">Hyper-V</a>, <a href="https://blog.stefcho.eu/tag/pfsense/" rel="tag">pfSense</a>, <a href="https://blog.stefcho.eu/tag/windows-server-2008-r2/" rel="tag">Windows Server 2008 R2</a></span>	</footer></article><article id="post-383" class="entry post-383 post type-post status-publish format-standard hentry category-technical tag-hyper-v tag-microsoft tag-network tag-pfsense tag-windows-server-2008-r2"><header class="entry-header"><h2 class="entry-title"><a href="https://blog.stefcho.eu/pfsense-1-2-3-as-virtual-machine-on-windows-server-2008-r2-hyper-v/" rel="bookmark">pfSense 1.2.3 as Virtual Machine on Windows Server 2008 R2 Hyper-V</a></h2>		<div class="entry-meta">
 			<span class="posted-on">Posted on <time class="entry-date published" datetime="2011-02-27T01:48:27+02:00">27/02/2011</time> - <time class="updated" datetime="2019-02-18T14:40:52+02:00">18/02/2019</time></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="https://blog.stefcho.eu/author/darko/">Stefan</a></span></span>		</div>
 			</header><div class="entry-content">
 		<p>After seeing pfSense working more than half year flawlessly on Alix, recently I’ve test it as virtual machine.</p>
@@ -329,93 +338,7 @@ First  I fixed the first absolute with new path, but still it was not working.  
 <p>Hope this will be fixed later on.</p>
 	</div>
 
-	<footer class="entry-footer"><span class="cat-links">Posted in <a href="https://blog.stefcho.eu/category/technical/" rel="category tag">Technical</a></span><span class="tags-links">Tagged <a href="https://blog.stefcho.eu/tag/microsoft/" rel="tag">Microsoft</a>, <a href="https://blog.stefcho.eu/tag/vmware/" rel="tag">VMWare</a></span>	</footer></article><article id="post-306" class="entry post-306 post type-post status-publish format-standard hentry category-technical tag-pfsense"><header class="entry-header"><h2 class="entry-title"><a href="https://blog.stefcho.eu/soho-firewall-appliance-with-alix2d13-and-pfsense/" rel="bookmark">SoHo Firewall Appliance with Alix2d13 and pfSense</a></h2>		<div class="entry-meta">
-			<span class="posted-on">Posted on <time class="entry-date published" datetime="2010-07-24T10:40:43+02:00">24/07/2010</time> - <time class="updated" datetime="2019-02-18T14:34:38+02:00">18/02/2019</time></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="https://blog.stefcho.eu/author/darko/">Stefan</a></span></span>		</div>
-			</header><div class="entry-content">
-		<p>След като прочетох този пост <a href="http://kaos.to/blog/archives/2005/07/15/armor-your-palace-securing-your-home-and-network" target="_blank">Armor  Your Palace</a>, се позамислих, хареса ми идеята, и се хванах за  работа.</p>
-<p>Тъй като това си е цяла система, ще разгледам различните елементи  отделно, този пост е посветен firewall-a</p>
-<p>И така Как да си направим един приличен Firewall / Router за вкъщи? С  каква операционна система  да е той, и за какви функции ще го ползваме.</p>
-<p>Незнам от къде намерих един много добър документ с тази таблица в  него:</p>
-<p><a href="https://blog.stefcho.eu/wp-content/uploads/2010/07/comparison.jpg"><img class="aligncenter size-full wp-image-308" title="comparison" src="https://blog.stefcho.eu/wp-content/uploads/2010/07/comparison.jpg" alt="" width="609" height="585" srcset="https://blog.stefcho.eu/wp-content/uploads/2010/07/comparison.jpg 609w,https://blog.stefcho.eu/wp-content/uploads/2010/07/comparison-300x288.jpg 300w" sizes="(max-width: 609px) 100vw, 609px"></a></p>
-<p>Firewall Comparison.pdf</p>
-<p>Хареса ми pfSense. Поиграх си с него на виртуална машина, не изглежда  зле, може да му се добавят доста полезни пакети(проложения), и да  прави  Dual WAN с Load Balancing.</p>
-<p>Опитах на направя нещо такова с dd-wrt, но е доста елементарно  решения и му липсват доста фикции. Има доста опътвания по въпроса <a href="http://www.dd-wrt.com/wiki/index.php/Tutorials" target="_blank">тук </a>,но бих ви  препоръчал да изчетете дъъъъългите теми по въпроса във форума.</p>
-<p>След като го  разгледах и нямах никакво желание да го оставям на  виртуална машина.</p>
-<p>Трябваше да му намеря подходящ хардуер, в сайт-а на pfsense има  доста препоръки в това отношение.</p>
-<p>Един бърз поглед в <a href="http://hardwarebg.com/forum/" target="_blank">hardwarebg</a>,  ме убеди че подходящ за мен варят е платка на <a href="http://www.pcengines.ch/" target="_blank">PC Engines</a>.</p>
-<p>Харесах си <a href="http://www.pcengines.ch/alix2d3.htm" target="_blank">Alix2d3</a>,  има си 3 Ethernet порта, 500 MHz AMD процесор, и 256 MB RAM.</p>
-<p><a href="https://blog.stefcho.eu/wp-content/uploads/2010/07/alix2d3.jpg"><img class="aligncenter size-medium wp-image-314" title="alix2d3" src="https://blog.stefcho.eu/wp-content/uploads/2010/07/alix2d3-300x279.jpg" alt="" width="300" height="279" srcset="https://blog.stefcho.eu/wp-content/uploads/2010/07/alix2d3-300x279.jpg 300w,https://blog.stefcho.eu/wp-content/uploads/2010/07/alix2d3.jpg 800w" sizes="(max-width: 300px) 100vw, 300px"></a></p>
-<p>В  този прекрасен пост обясняват точно такъв setup, какъвто имах намерение  да направя.</p>
-<p><a href="http://tothelasttribe.com/blog/2009/04/building-a-firewall-pfsense-on-an-alix-2d3/" target="_blank">Building  A Firewall: pfSense on an ALIX 2D3</a></p>
-<p><a href="https://blog.stefcho.eu/wp-content/uploads/2010/07/alix2d13.jpg"><img class="aligncenter size-medium wp-image-315" title="alix2d13" src="https://blog.stefcho.eu/wp-content/uploads/2010/07/alix2d13-300x288.jpg" alt="" width="300" height="288" srcset="https://blog.stefcho.eu/wp-content/uploads/2010/07/alix2d13-300x288.jpg 300w,https://blog.stefcho.eu/wp-content/uploads/2010/07/alix2d13.jpg 800w" sizes="(max-width: 300px) 100vw, 300px"></a></p>
-<p>В него се цитират един друг изключително полезен пост за embedded</p>
-<p><a href="http://rockpenguin.wordpress.com/2008/02/23/installing-pfsense-on-the-alix2c1/" target="_blank">Installing  pfSense on the alix2c1</a></p>
-<p>По  – конкретно как се flash-ва последната версия на биос на такова дъно,  как се правят настройки на BIOS-a му през null modem cable.</p>
-<p>Идеята да си имам пълноценен Dual WAN router, с читав FireWall и IDS  (Snort), ми харесваше все повече и повече.</p>
-<p>PC Engines в Българя се предлага от няколко фирми, аз си намерих  моята платка в <a href="http://reloadbg.com/" target="_blank">reloadbg</a>.</p>
-<p>В електронния им магазин има и <a href="http://reloadbg.com/shop/product_info.php?products_id=217&osCsid=6d2c32d475ae6cf929a8a49ad70d37d8" target="_blank">кутия  (enclosure)</a> за дъното. Няма да го оставя платката гола я.<br>
-Не намерих подходящо захранване, и след бърза консултация в skype с  някой от reloadbg, ме насочи към едно за<a href="http://reloadbg.com/shop/product_info.php?cPath=29&products_id=135" target="_blank"> microtik-ски платки</a>, което предлагат.</p>
-<p>Имаха в наличност <a href="http://reloadbg.com/shop/product_info.php?cPath=26&products_id=174" target="_blank">null  modem cable</a>, за да мога да работя с платката.</p>
-<p>Единственото което оставаше да намеря и Compact Flash  карта на  която да го инсталирам. След сравнение на цените реших че <a href="http://www.reset.bg/catalog/product_info.php?cPath=16_65&products_id=5951" target="_blank">4  GB pqi 150 X</a> ще ми свърши работа. В момента се разработва версия  1.2.3 на pfSense  и тя ще има img за такава.</p>
-<table border="0" cellspacing="0" cellpadding="0" width="250"><colgroup><col width="122"></colgroup><colgroup><col span="2" width="64"></colgroup><tbody><tr style="text-align: left;" height="20"><td width="122" height="20">alix2d3</td>
-<td style="text-align: center;" width="64">188</td>
-<td width="64">MB</td>
-</tr><tr height="20"><td height="20">Alix 3d3</td>
-<td style="text-align: center;">25</td>
-<td>Case</td>
-</tr><tr height="20"><td height="20">CF 4 GB</td>
-<td style="text-align: center;">32</td>
-<td>Hdd</td>
-</tr><tr height="20"><td height="20">Null  modem   cable</td>
-<td style="text-align: center;">8</td>
-<td></td>
-</tr><tr height="20"><td height="20">Power  Supply</td>
-<td style="text-align: center;">15</td>
-<td></td>
-</tr><tr height="20"><td height="20"></td>
-<td></td>
-<td></td>
-</tr><tr height="20"><td height="20">Total:</td>
-<td align="right">268</td>
-<td></td>
-</tr><tr height="20"><td height="20">with  VAT</td>
-<td align="right">321.6</td>
-<td></td>
-</tr></tbody></table><p>в лева без доставката.</p>
-<p>Нямах време да ходя и да купувам всичко на място за това си ги  поръчах с доставка.</p>
-<p>Приятно ме изненада факта че не получих Alix2d3 a Alix2d13</p>
-<p>И така вече имах всичките необходими компоненти.</p>
-<p>Сега трябваше да запиша примерно<br>
-http://88.198.81.53/downloads/pfSense-1.2.2-Embedded.img.gz<br>
-на CF (Compact Flash Card).</p>
-<p>Тук идва въпроса с какво, как?<br>
-Това <a href="http://pfsense.bol2riz.com//tutorials/wrap_install/wrap_install.htm" target="_blank">tutorial-che</a> ми даде всичките отговори.</p>
-<p>Преди да го следвате е добре все пак да обновите BIOS-a на дъното до  последната версия.<br>
-Така се избягват неприятни ситуации.</p>
-<p>И така слагаме CF в дъното и сме готови, не съвсем.</p>
-<p>незнам защо но трябва с ей такива големи букви да го напишат:</p>
-<p><strong>Embedded installation do not support  packages!!!</strong></p>
-<p>Тоест не можеш да си добавяш пакети към инсталацията, ако си я  направил както е описано по – горе. Супер тъпо, нали?</p>
-<p>Смешното обяснение е че CF имат малко цикли за четене / писане, и  така се щадяло максимално.<br>
-На кой му пука?!?, при сегашните цени на CF, можеш да си я сменяш  достатъчно често за да не ми пречи  така наречения flash wearout .</p>
-<p>Какво правим сега?</p>
-<p>Тук <a href="http://blog.pfsense.org/?p=175" target="_blank">PCEngines ALIX boards  and pfSense</a>, StarScream казва как да преодолеем проблема.</p>
-<p>В общи линии, инсталираме от LiveCD на CF в VMWare. Единственото  което мога да допълня е че с 1.2.2 става и без да се слози GRUB. Даваше  ми някаква грешка при инсталация, и го прескочих.</p>
-<p>И о чудо, имаме си pfSense с възможност за пакети, върху Alix-a.<br>
-Boot-на си нормално. Сега е в тестов период. Тоест една седмица  нонстоп работа.</p>
-<p>Добрите новини не свършват до тук.<br><a href="http://blog.pfsense.org/?p=472" target="_blank">Next generation of pfSense  embedded now available</a></p>
-<p>Добрите  новини са че няма да е необходимо да правя такива маймонджулъци, за да  го подкарам както си искам, а пакетите ще са достъпни в 1.2.3.  Прегледайте го, има още доста интересни неща.<br>
-За забавление се оказа че enclosure-a дето съм взел трябва леко да  се модне. Нямаше подходяща отвор за двата USB конектора. След половин  час с дремела и няколко пили имаше.</p>
-<p><a href="https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3628.jpg"><img class="aligncenter size-medium wp-image-316" title="CIMG3628" src="https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3628-300x206.jpg" alt="" width="300" height="206" srcset="https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3628-300x206.jpg 300w,https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3628-1024x705.jpg 1024w,https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3628.jpg 1600w" sizes="(max-width: 300px) 100vw, 300px"></a><a href="https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3633.jpg"></a></p>
-<p><a href="https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3633.jpg"><img class="aligncenter size-medium wp-image-318" title="CIMG3633" src="https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3633-300x201.jpg" alt="" width="300" height="201" srcset="https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3633-300x201.jpg 300w,https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3633-1024x688.jpg 1024w,https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3633.jpg 1600w" sizes="(max-width: 300px) 100vw, 300px"></a><a href="https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3629.jpg"></a></p>
-<p><a href="https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3629.jpg"><img class="aligncenter size-medium wp-image-317" title="CIMG3629" src="https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3629-300x84.jpg" alt="" width="300" height="84" srcset="https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3629-300x84.jpg 300w,https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3629-1024x289.jpg 1024w,https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3629.jpg 1600w" sizes="(max-width: 300px) 100vw, 300px"></a><a href="https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3645.jpg"></a></p>
-<p><a href="https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3645.jpg"><img class="aligncenter size-medium wp-image-323" title="CIMG3645" src="https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3645-300x289.jpg" alt="" width="300" height="289" srcset="https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3645-300x289.jpg 300w,https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3645-1024x988.jpg 1024w,https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3645.jpg 1600w" sizes="(max-width: 300px) 100vw, 300px"></a><a href="https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3642.jpg"></a></p>
-<p><a href="https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3645.jpg"></a><a href="https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3642.jpg"><img class="aligncenter size-medium wp-image-322" title="CIMG3642" src="https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3642-300x225.jpg" alt="" width="300" height="225" srcset="https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3642-300x225.jpg 300w,https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3642-1024x768.jpg 1024w,https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3642.jpg 1600w" sizes="(max-width: 300px) 100vw, 300px"></a></p>
-<p><a href="https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3637.jpg"><img class="aligncenter size-medium wp-image-320" title="CIMG3637" src="https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3637-300x164.jpg" alt="" width="300" height="164" srcset="https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3637-300x164.jpg 300w,https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3637-1024x561.jpg 1024w,https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3637.jpg 1600w" sizes="(max-width: 300px) 100vw, 300px"></a><a href="https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3639.jpg"></a></p>
-<p><a href="https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3637.jpg"></a><a href="https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3639.jpg"><img class="aligncenter size-medium wp-image-321" title="CIMG3639" src="https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3639-300x225.jpg" alt="" width="300" height="225" srcset="https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3639-300x225.jpg 300w,https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3639-1024x768.jpg 1024w,https://blog.stefcho.eu/wp-content/uploads/2010/07/CIMG3639.jpg 1600w" sizes="(max-width: 300px) 100vw, 300px"></a></p>
-	</div>
-
-	<footer class="entry-footer"><span class="cat-links">Posted in <a href="https://blog.stefcho.eu/category/technical/" rel="category tag">Technical</a></span><span class="tags-links">Tagged <a href="https://blog.stefcho.eu/tag/pfsense/" rel="tag">pfSense</a></span><span class="comments-link"><a href="https://blog.stefcho.eu/soho-firewall-appliance-with-alix2d13-and-pfsense/#comments">3 Comments</a></span>	</footer></article><nav class="navigation posts-navigation" role="navigation"><h2 class="screen-reader-text">Posts navigation</h2>
+	<footer class="entry-footer"><span class="cat-links">Posted in <a href="https://blog.stefcho.eu/category/technical/" rel="category tag">Technical</a></span><span class="tags-links">Tagged <a href="https://blog.stefcho.eu/tag/microsoft/" rel="tag">Microsoft</a>, <a href="https://blog.stefcho.eu/tag/vmware/" rel="tag">VMWare</a></span>	</footer></article><nav class="navigation posts-navigation" role="navigation"><h2 class="screen-reader-text">Posts navigation</h2>
 		<div class="nav-links"><div class="nav-previous"><a href="https://blog.stefcho.eu/page/7/">Older posts</a></div><div class="nav-next"><a href="https://blog.stefcho.eu/page/5/">Newer posts</a></div></div>
 	</nav></main></div>
 			</div>
@@ -425,36 +348,36 @@ Boot-на си нормално. Сега е в тестов период. То�
 <a href="https://blog.stefcho.eu/tag/aes-ni/" class="tag-cloud-link tag-link-114 tag-link-position-2" style="font-size: 10.082644628099pt;" aria-label="AES-NI (2 items)">AES-NI</a>
 <a href="https://blog.stefcho.eu/tag/asterisk/" class="tag-cloud-link tag-link-55 tag-link-position-3" style="font-size: 10.082644628099pt;" aria-label="Asterisk (2 items)">Asterisk</a>
 <a href="https://blog.stefcho.eu/tag/asus/" class="tag-cloud-link tag-link-60 tag-link-position-4" style="font-size: 11.471074380165pt;" aria-label="ASUS (3 items)">ASUS</a>
-<a href="https://blog.stefcho.eu/tag/azure/" class="tag-cloud-link tag-link-94 tag-link-position-5" style="font-size: 11.471074380165pt;" aria-label="Azure (3 items)">Azure</a>
+<a href="https://blog.stefcho.eu/tag/azure/" class="tag-cloud-link tag-link-94 tag-link-position-5" style="font-size: 12.628099173554pt;" aria-label="Azure (4 items)">Azure</a>
 <a href="https://blog.stefcho.eu/tag/captive-portal/" class="tag-cloud-link tag-link-83 tag-link-position-6" style="font-size: 11.471074380165pt;" aria-label="Captive Portal (3 items)">Captive Portal</a>
 <a href="https://blog.stefcho.eu/tag/cell-phone/" class="tag-cloud-link tag-link-64 tag-link-position-7" style="font-size: 8pt;" aria-label="Cell Phone (1 item)">Cell Phone</a>
 <a href="https://blog.stefcho.eu/tag/centos/" class="tag-cloud-link tag-link-86 tag-link-position-8" style="font-size: 8pt;" aria-label="CentOS (1 item)">CentOS</a>
-<a href="https://blog.stefcho.eu/tag/creative/" class="tag-cloud-link tag-link-66 tag-link-position-9" style="font-size: 10.082644628099pt;" aria-label="Creative (2 items)">Creative</a>
-<a href="https://blog.stefcho.eu/tag/dd-wrt/" class="tag-cloud-link tag-link-57 tag-link-position-10" style="font-size: 14.363636363636pt;" aria-label="DD-WRT (6 items)">DD-WRT</a>
-<a href="https://blog.stefcho.eu/tag/dns/" class="tag-cloud-link tag-link-92 tag-link-position-11" style="font-size: 8pt;" aria-label="DNS (1 item)">DNS</a>
-<a href="https://blog.stefcho.eu/tag/hyper-v/" class="tag-cloud-link tag-link-67 tag-link-position-12" style="font-size: 12.628099173554pt;" aria-label="Hyper-V (4 items)">Hyper-V</a>
-<a href="https://blog.stefcho.eu/tag/ldap/" class="tag-cloud-link tag-link-74 tag-link-position-13" style="font-size: 10.082644628099pt;" aria-label="LDAP (2 items)">LDAP</a>
-<a href="https://blog.stefcho.eu/tag/learning/" class="tag-cloud-link tag-link-102 tag-link-position-14" style="font-size: 10.082644628099pt;" aria-label="Learning (2 items)">Learning</a>
-<a href="https://blog.stefcho.eu/tag/linksys/" class="tag-cloud-link tag-link-56 tag-link-position-15" style="font-size: 8pt;" aria-label="Linksys (1 item)">Linksys</a>
-<a href="https://blog.stefcho.eu/tag/microsoft/" class="tag-cloud-link tag-link-63 tag-link-position-16" style="font-size: 11.471074380165pt;" aria-label="Microsoft (3 items)">Microsoft</a>
-<a href="https://blog.stefcho.eu/tag/mikrotik-routerboard-rb250g/" class="tag-cloud-link tag-link-79 tag-link-position-17" style="font-size: 8pt;" aria-label="Mikrotik RouterBoard RB250G (1 item)">Mikrotik RouterBoard RB250G</a>
-<a href="https://blog.stefcho.eu/tag/network/" class="tag-cloud-link tag-link-65 tag-link-position-18" style="font-size: 19.107438016529pt;" aria-label="Network (17 items)">Network</a>
-<a href="https://blog.stefcho.eu/tag/openldap/" class="tag-cloud-link tag-link-87 tag-link-position-19" style="font-size: 8pt;" aria-label="OpenLDAP (1 item)">OpenLDAP</a>
-<a href="https://blog.stefcho.eu/tag/openvpn/" class="tag-cloud-link tag-link-72 tag-link-position-20" style="font-size: 16.561983471074pt;" aria-label="OpenVPN (10 items)">OpenVPN</a>
-<a href="https://blog.stefcho.eu/tag/openwrt/" class="tag-cloud-link tag-link-71 tag-link-position-21" style="font-size: 8pt;" aria-label="OpenWrt (1 item)">OpenWrt</a>
-<a href="https://blog.stefcho.eu/tag/pfcenter/" class="tag-cloud-link tag-link-85 tag-link-position-22" style="font-size: 8pt;" aria-label="pfCenter (1 item)">pfCenter</a>
-<a href="https://blog.stefcho.eu/tag/pfsemse/" class="tag-cloud-link tag-link-95 tag-link-position-23" style="font-size: 8pt;" aria-label="pfSemse (1 item)">pfSemse</a>
-<a href="https://blog.stefcho.eu/tag/pfsense/" class="tag-cloud-link tag-link-61 tag-link-position-24" style="font-size: 22pt;" aria-label="pfSense (31 items)">pfSense</a>
-<a href="https://blog.stefcho.eu/tag/pfsense-2-0-rc1/" class="tag-cloud-link tag-link-81 tag-link-position-25" style="font-size: 13.553719008264pt;" aria-label="pfSense 2.0 RC1 (5 items)">pfSense 2.0 RC1</a>
-<a href="https://blog.stefcho.eu/tag/pfsense-2-0-rc3/" class="tag-cloud-link tag-link-84 tag-link-position-26" style="font-size: 14.363636363636pt;" aria-label="pfSense 2.0 RC3 (6 items)">pfSense 2.0 RC3</a>
-<a href="https://blog.stefcho.eu/tag/pfsense-2-2/" class="tag-cloud-link tag-link-90 tag-link-position-27" style="font-size: 11.471074380165pt;" aria-label="pfSense 2.2 (3 items)">pfSense 2.2</a>
-<a href="https://blog.stefcho.eu/tag/pfsense-2-4-3/" class="tag-cloud-link tag-link-98 tag-link-position-28" style="font-size: 8pt;" aria-label="pfSense 2.4.3 (1 item)">pfSense 2.4.3</a>
-<a href="https://blog.stefcho.eu/tag/pki/" class="tag-cloud-link tag-link-77 tag-link-position-29" style="font-size: 10.082644628099pt;" aria-label="PKI (2 items)">PKI</a>
-<a href="https://blog.stefcho.eu/tag/radius/" class="tag-cloud-link tag-link-75 tag-link-position-30" style="font-size: 10.082644628099pt;" aria-label="RADIUS (2 items)">RADIUS</a>
-<a href="https://blog.stefcho.eu/tag/routing/" class="tag-cloud-link tag-link-80 tag-link-position-31" style="font-size: 8pt;" aria-label="Routing (1 item)">Routing</a>
-<a href="https://blog.stefcho.eu/tag/site-to-site/" class="tag-cloud-link tag-link-76 tag-link-position-32" style="font-size: 11.471074380165pt;" aria-label="Site To Site (3 items)">Site To Site</a>
-<a href="https://blog.stefcho.eu/tag/technical/" class="tag-cloud-link tag-link-97 tag-link-position-33" style="font-size: 14.942148760331pt;" aria-label="Technical (7 items)">Technical</a>
-<a href="https://blog.stefcho.eu/tag/ubuntu/" class="tag-cloud-link tag-link-99 tag-link-position-34" style="font-size: 8pt;" aria-label="Ubuntu (1 item)">Ubuntu</a>
+<a href="https://blog.stefcho.eu/tag/certification/" class="tag-cloud-link tag-link-105 tag-link-position-9" style="font-size: 10.082644628099pt;" aria-label="Certification (2 items)">Certification</a>
+<a href="https://blog.stefcho.eu/tag/creative/" class="tag-cloud-link tag-link-66 tag-link-position-10" style="font-size: 10.082644628099pt;" aria-label="Creative (2 items)">Creative</a>
+<a href="https://blog.stefcho.eu/tag/dd-wrt/" class="tag-cloud-link tag-link-57 tag-link-position-11" style="font-size: 14.363636363636pt;" aria-label="DD-WRT (6 items)">DD-WRT</a>
+<a href="https://blog.stefcho.eu/tag/dns/" class="tag-cloud-link tag-link-92 tag-link-position-12" style="font-size: 8pt;" aria-label="DNS (1 item)">DNS</a>
+<a href="https://blog.stefcho.eu/tag/hyper-v/" class="tag-cloud-link tag-link-67 tag-link-position-13" style="font-size: 12.628099173554pt;" aria-label="Hyper-V (4 items)">Hyper-V</a>
+<a href="https://blog.stefcho.eu/tag/ldap/" class="tag-cloud-link tag-link-74 tag-link-position-14" style="font-size: 10.082644628099pt;" aria-label="LDAP (2 items)">LDAP</a>
+<a href="https://blog.stefcho.eu/tag/learning/" class="tag-cloud-link tag-link-102 tag-link-position-15" style="font-size: 10.082644628099pt;" aria-label="Learning (2 items)">Learning</a>
+<a href="https://blog.stefcho.eu/tag/linksys/" class="tag-cloud-link tag-link-56 tag-link-position-16" style="font-size: 8pt;" aria-label="Linksys (1 item)">Linksys</a>
+<a href="https://blog.stefcho.eu/tag/microsoft/" class="tag-cloud-link tag-link-63 tag-link-position-17" style="font-size: 11.471074380165pt;" aria-label="Microsoft (3 items)">Microsoft</a>
+<a href="https://blog.stefcho.eu/tag/mikrotik-routerboard-rb250g/" class="tag-cloud-link tag-link-79 tag-link-position-18" style="font-size: 8pt;" aria-label="Mikrotik RouterBoard RB250G (1 item)">Mikrotik RouterBoard RB250G</a>
+<a href="https://blog.stefcho.eu/tag/network/" class="tag-cloud-link tag-link-65 tag-link-position-19" style="font-size: 19.107438016529pt;" aria-label="Network (17 items)">Network</a>
+<a href="https://blog.stefcho.eu/tag/openldap/" class="tag-cloud-link tag-link-87 tag-link-position-20" style="font-size: 8pt;" aria-label="OpenLDAP (1 item)">OpenLDAP</a>
+<a href="https://blog.stefcho.eu/tag/openvpn/" class="tag-cloud-link tag-link-72 tag-link-position-21" style="font-size: 16.561983471074pt;" aria-label="OpenVPN (10 items)">OpenVPN</a>
+<a href="https://blog.stefcho.eu/tag/openwrt/" class="tag-cloud-link tag-link-71 tag-link-position-22" style="font-size: 8pt;" aria-label="OpenWrt (1 item)">OpenWrt</a>
+<a href="https://blog.stefcho.eu/tag/pfcenter/" class="tag-cloud-link tag-link-85 tag-link-position-23" style="font-size: 8pt;" aria-label="pfCenter (1 item)">pfCenter</a>
+<a href="https://blog.stefcho.eu/tag/pfsemse/" class="tag-cloud-link tag-link-95 tag-link-position-24" style="font-size: 8pt;" aria-label="pfSemse (1 item)">pfSemse</a>
+<a href="https://blog.stefcho.eu/tag/pfsense/" class="tag-cloud-link tag-link-61 tag-link-position-25" style="font-size: 22pt;" aria-label="pfSense (31 items)">pfSense</a>
+<a href="https://blog.stefcho.eu/tag/pfsense-2-0-rc1/" class="tag-cloud-link tag-link-81 tag-link-position-26" style="font-size: 13.553719008264pt;" aria-label="pfSense 2.0 RC1 (5 items)">pfSense 2.0 RC1</a>
+<a href="https://blog.stefcho.eu/tag/pfsense-2-0-rc3/" class="tag-cloud-link tag-link-84 tag-link-position-27" style="font-size: 14.363636363636pt;" aria-label="pfSense 2.0 RC3 (6 items)">pfSense 2.0 RC3</a>
+<a href="https://blog.stefcho.eu/tag/pfsense-2-2/" class="tag-cloud-link tag-link-90 tag-link-position-28" style="font-size: 11.471074380165pt;" aria-label="pfSense 2.2 (3 items)">pfSense 2.2</a>
+<a href="https://blog.stefcho.eu/tag/pfsense-2-4-3/" class="tag-cloud-link tag-link-98 tag-link-position-29" style="font-size: 8pt;" aria-label="pfSense 2.4.3 (1 item)">pfSense 2.4.3</a>
+<a href="https://blog.stefcho.eu/tag/pki/" class="tag-cloud-link tag-link-77 tag-link-position-30" style="font-size: 10.082644628099pt;" aria-label="PKI (2 items)">PKI</a>
+<a href="https://blog.stefcho.eu/tag/radius/" class="tag-cloud-link tag-link-75 tag-link-position-31" style="font-size: 10.082644628099pt;" aria-label="RADIUS (2 items)">RADIUS</a>
+<a href="https://blog.stefcho.eu/tag/routing/" class="tag-cloud-link tag-link-80 tag-link-position-32" style="font-size: 8pt;" aria-label="Routing (1 item)">Routing</a>
+<a href="https://blog.stefcho.eu/tag/site-to-site/" class="tag-cloud-link tag-link-76 tag-link-position-33" style="font-size: 11.471074380165pt;" aria-label="Site To Site (3 items)">Site To Site</a>
+<a href="https://blog.stefcho.eu/tag/technical/" class="tag-cloud-link tag-link-97 tag-link-position-34" style="font-size: 14.942148760331pt;" aria-label="Technical (7 items)">Technical</a>
 <a href="https://blog.stefcho.eu/tag/uncategorized/" class="tag-cloud-link tag-link-96 tag-link-position-35" style="font-size: 8pt;" aria-label="Uncategorized (1 item)">Uncategorized</a>
 <a href="https://blog.stefcho.eu/tag/vlan/" class="tag-cloud-link tag-link-78 tag-link-position-36" style="font-size: 8pt;" aria-label="VLAN (1 item)">VLAN</a>
 <a href="https://blog.stefcho.eu/tag/vmware/" class="tag-cloud-link tag-link-62 tag-link-position-37" style="font-size: 14.942148760331pt;" aria-label="VMWare (7 items)">VMWare</a>

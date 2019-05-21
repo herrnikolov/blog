@@ -2,7 +2,7 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<sitemap>
 		<loc>https://blog.stefcho.eu/post-sitemap.xml</loc>
-		<lastmod>2019-05-21T07:56:24+01:00</lastmod>
+		<lastmod>2019-05-21T10:21:10+01:00</lastmod>
 	</sitemap>
 	<sitemap>
 		<loc>https://blog.stefcho.eu/attachment-sitemap.xml</loc>
@@ -10,11 +10,11 @@
 	</sitemap>
 	<sitemap>
 		<loc>https://blog.stefcho.eu/category-sitemap.xml</loc>
-		<lastmod>2019-05-21T07:56:24+01:00</lastmod>
+		<lastmod>2019-05-21T10:21:10+01:00</lastmod>
 	</sitemap>
 	<sitemap>
 		<loc>https://blog.stefcho.eu/post_tag-sitemap.xml</loc>
-		<lastmod>2019-05-21T07:56:24+01:00</lastmod>
+		<lastmod>2019-05-21T10:21:10+01:00</lastmod>
 	</sitemap>
 	<sitemap>
 		<loc>https://blog.stefcho.eu/author-sitemap.xml</loc>
