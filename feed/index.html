@@ -12,13 +12,13 @@
 	<atom:link href="https://blog.stefcho.eu/feed/" rel="self" type="application/rss+xml" />
 	<link>http://blog.stefcho.eu/</link>
 	<description>Software Development, Cloud, DevOps and PfSense</description>
-	<lastBuildDate>Mon, 17 Jun 2019 12:16:11 +0000</lastBuildDate>
+	<lastBuildDate>Mon, 01 Jul 2019 12:44:01 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=5.2.1</generator>
+	<generator>https://wordpress.org/?v=5.2.2</generator>
 
 <image>
 	<url>https://blog.stefcho.eu/wp-content/uploads/2018/10/cropped-0-32x32.jpg</url>
@@ -28,6 +28,57 @@
 	<height>32</height>
 </image> 
 	<item>
+		<title>PiNAS</title>
+		<link>https://blog.stefcho.eu/pinas/</link>
+				<pubDate>Mon, 01 Jul 2019 09:11:00 +0000</pubDate>
+		<dc:creator><![CDATA[Stefan]]></dc:creator>
+				<category><![CDATA[Technical]]></category>
+		<category><![CDATA[Raspberry Pi]]></category>
+
+		<guid isPermaLink="false">https://blog.stefcho.eu/?p=1378</guid>
+				<description><![CDATA[<p>I would like to share my latest creation. PiNAS is and attempt at making small home server based on Raspberry Pi 3B+. Main components: Raspberry Pi 3 Model B+ Raspberry Pi Universal Power Supply 5.1V 2.5 A Ultra-thin Aluminum Alloy CNC Case Portable Box Support GPIO Ribbon Cable For Raspberry Pi 3 Model B+(Plus) WD [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/pinas/">PiNAS</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[
+<p>I would like to share my latest creation. PiNAS is and attempt at making small home server based on Raspberry Pi 3B+. </p>
+
+
+
+<p>Main components:</p>
+<ul>
+<li>Raspberry Pi 3 Model B+</li>
+<li>Raspberry Pi Universal Power Supply 5.1V 2.5 A</li>
+<li>Ultra-thin Aluminum Alloy CNC Case Portable Box Support GPIO Ribbon Cable For Raspberry Pi 3 Model B+(Plus)</li>
+<li>WD Elements 2.5” USB 3.0 4 TB</li>
+<li>SanDisk Ultra microSDHC UHS-I 16 GB</li>
+</ul>
+
+
+
+<p>Raspbian Stretch Lite is the choice of OS. <br /><br />The easiest and clean way I’ve found to transfer the root partition from the SD card to the HDD: <a href="https://www.pvangsgaard.com/2018/01/04/how-to-boot-raspberry-pi-from-usb-hard-drive/" target="_blank" rel="noreferrer noopener">How to Boot Raspberry Pi from USB Hard Drive</a><br /><br />Previously I’ve used 3B and had no problems booting from the USB HDD. 3B+ is a different animal. I’ve spent hours researching why it did not booted directly from the HDD. Finally came across this article: <a href="https://www.raspberrypi.org/documentation/hardware/raspberrypi/bootmodes/README.md" target="_blank" rel="noreferrer noopener" aria-label="Raspberry Pi boot modes  (opens in a new tab)">Raspberry Pi boot modes </a><br /><br />So I have to keep the SD card with fresh bootcod.bin on it at boot time. Afterword’s the card is not used as my root partition is located on the USB HDD. <br /><br />I’ve tried this first: <a href="https://www.raspberrypi.org/documentation/hardware/raspberrypi/bootmodes/msd.md" target="_blank" rel="noreferrer noopener" aria-label="How to boot from a USB mass storage device on a Raspberry Pi  (opens in a new tab)">How to boot from a USB mass storage device on a Raspberry Pi </a> but it did not work! Than this: <a href="https://raspberrypi.stackexchange.com/questions/53857/raspberry-pi-3-usb-booting" target="_blank" rel="noreferrer noopener" aria-label="Raspberry Pi 3 USB booting  (opens in a new tab)">Raspberry Pi 3 USB booting </a> <br />No Luck!<br /><br />In this article it is explained Why in a very detailed manner: <a href="https://www.raspberrypi.org/blog/pi-3-booting-part-i-usb-mass-storage-boot/" target="_blank" rel="noreferrer noopener" aria-label="Pi 3 booting part I: USB mass storage boot beta (opens in a new tab)">Pi 3 booting part I: USB mass storage boot beta</a> <br /><br />After that everything works as expected. Now on boot Pi reads the boot partition from the SD card and continues from the HDD. <br />In contrast my 3B just reads everything from the HDD and there is not SD card needed. <br /><br />Now is time to install Docker and Docker-Compose: How to run docker and docker-compose on Raspbian <br /><br />Note this is my first 3B+ model. Previously I’ve used 3B and had no problems booting from the USB HDD. 3B+ is a different animal. I’ve spent hours researching why it did booted directly from the HDD. Finally came across this article: <a href="https://www.raspberrypi.org/documentation/hardware/raspberrypi/bootmodes/README.md" target="_blank" rel="noreferrer noopener">Raspberry Pi boot modes </a></p>
+
+
+
+
+
+<p>So I have to keep the SD card with fresh bootcod.bin on it at boot time. Afterword’s the card is not used as my root partition is located on the USB HDD. <br />I’ve tried this first: <a href="https://www.raspberrypi.org/documentation/hardware/raspberrypi/bootmodes/msd.md" target="_blank" rel="noreferrer noopener">How to boot from a USB mass storage device on a Raspberry Pi </a> but it did not work! Than this: <a href="https://raspberrypi.stackexchange.com/questions/53857/raspberry-pi-3-usb-booting" target="_blank" rel="noreferrer noopener">Raspberry Pi 3 USB booting </a> No Luck!<br />In this article it is explained why in a very detailed way: <a href="https://www.raspberrypi.org/blog/pi-3-booting-part-i-usb-mass-storage-boot/" target="_blank" rel="noreferrer noopener">Pi 3 booting part I: USB mass storage boot beta</a></p>
+
+
+
+
+
+<p>After that everything works as expected. Now on boot Pi reads the boot partition from the SD card and continues from the HDD. <br />In contrast my 3B just reads everything from the HDD and there is not SD card needed. <br /><br />Now is time to install Docker and Docker-Compose: <a href="https://manre-universe.net/how-to-run-docker-and-docker-compose-on-raspbian/" target="_blank" rel="noopener noreferrer">How to run docker and docker-compose on Raspbian</a></p>
+<p>Adding Samba and Deluge was quick and easy.</p>
+<p>As inspiration of this build and post I would like to tank to the creators of the following posts:<br /><a href="https://www.microfarad.de/pi-server/" target="_blank" rel="noopener noreferrer">Raspberry Pi Home Server</a> &#8211; really liked the UPS and Dynamic Fan Control.<br /><a href="https://blog.alexellis.io/hardened-raspberry-pi-nas/" target="_blank" rel="noopener noreferrer">Create a hardened Raspberry Pi NAS</a> &#8211; some of the configurations came quite in handy.<br /><br />PiNAS 2.0<br />As you know Raspberry Pi 4B was announced last week. It will provide 4 GB RAM, Real Gigabit Ethernet and 2 USB 3.0 Ports. Hope I’ll be able to attach two USB 3.0 HDDs and maybe build a software RAID.  For the moment I’ll have to wait as even USB HDD Boot is not implemented in Raspbian Buster. With a bit of luck in a couple of months all will be fixed and working.</p>
+<p>Until then my setup provides almost 20 MB/s throughput over Samba.</p>
+
+
+
+
+<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/pinas/">PiNAS</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
 		<title>Microsoft Certification Paths for Azure and Microsoft 365 in 2019</title>
 		<link>https://blog.stefcho.eu/microsoft-certification-paths-for-azure-and-microsoft-365-in-2019/</link>
 				<pubDate>Tue, 21 May 2019 09:21:08 +0000</pubDate>
@@ -804,25 +855,6 @@ volumes:
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>The post <a rel="nofollow" href="https://blog.stefcho.eu/net-design-patterns/">.NET Design Patterns</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
-]]></content:encoded>
-										</item>
-		<item>
-		<title>Learn Git Branching</title>
-		<link>https://blog.stefcho.eu/learn-git-branching/</link>
-				<pubDate>Sat, 06 Oct 2018 17:34:58 +0000</pubDate>
-		<dc:creator><![CDATA[Stefan]]></dc:creator>
-				<category><![CDATA[Technical]]></category>
-		<category><![CDATA[Git]]></category>
-		<category><![CDATA[Learning]]></category>
-
-		<guid isPermaLink="false">https://blog.stefcho.eu/?p=1058</guid>
-				<description><![CDATA[<p>Found a great site to learn git. It is a collection of interactive exercises. By my humble opinion the best way to learn something it by doing it in combination with reading. So If you want to check your git skills to https://learngitbranching.js.org/</p>
-<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/learn-git-branching/">Learn Git Branching</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
-]]></description>
-								<content:encoded><![CDATA[<p>Found a great site to learn git.</p>
-<p>It is a collection of interactive exercises. By my humble opinion the best way to learn something it by doing it in combination with reading.</p>
-<p>So If you want to check your git skills to <a href="https://learngitbranching.js.org/">https://learngitbranching.js.org/</a></p>
-<p>The post <a rel="nofollow" href="https://blog.stefcho.eu/learn-git-branching/">Learn Git Branching</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
 ]]></content:encoded>
 										</item>
 	</channel>
