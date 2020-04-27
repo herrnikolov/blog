@@ -18,7 +18,7 @@
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=5.2.2</generator>
+	<generator>https://wordpress.org/?v=5.4</generator>
 
 <image>
 	<url>https://blog.stefcho.eu/wp-content/uploads/2018/10/cropped-0-32x32.jpg</url>
@@ -30,21 +30,22 @@
 	<item>
 		<title>OpenVPN with RADIUS authentication on pfSense 2.0 RC1</title>
 		<link>https://blog.stefcho.eu/openvpn-with-radius-authentication-on-pfsense-2-0-rc1/</link>
-				<comments>https://blog.stefcho.eu/openvpn-with-radius-authentication-on-pfsense-2-0-rc1/#comments</comments>
-				<pubDate>Tue, 26 Apr 2011 14:32:32 +0000</pubDate>
+					<comments>https://blog.stefcho.eu/openvpn-with-radius-authentication-on-pfsense-2-0-rc1/#comments</comments>
+		
 		<dc:creator><![CDATA[Stefan]]></dc:creator>
+		<pubDate>Tue, 26 Apr 2011 14:32:32 +0000</pubDate>
 				<category><![CDATA[Technical]]></category>
 		<category><![CDATA[ADDS]]></category>
 		<category><![CDATA[OpenVPN]]></category>
 		<category><![CDATA[pfSense]]></category>
 		<category><![CDATA[RADIUS]]></category>
 		<category><![CDATA[Windows Server 2008 R2]]></category>
-
 		<guid isPermaLink="false">http://stefcho.azurewebsites.net/?p=545</guid>
-				<description><![CDATA[<p>This is the last post in the series of authentication alternatives for OpenVPN in pfSense 2.0 RC1. In the previous posts we looked at the local database of pfSense and Active Directory. Now we will use Remote Authentication Dial In User Service (RADIUS) instead. Again we will authenticate our users against Active Directory, as domain [&#8230;]</p>
+
+					<description><![CDATA[<p>This is the last post in the series of authentication alternatives for OpenVPN in pfSense 2.0 RC1. In the previous posts we looked at the local database of pfSense and Active Directory. Now we will use Remote Authentication Dial In User Service (RADIUS) instead. Again we will authenticate our users against Active Directory, as domain [&#8230;]</p>
 <p>The post <a rel="nofollow" href="https://blog.stefcho.eu/openvpn-with-radius-authentication-on-pfsense-2-0-rc1/">OpenVPN with RADIUS authentication on pfSense 2.0 RC1</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
 ]]></description>
-								<content:encoded><![CDATA[<p>This is the last post in the series of authentication alternatives for OpenVPN in pfSense 2.0 RC1.</p>
+										<content:encoded><![CDATA[<p>This is the last post in the series of authentication alternatives for OpenVPN in pfSense 2.0 RC1.</p>
 <p>In the previous posts we looked at the <a href="http://stefcho.azurewebsites.net/?p=492" target="_blank">local database</a> of pfSense and <a href="http://stefcho.azurewebsites.net/?p=528" target="_blank">Active Directory</a>. Now we will use Remote Authentication Dial In User Service (RADIUS) instead. Again we will authenticate our users against Active Directory, as domain user accounts.</p>
 <p>For that purpose we need to add <strong>Network Policy and Access Services</strong> server role to our Windows Server 2008 R2.</p>
 <p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/04/ADDS-Add-NPS-roles-02.png"><img class="aligncenter size-full wp-image-546" title="ADDS Add NPS roles 02" src="https://blog.stefcho.eu/wp-content/uploads/2011/04/ADDS-Add-NPS-roles-02.png" alt="" width="801" height="576" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/04/ADDS-Add-NPS-roles-02.png 801w, https://blog.stefcho.eu/wp-content/uploads/2011/04/ADDS-Add-NPS-roles-02-300x215.png 300w" sizes="(max-width: 801px) 100vw, 801px" /></a></p>
@@ -81,27 +82,31 @@ On Specify Access Permission, leave Access granted.</p>
 <p>That’s it.</p>
 <p>The post <a rel="nofollow" href="https://blog.stefcho.eu/openvpn-with-radius-authentication-on-pfsense-2-0-rc1/">OpenVPN with RADIUS authentication on pfSense 2.0 RC1</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
 ]]></content:encoded>
-							<wfw:commentRss>https://blog.stefcho.eu/openvpn-with-radius-authentication-on-pfsense-2-0-rc1/feed/</wfw:commentRss>
-		<slash:comments>5</slash:comments>
-							</item>
+					
+					<wfw:commentRss>https://blog.stefcho.eu/openvpn-with-radius-authentication-on-pfsense-2-0-rc1/feed/</wfw:commentRss>
+			<slash:comments>5</slash:comments>
+		
+		
+			</item>
 		<item>
 		<title>OpenVPN with LDAP authentication on pfSense 2.0 RC1</title>
 		<link>https://blog.stefcho.eu/openvpn-with-ldap-authentication-on-pfsense-2-0-rc1/</link>
-				<comments>https://blog.stefcho.eu/openvpn-with-ldap-authentication-on-pfsense-2-0-rc1/#comments</comments>
-				<pubDate>Fri, 22 Apr 2011 11:20:56 +0000</pubDate>
+					<comments>https://blog.stefcho.eu/openvpn-with-ldap-authentication-on-pfsense-2-0-rc1/#comments</comments>
+		
 		<dc:creator><![CDATA[Stefan]]></dc:creator>
+		<pubDate>Fri, 22 Apr 2011 11:20:56 +0000</pubDate>
 				<category><![CDATA[Technical]]></category>
 		<category><![CDATA[ADDS]]></category>
 		<category><![CDATA[LDAP]]></category>
 		<category><![CDATA[OpenVPN]]></category>
 		<category><![CDATA[pfSense]]></category>
 		<category><![CDATA[Windows Server 2008 R2]]></category>
-
 		<guid isPermaLink="false">http://stefcho.azurewebsites.net/?p=528</guid>
-				<description><![CDATA[<p>In the last post I’ve used Local User Database for authentication with the OpenVPN Server, but managing users in multiple places is redundant and should be avoided. If your users resides in Windows Domain why not use a Domain Controller for authenticating VPN users. That’s way now we will use Active Directory. For the purpose [&#8230;]</p>
+
+					<description><![CDATA[<p>In the last post I’ve used Local User Database for authentication with the OpenVPN Server, but managing users in multiple places is redundant and should be avoided. If your users resides in Windows Domain why not use a Domain Controller for authenticating VPN users. That’s way now we will use Active Directory. For the purpose [&#8230;]</p>
 <p>The post <a rel="nofollow" href="https://blog.stefcho.eu/openvpn-with-ldap-authentication-on-pfsense-2-0-rc1/">OpenVPN with LDAP authentication on pfSense 2.0 RC1</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
 ]]></description>
-								<content:encoded><![CDATA[<p>In the last post I’ve used Local User Database for authentication with the OpenVPN Server, but managing users in multiple places is redundant and should be avoided. If your users resides in Windows Domain why not use a Domain Controller for authenticating VPN users.</p>
+										<content:encoded><![CDATA[<p>In the last post I’ve used Local User Database for authentication with the OpenVPN Server, but managing users in multiple places is redundant and should be avoided. If your users resides in Windows Domain why not use a Domain Controller for authenticating VPN users.</p>
 <p>That’s way now we will use Active Directory.</p>
 <p>For the purpose I’ve setup a Windows Server with Active Directory Domain Services. In a new Organization Unit called Test Users, there are a service account (domain\vpnsvc), and user account with witch we’ll do the tests (domain\user2).</p>
 <p><a href="https://blog.stefcho.eu/wp-content/uploads/2011/04/ADDS-OU-with-Users.png"><img class="aligncenter size-full wp-image-529" title="ADDS OU with Users" src="https://blog.stefcho.eu/wp-content/uploads/2011/04/ADDS-OU-with-Users.png" alt="" width="554" height="245" srcset="https://blog.stefcho.eu/wp-content/uploads/2011/04/ADDS-OU-with-Users.png 554w, https://blog.stefcho.eu/wp-content/uploads/2011/04/ADDS-OU-with-Users-300x132.png 300w" sizes="(max-width: 554px) 100vw, 554px" /></a></p>
@@ -129,8 +134,11 @@ As Type of Server select LDAP<a href="https://blog.stefcho.eu/wp-content/uploads
 <p>Thank you for reading, have fun.</p>
 <p>The post <a rel="nofollow" href="https://blog.stefcho.eu/openvpn-with-ldap-authentication-on-pfsense-2-0-rc1/">OpenVPN with LDAP authentication on pfSense 2.0 RC1</a> appeared first on <a rel="nofollow" href="http://blog.stefcho.eu/">Stefcho&#039;s Tech Blog</a>.</p>
 ]]></content:encoded>
-							<wfw:commentRss>https://blog.stefcho.eu/openvpn-with-ldap-authentication-on-pfsense-2-0-rc1/feed/</wfw:commentRss>
-		<slash:comments>17</slash:comments>
-							</item>
+					
+					<wfw:commentRss>https://blog.stefcho.eu/openvpn-with-ldap-authentication-on-pfsense-2-0-rc1/feed/</wfw:commentRss>
+			<slash:comments>17</slash:comments>
+		
+		
+			</item>
 	</channel>
 </rss>

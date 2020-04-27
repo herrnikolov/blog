@@ -1,31 +1,26 @@
 <!DOCTYPE html>
-<html lang="en-US"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>pfSense 2.0 RC1 configuration of OpenVPN Server for Road Warrior with TLS and User Authentication - Stefcho's Tech Blog</title><meta property="og:locale" content="en_US"><meta property="og:type" content="article"><meta property="og:title" content="pfSense 2.0 RC1 configuration of OpenVPN Server for Road Warrior with TLS and User Authentication - Stefcho's Tech Blog"><meta property="og:description" content="VPN is very important service nowadays. The possibility to connect to remote network is very powerful feature used by single user accessing files at home to thousands of business users working remotely with applications and services available previously only on their desktops in the office.  Because of that there are many alternative on the market …"><meta property="og:url" content="https://blog.stefcho.eu/pfsense-2-0-rc1-configuration-of-openvpn-server-for-rad-warrior-with-tls-and-user-authentication/"><meta property="og:site_name" content="Stefcho's Tech Blog"><meta property="article:tag" content="OpenVPN"><meta property="article:tag" content="pfSense"><meta property="article:section" content="Technical"><meta property="article:published_time" content="2011-04-17T15:06:26+00:00"><meta property="article:modified_time" content="2019-02-18T13:58:17+00:00"><meta property="og:updated_time" content="2019-02-18T13:58:17+00:00"><meta property="og:image" content="https://blog.stefcho.eu/wp-content/uploads/2011/04/OpenVPn-Client-Export-Utility2.png"><script type="application/ld+json" class="yoast-schema-graph yoast-schema-graph--main">{
+<html lang="en-US"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>pfSense 2.0 RC1 configuration of OpenVPN Server for Road Warrior with TLS and User Authentication - Stefcho's Tech Blog</title><meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"><meta property="og:locale" content="en_US"><meta property="og:type" content="article"><meta property="og:title" content="pfSense 2.0 RC1 configuration of OpenVPN Server for Road Warrior with TLS and User Authentication - Stefcho's Tech Blog"><meta property="og:description" content="VPN is very important service nowadays. The possibility to connect to remote network is very powerful feature used by single user accessing files at home to thousands of business users working remotely with applications and services available previously only on their desktops in the office.  Because of that there are many alternative on the market …"><meta property="og:url" content="https://blog.stefcho.eu/pfsense-2-0-rc1-configuration-of-openvpn-server-for-rad-warrior-with-tls-and-user-authentication/"><meta property="og:site_name" content="Stefcho's Tech Blog"><meta property="article:tag" content="OpenVPN"><meta property="article:tag" content="pfSense"><meta property="article:section" content="Technical"><meta property="article:published_time" content="2011-04-17T15:06:26+00:00"><meta property="article:modified_time" content="2019-02-18T13:58:17+00:00"><meta property="og:updated_time" content="2019-02-18T13:58:17+00:00"><meta property="og:image" content="https://blog.stefcho.eu/wp-content/uploads/2011/04/OpenVPn-Client-Export-Utility2.png"><script type="application/ld+json" class="yoast-schema-graph yoast-schema-graph--main">{
     "@context": "https://schema.org",
     "@graph": [
-        {
-            "@type": "Organization",
-            "@id": "https://blog.stefcho.eu/#organization",
-            "name": "",
-            "url": "https://blog.stefcho.eu/",
-            "sameAs": []
-        },
         {
             "@type": "WebSite",
             "@id": "https://blog.stefcho.eu/#website",
             "url": "https://blog.stefcho.eu/",
             "name": "Stefcho's Tech Blog",
-            "publisher": {
-                "@id": "https://blog.stefcho.eu/#organization"
-            },
-            "potentialAction": {
-                "@type": "SearchAction",
-                "target": "https://blog.stefcho.eu/?s={search_term_string}",
-                "query-input": "required name=search_term_string"
-            }
+            "inLanguage": "en-US",
+            "description": "Software Development, Cloud, DevOps and PfSense",
+            "potentialAction": [
+                {
+                    "@type": "SearchAction",
+                    "target": "https://blog.stefcho.eu/?s={search_term_string}",
+                    "query-input": "required name=search_term_string"
+                }
+            ]
         },
         {
             "@type": "ImageObject",
             "@id": "https://blog.stefcho.eu/pfsense-2-0-rc1-configuration-of-openvpn-server-for-rad-warrior-with-tls-and-user-authentication/#primaryimage",
+            "inLanguage": "en-US",
             "url": "https://blog.stefcho.eu/wp-content/uploads/2011/04/OpenVPn-Client-Export-Utility2.png",
             "width": "1024",
             "height": "456"
@@ -34,59 +29,46 @@
             "@type": "WebPage",
             "@id": "https://blog.stefcho.eu/pfsense-2-0-rc1-configuration-of-openvpn-server-for-rad-warrior-with-tls-and-user-authentication/#webpage",
             "url": "https://blog.stefcho.eu/pfsense-2-0-rc1-configuration-of-openvpn-server-for-rad-warrior-with-tls-and-user-authentication/",
-            "inLanguage": "en-US",
             "name": "pfSense 2.0 RC1 configuration of OpenVPN Server for Road Warrior with TLS and User Authentication - Stefcho's Tech Blog",
             "isPartOf": {
                 "@id": "https://blog.stefcho.eu/#website"
             },
+            "inLanguage": "en-US",
             "primaryImageOfPage": {
                 "@id": "https://blog.stefcho.eu/pfsense-2-0-rc1-configuration-of-openvpn-server-for-rad-warrior-with-tls-and-user-authentication/#primaryimage"
             },
             "datePublished": "2011-04-17T15:06:26+00:00",
-            "dateModified": "2019-02-18T13:58:17+00:00"
-        },
-        {
-            "@type": "Article",
-            "@id": "https://blog.stefcho.eu/pfsense-2-0-rc1-configuration-of-openvpn-server-for-rad-warrior-with-tls-and-user-authentication/#article",
-            "isPartOf": {
-                "@id": "https://blog.stefcho.eu/pfsense-2-0-rc1-configuration-of-openvpn-server-for-rad-warrior-with-tls-and-user-authentication/#webpage"
-            },
-            "author": {
-                "@id": "https://blog.stefcho.eu/author/darko/#author"
-            },
-            "headline": "pfSense 2.0 RC1 configuration of OpenVPN Server for Road Warrior with TLS and User Authentication",
-            "datePublished": "2011-04-17T15:06:26+00:00",
             "dateModified": "2019-02-18T13:58:17+00:00",
-            "commentCount": "28",
-            "mainEntityOfPage": {
-                "@id": "https://blog.stefcho.eu/pfsense-2-0-rc1-configuration-of-openvpn-server-for-rad-warrior-with-tls-and-user-authentication/#webpage"
+            "author": {
+                "@id": "https://blog.stefcho.eu/#/schema/person/e88e6ecb4560cf2e925fc571cd3872bd"
             },
-            "publisher": {
-                "@id": "https://blog.stefcho.eu/#organization"
-            },
-            "image": {
-                "@id": "https://blog.stefcho.eu/pfsense-2-0-rc1-configuration-of-openvpn-server-for-rad-warrior-with-tls-and-user-authentication/#primaryimage"
-            },
-            "keywords": "OpenVPN,pfSense",
-            "articleSection": "Technical"
+            "potentialAction": [
+                {
+                    "@type": "ReadAction",
+                    "target": [
+                        "https://blog.stefcho.eu/pfsense-2-0-rc1-configuration-of-openvpn-server-for-rad-warrior-with-tls-and-user-authentication/"
+                    ]
+                }
+            ]
         },
         {
             "@type": [
                 "Person"
             ],
-            "@id": "https://blog.stefcho.eu/author/darko/#author",
+            "@id": "https://blog.stefcho.eu/#/schema/person/e88e6ecb4560cf2e925fc571cd3872bd",
             "name": "Stefan",
             "image": {
                 "@type": "ImageObject",
                 "@id": "https://blog.stefcho.eu/#authorlogo",
+                "inLanguage": "en-US",
                 "url": "http://0.gravatar.com/avatar/6f2a22a8c1f5de7df594d58f61f71b00?s=96&d=mm&r=g",
                 "caption": "Stefan"
             },
             "sameAs": []
         }
     ]
-}</script><link rel="dns-prefetch" href="//fonts.googleapis.com"><link rel="dns-prefetch" href="//s.w.org"><script type="text/javascript" data-cfasync="false">
-	var mi_version         = '7.7.1';
+}</script><link rel="dns-prefetch" href="//s.w.org"><script type="text/javascript" data-cfasync="false">
+	var mi_version         = '7.10.4';
 	var mi_track_user      = true;
 	var mi_no_track_reason = '';
 	
@@ -162,22 +144,43 @@
 			window['__gaTracker'] = __gaTracker;
 					})();
 		}
-</script><link rel="stylesheet" id="wp-block-library-css" href="https://blog.stefcho.eu/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all"><link rel="stylesheet" id="micro-style-css" href="https://blog.stefcho.eu/wp-content/themes/micro/assets/css/master.css" type="text/css" media="all"><link rel="stylesheet" id="primary-font-css" href="https://fonts.googleapis.com/css?family=Roboto+Mono%3A400%2C500&subset=latin%2Ccyrillic%2Cgreek%2Cvietnamese&ver=5.2.2" type="text/css" media="all"><link rel="stylesheet" id="wpgdprc.css-css" href="https://blog.stefcho.eu/wp-content/plugins/wp-gdpr-compliance/assets/css/front.css" type="text/css" media="all"><style id="wpgdprc.css-inline-css" type="text/css">
+</script><link rel="stylesheet" id="wp-block-library-css" href="https://blog.stefcho.eu/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all"><link rel="stylesheet" id="micro-style-css" href="https://blog.stefcho.eu/wp-content/themes/micro/assets/css/master.min.css" type="text/css" media="all"><link rel="stylesheet" id="wpgdprc.css-css" href="https://blog.stefcho.eu/wp-content/plugins/wp-gdpr-compliance/assets/css/front.css" type="text/css" media="all"><style id="wpgdprc.css-inline-css" type="text/css">
 
             div.wpgdprc .wpgdprc-switch .wpgdprc-switch-inner:before { content: 'Yes'; }
             div.wpgdprc .wpgdprc-switch .wpgdprc-switch-inner:after { content: 'No'; }
         
 </style><script type="text/javascript">
 /* <![CDATA[ */
-var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,exe,js,pdf,ppt,tgz,zip,xls","inbound_paths":"[]","home_url":"https:\/\/PLACEHOLDER.wpsho","hash_tracking":"false"};
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[]","home_url":"https:\/\/PLACEHOLDER.wpsho","hash_tracking":"false"};
 /* ]]> */
 </script><script type="text/javascript" src="https://blog.stefcho.eu/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend.min.js"></script><script type="text/javascript" src="https://blog.stefcho.eu/wp-includes/js/jquery/jquery.js"></script><script type="text/javascript" src="https://blog.stefcho.eu/wp-includes/js/jquery/jquery-migrate.min.js"></script><style data-context="foundation-flickity-css">/*! Flickity v2.0.2
 http://flickity.metafizzy.co
 ---------------------------------------------- */.flickity-enabled{position:relative}.flickity-enabled:focus{outline:0}.flickity-viewport{overflow:hidden;position:relative;height:100%}.flickity-slider{position:absolute;width:100%;height:100%}.flickity-enabled.is-draggable{-webkit-tap-highlight-color:transparent;tap-highlight-color:transparent;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.flickity-enabled.is-draggable .flickity-viewport{cursor:move;cursor:-webkit-grab;cursor:grab}.flickity-enabled.is-draggable .flickity-viewport.is-pointer-down{cursor:-webkit-grabbing;cursor:grabbing}.flickity-prev-next-button{position:absolute;top:50%;width:44px;height:44px;border:none;border-radius:50%;background:#fff;background:hsla(0,0%,100%,.75);cursor:pointer;-webkit-transform:translateY(-50%);transform:translateY(-50%)}.flickity-prev-next-button:hover{background:#fff}.flickity-prev-next-button:focus{outline:0;box-shadow:0 0 0 5px #09f}.flickity-prev-next-button:active{opacity:.6}.flickity-prev-next-button.previous{left:10px}.flickity-prev-next-button.next{right:10px}.flickity-rtl .flickity-prev-next-button.previous{left:auto;right:10px}.flickity-rtl .flickity-prev-next-button.next{right:auto;left:10px}.flickity-prev-next-button:disabled{opacity:.3;cursor:auto}.flickity-prev-next-button svg{position:absolute;left:20%;top:20%;width:60%;height:60%}.flickity-prev-next-button .arrow{fill:#333}.flickity-page-dots{position:absolute;width:100%;bottom:-25px;padding:0;margin:0;list-style:none;text-align:center;line-height:1}.flickity-rtl .flickity-page-dots{direction:rtl}.flickity-page-dots .dot{display:inline-block;width:10px;height:10px;margin:0 8px;background:#333;border-radius:50%;opacity:.25;cursor:pointer}.flickity-page-dots .dot.is-selected{opacity:1}</style><style data-context="foundation-slideout-css">.slideout-menu{position:fixed;left:0;top:0;bottom:0;right:auto;z-index:0;width:256px;overflow-y:auto;-webkit-overflow-scrolling:touch;display:none}.slideout-menu.pushit-right{left:auto;right:0}.slideout-panel{position:relative;z-index:1;will-change:transform}.slideout-open,.slideout-open .slideout-panel,.slideout-open body{overflow:hidden}.slideout-open .slideout-menu{display:block}.pushit{display:none}</style><style type="text/css">
 		/* Normal background color and text */
-		body, code, kbd, tt, var, pre, input, textarea, select {
-			color:#00aa13;
-			background-color:#060c08;
+		body, code, kbd, tt, var, pre, input, textarea, select,
+		.wp-block-button.is-style-outline .wp-block-button__link {
+			color: #00aa13;
+			background-color: #060c08;
+		}
+
+		hr {
+			background-color: #00aa13;
+		}
+
+		::-webkit-input-placeholder {
+			color: #00aa13;
+		}
+
+		::-moz-placeholder {
+			color: #00aa13;
+		}
+
+		:-ms-input-placeholder {
+			color: #00aa13;
+		}
+
+		:-moz-placeholder {
+			color: #00aa13;
 		}
 
 		/* Inverted background color and text */
@@ -188,37 +191,52 @@ http://flickity.metafizzy.co
 		.widget_calendar caption,
 		.comments-area .comments-title,
 		.main-navigation.is-extended .sub-menu a:hover,
-		.menu-toggle {
-			color:#060c08;
-			background-color:#00aa13;
+		.menu-toggle,
+		.wp-block-table.is-style-stripes tbody tr:nth-child(odd),
+		.wp-block-file .wp-block-file__button,
+		.wp-block-button__link {
+			color: #060c08;
+			background-color: #00aa13;
+		}
+
+		a:focus {
+			outline: 1px dashed #00aa13;
+			box-shadow: inset 0 0 0 2px #060c08;
 		}
 
 		/* Overwrite for links */
 		a,
 		.main-navigation .menu-item a,
 		.main-navigation .sub-menu a:hover,
+		.main-navigation .children a:hover,
+		.wp-block-latest-posts__post-date,
+		.wp-block-latest-comments__comment-date,
 		button, input  {
-			color:#00aa13;
+			color: #00aa13;
 		}
 
 		/* Borders */
 		input, button, textarea, select
 		.site-footer,
-		.homepage-welcome {
-			border-color:#00aa13;
+		.homepage-welcome,
+		.wp-block-table.is-style-stripes,
+		.wp-block-file .wp-block-file__button,
+		.wp-block-button.is-style-outline .wp-block-button__link  {
+			border-color: #00aa13;
 		}
 
 		.entry .entry-title a,
 		.entry .entry-title a:hover {
 			color: #060c08;
 		}
-	</style><link rel="icon" href="https://blog.stefcho.eu/wp-content/uploads/2018/10/cropped-0-32x32.jpg" sizes="32x32"><link rel="icon" href="https://blog.stefcho.eu/wp-content/uploads/2018/10/cropped-0-192x192.jpg" sizes="192x192"><link rel="apple-touch-icon-precomposed" href="https://blog.stefcho.eu/wp-content/uploads/2018/10/cropped-0-180x180.jpg"><meta name="msapplication-TileImage" content="https://blog.stefcho.eu/wp-content/uploads/2018/10/cropped-0-270x270.jpg"><style>.ios7.web-app-mode.has-fixed header{ background-color: rgba(3,122,221,.88);}</style><style type="text/css" id="wp-custom-css">
+	</style><link rel="icon" href="https://blog.stefcho.eu/wp-content/uploads/2018/10/cropped-0-32x32.jpg" sizes="32x32"><link rel="icon" href="https://blog.stefcho.eu/wp-content/uploads/2018/10/cropped-0-192x192.jpg" sizes="192x192"><link rel="apple-touch-icon" href="https://blog.stefcho.eu/wp-content/uploads/2018/10/cropped-0-180x180.jpg"><meta name="msapplication-TileImage" content="https://blog.stefcho.eu/wp-content/uploads/2018/10/cropped-0-270x270.jpg"><style>.ios7.web-app-mode.has-fixed header{ background-color: rgba(3,122,221,.88);}</style><style type="text/css" id="wp-custom-css">
 			  .entry .entry-content {
     margin: 50px 0; }		</style></head><body class="post-template-default single single-post postid-492 single-format-standard">
+
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
 
-	<header id="masthead" class="site-header"><div class="header-image">
+	<header id="masthead" class="site-header" role="banner"><div class="header-image">
 			<a href="https://blog.stefcho.eu/" rel="home">
 				<img src="/wp-content/uploads/2018/10/0.jpg" height="350" width="1400" alt=""></a>
 		</div>
@@ -230,7 +248,7 @@ http://flickity.metafizzy.co
 											<p class="site-description">Software Development, Cloud, DevOps and PfSense</p>
 									</div>
 
-				<nav id="site-navigation" class="main-navigation"><button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+				<nav id="site-navigation" class="main-navigation" aria-label="Primary"><button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
 						<span class="screen-reader-text">Menu</span>
 					</button>
 					<div class="menu-primary-container">
@@ -238,7 +256,7 @@ http://flickity.metafizzy.co
 					</div>
 				</nav></div>
 		</div>
-	</header><div id="content" class="site-content">
+	</header><div id="content" class="site-content" role="contentinfo">
 
 	<section class="section-fullwidth section-main"><div class="row">
 			<div class="columns small-12 medium-8">
@@ -280,25 +298,25 @@ The management of users and certificate is much easier in pfSense 2.0. You don�
 <p> </p>
 	</div>
 
-	<footer class="entry-footer"><span class="cat-links">Posted in <a href="https://blog.stefcho.eu/category/technical/" rel="category tag">Technical</a></span><span class="tags-links">Tagged <a href="https://blog.stefcho.eu/tag/openvpn/" rel="tag">OpenVPN</a>, <a href="https://blog.stefcho.eu/tag/pfsense/" rel="tag">pfSense</a></span>	</footer></article><nav class="navigation post-navigation" role="navigation"><h2 class="screen-reader-text">Post navigation</h2>
+	<footer class="entry-footer"><span class="cat-links">Posted in <a href="https://blog.stefcho.eu/category/technical/" rel="category tag">Technical</a></span><span class="tags-links">Tagged <a href="https://blog.stefcho.eu/tag/openvpn/" rel="tag">OpenVPN</a>, <a href="https://blog.stefcho.eu/tag/pfsense/" rel="tag">pfSense</a></span>	</footer></article><nav class="navigation post-navigation" role="navigation" aria-label="Posts"><h2 class="screen-reader-text">Post navigation</h2>
 		<div class="nav-links"><div class="nav-previous"><a href="https://blog.stefcho.eu/1-1-nat-in-pfsense-and-dd-wrt/" rel="prev">1 : 1 NAT in pfSense and DD-WRT</a></div><div class="nav-next"><a href="https://blog.stefcho.eu/openvpn-with-ldap-authentication-on-pfsense-2-0-rc1/" rel="next">OpenVPN with LDAP authentication on pfSense 2.0 RC1</a></div></div>
 	</nav><div id="comments" class="comments-area">
 
 			<h2 class="comments-title">
-			28 thoughts on “<span>pfSense 2.0 RC1 configuration of OpenVPN Server for Road Warrior with TLS and User Authentication</span>”		</h2>
+			28 Comments		</h2>
 
 		
 		<ol class="comment-list"><li id="comment-26" class="pingback even thread-even depth-1">
 			<div class="comment-body">
-				Pingback: <a href="http://stefcho.azurewebsites.net/?p=528" rel="external nofollow" class="url">OpenVPN with LDAP authentication on pfSense 2.0 RC1</a> 			</div>
+				Pingback: <a href="http://stefcho.azurewebsites.net/?p=528" rel="external nofollow ugc" class="url">OpenVPN with LDAP authentication on pfSense 2.0 RC1</a> 			</div>
 		</li>
 		<li id="comment-30" class="pingback odd alt thread-odd thread-alt depth-1">
 			<div class="comment-body">
-				Pingback: <a href="http://stefcho.azurewebsites.net/?p=545" rel="external nofollow" class="url">OpenVPN with RADIUS authentication on pfSense 2.0 RC1</a> 			</div>
+				Pingback: <a href="http://stefcho.azurewebsites.net/?p=545" rel="external nofollow ugc" class="url">OpenVPN with RADIUS authentication on pfSense 2.0 RC1</a> 			</div>
 		</li>
 		<li id="comment-39" class="pingback even thread-even depth-1">
 			<div class="comment-body">
-				Pingback: <a href="http://stefcho.azurewebsites.net/?p=733" rel="external nofollow" class="url">Routing Road Warrior’s clients through a Site-To-Site VPN with pfSense 2.0 RC1 and OpenVPN</a> 			</div>
+				Pingback: <a href="http://stefcho.azurewebsites.net/?p=733" rel="external nofollow ugc" class="url">Routing Road Warrior’s clients through a Site-To-Site VPN with pfSense 2.0 RC1 and OpenVPN</a> 			</div>
 		</li>
 		<li id="comment-71" class="comment odd alt thread-odd thread-alt depth-1">
 			<article id="div-comment-71" class="comment-body"><footer class="comment-meta"><div class="comment-author vcard">
@@ -320,7 +338,7 @@ Thanks.</p>
 							</article></li>
 		<li id="comment-76" class="pingback even thread-even depth-1">
 			<div class="comment-body">
-				Pingback: <a href="http://stefcho.azurewebsites.net/?p=916" rel="external nofollow" class="url">OpenVPN on pfSense 2.0 RC3 with OpenLDAP Authentication on CentOS 5.6</a> 			</div>
+				Pingback: <a href="http://stefcho.azurewebsites.net/?p=916" rel="external nofollow ugc" class="url">OpenVPN on pfSense 2.0 RC3 with OpenLDAP Authentication on CentOS 5.6</a> 			</div>
 		</li>
 		<li id="comment-77" class="comment odd alt thread-odd thread-alt depth-1">
 			<article id="div-comment-77" class="comment-body"><footer class="comment-meta"><div class="comment-author vcard">
@@ -373,11 +391,11 @@ each internal should be followed by its mask (example: push “route 10.10.20.0 
 							</article></li>
 		<li id="comment-83" class="pingback even thread-even depth-1">
 			<div class="comment-body">
-				Pingback: <a href="http://stefcho.azurewebsites.net/?p=956" rel="external nofollow" class="url">Using your OpenVPN Road Warrior setup as a Secure Relay</a> 			</div>
+				Pingback: <a href="http://stefcho.azurewebsites.net/?p=956" rel="external nofollow ugc" class="url">Using your OpenVPN Road Warrior setup as a Secure Relay</a> 			</div>
 		</li>
 		<li id="comment-114" class="comment odd alt thread-odd thread-alt depth-1">
 			<article id="div-comment-114" class="comment-body"><footer class="comment-meta"><div class="comment-author vcard">
-						<img alt="" src="http://0.gravatar.com/avatar/f420a8332d816e2bdbe9c955a065790c?s=32&d=mm&r=g" srcset="http://0.gravatar.com/avatar/f420a8332d816e2bdbe9c955a065790c?s=64&d=mm&r=g 2x" class="avatar avatar-32 photo" height="32" width="32"><b class="fn"><a href="http://www.ugal.com" rel="external nofollow" class="url">Jean</a></b> <span class="says">says:</span>					</div>
+						<img alt="" src="http://0.gravatar.com/avatar/f420a8332d816e2bdbe9c955a065790c?s=32&d=mm&r=g" srcset="http://0.gravatar.com/avatar/f420a8332d816e2bdbe9c955a065790c?s=64&d=mm&r=g 2x" class="avatar avatar-32 photo" height="32" width="32"><b class="fn"><a href="http://www.ugal.com" rel="external nofollow ugc" class="url">Jean</a></b> <span class="says">says:</span>					</div>
 
 					<div class="comment-metadata">
 						<a href="https://blog.stefcho.eu/pfsense-2-0-rc1-configuration-of-openvpn-server-for-rad-warrior-with-tls-and-user-authentication/#comment-114">
@@ -412,7 +430,7 @@ should i change config file ?</p>
 							</article></li>
 		<li id="comment-151" class="comment odd alt thread-odd thread-alt depth-1">
 			<article id="div-comment-151" class="comment-body"><footer class="comment-meta"><div class="comment-author vcard">
-						<img alt="" src="http://2.gravatar.com/avatar/5f7250655a655a374f6578172b2876d7?s=32&d=mm&r=g" srcset="http://2.gravatar.com/avatar/5f7250655a655a374f6578172b2876d7?s=64&d=mm&r=g 2x" class="avatar avatar-32 photo" height="32" width="32"><b class="fn"><a href="http://ipsacademy.net" rel="external nofollow" class="url">mohan</a></b> <span class="says">says:</span>					</div>
+						<img alt="" src="http://2.gravatar.com/avatar/5f7250655a655a374f6578172b2876d7?s=32&d=mm&r=g" srcset="http://2.gravatar.com/avatar/5f7250655a655a374f6578172b2876d7?s=64&d=mm&r=g 2x" class="avatar avatar-32 photo" height="32" width="32"><b class="fn"><a href="http://ipsacademy.net" rel="external nofollow ugc" class="url">mohan</a></b> <span class="says">says:</span>					</div>
 
 					<div class="comment-metadata">
 						<a href="https://blog.stefcho.eu/pfsense-2-0-rc1-configuration-of-openvpn-server-for-rad-warrior-with-tls-and-user-authentication/#comment-151">
@@ -459,7 +477,7 @@ Thanks<br><a href="mailto:mohanrao83@gmail.com">mohanrao83@gmail.com</a></p>
 							</article></li>
 		<li id="comment-156" class="comment even thread-even depth-1">
 			<article id="div-comment-156" class="comment-body"><footer class="comment-meta"><div class="comment-author vcard">
-						<img alt="" src="http://0.gravatar.com/avatar/640d5ecfbbd9cfe5ad5baa913a15b5eb?s=32&d=mm&r=g" srcset="http://0.gravatar.com/avatar/640d5ecfbbd9cfe5ad5baa913a15b5eb?s=64&d=mm&r=g 2x" class="avatar avatar-32 photo" height="32" width="32"><b class="fn"><a href="http://stefcho.eu" rel="external nofollow" class="url">Stefan</a></b> <span class="says">says:</span>					</div>
+						<img alt="" src="http://0.gravatar.com/avatar/640d5ecfbbd9cfe5ad5baa913a15b5eb?s=32&d=mm&r=g" srcset="http://0.gravatar.com/avatar/640d5ecfbbd9cfe5ad5baa913a15b5eb?s=64&d=mm&r=g 2x" class="avatar avatar-32 photo" height="32" width="32"><b class="fn"><a href="http://stefcho.eu" rel="external nofollow ugc" class="url">Stefan</a></b> <span class="says">says:</span>					</div>
 
 					<div class="comment-metadata">
 						<a href="https://blog.stefcho.eu/pfsense-2-0-rc1-configuration-of-openvpn-server-for-rad-warrior-with-tls-and-user-authentication/#comment-156">
@@ -489,11 +507,11 @@ Thanks<br><a href="mailto:mohanrao83@gmail.com">mohanrao83@gmail.com</a></p>
 							</article></li>
 		<li id="comment-186" class="pingback even thread-even depth-1">
 			<div class="comment-body">
-				Pingback: <a href="http://jessevaughn.com/?p=569" rel="external nofollow" class="url">Setting up OpenVPN with pfsense firewall… « JesseVaughn.com</a> 			</div>
+				Pingback: <a href="http://jessevaughn.com/?p=569" rel="external nofollow ugc" class="url">Setting up OpenVPN with pfsense firewall… « JesseVaughn.com</a> 			</div>
 		</li>
 		<li id="comment-187" class="comment odd alt thread-odd thread-alt depth-1">
 			<article id="div-comment-187" class="comment-body"><footer class="comment-meta"><div class="comment-author vcard">
-						<img alt="" src="http://1.gravatar.com/avatar/78cbcadc567dd6881fbc8f668837adc2?s=32&d=mm&r=g" srcset="http://1.gravatar.com/avatar/78cbcadc567dd6881fbc8f668837adc2?s=64&d=mm&r=g 2x" class="avatar avatar-32 photo" height="32" width="32"><b class="fn"><a href="http://www.sustainitsolutions.co.uk" rel="external nofollow" class="url">Jake Bloomfield</a></b> <span class="says">says:</span>					</div>
+						<img alt="" src="http://1.gravatar.com/avatar/78cbcadc567dd6881fbc8f668837adc2?s=32&d=mm&r=g" srcset="http://1.gravatar.com/avatar/78cbcadc567dd6881fbc8f668837adc2?s=64&d=mm&r=g 2x" class="avatar avatar-32 photo" height="32" width="32"><b class="fn"><a href="http://www.sustainitsolutions.co.uk" rel="external nofollow ugc" class="url">Jake Bloomfield</a></b> <span class="says">says:</span>					</div>
 
 					<div class="comment-metadata">
 						<a href="https://blog.stefcho.eu/pfsense-2-0-rc1-configuration-of-openvpn-server-for-rad-warrior-with-tls-and-user-authentication/#comment-187">
@@ -523,7 +541,7 @@ Thanks<br><a href="mailto:mohanrao83@gmail.com">mohanrao83@gmail.com</a></p>
 							</article></li>
 		<li id="comment-245" class="comment odd alt thread-odd thread-alt depth-1">
 			<article id="div-comment-245" class="comment-body"><footer class="comment-meta"><div class="comment-author vcard">
-						<img alt="" src="http://2.gravatar.com/avatar/50fac5308f21306717801d6c8917ada6?s=32&d=mm&r=g" srcset="http://2.gravatar.com/avatar/50fac5308f21306717801d6c8917ada6?s=64&d=mm&r=g 2x" class="avatar avatar-32 photo" height="32" width="32"><b class="fn"><a href="http://www.moh10ly.tk" rel="external nofollow" class="url">Moh J.H</a></b> <span class="says">says:</span>					</div>
+						<img alt="" src="http://2.gravatar.com/avatar/50fac5308f21306717801d6c8917ada6?s=32&d=mm&r=g" srcset="http://2.gravatar.com/avatar/50fac5308f21306717801d6c8917ada6?s=64&d=mm&r=g 2x" class="avatar avatar-32 photo" height="32" width="32"><b class="fn"><a href="http://www.moh10ly.tk" rel="external nofollow ugc" class="url">Moh J.H</a></b> <span class="says">says:</span>					</div>
 
 					<div class="comment-metadata">
 						<a href="https://blog.stefcho.eu/pfsense-2-0-rc1-configuration-of-openvpn-server-for-rad-warrior-with-tls-and-user-authentication/#comment-245">
@@ -534,13 +552,13 @@ Thanks<br><a href="mailto:mohanrao83@gmail.com">mohanrao83@gmail.com</a></p>
 									</footer><div class="comment-content">
 					<p>@Stefa,<br>
 Your setup is not working! even though I was able to export the configuration I kept getting TLS connection error! in your case i’m assuming you’re doing this virtually and within the same network that’s why u’re able to connect without any issues!</p>
-<p>for anyone who have such an issue visit this link<br><a href="http://forum.pfsense.org/index.php/topic,34714.msg180818.html#msg180818" rel="nofollow">http://forum.pfsense.org/index.php/topic,34714.msg180818.html#msg180818</a></p>
+<p>for anyone who have such an issue visit this link<br><a href="http://forum.pfsense.org/index.php/topic,34714.msg180818.html#msg180818" rel="nofollow ugc">http://forum.pfsense.org/index.php/topic,34714.msg180818.html#msg180818</a></p>
 				</div>
 
 							</article></li>
 		<li id="comment-1086" class="comment even thread-even depth-1">
 			<article id="div-comment-1086" class="comment-body"><footer class="comment-meta"><div class="comment-author vcard">
-						<img alt="" src="http://2.gravatar.com/avatar/5f7250655a655a374f6578172b2876d7?s=32&d=mm&r=g" srcset="http://2.gravatar.com/avatar/5f7250655a655a374f6578172b2876d7?s=64&d=mm&r=g 2x" class="avatar avatar-32 photo" height="32" width="32"><b class="fn"><a href="http://ipsacademy.org" rel="external nofollow" class="url">mohan</a></b> <span class="says">says:</span>					</div>
+						<img alt="" src="http://2.gravatar.com/avatar/5f7250655a655a374f6578172b2876d7?s=32&d=mm&r=g" srcset="http://2.gravatar.com/avatar/5f7250655a655a374f6578172b2876d7?s=64&d=mm&r=g 2x" class="avatar avatar-32 photo" height="32" width="32"><b class="fn"><a href="http://ipsacademy.org" rel="external nofollow ugc" class="url">mohan</a></b> <span class="says">says:</span>					</div>
 
 					<div class="comment-metadata">
 						<a href="https://blog.stefcho.eu/pfsense-2-0-rc1-configuration-of-openvpn-server-for-rad-warrior-with-tls-and-user-authentication/#comment-1086">
@@ -570,7 +588,7 @@ Your setup is not working! even though I was able to export the configuration I 
 							</article></li>
 		<li id="comment-253320" class="comment even thread-even depth-1">
 			<article id="div-comment-253320" class="comment-body"><footer class="comment-meta"><div class="comment-author vcard">
-						<img alt="" src="http://2.gravatar.com/avatar/5561585829ed01f3ded04bcf95273eba?s=32&d=mm&r=g" srcset="http://2.gravatar.com/avatar/5561585829ed01f3ded04bcf95273eba?s=64&d=mm&r=g 2x" class="avatar avatar-32 photo" height="32" width="32"><b class="fn"><a href="http://beeg.com" rel="external nofollow" class="url">xxx</a></b> <span class="says">says:</span>					</div>
+						<img alt="" src="http://2.gravatar.com/avatar/5561585829ed01f3ded04bcf95273eba?s=32&d=mm&r=g" srcset="http://2.gravatar.com/avatar/5561585829ed01f3ded04bcf95273eba?s=64&d=mm&r=g 2x" class="avatar avatar-32 photo" height="32" width="32"><b class="fn"><a href="http://beeg.com" rel="external nofollow ugc" class="url">xxx</a></b> <span class="says">says:</span>					</div>
 
 					<div class="comment-metadata">
 						<a href="https://blog.stefcho.eu/pfsense-2-0-rc1-configuration-of-openvpn-server-for-rad-warrior-with-tls-and-user-authentication/#comment-253320">
@@ -589,7 +607,7 @@ fог tҺat геaѕօn, and tɑκе thе<br>
 							</article></li>
 		<li id="comment-254408" class="comment odd alt thread-odd thread-alt depth-1">
 			<article id="div-comment-254408" class="comment-body"><footer class="comment-meta"><div class="comment-author vcard">
-						<img alt="" src="http://1.gravatar.com/avatar/18771d654b564063cf0bc17622c3f9b4?s=32&d=mm&r=g" srcset="http://1.gravatar.com/avatar/18771d654b564063cf0bc17622c3f9b4?s=64&d=mm&r=g 2x" class="avatar avatar-32 photo" height="32" width="32"><b class="fn"><a href="https://99pornxxx.com/" rel="external nofollow" class="url">หนัง</a></b> <span class="says">says:</span>					</div>
+						<img alt="" src="http://1.gravatar.com/avatar/18771d654b564063cf0bc17622c3f9b4?s=32&d=mm&r=g" srcset="http://1.gravatar.com/avatar/18771d654b564063cf0bc17622c3f9b4?s=64&d=mm&r=g 2x" class="avatar avatar-32 photo" height="32" width="32"><b class="fn"><a href="https://99pornxxx.com/" rel="external nofollow ugc" class="url">หนัง</a></b> <span class="says">says:</span>					</div>
 
 					<div class="comment-metadata">
 						<a href="https://blog.stefcho.eu/pfsense-2-0-rc1-configuration-of-openvpn-server-for-rad-warrior-with-tls-and-user-authentication/#comment-254408">
@@ -609,7 +627,7 @@ neᴡ ρߋѕtѕ.</p>
 							</article></li>
 		<li id="comment-254454" class="comment even thread-even depth-1">
 			<article id="div-comment-254454" class="comment-body"><footer class="comment-meta"><div class="comment-author vcard">
-						<img alt="" src="http://2.gravatar.com/avatar/595b926901c1956088e7844ce91023fd?s=32&d=mm&r=g" srcset="http://2.gravatar.com/avatar/595b926901c1956088e7844ce91023fd?s=64&d=mm&r=g 2x" class="avatar avatar-32 photo" height="32" width="32"><b class="fn"><a href="https://xxx69club.com/" rel="external nofollow" class="url">หนังx</a></b> <span class="says">says:</span>					</div>
+						<img alt="" src="http://2.gravatar.com/avatar/595b926901c1956088e7844ce91023fd?s=32&d=mm&r=g" srcset="http://2.gravatar.com/avatar/595b926901c1956088e7844ce91023fd?s=64&d=mm&r=g 2x" class="avatar avatar-32 photo" height="32" width="32"><b class="fn"><a href="https://xxx69club.com/" rel="external nofollow ugc" class="url">หนังx</a></b> <span class="says">says:</span>					</div>
 
 					<div class="comment-metadata">
 						<a href="https://blog.stefcho.eu/pfsense-2-0-rc1-configuration-of-openvpn-server-for-rad-warrior-with-tls-and-user-authentication/#comment-254454">
@@ -627,7 +645,7 @@ Aⅼl tɦе ƅᥱѕt</p>
 							</article></li>
 		<li id="comment-259530" class="comment odd alt thread-odd thread-alt depth-1">
 			<article id="div-comment-259530" class="comment-body"><footer class="comment-meta"><div class="comment-author vcard">
-						<img alt="" src="http://0.gravatar.com/avatar/640d5ecfbbd9cfe5ad5baa913a15b5eb?s=32&d=mm&r=g" srcset="http://0.gravatar.com/avatar/640d5ecfbbd9cfe5ad5baa913a15b5eb?s=64&d=mm&r=g 2x" class="avatar avatar-32 photo" height="32" width="32"><b class="fn"><a href="http://stefcho.eu" rel="external nofollow" class="url">Stefan</a></b> <span class="says">says:</span>					</div>
+						<img alt="" src="http://0.gravatar.com/avatar/640d5ecfbbd9cfe5ad5baa913a15b5eb?s=32&d=mm&r=g" srcset="http://0.gravatar.com/avatar/640d5ecfbbd9cfe5ad5baa913a15b5eb?s=64&d=mm&r=g 2x" class="avatar avatar-32 photo" height="32" width="32"><b class="fn"><a href="http://stefcho.eu" rel="external nofollow ugc" class="url">Stefan</a></b> <span class="says">says:</span>					</div>
 
 					<div class="comment-metadata">
 						<a href="https://blog.stefcho.eu/pfsense-2-0-rc1-configuration-of-openvpn-server-for-rad-warrior-with-tls-and-user-authentication/#comment-259530">
@@ -642,7 +660,7 @@ Aⅼl tɦе ƅᥱѕt</p>
 							</article></li>
 		<li id="comment-259531" class="comment even thread-even depth-1">
 			<article id="div-comment-259531" class="comment-body"><footer class="comment-meta"><div class="comment-author vcard">
-						<img alt="" src="http://0.gravatar.com/avatar/640d5ecfbbd9cfe5ad5baa913a15b5eb?s=32&d=mm&r=g" srcset="http://0.gravatar.com/avatar/640d5ecfbbd9cfe5ad5baa913a15b5eb?s=64&d=mm&r=g 2x" class="avatar avatar-32 photo" height="32" width="32"><b class="fn"><a href="http://stefcho.eu" rel="external nofollow" class="url">Stefan</a></b> <span class="says">says:</span>					</div>
+						<img alt="" src="http://0.gravatar.com/avatar/640d5ecfbbd9cfe5ad5baa913a15b5eb?s=32&d=mm&r=g" srcset="http://0.gravatar.com/avatar/640d5ecfbbd9cfe5ad5baa913a15b5eb?s=64&d=mm&r=g 2x" class="avatar avatar-32 photo" height="32" width="32"><b class="fn"><a href="http://stefcho.eu" rel="external nofollow ugc" class="url">Stefan</a></b> <span class="says">says:</span>					</div>
 
 					<div class="comment-metadata">
 						<a href="https://blog.stefcho.eu/pfsense-2-0-rc1-configuration-of-openvpn-server-for-rad-warrior-with-tls-and-user-authentication/#comment-259531">
@@ -659,7 +677,7 @@ Cheers</p>
 							</article></li>
 		<li id="comment-295027" class="pingback odd alt thread-odd thread-alt depth-1">
 			<div class="comment-body">
-				Pingback: <a href="https://blog.stefcho.eu/sharing-port-openvpn-web-server/" rel="external nofollow" class="url">Sharing a Port with OpenVPN and a Web Server - Stefcho's Tech Blog</a> 			</div>
+				Pingback: <a href="https://blog.stefcho.eu/sharing-port-openvpn-web-server/" rel="external nofollow ugc" class="url">Sharing a Port with OpenVPN and a Web Server - Stefcho's Tech Blog</a> 			</div>
 		</li>
 		</ol><p class="no-comments">Comments are closed.</p>
 	
@@ -673,7 +691,7 @@ Cheers</p>
 <a href="https://blog.stefcho.eu/tag/aes-ni/" class="tag-cloud-link tag-link-114 tag-link-position-2" style="font-size: 10.082644628099pt;" aria-label="AES-NI (2 items)">AES-NI</a>
 <a href="https://blog.stefcho.eu/tag/asterisk/" class="tag-cloud-link tag-link-55 tag-link-position-3" style="font-size: 10.082644628099pt;" aria-label="Asterisk (2 items)">Asterisk</a>
 <a href="https://blog.stefcho.eu/tag/asus/" class="tag-cloud-link tag-link-60 tag-link-position-4" style="font-size: 11.471074380165pt;" aria-label="ASUS (3 items)">ASUS</a>
-<a href="https://blog.stefcho.eu/tag/azure/" class="tag-cloud-link tag-link-94 tag-link-position-5" style="font-size: 12.628099173554pt;" aria-label="Azure (4 items)">Azure</a>
+<a href="https://blog.stefcho.eu/tag/azure/" class="tag-cloud-link tag-link-94 tag-link-position-5" style="font-size: 13.553719008264pt;" aria-label="Azure (5 items)">Azure</a>
 <a href="https://blog.stefcho.eu/tag/captive-portal/" class="tag-cloud-link tag-link-83 tag-link-position-6" style="font-size: 11.471074380165pt;" aria-label="Captive Portal (3 items)">Captive Portal</a>
 <a href="https://blog.stefcho.eu/tag/cell-phone/" class="tag-cloud-link tag-link-64 tag-link-position-7" style="font-size: 8pt;" aria-label="Cell Phone (1 item)">Cell Phone</a>
 <a href="https://blog.stefcho.eu/tag/centos/" class="tag-cloud-link tag-link-86 tag-link-position-8" style="font-size: 8pt;" aria-label="CentOS (1 item)">CentOS</a>
@@ -714,7 +732,8 @@ Cheers</p>
 <a href="https://blog.stefcho.eu/tag/windows-server-2012-r2/" class="tag-cloud-link tag-link-91 tag-link-position-43" style="font-size: 8pt;" aria-label="Windows Server 2012 R2 (1 item)">Windows Server 2012 R2</a>
 <a href="https://blog.stefcho.eu/tag/wireless/" class="tag-cloud-link tag-link-82 tag-link-position-44" style="font-size: 8pt;" aria-label="Wireless (1 item)">Wireless</a>
 <a href="https://blog.stefcho.eu/tag/workstation-8/" class="tag-cloud-link tag-link-89 tag-link-position-45" style="font-size: 8pt;" aria-label="Workstation 8 (1 item)">Workstation 8</a></div>
-</section><section id="archives-3" class="widget widget_archive"><h2 class="widget-title">Archives</h2>		<ul><li><a href="https://blog.stefcho.eu/2019/07/">July 2019</a></li>
+</section><section id="archives-3" class="widget widget_archive"><h2 class="widget-title">Archives</h2>		<ul><li><a href="https://blog.stefcho.eu/2020/04/">April 2020</a></li>
+	<li><a href="https://blog.stefcho.eu/2019/07/">July 2019</a></li>
 	<li><a href="https://blog.stefcho.eu/2019/05/">May 2019</a></li>
 	<li><a href="https://blog.stefcho.eu/2019/03/">March 2019</a></li>
 	<li><a href="https://blog.stefcho.eu/2019/02/">February 2019</a></li>
@@ -742,7 +761,7 @@ Cheers</p>
 		</div>
 	</section></div>
 
-	<footer id="colophon" class="site-footer section-fullwidth"><div class="row">
+	<footer id="colophon" class="site-footer section-fullwidth" role="contentinfo"><div class="row">
 			<div class="columns small-12">
 				<div class="site-info">
 					<a href="https://wordpress.org/">Proudly powered by WordPress</a>
@@ -752,8 +771,8 @@ Cheers</p>
 		</div>
 	</footer></div>
 
-<script type="text/javascript" src="https://blog.stefcho.eu/wp-content/themes/micro/assets/scripts/scripts.min.js"></script><script type="text/javascript">
+<script type="text/javascript" src="https://blog.stefcho.eu/wp-content/themes/micro/assets/scripts/bundle.min.js"></script><script type="text/javascript">
 /* <![CDATA[ */
-var wpgdprcData = {"ajaxURL":"https:\/\/blog.stefcho.eu\/wp-admin\/admin-ajax.php","ajaxSecurity":"d07ce61020","isMultisite":"","path":"\/","blogId":""};
+var wpgdprcData = {"ajaxURL":"https:\/\/blog.stefcho.eu\/wp-admin\/admin-ajax.php","ajaxSecurity":"16842c4f46","isMultisite":"","path":"\/","blogId":""};
 /* ]]> */
 </script><script type="text/javascript" src="https://blog.stefcho.eu/wp-content/plugins/wp-gdpr-compliance/assets/js/front.js"></script></body></html>
